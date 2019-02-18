@@ -1,0 +1,58 @@
+{
+  "author": {
+    "email": "this.eduardo@gmail.com",
+    "name": "Eduardo Gómez",
+    "url": "https://eduardogomez.io"
+  },
+  "config": {
+    "posts_per_page": 10,
+    "image_sizes": {
+      "xxs": {
+        "width": 30
+      },
+      "xs": {
+        "width": 100
+      },
+      "s": {
+        "width": 300
+      },
+      "m": {
+        "width": 600
+      },
+      "l": {
+        "width": 1000
+      },
+      "xl": {
+        "width": 2000
+      }
+    }
+  },
+  "demo": "https://liebling.eduardogomez.io",
+  "description": "Beautiful and clean theme that is easy and comfortable to use.",
+  "engines": {
+    "ghost": ">=2.0.0",
+    "ghost-api": "v2"
+  },
+  "gpm": {
+    "type": "theme",
+    "categories": [
+      "Beautiful",
+      "Clean",
+      "Magazine",
+      "Minimal",
+      "Responsive"
+    ]
+  },
+  "keywords": [
+    "ghost",
+    "theme",
+    "ghost-theme"
+  ],
+  "license": "MIT",
+  "name": "liebling",
+  "screenshots": {
+    "desktop": "assets/screenshot-desktop.jpg",
+    "mobile": "assets/screenshot-mobile.jpg"
+  },
+  "version": "0.1.0"
+}
