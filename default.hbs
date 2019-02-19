@@ -25,6 +25,11 @@
     {{!-- The footer --}}
     {{> footer}}
 
+    {{!-- Common scripts shared between pages --}}
+    <script defer src="{{asset "js/manifest.js"}}"></script>
+    <script defer src="{{asset "js/vendor.js"}}"></script>
+    <script defer src="{{asset "js/app.js"}}"></script>
+
     {{!-- The #block helper will pull in data from the #contentFor other template files --}}
     {{{block "scripts"}}}
 

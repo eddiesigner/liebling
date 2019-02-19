@@ -1,0 +1,34 @@
+<header class="m-header js-header">
+  {{#if background}}
+    <div class="m-header__shadow"></div>
+  {{/if}}
+
+  <div class="m-mobile-topbar" data-aos="fade-down">
+    <button class="m-icon-button in-mobile-topbar js-open-menu" aria-label="Open menu">
+      <span class="icon-menu"></span>
+    </button>
+    <button class="m-icon-button in-mobile-topbar js-open-search" aria-label="Open search">
+      <span class="icon-search"></span>
+    </button>
+  </div>
+
+  <div class="m-menu js-menu">
+    <button class="m-icon-button outlined as-close-menu js-close-menu" aria-label="Close menu">
+      <span class="icon-close"></span>
+    </button>
+    <div class="m-menu__main" data-aos="fade-down">
+      <div class="l-wrapper">
+        <div class="m-nav">
+          <nav class="m-nav__left">
+            {{#if @site.navigation}}
+              {{navigation}}
+            {{/if}}
+          </nav>
+          <button class="m-icon-button in-menu-main js-open-search" aria-label="Open search">
+            <span class="icon-search"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

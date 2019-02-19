@@ -1,0 +1,53 @@
+<ul role="menu">
+  {{#if @site.logo}}
+  <li class="only-desktop" role="menuitem">
+    <a href="{{@site.url}}" class="m-logo">
+      <img src="{{@site.logo}}" alt="{{@site.title}}">
+    </a>
+  </li>
+  {{/if}}
+  {{#foreach navigation}}
+    <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}">
+      <a href="{{url absolute="true"}}">{{label}}</a>
+    </li>
+  {{/foreach}}
+  <li role="menuitem" class="js-submenu-option">
+    <button class="m-icon-button in-menu-main more js-toggle-submenu" aria-label="Toggle submenu">
+      <span class="icon-more"></span>
+    </button>
+    <div class="m-submenu js-submenu">
+      <div class="l-wrapper in-submenu">
+        <section class="m-recent-articles">
+          <h3 class="m-submenu-title in-recent-articles">Recent articles</h3>
+          <div class="js-recent-articles">
+            {{#get "posts" limit="4" order="published_at desc" as |post|}}
+              {{#post}}
+                <div>
+                  <a href="{{url}}" class="m-recent-article">
+                    <div class="m-recent-article__picture">
+                      <div style="background-image: url({{img_url feature_image size="m"}});"></div>
+                    </div>
+                    <h3 class="m-recent-article__title">{{title}}</h3>
+                    <span class="m-recent-article__date">{{date published_at timeago="true"}}</span>
+                  </a>
+                </div>
+              {{/post}}
+            {{/get}}
+          </div>
+        </section>
+        <section class="m-tags">
+          <h3 class="m-submenu-title">Tags</h3>
+          <ul>
+            {{#get "tags" limit="10" as |tag|}}
+              {{#tag}}
+                <li>
+                  <a href="{{url}}">{{name}}</a>
+                </li>
+              {{/tag}}
+            {{/get}}
+          </ul>
+        </section>
+      </div>
+    </div>
+  </li>
+</ul>
