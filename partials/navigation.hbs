@@ -20,8 +20,8 @@
         <section class="m-recent-articles">
           <h3 class="m-submenu-title in-recent-articles">Recent articles</h3>
           <div class="js-recent-articles">
-            {{#get "posts" limit="4" order="published_at desc" as |post|}}
-              {{#post}}
+            {{#get "posts" limit="4" order="published_at desc"}}
+              {{#foreach posts}}
                 <div>
                   <a href="{{url}}" class="m-recent-article">
                     <div class="m-recent-article__picture">
@@ -31,21 +31,25 @@
                     <span class="m-recent-article__date">{{date published_at timeago="true"}}</span>
                   </a>
                 </div>
-              {{/post}}
+              {{else}}
+                <div class="m-no-found in-recent-articles">No recent articles found :(</div>
+              {{/foreach}}
             {{/get}}
           </div>
         </section>
         <section class="m-tags">
           <h3 class="m-submenu-title">Tags</h3>
-          <ul>
-            {{#get "tags" limit="10" as |tag|}}
-              {{#tag}}
+          {{#get "tags" limit="10"}}
+            <ul>
+              {{#foreach tags}}
                 <li>
                   <a href="{{url}}">{{name}}</a>
                 </li>
-              {{/tag}}
-            {{/get}}
-          </ul>
+              {{else}}
+                <li class="m-no-found">No tags found :(</li>
+              {{/foreach}}
+            </ul>
+          {{/get}}
         </section>
       </div>
     </div>
