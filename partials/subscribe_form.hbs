@@ -1,0 +1,14 @@
+<form method="post" action="{{action}}" id="{{form_id}}" class="{{form_class}}">
+  {{hidden}}
+
+  <fieldset>
+    {{input_email id=input_id class=input_class placeholder=placeholder value=email autofocus=autofocus}}
+  </fieldset>
+  <button id="{{button_id}}" class="{{button_class}}" type="submit">Subscribe</button>
+
+  {{script}}
+
+  {{#if error}}
+    <p class="m-small-text in-subscribe-page">Email cannot be blank.</p>
+  {{/if}}
+</form>
