@@ -1,0 +1,32 @@
+{{#if background}}
+  <style type="text/css">
+    .m-hero__picture {
+      background-image: url({{img_url background size='xl'}});
+    }
+  
+    @media(max-width: 1000px) {
+      .m-hero__picture {
+        background-image: url({{img_url background size='l'}});
+        background-image: -webkit-image-set(url({{img_url background size='l'}}) 1x,
+        url({{img_url background size='xl'}}) 2x);
+        background-image: image-set(url({{img_url background size='l'}}) 1x,
+        url({{img_url background size='xl'}}) 2x);
+      }
+    }
+  
+    @media(max-width: 600px) {
+      .m-hero__picture {
+        background-image: url({{img_url background size='m'}});
+        background-image: -webkit-image-set(url({{img_url background size='m'}}) 1x,
+        url({{img_url background size='l'}}) 2x);
+        background-image: image-set(url({{img_url background size='m'}}) 1x,
+        url({{img_url background size='l'}}) 2x);
+      }
+    }
+  </style>
+
+  <header class="m-hero with-picture" data-aos="fade">
+    <div class="m-hero__picture"></div>
+{{else}}
+  <header class="m-hero" data-aos="fade">
+{{/if}}

@@ -1,16 +1,15 @@
 {{!< default}}
 
-{{!-- The header --}}
-{{> header }}
+{{> header}}
 
 {{#post}}
-  <main>
-    <header class="m-hero" data-aos="fade">
-      <div class="m-hero__content" data-aos="fade-down">
-        <h1 class="m-hero-title">{{title}}</h1>
-        <p class="m-hero-description">{{excerpt}}</p>
-      </div>
-    </header>
+  {{> hero background=feature_image}}
+    <div class="m-hero__content" data-aos="fade-down">
+      <h1 class="m-hero-title">{{title}}</h1>
+      <p class="m-hero-description">{{excerpt}}</p>
+    </div>
+  </header>
+  <main role="main">
     <section class="l-content">
       <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
         {{#get 'authors' limit='all' include='count.posts' order='count.posts desc'}}
@@ -22,42 +21,44 @@
                 {{else}}
                   <div class="m-article-card__picture" style="background-image: url({{asset "images/default-avatar-rectangle.jpg"}})">
                 {{/if}}
-                  <a href="{{url}}" class="m-article-card__picture-link" aria-label="Author"></a>
-                  <h3 class="m-article-card__name">{{name}}</h3>
-                </div>
-                <div class="m-article-card__info">
-                  <a href="{{url}}" class="m-article-card__info-link">
-                    <p class="m-article-card__excerpt">{{bio}}</p>
-                  </a>
-                  <div class="m-article-card__author-stats">
-                    <span>
-                      {{plural count.posts empty="No posts" singular="% post" plural="% posts"}}
-                    </span>
-                    <ul class="m-article-card__social">
-                      {{#if website}}
-                        <li>
-                          <a href="{{website}}" target="_blank" rel="noopener">
-                            <span class="icon-globe"></span>
-                          </a>
-                        </li>
-                      {{/if}}
-                      {{#if facebook}}
-                      <li>
-                        <a href="https://facebook.com/{{facebook}}" target="_blank" rel="noopener">
-                          <span class="icon-facebook"></span>
-                        </a>
-                      </li>
-                      {{/if}}
-                      {{#if twitter}}
-                      <li>
-                        <a href="https://twitter.com/{{twitter}}" target="_blank" rel="noopener">
-                          <span class="icon-twitter"></span>
-                        </a>
-                      </li>
-                      {{/if}}
-                    </ul>
+                    <a href="{{url}}" class="m-article-card__picture-link" aria-label="Author"></a>
+                    <h3 class="m-article-card__name">{{name}}</h3>
                   </div>
-                </div>
+                  <div class="m-article-card__info">
+                    <a href="{{url}}" class="m-article-card__info-link">
+                      <p class="m-article-card__excerpt">{{bio}}</p>
+                    </a>
+                    <div class="m-article-card__author-stats">
+                      <span>
+                        {{plural count.posts empty="No posts" singular="% post" plural="% posts"}}
+                      </span>
+                      {{#has any="twitter, facebook, website"}}
+                        <ul class="m-article-card__social">
+                          {{#if website}}
+                            <li>
+                              <a href="{{website}}" target="_blank" rel="noopener">
+                                <span class="icon-globe"></span>
+                              </a>
+                            </li>
+                          {{/if}}
+                          {{#if facebook}}
+                            <li>
+                              <a href="https://facebook.com/{{facebook}}" target="_blank" rel="noopener">
+                                <span class="icon-facebook"></span>
+                              </a>
+                            </li>
+                          {{/if}}
+                          {{#if twitter}}
+                            <li>
+                              <a href="https://twitter.com/{{twitter}}" target="_blank" rel="noopener">
+                                <span class="icon-twitter"></span>
+                              </a>
+                            </li>
+                          {{/if}}
+                        </ul>
+                      {{/has}}
+                    </div>
+                  </div>
               </article>
             {{/foreach}}
           </section>

@@ -1,8 +1,8 @@
-<header class="m-header js-header">
-  {{#if background}}
-    <div class="m-header__shadow"></div>
-  {{/if}}
-
+{{#if background}}
+  <header class="m-header with-picture js-header">
+{{else}}
+  <header class="m-header js-header">
+{{/if}}
   <div class="m-mobile-topbar" data-aos="fade-down">
     <button class="m-icon-button in-mobile-topbar js-open-menu" aria-label="Open menu">
       <span class="icon-menu"></span>
