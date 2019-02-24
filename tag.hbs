@@ -1,0 +1,25 @@
+{{!< default}}
+
+{{> header}}
+
+{{#tag}}
+  {{> hero background=feature_image}}
+    <div class="m-hero__content" data-aos="fade-down">
+      <h1 class="m-hero-title">{{name}}</h1>
+      <p class="m-heading__description">
+        {{plural ../pagination.total empty="No posts" singular="% post" plural="% posts"}} with this tag
+      </p>
+    </div>
+  </header>
+{{/tag}}
+
+<main role="main">
+  <section class="l-content">
+    <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
+      <section class="l-grid centered">
+        {{> "loop"}}
+      </section>
+    </div>
+    {{pagination}}
+  </section>
+</main>
