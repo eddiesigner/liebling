@@ -7,6 +7,11 @@
     <button class="m-icon-button in-mobile-topbar js-open-menu" aria-label="Open menu">
       <span class="icon-menu"></span>
     </button>
+    {{#if @site.logo}}
+      <a href="{{@site.url}}" class="m-logo in-mobile-topbar">
+        <img src="{{@site.logo}}" alt="{{@site.title}}">
+      </a>
+    {{/if}}
     <button class="m-icon-button in-mobile-topbar js-open-search" aria-label="Open search">
       <span class="icon-search"></span>
     </button>
