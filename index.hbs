@@ -1,6 +1,78 @@
 {{!< default}}
 
-{{> header}}
+{{> header background=@site.cover_image}}
+
+{{> hero background=@site.cover_image}}
+  <div class="m-hero__content" data-aos="fade-down">
+    <h1 class="m-hero-title bigger">{{@site.title}}</h1>
+    {{#if @site.description}}
+      <p class="m-hero-description bigger">{{@site.description}}</p>
+    {{/if}}
+    {{#if @labs.subscribers}}
+      <a href="{{@site.url}}/subscribe" class="m-button filled">Subscribe</a>
+    {{/if}}
+  </div>
+</header>
 
 <main role="main">
+  <section class="l-content">
+    <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
+      <section class="l-grid centered">
+        {{#get "posts" filter="featured:true" include="authors,tags" limit="5" as |featured|}}
+          {{#if featured}}
+            <div class="m-featured-slider">
+              <ul class="m-featured-slider__list js-featured-articles">
+                {{#foreach featured}}
+                  <li class="m-featured-slider__list__item">
+                    {{#if feature_image}}
+                      <article class="m-featured-article">
+                    {{else}}
+                      <article class="m-featured-article no-picture">
+                    {{/if}}
+                      <div class="m-featured-article__picture">
+                        {{#if feature_image}}
+                          <div style="background-image: url({{feature_image}});"></div>
+                        {{/if}}
+                      </div>
+                      <div class="m-featured-article__meta">
+                        <a href="{{primary_author.url}}" class="m-featured-article__author js-tooltip"
+                          data-tippy-content="Posted by {{primary_author.name}} {{authors autolink="false" from="2" prefix="<br> Among with " separator=" , "}}">
+                          {{#if primary_author.profile_image}}
+                            <div style="background-image: url({{primary_author.profile_image}});"></div>
+                          {{else}}
+                            <div style="background-image: url({{asset "images/default-avatar-square-small.jpg"}});"></div>
+                          {{/if}}
+                        </a>
+                        {{#if primary_tag}}
+                          <a href="{{primary_tag.url}}" class="m-featured-article__tag">{{primary_tag.name}}</a>
+                        {{/if}}
+                      </div>
+                      <div class="m-featured-article__ribbon">
+                        <span class="icon-star"></span>
+                        <span>Featured</span>
+                      </div>
+                      <a href="{{url}}" class="m-featured-article__content">
+                        <h1 class="m-featured-article__title">{{title}}</h1>
+                        <div class="m-featured-article__timestamp">
+                          <time datetime="{{published_at}}">{{date published_at timeago="true"}}</time>
+                          <span>&bull;</span>
+                          <span>{{reading_time}}</span>
+                        </div>
+                      </a>
+                    </article>
+                  </li>
+                {{/foreach}}
+              </ul>
+            </div>
+          {{/if}}
+        {{/get}}
+        {{> "loop"}}
+      </section>
+    </div>
+    {{pagination}}
+  </section>
 </main>
+
+{{#contentFor "scripts"}}
+  <script defer src="{{asset "js/home.js"}}"></script>
+{{/contentFor}}
