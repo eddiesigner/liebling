@@ -1,0 +1,31 @@
+{{!< default}}
+
+{{#post}}
+  {{> header background=feature_image}}
+
+  {{> hero background=feature_image}}
+    <div class="m-hero__content" data-aos="fade-down">
+      <h1 class="m-hero-title bigger">{{title}}</h1>
+      {{#if excerpt}}
+        <p class="m-hero-description">{{excerpt}}</p>
+      {{/if}}
+    </div>
+  </header>
+  <main role="main">
+    <article>
+      <section class="l-content">
+        <div class="l-wrapper in-post" data-aos="fade-up" data-aos-delay="300">
+          <div class="l-post-content">
+            <section class="pos-relative js-post-content">
+              {{content}}
+            </section>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+{{/post}}
+
+{{#contentFor "scripts"}}
+  <script defer src="{{asset "js/page.js"}}"></script>
+{{/contentFor}}
