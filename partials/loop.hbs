@@ -7,7 +7,7 @@
       <div class="m-article-card__picture">
   {{/if}}
       <a href="{{url}}" class="m-article-card__picture-link" aria-label="Article"></a>
-      <a href="{{primary_author.url}}" class="m-article-card__author js-tooltip" data-tippy-content="Posted by {{primary_author.name}} {{authors autolink="false" from="2" prefix="<br> Among with " separator=" , "}}">
+      <a href="{{primary_author.url}}" class="m-article-card__author js-tooltip" data-tippy-content="Posted by {{primary_author.name}} {{authors autolink="false" from="2" prefix="<br>Among with " separator=" , "}}">
         {{#if primary_author.profile_image}}
           <div style="background-image: url({{primary_author.profile_image}});"></div>
         {{else}}
