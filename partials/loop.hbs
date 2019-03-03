@@ -1,4 +1,7 @@
 {{#foreach posts}}
+  {{#is "post"}}
+    <li class="m-recommended-slider__item">
+  {{/is}}
   {{#if feature_image}}
     <article class="m-article-card {{post_class}}">
       <div class="m-article-card__picture" style="background-image: url({{feature_image}});">
@@ -38,6 +41,9 @@
       </a>
     </div>
   </article>
+  {{#is "post"}}
+    </li>
+  {{/is}}
   {{else}}
     <header class="m-heading">
       <h3>No posts found</h3>
