@@ -1,24 +1,25 @@
 {{!< default}}
 
-{{#post}}
+<div class="main-wrap">
+  {{#post}}
   {{> header background=feature_image}}
-
+  
   {{> hero background=feature_image}}
   </header>
-{{/post}}
-
-<main role="main">
-  <article>
-    <section class="l-content">
-      {{#post}}
+  {{/post}}
+  
+  <main role="main">
+    <article>
+      <section class="l-content">
+        {{#post}}
         <div class="l-wrapper in-post js-wrapper-aos" data-aos="fade-up" data-aos-delay="300">
           <div class="l-post-content js-progress-content">
             <header class="m-heading">
               <h1 class="m-heading__title in-post">{{title}}</h1>
               <section class="m-heading__meta">
                 {{#if primary_tag}}
-                  <a href="{{primary_tag.url}}" class="m-heading__meta__tag">{{primary_tag.name}}</a>
-                  <span class="m-heading__meta__divider">&bull;</span>
+                <a href="{{primary_tag.url}}" class="m-heading__meta__tag">{{primary_tag.name}}</a>
+                <span class="m-heading__meta__divider">&bull;</span>
                 {{/if}}
                 <time class="m-heading__meta__time">{{date published_at}}</time>
               </section>
@@ -55,11 +56,11 @@
               </div>
               <div class="m-subscribe-section__form">
                 {{subscribe_form
-                      form_class="m-subscribe-section__form"
-                      input_class="m-input in-subscribe-section"
-                      button_class="m-button primary block"
-                      placeholder="Your email address"
-                    }}
+                        form_class="m-subscribe-section__form"
+                        input_class="m-input in-subscribe-section"
+                        button_class="m-button primary block"
+                        placeholder="Your email address"
+                      }}
               </div>
             </div>
           </div>
@@ -114,32 +115,32 @@
           </div>
         </section>
         {{!--
-        <section class="m-comments">
-          <div class="m-load-comments">
-            <div class="m-load-comments__line"></div>
-            <button class="m-icon-button filled as-load-comments js-tooltip js-load-comments" data-tippy-content="Load comments">
-              <span class="icon-comments"></span>
-            </button>
-          </div>
-          <div class="m-load-comments__iframe l-wrapper in-comments js-comments-iframe">
-            <div id="disqus_thread"></div>
-            <script>
-              var disqus_config = function () {
-                this.page.url = "{{url absolute="true"}}";
-                this.page.identifier = "ghost-{{comment_id}}"
-              };
-              (function () {
-                var d = document, s = d.createElement('script');
-                s.src = 'https://CHANGETHIS.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-              })();
-            </script>
-          </div>
-        </section>
-        --}}
-      {{/post}}
-      {{#get "posts" limit="3" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags,authors" as |related|}}
+          <section class="m-comments">
+            <div class="m-load-comments">
+              <div class="m-load-comments__line"></div>
+              <button class="m-icon-button filled as-load-comments js-tooltip js-load-comments" data-tippy-content="Load comments">
+                <span class="icon-comments"></span>
+              </button>
+            </div>
+            <div class="m-load-comments__iframe l-wrapper in-comments js-comments-iframe">
+              <div id="disqus_thread"></div>
+              <script>
+                var disqus_config = function () {
+                  this.page.url = "{{url absolute="true"}}";
+                  this.page.identifier = "ghost-{{comment_id}}"
+                };
+                (function () {
+                  var d = document, s = d.createElement('script');
+                  s.src = 'https://CHANGETHIS.disqus.com/embed.js';
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+                })();
+              </script>
+            </div>
+          </section>
+          --}}
+        {{/post}}
+        {{#get "posts" limit="3" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags,authors" as |related|}}
         <section class="m-recommended">
           <div class="l-wrapper in-recommended">
             <h3 class="m-section-title in-recommended">Recommended for you</h3>
@@ -150,10 +151,11 @@
             </div>
           </div>
         </section>
-      {{/get}}
-    </section>
-  </article>
-</main>
+        {{/get}}
+      </section>
+    </article>
+  </main>
+</div>
 
 {{#contentFor "scripts"}}
   <script defer src="{{asset "js/post.js"}}"></script>
