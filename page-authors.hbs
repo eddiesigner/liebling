@@ -12,11 +12,11 @@
       {{/if}}
     </div>
     </header>
-    <main role="main">
-      <section class="l-content">
+    <main>
+      <div class="l-content">
         <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
           {{#get 'authors' limit='all' include='count.posts' order='count.posts desc'}}
-          <section class="l-grid centered">
+          <div class="l-grid centered">
             {{#foreach authors}}
             <article class="m-article-card as-author">
               {{#if profile_image}}
@@ -65,10 +65,10 @@
                 </div>
             </article>
             {{/foreach}}
-          </section>
+          </div>
           {{/get}}
         </div>
-      </section>
+      </div>
     </main>
   </div>
 {{/post}}

@@ -8,23 +8,23 @@
   </header>
   {{/post}}
   
-  <main role="main">
+  <main>
     <article>
-      <section class="l-content">
+      <div class="l-content">
         {{#post}}
         <div class="l-wrapper in-post js-wrapper-aos" data-aos="fade-up" data-aos-delay="300">
           <div class="l-post-content js-progress-content">
             <header class="m-heading">
               <h1 class="m-heading__title in-post">{{title}}</h1>
-              <section class="m-heading__meta">
+              <div class="m-heading__meta">
                 {{#if primary_tag}}
                 <a href="{{primary_tag.url}}" class="m-heading__meta__tag">{{primary_tag.name}}</a>
                 <span class="m-heading__meta__divider">&bull;</span>
                 {{/if}}
                 <time class="m-heading__meta__time">{{date published_at}}</time>
-              </section>
+              </div>
             </header>
-            <section class="pos-relative js-post-content">
+            <div class="pos-relative js-post-content">
               <div class="m-share">
                 <div class="m-share__content js-sticky">
                   <a href="#" class="m-icon-button filled in-share">
@@ -42,7 +42,7 @@
                 </div>
               </div>
               {{content}}
-            </section>
+            </div>
           </div>
         </div>
         <section class="m-subscribe-section">
@@ -152,7 +152,7 @@
           </div>
         </section>
         {{/get}}
-      </section>
+      </div>
     </article>
   </main>
 </div>

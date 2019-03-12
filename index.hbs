@@ -15,10 +15,10 @@
   </div>
   </header>
   
-  <main role="main">
-    <section class="l-content">
+  <main>
+    <div class="l-content">
       <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
-        <section class="l-grid centered">
+        <div class="l-grid centered">
           {{#get "posts" filter="featured:true" include="authors,tags" limit="5" as |featured|}}
           {{#if featured}}
           <div class="m-featured-slider">
@@ -68,10 +68,10 @@
           {{/if}}
           {{/get}}
           {{> "loop"}}
-        </section>
+        </div>
       </div>
       {{pagination}}
-    </section>
+    </div>
   </main>
 </div>
 

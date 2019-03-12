@@ -1,5 +1,6 @@
 {{#if background}}
-  <style type="text/css">
+  {{#contentFor "herobackground"}}
+  <style>
     .m-hero__picture {
       background-image: url({{img_url background size='xl'}});
     }
@@ -7,23 +8,16 @@
     @media(max-width: 1000px) {
       .m-hero__picture {
         background-image: url({{img_url background size='l'}});
-        background-image: -webkit-image-set(url({{img_url background size='l'}}) 1x,
-        url({{img_url background size='xl'}}) 2x);
-        background-image: image-set(url({{img_url background size='l'}}) 1x,
-        url({{img_url background size='xl'}}) 2x);
       }
     }
   
     @media(max-width: 600px) {
       .m-hero__picture {
         background-image: url({{img_url background size='m'}});
-        background-image: -webkit-image-set(url({{img_url background size='m'}}) 1x,
-        url({{img_url background size='l'}}) 2x);
-        background-image: image-set(url({{img_url background size='m'}}) 1x,
-        url({{img_url background size='l'}}) 2x);
       }
     }
   </style>
+  {{/contentFor}}
 
   <header class="m-hero with-picture" data-aos="fade">
     {{#is "post"}}
