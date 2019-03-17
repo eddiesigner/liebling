@@ -1,6 +1,6 @@
 {{#foreach posts}}
   {{#is "post"}}
-    <li class="m-recommended-slider__item">
+    <div class="m-recommended-slider__item">
   {{/is}}
   {{#if feature_image}}
     <article class="m-article-card {{post_class}}">
@@ -10,7 +10,7 @@
       <div class="m-article-card__picture">
   {{/if}}
       <a href="{{url}}" class="m-article-card__picture-link" aria-label="Article"></a>
-      <a href="{{primary_author.url}}" class="m-article-card__author js-tooltip" data-tippy-content="Posted by {{primary_author.name}} {{authors autolink="false" from="2" prefix="<br>Among with " separator=" , "}}">
+      <a href="{{primary_author.url}}" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="Posted by {{primary_author.name}} {{authors autolink="false" from="2" prefix="<br>Among with " separator=" , "}}">
         {{#if primary_author.profile_image}}
           <div style="background-image: url({{primary_author.profile_image}});"></div>
         {{else}}
@@ -34,7 +34,7 @@
           <h2 class="m-article-card__title">{{title}}</h2>
         </div>
         <div class="m-article-card__timestamp">
-          <time datetime="{{published_at}}">{{date published_at timeago="true"}}</time>
+          <span>{{date published_at timeago="true"}}</span>
           <span>&bull;</span>
           <span>{{reading_time}}</span>
         </div>
@@ -42,7 +42,7 @@
     </div>
   </article>
   {{#is "post"}}
-    </li>
+    </div>
   {{/is}}
   {{else}}
     <header class="m-heading">
