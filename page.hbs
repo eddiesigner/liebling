@@ -1,9 +1,17 @@
+{{!--
+This template is used for the posts that are marked as pages.
+--}}
+
+{{!-- The tag below means: insert everything in this file
+into the {body} of the default.hbs template --}}
 {{!< default}}
 
+{{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
   <div class="main-wrap">
+    {{!--Special header.hbs partial to generate the <header> tag--}}
     {{> header background=feature_image}}
-    
+    {{!-- Inject styles of the hero image to make it responsive --}}
     {{> hero background=feature_image}}
     <div class="m-hero__content" data-aos="fade-down">
       <h1 class="m-hero-title bigger">{{title}}</h1>
@@ -28,6 +36,7 @@
   </div>
 {{/post}}
 
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
   <script defer src="{{asset "js/page.js"}}"></script>
 {{/contentFor}}

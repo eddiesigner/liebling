@@ -1,9 +1,17 @@
+{{!--
+This template is used for the authors page.
+You must first create a page called Authors in the dashboard to enable it.
+--}}
+
+{{!-- The tag below means: insert everything in this file
+into the {body} of the default.hbs template --}}
 {{!< default}}
 
 {{#post}}
   <div class="main-wrap">
+    {{!--Special header.hbs partial to generate the <header> tag--}}
     {{> header background=feature_image}}
-    
+    {{!-- Inject styles of the hero image to make it responsive --}}
     {{> hero background=feature_image}}
     <div class="m-hero__content" data-aos="fade-down">
       <h1 class="m-hero-title bigger">{{title}}</h1>

@@ -1,9 +1,17 @@
+{{!--
+This template is used for the post page.
+--}}
+
+{{!-- The tag below means: insert everything in this file
+into the {body} of the default.hbs template --}}
 {{!< default}}
 
 <div class="main-wrap">
+  {{!-- Everything inside the #post tags pulls data from the post --}}
   {{#post}}
+  {{!--Special header.hbs partial to generate the <header> tag--}}
   {{> header background=feature_image}}
-  
+  {{!-- Inject styles of the hero image to make it responsive --}}
   {{> hero background=feature_image}}
   </header>
   {{/post}}
@@ -11,6 +19,7 @@
   <main>
     <article>
       <div class="l-content">
+        {{!-- Everything inside the #post tags pulls data from the post --}}
         {{#post}}
         <div class="l-wrapper in-post js-aos-wrapper" data-aos="fade-up" data-aos-delay="300">
           {{#if @labs.subscribers}}
@@ -49,6 +58,7 @@
             </div>
           </div>
         </div>
+        {{!-- Email subscribe form at the bottom of the page --}}
         {{#if @labs.subscribers}}
         <section class="m-subscribe-section">
           <div class="l-wrapper in-post">
@@ -123,6 +133,7 @@
             </div>
           </div>
         </section>
+        {{!-- If you want to embed comments, this is a good place to do it! --}}
         {{!--
           <section class="m-comments">
             <div class="m-load-comments">
@@ -149,12 +160,14 @@
           </section>
           --}}
         {{/post}}
+        {{!-- Related posts --}}
         {{#get "posts" limit="3" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags,authors" as |related|}}
         <section class="m-recommended">
           <div class="l-wrapper in-recommended">
             <h3 class="m-section-title in-recommended">Recommended for you</h3>
             <div class="m-recommended-articles">
               <div class="m-recommended-slider js-recommended-articles">
+                {{!-- The tag below iterates over all the related posts --}}
                 {{> "loop"}}
               </div>
             </div>
@@ -166,6 +179,7 @@
   </main>
 </div>
 
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
   <script defer src="{{asset "js/post.js"}}"></script>
 {{/contentFor}}

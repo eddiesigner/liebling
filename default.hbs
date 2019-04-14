@@ -13,15 +13,19 @@
     {{!-- Styles'n'Scripts --}}
     <link rel="stylesheet" type="text/css" href="{{asset "css/app.css"}}" media="screen" />
 
+    {{!-- This #block helper will pull data from the hero partial 
+    to inject styles of the hero image to make it responsive --}}
     {{{block "herobackground"}}}
 
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
 
+    {{!-- This variable is used to make the search form work --}}
     <script>
       const ghostHost = "{{@site.url}}"
     </script>
 
+    {{!-- This script loads the Google fornt asynchronously --}}
     <script>
       WebFontConfig = {
         google: { families: ['Source+Sans+Pro:400,600,700'] }
