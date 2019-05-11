@@ -68,6 +68,8 @@ To download the latest version please head over the [releases page](https://gith
 
 ## Help and Support
 
+To enable the search, comments, subscribers and so on, you must follow the steps found in the [Wiki](https://github.com/eddiesigner/liebling/wiki).
+
 If you have any questions or troubles with this product, please feel free to open an issue [here](https://github.com/eddiesigner/liebling/issues).
 
 ## License
