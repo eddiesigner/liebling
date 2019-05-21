@@ -1,0 +1,24 @@
+.m-load-comments {
+  position: relative;
+  margin: 0 auto 40px;
+  max-width: 280px;
+
+  @include respond-to('medium') {
+    max-width: 400px;
+    margin-bottom: 60px;
+  }
+}
+
+.m-load-comments__line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  z-index: 1;
+  background-color: #e2e2e2;
+}
+
+.m-load-comments__iframe {
+  display: none;
+}

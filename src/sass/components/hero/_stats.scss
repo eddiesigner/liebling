@@ -1,0 +1,27 @@
+.m-hero-stats {
+  text-align: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  @include respond-to('medium') {
+    margin-left: 7px;
+  }
+
+  &.with-picture {
+    color: $white;
+  }
+
+  li {
+    display: inline-block;
+    color: inherit;
+    letter-spacing: 0.2px;
+    font-size: 0.813rem;
+    margin: 0 4px;
+
+    @include respond-to('medium') {
+      letter-spacing: 0.3px;
+      font-size: 1rem;
+    }
+  }
+}

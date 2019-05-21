@@ -1,0 +1,14 @@
+.m-no-found {
+  color: $black;
+  line-height: 1.3;
+  font-size: 0.875rem;
+  font-weight: 600;
+
+  &.in-recent-articles {
+    margin-left: $mobile-space;
+
+    @include respond-to('medium') {
+      margin-left: 0;
+    }
+  }
+}

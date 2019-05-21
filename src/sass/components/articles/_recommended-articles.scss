@@ -1,0 +1,8 @@
+.m-recommended-articles {
+  margin: 0 -20px;
+
+  @include respond-to('large') {
+    padding: 0 40px;
+    margin: 0 -30px;
+  }
+}

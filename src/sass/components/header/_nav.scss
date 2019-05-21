@@ -1,0 +1,54 @@
+.m-nav {
+  @include respond-to('medium') {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.m-nav__left {
+  margin-bottom: 30px;
+
+  @include respond-to('medium') {
+    margin-bottom: 0;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+
+    @include respond-to('medium') {
+      display: flex;
+      align-items: center;
+    }
+
+    li {
+      color: $titles;
+      letter-spacing: 0.3px;
+      font-size: 1.125rem;
+      margin-bottom: 15px;
+
+      @include respond-to('medium') {
+        margin-bottom: 0;
+        margin-right: 35px;
+        position: relative;
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+
+        @include respond-to('medium') {
+          margin-right: 0;
+        }
+      }
+
+      &.nav-current {
+        font-weight: 600;
+      }
+
+      a {
+        color: inherit;
+      }
+    }
+  }
+}

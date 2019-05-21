@@ -1,0 +1,15 @@
+.m-logo {
+  display: inline-block;
+  height: 25px;
+
+  img {
+    width: auto;
+    max-width: 150px;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &.in-mobile-topbar {
+    height: 20px;
+  }
+}

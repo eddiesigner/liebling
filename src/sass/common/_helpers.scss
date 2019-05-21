@@ -1,0 +1,102 @@
+@charset "UTF-8";
+
+/**
+ *  Helpers
+ */
+
+.hide {
+  display: none;
+}
+
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " "; /* 1 */
+  line-height: 0;
+  display: table; /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+.content-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.no-appearance {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  -o-appearance: none !important;
+  -ms-appearance: none !important;
+  appearance: none !important;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.no-margin {
+  margin: 0
+}
+
+.no-scroll-y {
+  overflow-y: hidden;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.pos-relative {
+  position: relative;
+}
+
+.pos-absolute {
+  position: absolute;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.only-desktop {
+  display: none;
+
+  @include respond-to('medium') {
+    display: block;
+  }
+}

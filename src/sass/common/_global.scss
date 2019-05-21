@@ -1,0 +1,71 @@
+/** Global styles */
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  color: $body;
+  font-size: 1rem;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-display: swap;
+  background-color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &.share-menu-displayed {
+    padding-bottom: 45px;
+
+    @include respond-to('medium') {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.main-wrap {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+p {
+  line-height: 1.3;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  position: relative;
+}
+
+.tippy-popper * {
+  text-align: left !important;
+}
+
+.medium-zoom-overlay,
+.medium-zoom-image {
+  z-index: 5;
+}
+
+::-webkit-input-placeholder {
+  color: $gray;
+}
+
+::-moz-placeholder {
+  color: $gray;
+}
+
+:-ms-input-placeholder {
+  color: $gray;
+}
+
+:-moz-placeholder {
+  color: $gray;
+}

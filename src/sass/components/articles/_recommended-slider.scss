@@ -1,0 +1,35 @@
+.m-recommended-slider {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  .slick-list {
+    padding: 40px 0 60px;
+
+    @include respond-to('large') {
+      padding: 40px 40px 60px;
+      margin: 0 -40px;
+    }
+  }
+
+  .m-article-card {
+    width: 100% !important;
+    margin: 0 !important;
+
+    @include respond-to('large') {
+      .m-article-card__picture {
+        height: 190px;
+      }
+    }
+
+    @include respond-to('extra-large') {
+      .m-article-card__picture {
+        height: 220px;
+      }
+    }
+  }
+}
+
+.m-recommended-slider__item {
+  padding: 0 20px;
+}

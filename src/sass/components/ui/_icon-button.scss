@@ -1,0 +1,216 @@
+.m-icon-button {
+  color: $titles;
+  font-size: 1.125rem;
+  border: 0;
+  outline: 0;
+  padding: 0;
+  cursor: pointer;
+  background-color: transparent;
+  @extend .content-centered;
+  @extend .no-appearance;
+
+  &.outlined {
+    border-radius: 50%;
+    border: 1px solid $body;
+  }
+
+  &.filled {
+    background-color: $white;
+    border-radius: 50%;
+    @include bs(0 2px 4px rgba(108, 108, 108, 0.2));
+    @include transition(all .25s cubic-bezier(.02,.01,.47,1));
+
+    &:hover {
+      @include bs(0 4px 8px rgba(108, 108, 108, 0.3));
+    }
+  }
+
+  &.in-mobile-topbar {
+    width: 65px;
+    height: 100%;
+  }
+
+  &.as-close-menu {
+    position: absolute;
+    top: $mobile-space;
+    right: $mobile-space;
+    width: 32px;
+    height: 32px;
+    font-size: 0.625rem;
+    z-index: 2;
+
+    @include respond-to('medium') {
+      display: none !important;
+    }
+  }
+
+  &.as-close-search {
+    position: absolute;
+    top: $mobile-space;
+    right: $mobile-space;
+    width: 32px;
+    height: 32px;
+    font-size: 0.625rem;
+    z-index: 2;
+    background-color: $white;
+
+    @include respond-to('medium') {
+      top: 30px;
+      right: 30px;
+      width: 42px;
+      height: 42px;
+      font-size: 0.875rem;
+    }
+
+    @include respond-to('extra-large') {
+      top: 40px;
+      right: 40px;
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  &.in-menu-main {
+    display: none;
+
+    @include respond-to('medium') {
+      display: flex;
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  &.more {
+    font-size: 6px;
+    z-index: 6;
+    position: relative;
+
+    &.active {
+      color: $main-color;
+    }
+  }
+
+  &.in-pagination-left,
+  &.in-pagination-right {
+    width: 40px;
+    height: 40px;
+    font-size: 0.625rem;
+
+    @include respond-to('medium') {
+      width: 46px;
+      height: 46px;
+      font-size: 0.688rem;
+    }
+  }
+
+  &.in-pagination-left {
+    margin-right: 30px;
+  }
+
+  &.in-pagination-right {
+    margin-left: 30px;
+  }
+
+  &.in-featured-articles {
+    position: absolute;
+    color: $white;
+    font-size: 0.875rem;
+    width: 29px;
+    height: 22px;
+    bottom: 16px;
+    z-index: 2;
+
+    @include respond-to('medium') {
+      bottom: 36px;
+    }
+
+    &.slick-prev {
+      right: 52px;
+
+      @include respond-to('medium') {
+        right: 72px;
+      }
+    }
+
+    &.slick-next {
+      right: 16px;
+
+      @include respond-to('medium') {
+        right: 36px;
+      }
+    }
+  }
+
+  &.in-recommended-articles {
+    position: absolute;
+    font-size: 0.625rem;
+    width: 40px;
+    height: 40px;
+    top: 200px;
+    z-index: 2;
+    @include transform(translateY(-50%));
+
+    &.slick-prev {
+      left: 0;
+    }
+
+    &.slick-next {
+      right: 0;
+    }
+  }
+
+  &.as-load-comments {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    font-size: 1.250rem;
+    margin: 0 auto;
+    z-index: 2;
+
+    @include respond-to('medium') {
+      width: 80px;
+      height: 80px;
+      font-size: 1.625rem;
+    }
+  }
+
+  &.in-share {
+    color: $titles;
+    font-size: 0.750rem;
+    text-decoration: none;
+    width: 31px;
+    height: 31px;
+    margin: 0 25px;
+
+    @include respond-to('large') {
+      font-size: 0.875rem;
+      width: 40px;
+      height: 40px;
+      margin: 0 0 20px 0;
+    }
+
+    @include respond-to('extra-large') {
+      font-size: 1rem;
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  &.progress {
+    position: relative;
+
+    svg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+
+      circle {
+        transform-origin: 50% 50%;
+        @include transform(rotate(-90deg));
+        @include transition(stroke-dashoffset 0.2s);
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.m-button {
+  display: inline-block;
+  color: $titles;
+  text-align: center;
+  letter-spacing: 0.2px;
+  line-height: 1;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 13px 25px;
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+  background-color: transparent;
+  @extend .no-appearance;
+  @include transition(all .25s cubic-bezier(.02,.01,.47,1));
+
+  &.outlined {
+    border: 1px solid $body;
+  }
+
+  &.filled,
+  &.primary {
+    @include bs(0 2px 4px rgba(108, 108, 108, 0.2));
+
+    &:hover {
+      @include transform(translateY(-2px));
+      @include bs(0 4px 8px rgba(108, 108, 108, 0.3));
+    }
+  }
+
+  &.filled {
+    border-radius: 5px;
+    background-color: $white;
+  }
+
+  &.block {
+    display: block;
+    width: 100%;
+  }
+
+  &.primary {
+    color: $white;
+    background-color: $main-color;
+  }
+}

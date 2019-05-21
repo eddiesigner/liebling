@@ -1,0 +1,41 @@
+.m-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 4;
+
+  @include respond-to('medium') {
+    padding: 20px 0;
+  }
+
+  &.fixed {
+    position: fixed;
+    opacity: 0;
+    background-color: $white;
+    @include transform(translateY(-100%));
+    @include bs(0 4px 8px rgba(0, 0, 0, 0.05));
+    @include transition(transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1));
+
+    .m-header__shadow {
+      display: none;
+    }
+  }
+
+  &.fixed-active {
+    opacity: 1;
+    @include transform(translateY(0));
+  }
+
+  &.submenu-is-active {
+    background-color: $white;
+
+    .m-header__shadow {
+      display: none;
+    }
+  }
+
+  &.with-picture {
+    background-color: $white;
+  }
+}

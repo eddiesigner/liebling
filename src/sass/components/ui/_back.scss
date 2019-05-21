@@ -1,0 +1,33 @@
+.m-back {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: $mobile-space;
+  left: $mobile-space;
+  color: $titles;
+  letter-spacing: 0.2px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 2;
+
+  @include respond-to('medium') {
+    top: 40px;
+    letter-spacing: 0.3px;
+    font-size: 1rem;
+  }
+
+  span {
+    color: inherit;
+    display: inline-block;
+  }
+}
+
+.m-back__icon {
+  font-size: 0.750rem;
+  margin-right: 10px;
+
+  @include respond-to('medium') {
+    font-size: 0.875rem;
+  }
+}

@@ -1,0 +1,19 @@
+.l-grid {
+  padding-bottom: 20px;
+
+  @include respond-to('medium') {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+  }
+
+  @include respond-to('extra-large') {
+    margin: 0 -20px;
+  }
+
+  &.centered {
+    @include respond-to('medium') {
+      justify-content: center;
+    }
+  }
+}

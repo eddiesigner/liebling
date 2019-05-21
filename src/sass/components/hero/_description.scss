@@ -1,0 +1,24 @@
+.m-hero-description {
+  letter-spacing: 0.2px;
+  line-height: 1.5;
+  font-size: 0.938rem;
+  margin-bottom: 20px;
+
+  @include respond-to('medium') {
+    font-size: 1.125rem;
+  }
+
+  &.bigger {
+    line-height: 1.3;
+    font-size: 1.125rem;
+    margin-bottom: 25px;
+
+    @include respond-to('medium') {
+      font-size: 1.375rem;
+    }
+  }
+
+  &.with-picture {
+    color: $white;
+  }
+}
