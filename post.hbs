@@ -84,7 +84,11 @@ into the {body} of the default.hbs template --}}
           </div>
         </section>
         {{/if}}
+        {{#if @labs.subscribers}}
         <section class="m-author">
+        {{else}}
+        <section class="m-author no-subscribers">
+        {{/if}}
           <div class="m-author__content">
             <div class="m-author__picture">
               <a href="{{primary_author.url}}" class="m-author-picture" aria-label="Author picture">

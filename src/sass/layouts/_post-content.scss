@@ -1,11 +1,9 @@
 .l-post-content {
+  padding-bottom: 15px;
+
   @include respond-to('medium') {
     max-width: 820px;
     margin: 0 auto;
-  }
-
-  &.has-subscribe-form {
-    padding-bottom: 15px;
 
     @include respond-to('medium') {
       padding-bottom: 30px;
@@ -181,6 +179,15 @@
     &.kg-width-wide {
       @include respond-to('extra-large') {
         margin: 0 -70px;
+      }
+    }
+
+    &.kg-width-full {
+      @include respond-to('medium') {
+        width: 100vw;
+        margin-left: 50%;
+
+        @include transform(translateX(-50%));
       }
     }
 

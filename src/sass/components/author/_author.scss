@@ -1,5 +1,9 @@
 .m-author {
   padding: 40px $mobile-space;
+  border-color: $light-blue;
+  border-top-width: 2px;
+  border-bottom-width: 2px;
+  border-style: solid;
   margin: 0 auto;
 
   @include respond-to('medium') {
@@ -10,6 +14,10 @@
 
   @include respond-to('extra-large') {
     padding: 60px 0;
+  }
+
+  &.no-subscribers {
+    background-color: $light-blue;
   }
 }
 
