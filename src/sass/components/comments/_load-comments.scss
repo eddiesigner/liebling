@@ -1,11 +1,10 @@
 .m-load-comments {
   position: relative;
-  margin: 0 auto 40px;
+  margin: 0 auto;
   max-width: 280px;
 
   @include respond-to('medium') {
     max-width: 400px;
-    margin-bottom: 60px;
   }
 }
 
@@ -16,7 +15,7 @@
   top: 50%;
   height: 1px;
   z-index: 1;
-  background-color: #e2e2e2;
+  background-color: $light-blue;
 }
 
 .m-load-comments__iframe {
