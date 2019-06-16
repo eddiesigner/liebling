@@ -4,86 +4,98 @@ import stickybits from 'stickybits'
 import mediumZoom from 'medium-zoom'
 import fitvids from 'fitvids'
 
-$(document).ready(() => {
-  fitvids('.js-post-content')
+let $progressCircle = null
+let lastScrollingY = window.pageYOffset
+let lastWindowHeight = 0
+let lastDocumentHeight = 0
+let circumference = 0
+let isTicking = false
 
+function isMobile(width = '768px') {
+  return window.matchMedia(`(max-width: ${width})`).matches
+}
+
+function onScrolling() {
+  lastScrollingY = window.pageYOffset
+  requestTicking()
+}
+
+function onResizing() {
+  setHeights()
+  adjustShare(100)
+
+  setTimeout(() => {
+    setCircleStyles()
+    requestTicking()
+  }, 200)
+}
+
+function requestTicking() {
+  if (!isTicking) {
+    requestAnimationFrame(updating)
+  }
+
+  isTicking = true
+}
+
+function updating() {
+  const progressMax = lastDocumentHeight - lastWindowHeight
+  const percent = Math.ceil((lastScrollingY / progressMax) * 100)
+
+  if (percent <= 100) {
+    setProgress(percent)
+  }
+
+  isTicking = false
+}
+
+function setHeights() {
+  lastWindowHeight = window.innerHeight
+  lastDocumentHeight = $(document).height()
+}
+
+function setCircleStyles() {
+  const radiusCircle = $progressCircle.parent().width() / 2
+  const borderWidth = isMobile() ? 2 : 3
+
+  $progressCircle.attr('stroke-width', borderWidth)
+  $progressCircle.attr('r', radiusCircle - (borderWidth - 1))
+  $progressCircle.attr('cx', radiusCircle)
+  $progressCircle.attr('cy', radiusCircle)
+
+  circumference = radiusCircle * 2 * Math.PI
+
+  $progressCircle[0].style.strokeDasharray = `${circumference} ${circumference}`
+  $progressCircle[0].style.strokeDashoffset = circumference
+}
+
+function setProgress(percent) {
+  if (percent <= 100) {
+    const offset = circumference - percent / 100 * circumference
+    $progressCircle[0].style.strokeDashoffset = offset
+  }
+}
+
+function prepareProgressCircle() {
+  $progressCircle = $('.js-progress')
+
+  setHeights()
+  setCircleStyles()
+  updating()
+
+  setTimeout(() => {
+    $progressCircle.parent().css('opacity', 1)
+  }, 300)
+}
+
+$(document).ready(() => {
   const $aosWrapper = $('.js-aos-wrapper')
-  const $progressCircle = $('.js-progress')
   const $scrollButton = $('.js-scrolltop')
   const $loadComments = $('.js-load-comments')
   const $commentsIframe = $('.js-comments-iframe')
   const $recommendedArticles = $('.js-recommended-articles')
 
-  let lastScrollingY = window.pageYOffset
-  let lastWindowHeight = 0
-  let lastDocumentHeight = 0
-  let circumference = 0
-  let isTicking = false
-
-  function isMobile(width = '768px') {
-    return window.matchMedia(`(max-width: ${width})`).matches
-  }
-
-  function onScrolling() {
-    lastScrollingY = window.pageYOffset
-    requestTicking()
-  }
-
-  function onResizing() {
-    setHeights()
-    adjustShare(100)
-
-    setTimeout(() => {
-      setCircleStyles()
-      requestTicking()
-    }, 200)
-  }
-
-  function requestTicking() {
-    if (!isTicking) {
-      requestAnimationFrame(updating)
-    }
-
-    isTicking = true
-  }
-
-  function updating() {
-    const progressMax = lastDocumentHeight - lastWindowHeight
-    const percent = Math.ceil((lastScrollingY / progressMax) * 100)
-
-    if (percent <= 100) {
-      setProgress(percent * 1.5)
-    }
-
-    isTicking = false
-  }
-
-  function setHeights() {
-    lastWindowHeight = window.innerHeight
-    lastDocumentHeight = $(document).height()
-  }
-
-  function setCircleStyles() {
-    const radiusCircle = $progressCircle.parent().width() / 2
-    const borderWidth = isMobile() ? 2 : 3
-
-    $progressCircle.attr('stroke-width', borderWidth)
-    $progressCircle.attr('r', radiusCircle - (borderWidth - 1))
-    $progressCircle.attr('cx', radiusCircle)
-    $progressCircle.attr('cy', radiusCircle)
-
-    circumference = radiusCircle * 2 * Math.PI
-
-    $progressCircle[0].style.strokeDasharray = `${circumference} ${circumference}`
-    $progressCircle[0].style.strokeDashoffset = circumference
-  }
-
-  function setProgress(percent) {
-    if (percent <= 100) {
-      const offset = circumference - percent / 100 * circumference
-      $progressCircle[0].style.strokeDashoffset = offset
-    }
-  }
+  fitvids('.js-post-content')
 
   function adjustImageGallery() {
     const images = document.querySelectorAll('.kg-gallery-image img')
@@ -113,10 +125,8 @@ $(document).ready(() => {
   adjustShare(1000)
 
   if ($recommendedArticles.length > 0) {
-    $recommendedArticles.on('init', function() {
-      setHeights()
-      setCircleStyles()
-      updating()
+    $recommendedArticles.on('init', function () {
+      prepareProgressCircle()
     })
 
     $recommendedArticles.slick({
@@ -141,10 +151,6 @@ $(document).ready(() => {
         }
       ]
     })
-  } else {
-    setHeights()
-    setCircleStyles()
-    updating()
   }
 
   $scrollButton.click(() => {
@@ -173,4 +179,8 @@ $(document).ready(() => {
 
   window.addEventListener('scroll', onScrolling, { passive: true })
   window.addEventListener('resize', onResizing, { passive: true })
+})
+
+$(window).on('load', () => {
+  prepareProgressCircle()
 })
