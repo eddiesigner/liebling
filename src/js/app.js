@@ -111,12 +111,12 @@ $(document).ready(() => {
       matchAllTokens: true,
       maxPatternLength: 32,
       minMatchCharLength: 1,
-      keys: ['title']
+      keys: ['title', 'custom_excerpt', 'html']
     }
 
     api.posts.browse({
       limit: 'all',
-      fields: 'id, title, url, published_at'
+      fields: 'id, title, url, published_at, custom_excerpt, html'
     })
       .then((posts) => {
         for (var i = 0, len = posts.length; i < len; i++) {
@@ -182,18 +182,20 @@ $(document).ready(() => {
   $inputSearch.keyup(() => {
     if ($inputSearch.val().length > 0 && fuse) {
       const results = fuse.search($inputSearch.val())
+      let htmlString = ''
 
       if (results.length > 0) {
         for (var i = 0, len = results.length; i < len; i++) {
-          $searchResults.html(`
+          htmlString += `
           <article class="m-result">\
             <a href="${results[i].url}" class="m-result__link">\
               <h3 class="m-result__title">${results[i].title}</h3>\
               <span class="m-result__date">${formatDate(results[i].published_at)}</span>\
             </a>\
-          </article>
-        `)
+          </article>`
         }
+
+        $searchResults.html(htmlString)
       } else {
         $searchResults.html('<p class="m-no-found align-center">0 results for your search, try something different.</>')
       }

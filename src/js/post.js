@@ -20,6 +20,18 @@ function onScrolling() {
   requestTicking()
 }
 
+function adjustShare(timeout) {
+  if (!isMobile('1023px')) {
+    stickybits('.js-sticky', { stickyBitStickyOffset: 100 })
+    $('body').removeClass('share-menu-displayed')
+  } else {
+    $('body').addClass('share-menu-displayed')
+    setTimeout(() => {
+      $aosWrapper.removeAttr('data-aos')
+    }, timeout)
+  }
+}
+
 function onResizing() {
   setHeights()
   adjustShare(100)
@@ -106,18 +118,6 @@ $(document).ready(() => {
       const height = images[i].attributes.height.value
       const ratio = width / height
       container.style.flex = `${ratio} 1 0%`
-    }
-  }
-
-  function adjustShare(timeout) {
-    if (!isMobile('1023px')) {
-      stickybits('.js-sticky', { stickyBitStickyOffset: 100 })
-      $('body').removeClass('share-menu-displayed')
-    } else {
-      $('body').addClass('share-menu-displayed')
-      setTimeout(() => {
-        $aosWrapper.removeAttr('data-aos')
-      }, timeout)
     }
   }
 
