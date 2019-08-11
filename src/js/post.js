@@ -4,6 +4,7 @@ import stickybits from 'stickybits'
 import mediumZoom from 'medium-zoom'
 import fitvids from 'fitvids'
 
+let $aosWrapper = null
 let $progressCircle = null
 let lastScrollingY = window.pageYOffset
 let lastWindowHeight = 0
@@ -101,7 +102,7 @@ function prepareProgressCircle() {
 }
 
 $(document).ready(() => {
-  const $aosWrapper = $('.js-aos-wrapper')
+  $aosWrapper = $('.js-aos-wrapper')
   const $scrollButton = $('.js-scrolltop')
   const $loadComments = $('.js-load-comments')
   const $commentsIframe = $('.js-comments-iframe')
