@@ -9,7 +9,7 @@ into the {body} of the default.hbs template --}}
 <div class="l-wrapper" data-aos="fade-down">
   <a href="{{@site.url}}" class="m-back">
     <span class="m-back__icon icon-arrow-left"></span>
-    <span>Back to home</span>
+    <span>{{t "Back to home"}}</span>
   </a>
 </div>
 
@@ -18,9 +18,9 @@ into the {body} of the default.hbs template --}}
     {{^if success}}
       <div>
         <header class="m-heading in-subscribe-page">
-          <h1 class="m-heading__title">Subscribe to {{@site.title}}</h1>
+          <h1 class="m-heading__title">{{t "Subscribe to"}} {{@site.title}}</h1>
           <p class="m-heading__description in-subscribe-page">
-            Stay up to date! Get all the latest & greatest posts delivered straight to your inbox.
+            {{t "Stay up to date! Get all the latest & greatest posts delivered straight to your inbox."}}
           </p>
         </header>
         {{subscribe_form
@@ -37,12 +37,12 @@ into the {body} of the default.hbs template --}}
     {{else}}
       <div>
         <header class="m-heading in-subscribe-page">
-          <h1 class="m-heading__title">Subscribed!</h1>
+          <h1 class="m-heading__title">{{t "Subscribed!"}}</h1>
           <p class="m-heading__description in-subscribe-page">
-            You've successfully subscribed to <strong>{{@site.title}}</strong> with the email address <strong>{{email}}</strong>
+            {{t "You've successfully subscribed to"}} <strong>{{@site.title}}</strong> {{t "with the email address"}} <strong>{{email}}</strong>
           </p>
         </header>
-        <a href="{{@site.url}}" class="m-button outlined">Back to home</a>
+        <a href="{{@site.url}}" class="m-button outlined">{{t "Back to home"}}</a>
       </div>
     {{/if}}
   </section>

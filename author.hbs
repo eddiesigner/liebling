@@ -51,7 +51,7 @@ into the {body} of the default.hbs template --}}
       {{/has}}
       <ul class="m-hero-stats">
         <li>
-          {{plural ../pagination.total empty="No posts" singular="% post" plural="% posts"}}
+          {{plural ../pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}
         </li>
         {{#if location}}
         <li>&bull;</li>

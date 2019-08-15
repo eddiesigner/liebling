@@ -64,9 +64,9 @@ into the {body} of the default.hbs template --}}
           <div class="l-wrapper in-post">
             <div class="m-subscribe-section__content">
               <div class="m-subscribe-section__text">
-                <h4 class="m-subscribe-section__title">Subscribe to our newsletter</h4>
+                <h4 class="m-subscribe-section__title">{{t "Subscribe to our newsletter"}}</h4>
                 <p class="m-subscribe-section__description">
-                  Get the latest posts delivered right to your inbox.
+                  {{t "Get the latest posts delivered right to your inbox."}}
                 </p>
               </div>
               <div class="m-subscribe-section__form">
@@ -168,7 +168,7 @@ into the {body} of the default.hbs template --}}
         {{#get "posts" limit="3" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags,authors" as |related|}}
         <section class="m-recommended">
           <div class="l-wrapper in-recommended">
-            <h3 class="m-section-title in-recommended">Recommended for you</h3>
+            <h3 class="m-section-title in-recommended">{{t "Recommended for you"}}</h3>
             <div class="m-recommended-articles">
               <div class="m-recommended-slider js-recommended-articles">
                 {{!-- The tag below iterates over all the related posts --}}

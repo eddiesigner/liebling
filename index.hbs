@@ -18,7 +18,7 @@ into the {body} of the default.hbs template --}}
     <p class="m-hero-description bigger">{{@site.description}}</p>
     {{/if}}
     {{#if @labs.subscribers}}
-    <a href="{{@site.url}}/subscribe" class="m-button filled">Subscribe</a>
+    <a href="{{@site.url}}/subscribe" class="m-button filled">{{t "Subscribe"}}</a>
     {{/if}}
   </div>
   </header>
@@ -57,14 +57,14 @@ into the {body} of the default.hbs template --}}
                     </div>
                     <div class="m-featured-article__ribbon">
                       <span class="icon-star"></span>
-                      <span>Featured</span>
+                      <span>{{t "Featured"}}</span>
                     </div>
                     <a href="{{url}}" class="m-featured-article__content">
                       <h1 class="m-featured-article__title">{{title}}</h1>
                       <div class="m-featured-article__timestamp">
                         <span>{{date published_at timeago="true"}}</span>
                         <span>&bull;</span>
-                        <span>{{reading_time}}</span>
+                        <span>{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</span>
                       </div>
                     </a>
                   </article>
