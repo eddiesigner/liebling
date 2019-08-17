@@ -12,7 +12,7 @@
       <div class="m-article-card__picture">
   {{/if}}
       <a href="{{url}}" class="m-article-card__picture-link" aria-label="Article"></a>
-      <a href="{{primary_author.url}}" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="Posted by {{primary_author.name}} {{authors autolink="false" from="2" prefix="<br>Among with " separator=" , "}}">
+      <a href="{{primary_author.url}}" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="{{t "Posted by"}} {{primary_author.name}} {{authors autolink="false" from="2" prefix=(t "Among with") separator=" , "}}">
         {{#if primary_author.profile_image}}
           <div style="background-image: url({{primary_author.profile_image}});"></div>
         {{else}}
@@ -20,7 +20,7 @@
         {{/if}}
       </a>
       {{#if featured}}
-        <a href="{{url}}" class="m-article-card__featured js-tooltip" data-tippy-content="Featured" aria-label="Article">
+        <a href="{{url}}" class="m-article-card__featured js-tooltip" data-tippy-content="{{t "Featured"}}" aria-label="Article">
           <span class="icon-star"></span>
         </a>
       {{/if}}

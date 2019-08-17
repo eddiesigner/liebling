@@ -77,7 +77,7 @@ into the {body} of the default.hbs template --}}
                         input_class="m-input in-subscribe-section"
                         button_id="subscribe_button"
                         button_class="m-button primary block"
-                        placeholder="Your email address"
+                        placeholder=(t "Your email address")
                       }}
               </div>
             </div>
@@ -105,7 +105,7 @@ into the {body} of the default.hbs template --}}
               </h4>
               {{#has author="count:>1"}}
               <p class="m-small-text in-author-along-with">
-                {{authors separator=", " prefix="Among with " from="2"}}
+                {{authors separator=", " prefix=(t "Among with no break line") from="2"}}
               </p>
               {{/has}}
               {{#if primary_author.bio}}

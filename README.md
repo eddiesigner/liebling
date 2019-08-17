@@ -47,6 +47,7 @@ To download the latest version please head over the [releases page](https://gith
 
 ### Liebling unique features
 
+* Support for translations
 * Search
 * Custom Subscribe page
 * Custom authors page

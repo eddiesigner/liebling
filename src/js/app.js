@@ -20,6 +20,7 @@ $(document).ready(() => {
   const $search = $('.js-search')
   const $inputSearch = $('.js-input-search')
   const $searchResults = $('.js-search-results')
+  const $searchNoResults = $('.js-no-results')
 
   const headerHeight = $header.outerHeight()
 
@@ -195,12 +196,18 @@ $(document).ready(() => {
           </article>`
         }
 
+        $searchNoResults.hide()
         $searchResults.html(htmlString)
+        $searchResults.show()
       } else {
-        $searchResults.html('<p class="m-no-found align-center">0 results for your search, try something different.</>')
+        $searchResults.html('')
+        $searchResults.hide()
+        $searchNoResults.show()
       }
     } else {
       $searchResults.html('')
+      $searchResults.hide()
+      $searchNoResults.hide()
     }
   })
 

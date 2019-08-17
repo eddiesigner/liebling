@@ -7,6 +7,7 @@
   "Subscribed!": "Subscribed!",
   "Subscribe to our newsletter": "Subscribe to our newsletter",
   "You've successfully subscribed to": "You've successfully subscribed to",
+  "Your email address": "Your email address",
   "with the email address": "with the email address",
   "Email cannot be blank.": "Email cannot be blank.",
   "Get the latest posts delivered right to your inbox.": "Get the latest posts delivered right to your inbox.",
@@ -28,5 +29,10 @@
   "% posts": "% posts",
   "Tags": "Tags",
   "with this tag": "with this tag",
-  "No tags found :(": "No tags found :("
+  "No tags found :(": "No tags found :(",
+  "Posted by": "Posted by",
+  "Among with": "<br>Among with ",
+  "Among with no break line": "Among with ",
+  "Type to search": "Type to search",
+  "No results for your search, try something different.": "No results for your search, try something different."
 }

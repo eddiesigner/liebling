@@ -12,9 +12,10 @@ follow the instructions to enable the search feature.
     <form class="m-search__form">
       <fieldset>
         <span class="icon-search m-search-icon"></span>
-        <input type="text" class="m-input in-search js-input-search" placeholder="Type to search" aria-label="Type to search">
+        <input type="text" class="m-input in-search js-input-search" placeholder="{{t "Type to search"}}" aria-label="Type to search">
       </fieldset>
     </form>
-    <div class="js-search-results"></div>
+    <div class="js-search-results hide"></div>
+    <p class="m-no-found align-center hide js-no-results">{{t "No results for your search, try something different."}}</>
   </div>
 </div>
