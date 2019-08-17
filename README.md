@@ -47,7 +47,6 @@ To download the latest version please head over the [releases page](https://gith
 
 ### Liebling unique features
 
-* Support for translations
 * Search
 * Custom Subscribe page
 * Custom authors page
@@ -58,6 +57,13 @@ To download the latest version please head over the [releases page](https://gith
 * Slider for featured posts
 * Support for normal, wide and full images in posts
 * Reading progress indicator
+
+## Localization
+
+* English
+* Spanish
+* German by [D3473R](https://github.com/D3473R)
+* Informal german by [D3473R](https://github.com/D3473R)
 
 ## Theme tested
 
