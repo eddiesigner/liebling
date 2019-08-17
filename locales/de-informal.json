@@ -30,9 +30,9 @@
   "Tags": "Tags",
   "with this tag": "mit diesem Tag",
   "No tags found :(": "Keine Tags gefunden :(",
-  "Posted by": "Eingetragen von",
-  "Among with": "<br>Neben mit ",
-  "Among with no break line": "Neben mit ",
-  "Type to search": "Zum Durchsuchen eingeben",
-  "No results for your search, try something different.": "Keine Ergebnisse für deine Suche, versuche es etwas anderes."
+  "Posted by": "Geschrieben von",
+  "Among with": "<br>zusammen mit ",
+  "Among with no break line": "zusammen mit ",
+  "Type to search": "Schreiben um zu suchen",
+  "No results for your search, try something different.": "Keine Ergebnisse für deine Suche gefunden, versuche es mit etwas anderem."
 }
