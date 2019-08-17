@@ -7,7 +7,7 @@
   "Subscribed!": "Abonniert!",
   "Subscribe to our newsletter": "Abonnieren Sie unseren Newsletter",
   "You've successfully subscribed to": "Sie haben",
-  "Your email address": "Seine E-Mail-Adresse",
+  "Your email address": "Ihre E-Mail-Adresse",
   "with the email address": "erfolgreich mit folgender E-Mail Adresse abonniert",
   "Email cannot be blank.": "Die E-Mail darf nicht leer sein.",
   "Get the latest posts delivered right to your inbox.": "Holen Sie sich die neuesten Beiträge direkt in Ihren Posteingang.",
@@ -30,9 +30,9 @@
   "Tags": "Tags",
   "with this tag": "mit diesem Tag",
   "No tags found :(": "Keine Tags gefunden :(",
-  "Posted by": "Eingetragen von",
-  "Among with": "<br>Neben mit ",
-  "Among with no break line": "Neben mit ",
-  "Type to search": "Zum Durchsuchen eingeben",
-  "No results for your search, try something different.": "Keine Ergebnisse für Ihre Suche, versuchen Sie etwas anderes."
+  "Posted by": "Geschrieben von",
+  "Among with": "<br>zusammen mit ",
+  "Among with no break line": "zusammen mit ",
+  "Type to search": "Schreiben Sie um zu suchen",
+  "No results for your search, try something different.": "Keine Ergebnisse für Ihre Suche gefunden, versuchen Sie es mit etwas anderem."
 }
