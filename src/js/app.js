@@ -230,10 +230,14 @@ $(document).ready(() => {
     })
   }
 
-  AOS.init({
-    once: true,
-    startEvent: 'DOMContentLoaded',
-  })
+  if (typeof disableFadeAnimation === 'undefined' || !disableFadeAnimation) {
+    AOS.init({
+      once: true,
+      startEvent: 'DOMContentLoaded',
+    })
+  } else {
+    $('[data-aos]').addClass('no-aos-animation')
+  }
 
   tippy('.js-tooltip')
 
