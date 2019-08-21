@@ -1,6 +1,10 @@
 *.gz
 *.zip
 
+assets/css
+assets/fonts
+assets/js
+
 npm-debug.log
 node_modules
 
