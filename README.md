@@ -77,7 +77,7 @@ To get the latest version please head over the [releases page](https://github.co
 
 ## Theme development
 
-Thanks to [D3473R](https://github.com/D3473R) 💪🏼 for create a development environment with Docker. From now on you can work on this theme without installing a Ghost instance on your local machine. With two commands you can and instant development setup and build the theme for production.
+Thanks to [D3473R](https://github.com/D3473R) 💪🏼 for create a development environment with Docker. From now on you can work on this theme without installing a Ghost instance on your local machine. With two commands you have an instant development setup and you can build the theme for production.
 
 Please take a look to this page to see how it works: https://github.com/eddiesigner/liebling/wiki/Theme-development-with-Docker
 
