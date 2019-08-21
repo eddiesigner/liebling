@@ -65,7 +65,7 @@ To download the latest version please head over the [releases page](https://gith
 * German by [D3473R](https://github.com/D3473R)
 * Informal german by [D3473R](https://github.com/D3473R)
 * Bulgarian by [clappingmonkey](https://github.com/clappingmonkey)
-* Vietnamese BY [hiensarahly](https://github.com/hiensarahly)
+* Vietnamese by [hiensarahly](https://github.com/hiensarahly)
 
 ## Theme tested
 
