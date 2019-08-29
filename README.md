@@ -66,6 +66,7 @@ To get the latest version please head over the [releases page](https://github.co
 * Informal german by [D3473R](https://github.com/D3473R)
 * Bulgarian by [clappingmonkey](https://github.com/clappingmonkey)
 * Vietnamese by [hiensarahly](https://github.com/hiensarahly)
+* Italian by [vignini](https://github.com/vignini)
 
 ## Theme tested
 

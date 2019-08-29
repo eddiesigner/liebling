@@ -1,5 +1,6 @@
 *.gz
 *.zip
+*.db
 
 assets/css
 assets/fonts
