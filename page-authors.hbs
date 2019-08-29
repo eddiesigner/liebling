@@ -42,7 +42,7 @@ into the {body} of the default.hbs template --}}
                   </a>
                   <div class="m-article-card__author-stats">
                     <span>
-                      {{plural count.posts empty="No posts" singular="% post" plural="% posts"}}
+                      {{plural count.posts empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}
                     </span>
                     {{#has any="twitter, facebook, website"}}
                     <ul class="m-article-card__social">

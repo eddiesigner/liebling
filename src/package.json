@@ -1,0 +1,41 @@
+{
+  "name": "liebling",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "get-database": "curl https://raw.githubusercontent.com/eddiesigner/ghost-db/master/ghost.db -o ghost.db",
+    "dev": "NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "docker-watch": "docker-compose up -d && node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js && npm run zip",
+    "zip": "cd .. && zip -r liebling.zip ./* -x './src/*'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "browser-sync-webpack-plugin": "^2.0.1",
+    "ghost-cli": "^1.11.0",
+    "laravel-mix": "^4.0.0-beta.2",
+    "resolve-url-loader": "3.1.0",
+    "sass": "^1.22.9",
+    "sass-loader": "7.*",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "dependencies": {
+    "@tryghost/content-api": "^1.0.0",
+    "aos": "^2.3.4",
+    "fitvids": "^2.0.0",
+    "fuse.js": "^3.4.2",
+    "jquery": "^3.3.1",
+    "medium-zoom": "^1.0.3",
+    "promise-polyfill": "8.1.0",
+    "slick-carousel": "^1.8.1",
+    "stickybits": "^3.6.1",
+    "tippy.js": "^4.0.1"
+  }
+}

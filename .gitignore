@@ -1,5 +1,11 @@
 *.gz
 *.zip
+*.db
+
+assets/css
+assets/fonts
+assets/js
+assets/mix-manifest.json
 
 npm-debug.log
 node_modules

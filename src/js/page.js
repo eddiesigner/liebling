@@ -26,7 +26,7 @@ $(document).ready(() => {
     if ($figcaption) {
       $(this).attr('alt', $figcaption.text())
     } else {
-      $this.attr('alt', '')
+      $(this).attr('alt', '')
     }
   })
 

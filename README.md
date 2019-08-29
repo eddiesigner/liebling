@@ -16,7 +16,7 @@ You can see a live demo here: [https://liebling.eduardogomez.io](https://lieblin
 
 ## Download
 
-To download the latest version please head over the [releases page](https://github.com/eddiesigner/liebling/releases) and click on the zip link from the latest release.
+To get the latest version please head over the [releases page](https://github.com/eddiesigner/liebling/releases) and download the file `liebling.zip` of the latest release.
 
 ## Features
 
@@ -58,6 +58,16 @@ To download the latest version please head over the [releases page](https://gith
 * Support for normal, wide and full images in posts
 * Reading progress indicator
 
+## Localization
+
+* English
+* Spanish
+* German by [D3473R](https://github.com/D3473R)
+* Informal german by [D3473R](https://github.com/D3473R)
+* Bulgarian by [clappingmonkey](https://github.com/clappingmonkey)
+* Vietnamese by [hiensarahly](https://github.com/hiensarahly)
+* Italian by [vignini](https://github.com/vignini)
+
 ## Theme tested
 
 * W3C Markup Validation: [Correct validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fliebling.eduardogomez.io%2F)
@@ -65,6 +75,12 @@ To download the latest version please head over the [releases page](https://gith
 * GTmetrix PageSpeed Score: **A (97%)**
 * PageSpeed Insights: **94/100** (mobile) **99/100** (desktop)
 * Pingdom Performance Grade: **A 91**
+
+## Theme development
+
+Thanks to [D3473R](https://github.com/D3473R) 💪🏼 for create a development environment with Docker. From now on you can work on this theme without installing a Ghost instance on your local machine. With two commands you have an instant development setup and you can build the theme for production.
+
+Please take a look to this page to see how it works: https://github.com/eddiesigner/liebling/wiki/Theme-development-with-Docker
 
 ## Help and Support
 

@@ -23,7 +23,7 @@ Also it includes the big submenu.
     <div class="m-submenu js-submenu">
       <div class="l-wrapper in-submenu">
         <section class="m-recent-articles">
-          <h3 class="m-submenu-title in-recent-articles">Recent articles</h3>
+          <h3 class="m-submenu-title in-recent-articles">{{t "Recent articles"}}</h3>
           <div class="js-recent-articles">
             {{#get "posts" limit="4" order="published_at desc"}}
               {{#foreach posts}}
@@ -37,13 +37,13 @@ Also it includes the big submenu.
                   </a>
                 </div>
               {{else}}
-                <div class="m-no-found in-recent-articles">No recent articles found :(</div>
+                <div class="m-no-found in-recent-articles">{{t "No recent articles found :("}}</div>
               {{/foreach}}
             {{/get}}
           </div>
         </section>
         <section class="m-tags">
-          <h3 class="m-submenu-title">Tags</h3>
+          <h3 class="m-submenu-title">{{t "Tags"}}</h3>
           {{#get "tags" limit="10"}}
             <ul>
               {{#foreach tags}}
@@ -51,7 +51,7 @@ Also it includes the big submenu.
                   <a href="{{url}}">{{name}}</a>
                 </li>
               {{else}}
-                <li class="m-no-found">No tags found :(</li>
+                <li class="m-no-found">{{t "No tags found :("}}</li>
               {{/foreach}}
             </ul>
           {{/get}}
