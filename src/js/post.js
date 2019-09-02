@@ -166,7 +166,9 @@ $(document).ready(() => {
   })
 
   $('.js-post-content').find('img').each(function() {
-    $(this).addClass('js-zoomable')
+    if (!$(this).closest('figure').hasClass('kg-bookmark-card')) {
+      $(this).addClass('js-zoomable')
+    }
 
     const $figcaption = $(this).parent().find('figcaption')
     if ($figcaption) {

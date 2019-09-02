@@ -36,6 +36,7 @@ To get the latest version please head over the [releases page](https://github.co
 * Featured posts and pages
 * Post, Page, Tag, Authors, pages
 * Koenig editor
+* Bookmark card
 * Gallery card
 * Blog title and description
 * Cover image for Home, Post, Page, Tag, Author pages

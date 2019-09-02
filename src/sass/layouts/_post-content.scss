@@ -415,4 +415,109 @@
     @extend .m-button;
   }
 
+  .kg-bookmark-card {
+    width: 100%;
+    padding: 0 !important;
+    margin: 30px auto !important;
+    background: $white;
+
+    @include respond-to('medium') {
+      margin: 40px auto !important;
+    }
+  }
+
+  .kg-card + .kg-bookmark-card {
+    margin-top: 0;
+  }
+
+  .kg-bookmark-container {
+    display: flex;
+    color: $body;
+    text-decoration: none !important;
+    min-height: 148px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px,
+      rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
+    border-radius: 3px;
+  }
+
+  .kg-bookmark-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: flex-start;
+    justify-content: start;
+    padding: 20px;
+  }
+
+  .kg-bookmark-title {
+    font-size: 1.125rem;
+    line-height: 1.3;
+    font-weight: 600;
+  }
+
+  .kg-bookmark-description {
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-top: 12px;
+    overflow-y: hidden;
+  }
+
+  .kg-bookmark-thumbnail {
+    position: relative;
+    min-width: 30%;
+    max-height: 100%;
+    overflow: hidden;
+  }
+
+  .kg-bookmark-thumbnail img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    border-radius: 0 3px 3px 0;
+  }
+
+  .kg-bookmark-metadata {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: $gray;
+    margin-top: 14px;
+  }
+
+  .kg-bookmark-icon {
+    width: 22px !important;
+    height: 22px !important;
+    margin-right: 8px !important;
+  }
+
+  .kg-bookmark-author:after {
+    content: '•';
+    margin: 0 6px;
+  }
+
+  @media (max-width: 500px) {
+    .kg-bookmark-container {
+      flex-direction: column;
+    }
+
+    .kg-bookmark-thumbnail {
+      order: 1;
+      width: 100%;
+      min-height: 160px;
+    }
+
+    .kg-bookmark-thumbnail img {
+      border-radius: 3px 3px 0 0;
+    }
+
+    .kg-bookmark-content {
+      order: 2;
+    }
+  }
 }

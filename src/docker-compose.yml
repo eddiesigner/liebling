@@ -2,7 +2,7 @@ version: '3'
 
 services:
   ghost:
-    image: ghost
+    image: ghost:2.30.2
     container_name: ghost
     volumes:
       - $PWD/..:/var/lib/ghost/content/themes/liebling
