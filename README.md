@@ -68,6 +68,9 @@ To get the latest version please head over the [releases page](https://github.co
 * Bulgarian by [clappingmonkey](https://github.com/clappingmonkey)
 * Vietnamese by [hiensarahly](https://github.com/hiensarahly)
 * Italian by [vignini](https://github.com/vignini)
+* French by [v1nc3nt-fr](https://github.com/v1nc3nt-fr)
+* Informal french by [v1nc3nt-fr](https://github.com/v1nc3nt-fr)
+* Portuguese by [ivomota](https://github.com/ivomota)
 
 ## Theme tested
 
