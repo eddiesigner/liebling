@@ -9,6 +9,7 @@ This footer template is shared across all the pages.
       <span>&nbsp; &bull; &nbsp;</span>
       <span>{{t "Published with"}} <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a></span>
     </p>
+
     <nav class="m-footer-social">
       {{#if @site.facebook}}
         <a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener" aria-label="Facebook">
@@ -21,5 +22,8 @@ This footer template is shared across all the pages.
         </a>
       {{/if}}
     </nav>
+    <p class="m-footer-copyright jslicense">
+      <a href="/assets/html/javascript.html" rel="jslicense">{{t "JavaScript license information"}}</a>
+    </p>
   </div>
 </footer>
