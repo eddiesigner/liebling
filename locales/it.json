@@ -5,11 +5,11 @@
   "Subscribe": "Iscriviti",
   "Subscribe to": "Iscriviti a",
   "Subscribed!": "Iscritto!",
-  "Subscribe to our newsletter": "Iscritto alla nostra newsletter",
+  "Subscribe to our newsletter": "Iscriviti alla newsletter",
   "You've successfully subscribed to": "Ti sei iscritto con successo a",
   "Your email address": "Il tuo indirizzo email",
   "with the email address": "con l'indirizzo email",
-  "Email cannot be blank.": "Inserisciun indirizzo email.",
+  "Email cannot be blank.": "Inserisci un indirizzo email.",
   "Get the latest posts delivered right to your inbox.": "Ricevi i post più recenti direttamente nella tua casella di posta.",
   "Stay up to date! Get all the latest & greatest posts delivered straight to your inbox.": "Resta aggiornato! Ricevi i post più letti e recenti nella tua casella di posta.",
   "Recommended for you": "Raccomandato per te",
@@ -20,8 +20,8 @@
   "Go to the home page": "Vai alla home page",
   "Recent articles": "Articoli recenti",
   "No recent articles found :(": "Nessun articolo recente trovato :(",
-  "1 min read": "Tempo di lettura: 1 min", 
-  "% min read": "Tempo di lettura: % min",
+  "1 min read": "tempo di lettura: 1 min", 
+  "% min read": "tempo di lettura: % min",
   "No posts": "Nessun post",
   "No posts found": "Nessun post trovato",
   "Apparently there are no posts at the moment, check again later.": "Sembra che non ci siano post al momento, controlla più tardi.",
@@ -34,5 +34,6 @@
   "Among with": "<br>Insieme a ",
   "Among with no break line": "Insieme a ",
   "Type to search": "Cerca",
-  "No results for your search, try something different.": "Nessun risultato, prova con qualcos'altro."
+  "No results for your search, try something different.": "Nessun risultato, prova con qualcos'altro.",
+  "JavaScript license information": "Informazioni sulle licenze JavaScript"
 }

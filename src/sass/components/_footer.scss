@@ -36,12 +36,17 @@
       }
     }
   }
+
+  &.jslicense {
+    margin-bottom: 0;
+  }
 }
 
 .m-footer-social {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 20px;
 
   a {
     display: inline-block;
