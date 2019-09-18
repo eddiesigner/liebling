@@ -73,6 +73,7 @@ To get the latest version please head over the [releases page](https://github.co
 * Portuguese by [ivomota](https://github.com/ivomota)
 * Brazilian portuguese by [pedrinholula](https://github.com/pedrinholula)
 * Russian by [stereohorse](https://github.com/stereohorse)
+* Kyrgyz by [januchaos](https://github.com/januchaos)
 
 ## Theme tested
 
