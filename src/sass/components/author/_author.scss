@@ -39,12 +39,28 @@
   }
 }
 
+.rtl {
+  .m-author__picture {
+    @include respond-to('medium') {
+      margin: 0 0 0 30px;
+    }
+  }
+}
+
 .m-author__info {
   text-align: center;
 
   @include respond-to('medium') {
     flex: 1;
     text-align: left;
+  }
+}
+
+.rtl {
+  .m-author__info {
+    @include respond-to('medium') {
+      text-align: right;
+    }
   }
 }
 

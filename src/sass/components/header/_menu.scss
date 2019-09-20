@@ -40,3 +40,13 @@
     padding: 0;
   }
 }
+
+.rtl {
+  .m-menu__main {
+    padding-top: 75px;
+
+    @include respond-to('medium') {
+      padding: 0;
+    }
+  }
+}

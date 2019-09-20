@@ -16,6 +16,14 @@
   }
 }
 
+.rtl {
+  .m-recent-article {
+    @include respond-to('medium') {
+      margin: 0 0 0 60px;
+    }
+  }
+}
+
 .m-recent-article__picture {
   height: 130px;
   margin-bottom: 15px;

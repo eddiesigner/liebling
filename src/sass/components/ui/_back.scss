@@ -23,11 +23,25 @@
   }
 }
 
+.rtl {
+  .m-back {
+    span:first-of-type {
+      order: 2;
+    }
+  }
+}
+
 .m-back__icon {
   font-size: 0.750rem;
   margin-right: 10px;
 
   @include respond-to('medium') {
     font-size: 0.875rem;
+  }
+}
+
+.rtl {
+  .m-back__icon {
+    order: 1;
   }
 }

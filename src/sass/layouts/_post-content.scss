@@ -521,3 +521,42 @@
     }
   }
 }
+
+.rtl {
+  .l-post-content {
+    ul, ol {
+      padding-left: 0;
+      padding-right: 20px;
+
+      @include respond-to('medium') {
+        padding-left: 0;
+        padding-right: 40px;
+      }
+    }
+
+    code {
+      direction: ltr;
+    }
+
+    blockquote {
+      &:before {
+        left: auto;
+        right: 0;
+      }
+    }
+
+    .kg-bookmark-icon {
+      margin-right: 0 !important;
+      margin-left: 8px !important;
+    }
+
+    figure.kg-width-full {
+      @include respond-to('medium') {
+        margin-left: 0;
+        margin-right: 50%;
+
+        @include transform(translateX(50%));
+      }
+    }
+  }
+}

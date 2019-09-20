@@ -6,6 +6,12 @@ import GhostContentAPI from '@tryghost/content-api'
 import Fuse from 'fuse.js'
 
 $(document).ready(() => {
+  const isRTL = $('html').attr('lang') === 'ar'
+
+  if (isRTL) {
+    $('html').attr('dir', 'rtl').addClass('rtl')
+  }
+
   const $body = $('body')
   const $header = $('.js-header')
   const $openMenu = $('.js-open-menu')
@@ -98,7 +104,7 @@ $(document).ready(() => {
 
   function getAllPosts(host, key) {
     const api = new GhostContentAPI({
-      host,
+      url: host,
       key,
       version: 'v2'
     })
@@ -226,7 +232,8 @@ $(document).ready(() => {
       arrows: false,
       infinite: false,
       mobileFirst: true,
-      variableWidth: true
+      variableWidth: true,
+      rtl: isRTL
     })
   }
 

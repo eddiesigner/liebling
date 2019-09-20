@@ -45,6 +45,23 @@
   }
 }
 
+.rtl {
+  .m-share {
+    @include respond-to('large') {
+      right: auto;
+      left: -75px;
+    }
+
+    @include respond-to('extra-large') {
+      left: -175px;
+    }
+
+    @include respond-to('largest') {
+      left: -200px;
+    }
+  }
+}
+
 .m-share__content {
   display: flex;
   align-items: center;
@@ -55,5 +72,11 @@
     flex-direction: column-reverse;
     align-items: flex-start;
     height: auto;
+  }
+}
+
+.rtl {
+  .m-share__content {
+    direction: ltr;
   }
 }

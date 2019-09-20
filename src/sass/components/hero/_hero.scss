@@ -70,3 +70,9 @@
     justify-content: center;
   }
 }
+
+.rtl {
+  .m-hero__meta {
+    direction: ltr;
+  }
+}

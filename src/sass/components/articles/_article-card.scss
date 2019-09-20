@@ -116,6 +116,7 @@
 .m-article-card__name {
   position: absolute;
   left: $mobile-space;
+  right: $mobile-space;
   bottom: $mobile-space;
   color: $white;
   letter-spacing: 0.4px;
@@ -314,5 +315,11 @@
         color: inherit;
       }
     }
+  }
+}
+
+.rtl {
+  .m-article-card__social {
+    direction: ltr;
   }
 }

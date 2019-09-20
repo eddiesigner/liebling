@@ -75,7 +75,7 @@
 
     @include respond-to('medium') {
       display: flex;
-      width: 25px;
+      width: 26px;
       height: 25px;
     }
   }
@@ -211,6 +211,46 @@
         transform-origin: 50% 50%;
         @include transform(rotate(-90deg));
         @include transition(stroke-dashoffset 0.2s);
+      }
+    }
+  }
+}
+
+.rtl {
+  .m-icon-button {
+    &.in-featured-articles {
+      &.slick-prev {
+        right: auto;
+        left: 16px;
+
+        @include respond-to('medium') {
+          right: auto;
+          left: 36px;
+        }
+      }
+
+      &.slick-next {
+        right: auto;
+        left: 52px;
+
+        @include respond-to('medium') {
+          right: auto;
+          left: 72px;
+        }
+      }
+    }
+
+    &.in-recommended-articles {
+      &.slick-prev {
+        left: auto;
+        right: 0;
+        @include transform(rotate(180deg));
+      }
+
+      &.slick-next {
+        right: auto;
+        left : 0;
+        @include transform(rotate(180deg));
       }
     }
   }

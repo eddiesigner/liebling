@@ -27,6 +27,16 @@
   }
 }
 
+.rtl {
+  .m-subscribe-section__text {
+    @include respond-to('medium') {
+      text-align: right;
+      padding-right: 0;
+      padding-left: 75px;
+    }
+  }
+}
+
 .m-subscribe-section__title {
   color: $titles;
   letter-spacing: 0.3px;

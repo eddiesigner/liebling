@@ -48,6 +48,18 @@
   }
 }
 
+.rtl {
+  .m-featured-article__meta {
+    left: auto;
+    right: $mobile-space;
+
+    @include respond-to('medium') {
+      left: auto;
+      right: 40px;
+    }
+  }
+}
+
 .m-featured-article__author {
   display: block;
   width: 35px;
@@ -117,6 +129,25 @@
 
     @include respond-to('medium') {
       display: block;
+    }
+  }
+}
+
+.rtl {
+  .m-featured-article__ribbon {
+    right: auto;
+    left: $mobile-space;
+
+    @include respond-to('medium') {
+      right: auto;
+      left: 40px;
+    }
+
+    span:first-of-type {
+      @include respond-to('medium') {
+        margin-right: 0;
+        margin-left: 4px;
+      }
     }
   }
 }

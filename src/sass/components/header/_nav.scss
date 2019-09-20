@@ -52,3 +52,18 @@
     }
   }
 }
+
+.rtl {
+  .m-nav__left ul li {
+    @include respond-to('medium') {
+      margin-right: 0;
+      margin-left: 35px;
+
+      &:last-of-type {
+        @include respond-to('medium') {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

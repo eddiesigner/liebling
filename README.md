@@ -58,6 +58,7 @@ To get the latest version please head over the [releases page](https://github.co
 * Slider for featured posts
 * Support for normal, wide and full images in posts
 * Reading progress indicator
+* RTL language support
 
 ## Localization
 
