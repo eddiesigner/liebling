@@ -6,7 +6,7 @@ import GhostContentAPI from '@tryghost/content-api'
 import Fuse from 'fuse.js'
 
 $(document).ready(() => {
-  const isRTL = $('html').attr('lang') === 'ar'
+  const isRTL = $('html').attr('lang') === 'ar' || $('html').attr('lang') === 'he'
 
   if (isRTL) {
     $('html').attr('dir', 'rtl').addClass('rtl')

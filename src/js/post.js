@@ -102,7 +102,7 @@ function prepareProgressCircle() {
 }
 
 $(document).ready(() => {
-  const isRTL = $('html').attr('lang') === 'ar'
+  const isRTL = $('html').attr('lang') === 'ar' || $('html').attr('lang') === 'he'
 
   $aosWrapper = $('.js-aos-wrapper')
   const $scrollButton = $('.js-scrolltop')

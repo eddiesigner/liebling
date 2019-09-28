@@ -75,6 +75,7 @@ To get the latest version please head over the [releases page](https://github.co
 * Brazilian portuguese by [pedrinholula](https://github.com/pedrinholula)
 * Russian by [stereohorse](https://github.com/stereohorse)
 * Kyrgyz by [januchaos](https://github.com/januchaos)
+* Hebrew by [cohen604](https://github.com/cohen604)
 
 ## Theme tested
 

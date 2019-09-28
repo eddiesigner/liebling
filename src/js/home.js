@@ -2,7 +2,7 @@ import $ from 'jquery'
 import slick from 'slick-carousel'
 
 $(document).ready(() => {
-  const isRTL = $('html').attr('lang') === 'ar'
+  const isRTL = $('html').attr('lang') === 'ar' || $('html').attr('lang') === 'he'
   const $featuredArticles = $('.js-featured-articles')
 
   if ($featuredArticles.length > 0) {
