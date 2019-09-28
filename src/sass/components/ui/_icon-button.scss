@@ -1,5 +1,5 @@
 .m-icon-button {
-  color: $titles;
+  color: var(--titles-color);
   font-size: 1.125rem;
   border: 0;
   outline: 0;
@@ -11,11 +11,11 @@
 
   &.outlined {
     border-radius: 50%;
-    border: 1px solid $body;
+    border: 1px solid var(--primary-foreground-color);
   }
 
   &.filled {
-    background-color: $white;
+    background-color: var(--background-color);
     border-radius: 50%;
     @include bs(0 2px 4px rgba(108, 108, 108, 0.2));
     @include transition(all .25s cubic-bezier(.02,.01,.47,1));
@@ -52,7 +52,7 @@
     height: 32px;
     font-size: 0.625rem;
     z-index: 2;
-    background-color: $white;
+    background-color: var(--background-color);
 
     @include respond-to('medium') {
       top: 30px;
@@ -113,7 +113,7 @@
 
   &.in-featured-articles {
     position: absolute;
-    color: $white;
+    color: var(--background-color);
     font-size: 0.875rem;
     width: 29px;
     height: 22px;
@@ -175,7 +175,7 @@
   }
 
   &.in-share {
-    color: $titles;
+    color: var(--titles-color);
     font-size: 0.750rem;
     text-decoration: none;
     width: 31px;

@@ -18,7 +18,7 @@
 }
 
 .m-result__title {
-  color: $body;
+  color: var(--primary-foreground-color);
   letter-spacing: 0.3px;
   line-height: 1.4;
   font-size: 1rem;

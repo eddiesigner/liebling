@@ -23,7 +23,7 @@
     }
 
     li {
-      color: $titles;
+      color: var(--titles-color);
       letter-spacing: 0.3px;
       font-size: 1.125rem;
       margin-bottom: 15px;

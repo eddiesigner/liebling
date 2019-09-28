@@ -29,6 +29,7 @@
   "dependencies": {
     "@tryghost/content-api": "^1.0.0",
     "aos": "^2.3.4",
+    "css-vars-ponyfill": "^2.1.2",
     "fitvids": "^2.0.0",
     "fuse.js": "^3.4.2",
     "jquery": "^3.3.1",

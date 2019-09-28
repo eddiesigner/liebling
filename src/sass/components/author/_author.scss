@@ -1,8 +1,10 @@
 .m-author {
   padding: 40px $mobile-space;
-  border-color: $light-blue;
+  border-color: var(--secondary-subtle-color);
   border-top-width: 2px;
   border-bottom-width: 2px;
+  border-left-width: 0;
+  border-right-width: 0;
   border-style: solid;
   margin: 0 auto;
 
@@ -17,7 +19,7 @@
   }
 
   &.no-subscribers {
-    background-color: $light-blue;
+    background-color: var(--secondary-subtle-color);
   }
 }
 

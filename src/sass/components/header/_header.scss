@@ -12,7 +12,7 @@
   &.fixed {
     position: fixed;
     opacity: 0;
-    background-color: $white;
+    background-color: var(--background-color);
     @include transform(translateY(-100%));
     @include bs(0 4px 8px rgba(0, 0, 0, 0.05));
     @include transition(transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1));
@@ -28,7 +28,7 @@
   }
 
   &.submenu-is-active {
-    background-color: $white;
+    background-color: var(--background-color);
 
     .m-header__shadow {
       display: none;
@@ -36,6 +36,6 @@
   }
 
   &.with-picture {
-    background-color: $white;
+    background-color: var(--background-color);
   }
 }

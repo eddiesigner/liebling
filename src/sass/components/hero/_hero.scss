@@ -4,7 +4,7 @@
   min-height: 365px;
   overflow: hidden;
   padding: 100px 0 75px;
-  background-color: $light-blue;
+  background-color: var(--secondary-subtle-color);
   @extend .content-centered;
 
   @include respond-to('medium') {
@@ -14,7 +14,7 @@
 
   &.with-picture {
     color: $white;
-    background-color: darken($body, 25%);
+    background-color: $black;
 
     @include respond-to('medium') {
       min-height: 450px;

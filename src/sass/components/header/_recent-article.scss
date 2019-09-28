@@ -42,7 +42,7 @@
 }
 
 .m-recent-article__title {
-  color: $titles;
+  color: var(--titles-color);
   letter-spacing: 0.2px;
   line-height: 1.438rem;
   font-size: 1rem;
@@ -56,7 +56,7 @@
 }
 
 .m-recent-article__date {
-  color: $titles;
+  color: var(--titles-color);
   letter-spacing: 0.15px;
   font-size: 0.813rem;
 }

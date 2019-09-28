@@ -1,6 +1,6 @@
 # Liebling
 
-Liebling is a beautiful and clean Ghost theme that is easy and comfortable to use. **It's free** and you can use it for any kind of content you might have.
+Liebling is a beautiful and clean Ghost theme that is easy and comfortable to use. **It's free** and you can use it for any kind of content you might have. Now with dark mode 🌓!
 
 If you use it and you like it, please consider to make a donation to support its development! 🙏🏼
 
@@ -48,6 +48,7 @@ To get the latest version please head over the [releases page](https://github.co
 
 ### Liebling unique features
 
+* Dark mode
 * Search
 * Custom Subscribe page
 * Custom authors page

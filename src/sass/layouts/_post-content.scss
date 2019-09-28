@@ -411,7 +411,7 @@
   }
 
   button:not(.m-icon-button) {
-    border: 1px solid $body !important;
+    border: 1px solid var(--primary-foreground-color) !important;
     @extend .m-button;
   }
 
@@ -432,7 +432,7 @@
 
   .kg-bookmark-container {
     display: flex;
-    color: $body;
+    color: var(--primary-foreground-color);
     text-decoration: none !important;
     min-height: 148px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px,

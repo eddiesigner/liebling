@@ -16,7 +16,7 @@
   @include transition(all .25s cubic-bezier(.02,.01,.47,1));
 
   &.outlined {
-    border: 1px solid $body;
+    border: 1px solid var(--primary-foreground-color);
   }
 
   &.filled,
