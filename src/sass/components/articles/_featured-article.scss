@@ -1,7 +1,7 @@
 .m-featured-article {
   position: relative;
   height: 100%;
-  background-color: $main-color;
+  background-color: var(--primary-subtle-color);
   z-index: 1;
 
   &:hover {
@@ -12,7 +12,7 @@
 
   &.no-picture {
     .m-featured-article__picture {
-      background-color: $dark-blue;
+      background-color: var(--link-color);
     }
   }
 }

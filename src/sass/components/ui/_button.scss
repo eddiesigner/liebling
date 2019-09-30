@@ -41,6 +41,6 @@
 
   &.primary {
     color: $white;
-    background-color: $main-color;
+    background-color: var(--primary-subtle-color);
   }
 }

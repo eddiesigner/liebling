@@ -52,7 +52,6 @@
     height: 32px;
     font-size: 0.625rem;
     z-index: 2;
-    background-color: var(--background-color);
 
     @include respond-to('medium') {
       top: 30px;
@@ -86,7 +85,7 @@
     position: relative;
 
     &.active {
-      color: $main-color;
+      color: var(--primary-subtle-color);
     }
   }
 
@@ -113,7 +112,7 @@
 
   &.in-featured-articles {
     position: absolute;
-    color: var(--background-color);
+    color: $white;
     font-size: 0.875rem;
     width: 29px;
     height: 22px;

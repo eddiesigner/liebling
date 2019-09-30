@@ -50,23 +50,27 @@ fieldset {
   text-align: left !important;
 }
 
+.medium-zoom-overlay {
+  background-color: var(--background-color) !important;
+}
+
 .medium-zoom-overlay,
 .medium-zoom-image {
   z-index: 5;
 }
 
 ::-webkit-input-placeholder {
-  color: var(--primary-border-color);
+  color: $gray;
 }
 
 ::-moz-placeholder {
-  color: var(--primary-border-color);
+  color: $gray;
 }
 
 :-ms-input-placeholder {
-  color: var(--primary-border-color);
+  color: $gray;
 }
 
 :-moz-placeholder {
-  color: var(--primary-border-color);
+  color: $gray;
 }
