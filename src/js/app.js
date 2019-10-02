@@ -2,7 +2,6 @@ import $ from 'jquery'
 import slick from 'slick-carousel'
 import tippy from 'tippy.js'
 import AOS from 'aos'
-import GhostContentAPI from '@tryghost/content-api'
 import Fuse from 'fuse.js'
 
 $(document).ready(() => {

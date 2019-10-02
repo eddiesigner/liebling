@@ -27,7 +27,6 @@
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
-    "@tryghost/content-api": "^1.0.0",
     "aos": "^2.3.4",
     "fitvids": "^2.0.0",
     "fuse.js": "^3.4.2",
