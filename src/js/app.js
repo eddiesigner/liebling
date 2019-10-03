@@ -95,7 +95,7 @@ $(document).ready(() => {
     if (typeof ghostSearchApiKey !== 'undefined') {
       getAllPosts(ghostHost, ghostSearchApiKey)
     } else {
-      $openSearch.remove()
+      $openSearch.css('visibility', 'hidden')
       $closeSearch.remove()
       $search.remove()
     }

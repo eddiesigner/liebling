@@ -35,9 +35,14 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    background-color: $light-blue;
     -webkit-backface-visibility: visible !important;
     backface-visibility: visible !important;
     @include transition(transform .5s cubic-bezier(0.165, 0.84, 0.44, 1));
+
+    &.no-image {
+      background-size: 64px 64px;
+    }
   }
 }
 

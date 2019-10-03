@@ -10,6 +10,12 @@ Also it includes the big submenu.
       <img src="{{@site.logo}}" alt="{{@site.title}}">
     </a>
   </li>
+  {{else}}
+  <li class="only-desktop" role="menuitem">
+    <a href="{{@site.url}}" class="m-site-name in-desktop-menu">
+      {{@site.title}}
+    </a>
+  </li>
   {{/if}}
   {{#foreach navigation}}
     <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}">
@@ -30,7 +36,11 @@ Also it includes the big submenu.
                 <div>
                   <a href="{{url}}" class="m-recent-article">
                     <div class="m-recent-article__picture">
-                      <div style="background-image: url({{img_url feature_image size="m"}});"></div>
+                      {{#if feature_image}}
+                        <div style="background-image: url({{img_url feature_image size="m"}});"></div>
+                      {{else}}
+                        <div style="background-image: url({{asset "images/no-image.png"}});" class="no-image"></div>
+                      {{/if}}
                     </div>
                     <h3 class="m-recent-article__title">{{title}}</h3>
                     <span class="m-recent-article__date">{{date published_at timeago="true"}}</span>

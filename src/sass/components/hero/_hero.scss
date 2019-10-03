@@ -28,6 +28,10 @@
       color: $white;
     }
   }
+
+  &.no-picture.in-post {
+    display: none;
+  }
 }
 
 .m-hero__picture {

@@ -18,10 +18,10 @@ into the {body} of the default.hbs template --}}
   
   <main>
     <article>
-      <div class="l-content">
+      <div class="l-content in-post">
         {{!-- Everything inside the #post tags pulls data from the post --}}
         {{#post}}
-        <div class="l-wrapper in-post js-aos-wrapper" data-aos="fade-up" data-aos-delay="300">
+        <div class="l-wrapper in-post {{#unless feature_image}}no-image{{/unless}} js-aos-wrapper" data-aos="fade-up" data-aos-delay="300">
           {{#if @labs.subscribers}}
           <div class="l-post-content has-subscribe-form js-progress-content">
           {{else}}
