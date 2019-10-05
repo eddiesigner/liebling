@@ -1,6 +1,6 @@
 .m-site-name {
   &.in-mobile-topbar {
-    color: $titles;
+    color: var(--titles-color);
     font-weight: 600;
   }
 
