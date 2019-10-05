@@ -1,5 +1,5 @@
 .m-icon-button {
-  color: $titles;
+  color: var(--titles-color);
   font-size: 1.125rem;
   border: 0;
   outline: 0;
@@ -11,17 +11,17 @@
 
   &.outlined {
     border-radius: 50%;
-    border: 1px solid $body;
+    border: 1px solid var(--primary-foreground-color);
   }
 
   &.filled {
-    background-color: $white;
+    background-color: var(--background-color);
     border-radius: 50%;
-    @include bs(0 2px 4px rgba(108, 108, 108, 0.2));
+    @include bs(0 2px 4px var(--button-shadow-color-normal));
     @include transition(all .25s cubic-bezier(.02,.01,.47,1));
 
     &:hover {
-      @include bs(0 4px 8px rgba(108, 108, 108, 0.3));
+      @include bs(0 4px 8px var(--button-shadow-color-hover));
     }
   }
 
@@ -52,7 +52,6 @@
     height: 32px;
     font-size: 0.625rem;
     z-index: 2;
-    background-color: $white;
 
     @include respond-to('medium') {
       top: 30px;
@@ -86,7 +85,7 @@
     position: relative;
 
     &.active {
-      color: $main-color;
+      color: var(--primary-subtle-color);
     }
   }
 
@@ -175,7 +174,7 @@
   }
 
   &.in-share {
-    color: $titles;
+    color: var(--titles-color);
     font-size: 0.750rem;
     text-decoration: none;
     width: 31px;
@@ -208,6 +207,7 @@
       opacity: 0;
 
       circle {
+        stroke: var(--primary-subtle-color);
         transform-origin: 50% 50%;
         @include transform(rotate(-90deg));
         @include transition(stroke-dashoffset 0.2s);

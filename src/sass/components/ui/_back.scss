@@ -4,7 +4,7 @@
   position: absolute;
   top: $mobile-space;
   left: $mobile-space;
-  color: $titles;
+  color: var(--titles-color);
   letter-spacing: 0.2px;
   font-size: 0.875rem;
   font-weight: 600;

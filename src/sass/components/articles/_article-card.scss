@@ -4,9 +4,9 @@
   position: relative;
   margin-bottom: 20px;
   height: 400px;
-  background-color: $white;
+  background-color: var(--background-color);
   border-radius: 10px;
-  border: 1px solid aliceblue;
+  border: 1px solid var(--secondary-border-color);
   z-index: 1;
   @include transition(all .25s cubic-bezier(.02,.01,.47,1));
 
@@ -14,7 +14,7 @@
     @include transform(translateY(-5px));
 
     &:before {
-      @include bs(0 4px 60px 0 rgba(0,0,0,.2));
+      @include bs(var(--article-shadow-hover));
     }
 
     .m-article-card__author {
@@ -43,7 +43,7 @@
     }
 
     .m-article-card__info {
-      background-color: $light-blue;
+      background-color: var(--secondary-subtle-color);
     }
 
     .m-article-card__title {
@@ -85,7 +85,7 @@
     bottom: 0;
     left: 10px;
     border-radius: 10px;
-    @include bs(0 10px 10px rgba(0,0,0,0.08));
+    @include bs(var(--article-shadow-normal));
     @include transition(all .25s cubic-bezier(.02,.01,.47,1));
   }
 }
@@ -94,7 +94,7 @@
   position: relative;
   height: 200px;
   border-radius: 10px 10px 0 0;
-  background-color: $light-blue;
+  background-color: var(--secondary-subtle-color);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -191,7 +191,7 @@
   height: 200px;
   overflow: hidden;
   border-radius: 0 0 10px 10px;
-  background-color: $white;
+  background-color: var(--background-color);
 
   @include respond-to('medium') {
     padding-top: 53px;
@@ -214,7 +214,7 @@
   position: absolute;
   top: $mobile-space;
   left: $mobile-space;
-  color: $dark-blue;
+  color: var(--link-color);
   letter-spacing: 0.2px;
   font-size: 0.875rem;
   font-weight: 600;
@@ -240,7 +240,7 @@
 }
 
 .m-article-card__title {
-  color: $titles;
+  color: var(--titles-color);
   letter-spacing: 0.4px;
   line-height: 1.3;
   font-size: 1.250rem;
@@ -257,26 +257,17 @@
   position: relative;
   overflow: hidden;
   height: 100%;
-  color: $titles;
+  color: var(--titles-color);
   letter-spacing: 0.3px;
   line-height: 1.5;
   font-size: 1rem;
-  &:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 20px;
-    background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
-  }
 }
 
 .m-article-card__timestamp,
 .m-article-card__author-stats {
   display: flex;
   align-items: center;
-  color: $titles;
+  color: var(--titles-color);
   letter-spacing: 0.2px;
   font-size: 0.875rem;
 
@@ -308,7 +299,7 @@
     margin-left: 22px;
 
     a {
-      color: $body;
+      color: var(--primary-foreground-color);
       font-size: 0.938rem;
 
       span {

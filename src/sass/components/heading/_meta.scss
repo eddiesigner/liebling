@@ -13,7 +13,7 @@
 
 .m-heading__meta__tag,
 .m-heading__meta__time {
-  color: $dark-blue !important;
+  color: var(--link-color) !important;
 }
 
 .m-heading__meta__tag {
@@ -22,6 +22,6 @@
 
 .m-heading__meta__divider {
   display: inline-block;
-  color: $gray;
+  color: var(--primary-border-color);
   margin: 0 10px;
 }

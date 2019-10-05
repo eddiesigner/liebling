@@ -1,8 +1,11 @@
+import cssVars from 'css-vars-ponyfill'
 import $ from 'jquery'
 import slick from 'slick-carousel'
 import tippy from 'tippy.js'
 import AOS from 'aos'
 import Fuse from 'fuse.js'
+
+cssVars({})
 
 $(document).ready(() => {
   const isRTL = $('html').attr('lang') === 'ar' || $('html').attr('lang') === 'he'

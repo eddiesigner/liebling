@@ -1,8 +1,10 @@
 .m-author {
   padding: 40px $mobile-space;
-  border-color: $light-blue;
-  border-top-width: 2px;
-  border-bottom-width: 2px;
+  border-color: var(--secondary-subtle-color);
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 0;
+  border-right-width: 0;
   border-style: solid;
   margin: 0 auto;
 
@@ -17,7 +19,7 @@
   }
 
   &.no-subscribers {
-    background-color: $light-blue;
+    background-color: var(--secondary-subtle-color);
   }
 }
 
@@ -65,7 +67,7 @@
 }
 
 .m-author__name {
-  color: $dark-blue;
+  color: var(--link-color);
   letter-spacing: 0.2px;
   line-height: 1.3;
   font-size: 1.125rem;
