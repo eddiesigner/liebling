@@ -41,6 +41,10 @@
   }
 }
 
+.m-featured-slider:not(:root:root) {
+  overflow: hidden !important;
+}
+
 .m-featured-slider__list {
   list-style-type: none;
   padding: 0;

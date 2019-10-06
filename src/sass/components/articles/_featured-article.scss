@@ -1,8 +1,13 @@
 .m-featured-article {
   position: relative;
   height: 100%;
+  overflow: hidden;
   background-color: var(--primary-subtle-color);
   z-index: 1;
+
+  @include respond-to('medium') {
+    border-radius: 10px;
+  }
 
   &:hover {
     .m-featured-article__author {
