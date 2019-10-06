@@ -10,9 +10,9 @@ If you use it and you like it, please consider to make a donation to support its
 
 You can see a live demo here: [https://liebling.eduardogomez.io](https://liebling.eduardogomez.io)
 
-![](https://res.cloudinary.com/edev/image/upload/v1557074150/liebling/liebling-promo-ipad.jpg)
+![](https://res.cloudinary.com/edev/image/upload/v1570370297/liebling/liebling-promo-ipad.jpg)
 <br><br>
-![](https://res.cloudinary.com/edev/image/upload/v1557074150/liebling/liebling-promo-mobile.jpg)
+![](https://res.cloudinary.com/edev/image/upload/v1570370297/liebling/liebling-promo-mobile.jpg)
 
 ## Download
 
