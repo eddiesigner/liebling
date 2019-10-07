@@ -13,15 +13,15 @@ into the {body} of the default.hbs template --}}
   {{> header background=feature_image}}
   {{!-- Inject styles of the hero image to make it responsive --}}
   {{> hero background=feature_image}}
-  </header>
+  </section>
   {{/post}}
   
   <main>
     <article>
-      <div class="l-content">
+      <div class="l-content in-post">
         {{!-- Everything inside the #post tags pulls data from the post --}}
         {{#post}}
-        <div class="l-wrapper in-post js-aos-wrapper" data-aos="fade-up" data-aos-delay="300">
+        <div class="l-wrapper in-post {{#unless feature_image}}no-image{{/unless}} js-aos-wrapper" data-aos="fade-up" data-aos-delay="300">
           {{#if @labs.subscribers}}
           <div class="l-post-content has-subscribe-form js-progress-content">
           {{else}}
@@ -49,7 +49,7 @@ into the {body} of the default.hbs template --}}
                   <button class="m-icon-button filled in-share progress js-scrolltop" aria-label="Scroll to top">
                     <span class="icon-arrow-top"></span>
                     <svg>
-                      <circle class="progress-ring__circle js-progress" stroke="#04aeee" fill="transparent" r="0" />
+                      <circle class="progress-ring__circle js-progress" fill="transparent" r="0" />
                     </svg>
                   </button>
                 </div>

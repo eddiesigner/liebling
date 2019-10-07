@@ -19,7 +19,7 @@ into the {body} of the default.hbs template --}}
       <p class="m-hero-description">{{custom_excerpt}}</p>
       {{/if}}
     </div>
-    </header>
+    </section>
     <main>
       <div class="l-content">
         <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
@@ -38,7 +38,9 @@ into the {body} of the default.hbs template --}}
                 </div>
                 <div class="m-article-card__info">
                   <a href="{{url}}" class="m-article-card__info-link">
+                    {{#if bio}}
                     <p class="m-article-card__excerpt">{{bio}}</p>
+                    {{/if}}
                   </a>
                   <div class="m-article-card__author-stats">
                     <span>

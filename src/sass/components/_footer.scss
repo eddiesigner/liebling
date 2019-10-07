@@ -1,6 +1,6 @@
 .m-footer {
   flex-shrink: 0;
-  background-color: $dark-blue;
+  background-color: var(--foter-background-color);
 }
 
 .m-footer__content {
@@ -57,5 +57,11 @@
       color: inherit;
       font-size: 1rem;
     }
+  }
+}
+
+.rtl {
+  .m-footer-social {
+    direction: ltr;
   }
 }

@@ -102,6 +102,8 @@ function prepareProgressCircle() {
 }
 
 $(document).ready(() => {
+  const isRTL = $('html').attr('lang') === 'ar' || $('html').attr('lang') === 'he'
+
   $aosWrapper = $('.js-aos-wrapper')
   const $scrollButton = $('.js-scrolltop')
   const $loadComments = $('.js-load-comments')
@@ -150,7 +152,8 @@ $(document).ready(() => {
             slidesToShow: 3
           }
         }
-      ]
+      ],
+      rtl: isRTL
     })
   }
 

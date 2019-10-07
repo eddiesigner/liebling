@@ -5,7 +5,6 @@ mix.webpackConfig({
     rules: [
       {
         test: /\.jsx?$/,
-        exclude: [/node_modules\/(?!(@tryghost)\/).*/],
         use: [
           {
             loader: 'babel-loader',

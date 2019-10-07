@@ -1,11 +1,19 @@
+import cssVars from 'css-vars-ponyfill'
 import $ from 'jquery'
 import slick from 'slick-carousel'
 import tippy from 'tippy.js'
 import AOS from 'aos'
-import GhostContentAPI from '@tryghost/content-api'
 import Fuse from 'fuse.js'
 
+cssVars({})
+
 $(document).ready(() => {
+  const isRTL = $('html').attr('lang') === 'ar' || $('html').attr('lang') === 'he'
+
+  if (isRTL) {
+    $('html').attr('dir', 'rtl').addClass('rtl')
+  }
+
   const $body = $('body')
   const $header = $('.js-header')
   const $openMenu = $('.js-open-menu')
@@ -90,7 +98,7 @@ $(document).ready(() => {
     if (typeof ghostSearchApiKey !== 'undefined') {
       getAllPosts(ghostHost, ghostSearchApiKey)
     } else {
-      $openSearch.remove()
+      $openSearch.css('visibility', 'hidden')
       $closeSearch.remove()
       $search.remove()
     }
@@ -98,7 +106,7 @@ $(document).ready(() => {
 
   function getAllPosts(host, key) {
     const api = new GhostContentAPI({
-      host,
+      url: host,
       key,
       version: 'v2'
     })
@@ -226,7 +234,8 @@ $(document).ready(() => {
       arrows: false,
       infinite: false,
       mobileFirst: true,
-      variableWidth: true
+      variableWidth: true,
+      rtl: isRTL
     })
   }
 

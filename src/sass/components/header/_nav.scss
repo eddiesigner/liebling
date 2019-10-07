@@ -23,7 +23,7 @@
     }
 
     li {
-      color: $titles;
+      color: var(--titles-color);
       letter-spacing: 0.3px;
       font-size: 1.125rem;
       margin-bottom: 15px;
@@ -48,6 +48,21 @@
 
       a {
         color: inherit;
+      }
+    }
+  }
+}
+
+.rtl {
+  .m-nav__left ul li {
+    @include respond-to('medium') {
+      margin-right: 0;
+      margin-left: 35px;
+
+      &:last-of-type {
+        @include respond-to('medium') {
+          margin-left: 0;
+        }
       }
     }
   }

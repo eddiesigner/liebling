@@ -11,7 +11,7 @@
     }
 
     &:before {
-      @include bs(0 4px 60px 0 rgba(0,0,0,.2));
+      @include bs(var(--article-shadow-hover));
     }
   }
 
@@ -36,9 +36,13 @@
     bottom: 0;
     left: 10px;
     border-radius: 10px;
-    @include bs(0 10px 10px rgba(0,0,0,0.08));
+    @include bs(var(--article-shadow-normal));
     @include transition(all .25s cubic-bezier(.02,.01,.47,1));
   }
+}
+
+.m-featured-slider:not(:root:root) {
+  overflow: hidden !important;
 }
 
 .m-featured-slider__list {

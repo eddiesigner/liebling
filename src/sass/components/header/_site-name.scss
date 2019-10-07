@@ -1,0 +1,10 @@
+.m-site-name {
+  &.in-mobile-topbar {
+    color: var(--titles-color);
+    font-weight: 600;
+  }
+
+  &.in-desktop-menu {
+    font-weight: 700;
+  }
+}

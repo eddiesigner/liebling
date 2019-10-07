@@ -5,12 +5,12 @@ body {
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
-  color: $body;
+  color: var(--primary-foreground-color);
   font-size: 1rem;
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
   font-display: swap;
   overflow-x: hidden;
-  background-color: white;
+  background-color: var(--background-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -48,6 +48,10 @@ fieldset {
 
 .tippy-popper * {
   text-align: left !important;
+}
+
+.medium-zoom-overlay {
+  background-color: var(--background-color) !important;
 }
 
 .medium-zoom-overlay,

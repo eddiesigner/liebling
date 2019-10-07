@@ -1,8 +1,13 @@
 .m-featured-article {
   position: relative;
   height: 100%;
-  background-color: $main-color;
+  overflow: hidden;
+  background-color: var(--primary-subtle-color);
   z-index: 1;
+
+  @include respond-to('medium') {
+    border-radius: 10px;
+  }
 
   &:hover {
     .m-featured-article__author {
@@ -12,7 +17,7 @@
 
   &.no-picture {
     .m-featured-article__picture {
-      background-color: $dark-blue;
+      background-color: var(--link-color);
     }
   }
 }
@@ -45,6 +50,18 @@
   @include respond-to('medium') {
     top: 40px;
     left: 40px;
+  }
+}
+
+.rtl {
+  .m-featured-article__meta {
+    left: auto;
+    right: $mobile-space;
+
+    @include respond-to('medium') {
+      left: auto;
+      right: 40px;
+    }
   }
 }
 
@@ -117,6 +134,25 @@
 
     @include respond-to('medium') {
       display: block;
+    }
+  }
+}
+
+.rtl {
+  .m-featured-article__ribbon {
+    right: auto;
+    left: $mobile-space;
+
+    @include respond-to('medium') {
+      right: auto;
+      left: 40px;
+    }
+
+    span:first-of-type {
+      @include respond-to('medium') {
+        margin-right: 0;
+        margin-left: 4px;
+      }
     }
   }
 }

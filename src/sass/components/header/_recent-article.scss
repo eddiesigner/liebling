@@ -16,6 +16,14 @@
   }
 }
 
+.rtl {
+  .m-recent-article {
+    @include respond-to('medium') {
+      margin: 0 0 0 60px;
+    }
+  }
+}
+
 .m-recent-article__picture {
   height: 130px;
   margin-bottom: 15px;
@@ -27,14 +35,19 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    background-color: var(--secondary-subtle-color);
     -webkit-backface-visibility: visible !important;
     backface-visibility: visible !important;
     @include transition(transform .5s cubic-bezier(0.165, 0.84, 0.44, 1));
+
+    &.no-image {
+      background-size: 64px 64px;
+    }
   }
 }
 
 .m-recent-article__title {
-  color: $titles;
+  color: var(--titles-color);
   letter-spacing: 0.2px;
   line-height: 1.438rem;
   font-size: 1rem;
@@ -48,7 +61,7 @@
 }
 
 .m-recent-article__date {
-  color: $titles;
+  color: var(--titles-color);
   letter-spacing: 0.15px;
   font-size: 0.813rem;
 }

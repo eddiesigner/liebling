@@ -15,6 +15,10 @@ This header template is shared across all the pages.
       <a href="{{@site.url}}" class="m-logo in-mobile-topbar">
         <img src="{{@site.logo}}" alt="{{@site.title}}">
       </a>
+    {{else}}
+      <a href="{{@site.url}}" class="m-site-name in-mobile-topbar">
+        {{@site.title}}
+      </a>
     {{/if}}
     <button class="m-icon-button in-mobile-topbar js-open-search" aria-label="Open search">
       <span class="icon-search"></span>
