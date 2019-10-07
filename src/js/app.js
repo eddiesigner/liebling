@@ -1,5 +1,6 @@
 import cssVars from 'css-vars-ponyfill'
 import $ from 'jquery'
+import Headroom from "headroom.js"
 import slick from 'slick-carousel'
 import tippy from 'tippy.js'
 import AOS from 'aos'
@@ -30,53 +31,8 @@ $(document).ready(() => {
   const $searchResults = $('.js-search-results')
   const $searchNoResults = $('.js-no-results')
 
-  const headerHeight = $header.outerHeight()
-
   let fuse = null
-  let lastScrollY = window.pageYOffset
-  let ticking = false
   let submenuIsOpen = false
-
-  function onScroll() {
-    requestTick()
-  }
-
-  function requestTick() {
-    if (!ticking) {
-      requestAnimationFrame(toggleHeader)
-    }
-
-    ticking = true
-  }
-
-  function toggleHeader() {
-    const scrollTop = window.pageYOffset
-
-    if (scrollTop >= headerHeight) {
-      $header.addClass('fixed')
-
-      if (submenuIsOpen) {
-        $header.addClass('fixed-active')
-      }
-
-      if (scrollTop >= lastScrollY) {
-        if (!submenuIsOpen) {
-          $header.removeClass('fixed-active')
-        }
-      } else {
-        $header.addClass('fixed-active')
-      }
-    } else {
-      if (!submenuIsOpen) {
-        $header.removeClass('fixed-active')
-      }
-
-      $header.removeClass('fixed')
-    }
-
-    lastScrollY = scrollTop
-    ticking = false
-  }
 
   function showSubmenu() {
     $header.addClass('submenu-is-active')
@@ -228,6 +184,19 @@ $(document).ready(() => {
     }
   })
 
+  var headerElement = document.querySelector('.js-header')
+
+  if (headerElement) {
+    var headroom = new Headroom(headerElement, {
+      tolerance: {
+        down: 10,
+        up: 20
+      },
+      offset: 15
+    })
+    headroom.init()
+  }
+
   if ($recentArticles.length > 0) {
     $recentArticles.slick({
       adaptiveHeight: true,
@@ -251,6 +220,4 @@ $(document).ready(() => {
   tippy('.js-tooltip')
 
   trySearchFeature()
-
-  window.addEventListener('scroll', onScroll, { passive: true })
 })

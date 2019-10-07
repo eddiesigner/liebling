@@ -34,6 +34,7 @@
     "css-vars-ponyfill": "^2.1.2",
     "fitvids": "^2.0.0",
     "fuse.js": "^3.4.2",
+    "headroom.js": "^0.10.3",
     "jquery": "^3.3.1",
     "medium-zoom": "^1.0.3",
     "promise-polyfill": "8.1.0",
