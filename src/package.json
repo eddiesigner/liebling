@@ -11,7 +11,9 @@
     "hot": "NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
     "docker-watch": "docker-compose up -d && node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js && npm run zip",
-    "zip": "cd .. && zip -r liebling.zip ./* -x './src/*'"
+    "zip": "run-script-os",
+    "zip:win32": "cd .. && 7z a -r -x!.git -x!src liebling.zip *",
+    "zip:default": "cd .. && zip -r liebling.zip ./* -x './src/*'"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +24,7 @@
     "ghost-cli": "^1.11.0",
     "laravel-mix": "^4.0.0-beta.2",
     "resolve-url-loader": "3.1.0",
+    "run-script-os": "^1.0.7",
     "sass": "^1.22.9",
     "sass-loader": "7.*",
     "vue-template-compiler": "^2.6.10"
