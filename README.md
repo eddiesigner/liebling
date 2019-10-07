@@ -73,6 +73,7 @@ To get the latest version please head over the [releases page](https://github.co
 * French by [v1nc3nt-fr](https://github.com/v1nc3nt-fr)
 * Informal french by [v1nc3nt-fr](https://github.com/v1nc3nt-fr)
 * Portuguese by [ivomota](https://github.com/ivomota)
+* Arabic by [allamiro](https://github.com/allamiro)
 * Polish by [otlet](https://github.com/otlet)
 * Brazilian portuguese by [pedrinholula](https://github.com/pedrinholula)
 * Russian by [stereohorse](https://github.com/stereohorse)
