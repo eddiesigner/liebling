@@ -5,7 +5,7 @@ services:
     image: ghost:2.31.1
     container_name: ghost
     volumes:
-      - $PWD/..:/var/lib/ghost/content/themes/liebling
+      - ./..:/var/lib/ghost/content/themes/liebling
       - ./ghost.db:/var/lib/ghost/content/data/ghost.db
     environment:
       - NODE_ENV=development
