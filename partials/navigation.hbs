@@ -47,7 +47,7 @@ Also it includes the big submenu.
                   </a>
                 </div>
               {{else}}
-                <div class="m-no-found in-recent-articles">{{t "No recent articles found :("}}</div>
+                <div class="m-not-found in-recent-articles">{{t "No recent articles found :("}}</div>
               {{/foreach}}
             {{/get}}
           </div>
@@ -61,7 +61,7 @@ Also it includes the big submenu.
                   <a href="{{url}}">{{name}}</a>
                 </li>
               {{else}}
-                <li class="m-no-found">{{t "No tags found :("}}</li>
+                <li class="m-not-found">{{t "No tags found :("}}</li>
               {{/foreach}}
             </ul>
           {{/get}}
