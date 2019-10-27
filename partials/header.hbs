@@ -33,9 +33,71 @@ This header template is shared across all the pages.
       <div class="l-wrapper">
         <div class="m-nav">
           <nav class="m-nav__left">
-            {{#if @site.navigation}}
-              {{navigation}}
-            {{/if}}
+            <ul role="submenu">
+              {{#if @site.logo}}
+                <li class="only-desktop" role="menuitem">
+                  <a href="{{@site.url}}" class="m-logo">
+                    <img src="{{@site.logo}}" alt="{{@site.title}}">
+                  </a>
+                </li>
+                {{else}}
+                <li class="only-desktop" role="menuitem">
+                  <a href="{{@site.url}}" class="m-site-name in-desktop-menu">
+                    {{@site.title}}
+                  </a>
+                </li>
+              {{/if}}
+              {{#if @site.navigation}}
+                {{navigation}}
+              {{/if}}
+              <li role="menuitem" class="js-submenu-option">
+                <button class="m-icon-button in-menu-main more js-toggle-submenu" aria-label="Toggle submenu">
+                  <span class="icon-more"></span>
+                </button>
+                <div class="m-submenu js-submenu">
+                  <div class="l-wrapper in-submenu">
+                    <section class="m-recent-articles">
+                      <h3 class="m-submenu-title in-recent-articles">{{t "Recent articles"}}</h3>
+                      <div class="js-recent-articles">
+                        {{#get "posts" limit="4" order="published_at desc"}}
+                        {{#foreach posts}}
+                        <div>
+                          <a href="{{url}}" class="m-recent-article">
+                            <div class="m-recent-article__picture">
+                              {{#if feature_image}}
+                              <div class="lozad" data-background-image="{{img_url feature_image size="m"}}"></div>
+                              {{else}}
+                              <div class="no-image lozad" data-background-image="{{asset "images/no-image.png"}}"></div>
+                              {{/if}}
+                            </div>
+                            <h3 class="m-recent-article__title">{{title}}</h3>
+                            <span class="m-recent-article__date">{{date published_at timeago="true"}}</span>
+                          </a>
+                        </div>
+                        {{else}}
+                        <div class="m-not-found in-recent-articles">{{t "No recent articles found :("}}</div>
+                        {{/foreach}}
+                        {{/get}}
+                      </div>
+                    </section>
+                    <section class="m-tags">
+                      <h3 class="m-submenu-title">{{t "Tags"}}</h3>
+                      {{#get "tags" limit="10"}}
+                      <ul>
+                        {{#foreach tags}}
+                        <li>
+                          <a href="{{url}}">{{name}}</a>
+                        </li>
+                        {{else}}
+                        <li class="m-not-found">{{t "No tags found :("}}</li>
+                        {{/foreach}}
+                      </ul>
+                      {{/get}}
+                    </section>
+                  </div>
+                </div>
+              </li>
+            </ul>
           </nav>
           <button class="m-icon-button in-menu-main js-open-search" aria-label="Open search">
             <span class="icon-search"></span>
