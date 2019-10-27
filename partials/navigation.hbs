@@ -37,9 +37,9 @@ Also it includes the big submenu.
                   <a href="{{url}}" class="m-recent-article">
                     <div class="m-recent-article__picture">
                       {{#if feature_image}}
-                        <div style="background-image: url({{img_url feature_image size="m"}});"></div>
+                        <div class="lozad" data-background-image="{{img_url feature_image size="m"}}"></div>
                       {{else}}
-                        <div style="background-image: url({{asset "images/no-image.png"}});" class="no-image"></div>
+                        <div class="no-image lozad" data-background-image="{{asset "images/no-image.png"}}"></div>
                       {{/if}}
                     </div>
                     <h3 class="m-recent-article__title">{{title}}</h3>

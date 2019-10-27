@@ -59,6 +59,20 @@ fieldset {
   z-index: 5;
 }
 
+div[data-loaded="true"],
+img[data-loaded="true"] {
+  opacity: 0;
+  @include animation('fadeIn 0.5s forwards');
+  @include keyframes(fadeIn) {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
 ::-webkit-input-placeholder {
   color: $gray;
 }

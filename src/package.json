@@ -37,6 +37,7 @@
     "fuse.js": "^3.4.2",
     "headroom.js": "^0.10.3",
     "jquery": "^3.3.1",
+    "lozad": "^1.14.0",
     "medium-zoom": "^1.0.3",
     "promise-polyfill": "8.1.0",
     "slick-carousel": "^1.8.1",

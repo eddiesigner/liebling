@@ -16,7 +16,7 @@ mix.webpackConfig({
   }
 });
 
-mix.js('js/polyfill.js', 'js/')
+mix.js('js/helpers.js', 'js/')
   .js('js/app.js', 'js/')
   .js('js/home.js', 'js/')
   .js('js/post.js', 'js/')

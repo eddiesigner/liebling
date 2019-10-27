@@ -1,17 +1,20 @@
 import cssVars from 'css-vars-ponyfill'
 import $ from 'jquery'
+import lozad from 'lozad'
 import Headroom from "headroom.js"
 import slick from 'slick-carousel'
 import tippy from 'tippy.js'
 import AOS from 'aos'
 import Fuse from 'fuse.js'
+import {
+  isRTL,
+  formatDate
+} from './helpers'
 
 cssVars({})
 
 $(document).ready(() => {
-  const isRTL = $('html').attr('lang') === 'ar' || $('html').attr('lang') === 'he'
-
-  if (isRTL) {
+  if (isRTL()) {
     $('html').attr('dir', 'rtl').addClass('rtl')
   }
 
@@ -93,21 +96,6 @@ $(document).ready(() => {
       .catch((err) => {
         console.log(err)
       })
-  }
-
-  function formatDate(date) {
-    if (date) {
-      return new Date(date).toLocaleDateString(
-        document.documentElement.lang,
-        {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric'
-        }
-      )
-    }
-
-    return ''
   }
 
   $openMenu.click(() => {
@@ -216,6 +204,9 @@ $(document).ready(() => {
   } else {
     $('[data-aos]').addClass('no-aos-animation')
   }
+
+  const observer = lozad()
+  observer.observe()
 
   tippy('.js-tooltip')
 

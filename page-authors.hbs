@@ -28,10 +28,9 @@ into the {body} of the default.hbs template --}}
             {{#foreach authors}}
             <article class="m-article-card as-author">
               {{#if profile_image}}
-              <div class="m-article-card__picture" style="background-image: url({{profile_image}})">
+              <div class="m-article-card__picture lozad" data-background-image="{{profile_image}}">
                 {{else}}
-                <div class="m-article-card__picture"
-                  style="background-image: url({{asset "images/default-avatar-rectangle.jpg"}})">
+                <div class="m-article-card__picture lozad" data-background-image="{{asset "images/default-avatar-rectangle.jpg"}}">
                   {{/if}}
                   <a href="{{url}}" class="m-article-card__picture-link" aria-label="Author"></a>
                   <h3 class="m-article-card__name">{{name}}</h3>

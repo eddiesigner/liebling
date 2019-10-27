@@ -3,6 +3,10 @@ import slick from 'slick-carousel'
 import stickybits from 'stickybits'
 import mediumZoom from 'medium-zoom'
 import fitvids from 'fitvids'
+import {
+  isRTL,
+  isMobile
+} from './helpers'
 
 let $aosWrapper = null
 let $progressCircle = null
@@ -11,10 +15,6 @@ let lastWindowHeight = 0
 let lastDocumentHeight = 0
 let circumference = 0
 let isTicking = false
-
-function isMobile(width = '768px') {
-  return window.matchMedia(`(max-width: ${width})`).matches
-}
 
 function onScrolling() {
   lastScrollingY = window.pageYOffset
@@ -102,8 +102,6 @@ function prepareProgressCircle() {
 }
 
 $(document).ready(() => {
-  const isRTL = $('html').attr('lang') === 'ar' || $('html').attr('lang') === 'he'
-
   $aosWrapper = $('.js-aos-wrapper')
   const $scrollButton = $('.js-scrolltop')
   const $loadComments = $('.js-load-comments')
@@ -153,7 +151,7 @@ $(document).ready(() => {
           }
         }
       ],
-      rtl: isRTL
+      rtl: isRTL()
     })
   }
 
