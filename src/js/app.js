@@ -205,7 +205,11 @@ $(document).ready(() => {
     $('[data-aos]').addClass('no-aos-animation')
   }
 
-  const observer = lozad()
+  const observer = lozad('.lozad', {
+    loaded: (el) => {
+      el.classList.add('loaded')
+    }
+  })
   observer.observe()
 
   tippy('.js-tooltip')

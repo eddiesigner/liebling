@@ -40,13 +40,13 @@ into the {body} of the default.hbs template --}}
                     {{/if}}
                     <div class="m-featured-article__picture">
                       {{#if feature_image}}
-                      <div class="lozad" data-background-image="{{feature_image}}"></div>
+                      <div class="lozad" data-background-image="{{img_url feature_image size="l"}}"></div>
                       {{/if}}
                     </div>
                     <div class="m-featured-article__meta">
                       <a href="{{primary_author.url}}" class="m-featured-article__author js-tooltip" aria-label="Authors" data-tippy-content="{{t "Posted by"}} {{primary_author.name}} {{authors autolink="false" from="2" prefix=(t "Among with") separator=" , "}}">
                         {{#if primary_author.profile_image}}
-                        <div style="background-image: url({{primary_author.profile_image}});"></div>
+                        <div style="background-image: url({{img_url primary_author.profile_image size="xs"}});"></div>
                         {{else}}
                         <div style="background-image: url({{asset "images/default-avatar-square-small.jpg"}});"></div>
                         {{/if}}

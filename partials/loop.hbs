@@ -6,7 +6,7 @@
   {{/is}}
   {{#if feature_image}}
     <article class="m-article-card {{post_class}}">
-      <div class="m-article-card__picture lozad" data-background-image="{{feature_image}}">
+      <div class="m-article-card__picture lozad" data-background-image="{{img_url feature_image size="m"}}">
   {{else}}
     <article class="m-article-card no-picture {{post_class}}">
       <div class="m-article-card__picture">
@@ -14,7 +14,7 @@
       <a href="{{url}}" class="m-article-card__picture-link" aria-label="Article"></a>
       <a href="{{primary_author.url}}" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="{{t "Posted by"}} {{primary_author.name}} {{authors autolink="false" from="2" prefix=(t "Among with") separator=" , "}}">
         {{#if primary_author.profile_image}}
-          <div style="background-image: url({{primary_author.profile_image}});"></div>
+          <div style="background-image: url({{img_url primary_author.profile_image size="xs"}});"></div>
         {{else}}
           <div style="background-image: url({{asset "images/default-avatar-square-small.jpg"}});"></div>
         {{/if}}

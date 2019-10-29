@@ -59,8 +59,8 @@ fieldset {
   z-index: 5;
 }
 
-div[data-loaded="true"],
-img[data-loaded="true"] {
+div.lozad.loaded,
+img.lozad.loaded {
   opacity: 0;
   @include animation('fadeIn 0.5s forwards');
   @include keyframes(fadeIn) {
