@@ -59,7 +59,7 @@ fieldset {
   z-index: 5;
 }
 
-div.lozad.loaded,
+div.lozad.loaded:not(.no-fade-animation),
 img.lozad.loaded {
   opacity: 0;
   @include animation('fadeIn 0.5s forwards');
