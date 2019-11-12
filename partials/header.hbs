@@ -99,9 +99,15 @@ This header template is shared across all the pages.
               </li>
             </ul>
           </nav>
-          <button class="m-icon-button in-menu-main js-open-search" aria-label="Open search">
-            <span class="icon-search"></span>
-          </button>
+          <div class="m-nav__right">
+            <button class="m-icon-button in-menu-main js-open-search" aria-label="Open search">
+              <span class="icon-search"></span>
+            </button>
+            <div class="m-toggle-darkmode js-tooltip" data-tippy-content="{{t "Toggle dark mode"}}">
+              <input type="checkbox" class="js-toggle-darkmode">
+              <div></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

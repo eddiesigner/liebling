@@ -53,6 +53,12 @@
   }
 }
 
+.m-nav__right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 .rtl {
   .m-nav__left ul li {
     @include respond-to('medium') {

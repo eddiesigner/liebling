@@ -33,6 +33,8 @@ $(document).ready(() => {
   const $inputSearch = $('.js-input-search')
   const $searchResults = $('.js-search-results')
   const $searchNoResults = $('.js-no-results')
+  const $toggleDarkMode = $('.js-toggle-darkmode')
+  const currentTheme = localStorage.getItem('theme')
 
   let fuse = null
   let submenuIsOpen = false
@@ -163,6 +165,16 @@ $(document).ready(() => {
     }
   })
 
+  $toggleDarkMode.change(() => {
+    if ($toggleDarkMode.is(':checked')) {
+      $('html').attr('data-theme', 'dark')
+      localStorage.setItem('theme', 'dark')
+    } else {
+      $('html').attr('data-theme', 'light')
+      localStorage.setItem('theme', 'light')
+    }
+  })
+
   $(window).click((e) => {
     if (submenuIsOpen) {
       if ($submenuOption && !$submenuOption.contains(e.target)) {
@@ -171,6 +183,14 @@ $(document).ready(() => {
       }
     }
   })
+
+  if (currentTheme) {
+    $('html').attr('data-theme', currentTheme)
+
+    if (currentTheme === 'dark') {
+      $toggleDarkMode.attr('checked', true)
+    }
+  }
 
   var headerElement = document.querySelector('.js-header')
 
@@ -192,7 +212,7 @@ $(document).ready(() => {
       infinite: false,
       mobileFirst: true,
       variableWidth: true,
-      rtl: isRTL
+      rtl: isRTL()
     })
   }
 

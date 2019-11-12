@@ -1,0 +1,58 @@
+.m-toggle-darkmode {
+  position: fixed;
+  right: $mobile-space;
+  bottom: $mobile-space;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  @include respond-to('medium') {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin-left: 20px;
+  }
+
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    outline: 0;
+    border: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+    @extend .no-appearance;
+  }
+
+  input::-moz-focus-inner { 
+    border: 0; 
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: $titles;
+    z-index: 1;
+
+    &:after {
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--toggle-darkmode-button-color);
+      @include transition(background-color linear 0.2s);
+    }
+  }
+}

@@ -35,9 +35,11 @@
 
 .m-menu__main {
   padding: 50px 0 5px;
+  min-height: 100%;
 
   @include respond-to('medium') {
     padding: 0;
+    min-height: 0;
   }
 }
 
