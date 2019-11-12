@@ -1,17 +1,19 @@
 .m-toggle-darkmode {
   position: fixed;
   right: $mobile-space;
-  bottom: $mobile-space;
+  bottom: 45px;
   width: 22px;
   height: 22px;
   border-radius: 50%;
   overflow: hidden;
+  z-index: 2;
 
   @include respond-to('medium') {
     position: relative;
     right: auto;
     bottom: auto;
     margin-left: 20px;
+    z-index: auto;
   }
 
   input {
@@ -55,4 +57,8 @@
       @include transition(background-color linear 0.2s);
     }
   }
+}
+
+_:-ms-fullscreen, :root .m-toggle-darkmode {
+  display: none;
 }

@@ -8,7 +8,8 @@ import AOS from 'aos'
 import Fuse from 'fuse.js'
 import {
   isRTL,
-  formatDate
+  formatDate,
+  isDarkMode
 } from './helpers'
 
 cssVars({})
@@ -34,7 +35,7 @@ $(document).ready(() => {
   const $searchResults = $('.js-search-results')
   const $searchNoResults = $('.js-no-results')
   const $toggleDarkMode = $('.js-toggle-darkmode')
-  const currentTheme = localStorage.getItem('theme')
+  const currentSavedTheme = localStorage.getItem('theme')
 
   let fuse = null
   let submenuIsOpen = false
@@ -184,12 +185,16 @@ $(document).ready(() => {
     }
   })
 
-  if (currentTheme) {
-    $('html').attr('data-theme', currentTheme)
+  if (currentSavedTheme) {
+    $('html').attr('data-theme', currentSavedTheme)
 
-    if (currentTheme === 'dark') {
+    if (currentSavedTheme === 'dark') {
       $toggleDarkMode.attr('checked', true)
     }
+  }
+
+  if (isDarkMode()) {
+    $toggleDarkMode.attr('checked', true)
   }
 
   var headerElement = document.querySelector('.js-header')

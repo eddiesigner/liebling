@@ -25,7 +25,7 @@ for it, and apply those styles to the <header> tag.
   {{/contentFor}}
 
   <section class="m-hero with-picture" data-aos="fade">
-    <div class="m-hero__picture in-post {{#is "post"}}in-post{{/is}}"></div>
+    <div class="m-hero__picture {{#is "post"}}in-post{{/is}}"></div>
 {{else}}
   <section class="m-hero no-picture {{#is "post"}}in-post{{/is}}" data-aos="fade">
 {{/if}}
