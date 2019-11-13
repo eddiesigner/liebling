@@ -102,11 +102,13 @@ $(document).ready(() => {
   }
 
   $openMenu.click(() => {
+    $header.addClass('mobile-menu-opened')
     $menu.addClass('opened')
     toggleScrollVertical()
   })
 
   $closeMenu.click(() => {
+    $header.removeClass('mobile-menu-opened')
     $menu.removeClass('opened')
     toggleScrollVertical()
   })

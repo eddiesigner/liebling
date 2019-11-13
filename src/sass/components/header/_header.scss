@@ -12,6 +12,14 @@
     padding: 20px 0;
   }
 
+  &.mobile-menu-opened {
+    height: 100%;
+
+    @include respond-to('medium') {
+      height: auto;
+    }
+  }
+
   &.headroom--pinned {
     @include bs(0 4px 8px rgba(0, 0, 0, 0.05));
     @include transform(translateY(0%));
