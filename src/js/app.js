@@ -193,10 +193,10 @@ $(document).ready(() => {
     if (currentSavedTheme === 'dark') {
       $toggleDarkMode.attr('checked', true)
     }
-  }
-
-  if (isDarkMode()) {
-    $toggleDarkMode.attr('checked', true)
+  } else {
+    if (isDarkMode()) {
+      $toggleDarkMode.attr('checked', true)
+    }
   }
 
   var headerElement = document.querySelector('.js-header')
