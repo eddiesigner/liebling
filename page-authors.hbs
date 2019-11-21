@@ -38,7 +38,9 @@ into the {body} of the default.hbs template --}}
                 <div class="m-article-card__info">
                   <a href="{{url}}" class="m-article-card__info-link">
                     {{#if bio}}
-                    <p class="m-article-card__excerpt">{{bio}}</p>
+                    <p class="m-article-card__excerpt js-article-card-title">
+                      {{bio}}
+                    </p>
                     {{/if}}
                   </a>
                   <div class="m-article-card__author-stats">

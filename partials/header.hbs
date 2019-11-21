@@ -70,7 +70,9 @@ This header template is shared across all the pages.
                               <div class="no-image lozad" data-background-image="{{asset "images/no-image.png"}}"></div>
                               {{/if}}
                             </div>
-                            <h3 class="m-recent-article__title">{{title}}</h3>
+                            <h3 class="m-recent-article__title js-recent-article-title" title="{{title}}">
+                              {{title}}
+                            </h3>
                             <span class="m-recent-article__date">{{date published_at timeago="true"}}</span>
                           </a>
                         </div>

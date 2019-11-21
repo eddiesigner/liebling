@@ -3,6 +3,7 @@ import slick from 'slick-carousel'
 import stickybits from 'stickybits'
 import mediumZoom from 'medium-zoom'
 import fitvids from 'fitvids'
+import shave from 'shave'
 import {
   isRTL,
   isMobile
@@ -128,6 +129,9 @@ $(document).ready(() => {
   if ($recommendedArticles.length > 0) {
     $recommendedArticles.on('init', function () {
       prepareProgressCircle()
+
+      shave('.js-article-card-title', 100)
+      shave('.js-article-card-title-no-image', 250)
     })
 
     $recommendedArticles.slick({

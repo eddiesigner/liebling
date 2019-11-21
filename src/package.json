@@ -39,6 +39,7 @@
     "jquery": "^3.3.1",
     "lozad": "^1.14.0",
     "medium-zoom": "^1.0.3",
+    "shave": "^2.5.6",
     "slick-carousel": "^1.8.1",
     "stickybits": "^3.6.1",
     "tippy.js": "^4.0.1"

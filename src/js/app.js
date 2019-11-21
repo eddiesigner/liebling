@@ -4,6 +4,7 @@ import lozad from 'lozad'
 import Headroom from "headroom.js"
 import slick from 'slick-carousel'
 import tippy from 'tippy.js'
+import shave from 'shave'
 import AOS from 'aos'
 import Fuse from 'fuse.js'
 import {
@@ -213,6 +214,10 @@ $(document).ready(() => {
   }
 
   if ($recentArticles.length > 0) {
+    $recentArticles.on('init', function () {
+      shave('.js-recent-article-title', 50)
+    })
+
     $recentArticles.slick({
       adaptiveHeight: true,
       arrows: false,
@@ -240,6 +245,9 @@ $(document).ready(() => {
   observer.observe()
 
   tippy('.js-tooltip')
+
+  shave('.js-article-card-title', 100)
+  shave('.js-article-card-title-no-image', 250)
 
   trySearchFeature()
 })

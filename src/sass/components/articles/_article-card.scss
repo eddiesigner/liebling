@@ -39,7 +39,7 @@
 
   &.no-picture {
     .m-article-card__picture {
-      height: 85px;
+      height: 85px !important;
     }
 
     .m-article-card__info {
@@ -48,7 +48,7 @@
 
     .m-article-card__title {
       line-height: 1.4;
-      font-size: 1.750rem;
+      font-size: 1.625rem;
     }
   }
 

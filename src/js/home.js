@@ -1,11 +1,16 @@
 import $ from 'jquery'
 import slick from 'slick-carousel'
+import shave from 'shave'
 import { isRTL } from './helpers'
 
 $(document).ready(() => {
   const $featuredArticles = $('.js-featured-articles')
 
   if ($featuredArticles.length > 0) {
+    $featuredArticles.on('init', function () {
+      shave('.js-featured-article-title', 200)
+    })
+
     $featuredArticles.slick({
       arrows: true,
       infinite: true,
