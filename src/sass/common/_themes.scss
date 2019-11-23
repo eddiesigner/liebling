@@ -17,6 +17,8 @@
   --button-shadow-color-normal: rgba(108, 108, 108, 0.2);
   --button-shadow-color-hover: rgba(108, 108, 108, 0.3);
   --toggle-darkmode-button-color: #fff;
+  --table-background-color-odd: #fafafa;
+  --table-head-border-bottom: #e2e2e2;
 }
 
 [data-theme="dark"] {
@@ -37,6 +39,8 @@
   --button-shadow-color-normal: rgba(10, 10, 10, 0.5);
   --button-shadow-color-hover: rgba(10, 10, 10, 0.5);
   --toggle-darkmode-button-color: #efd114;
+  --table-background-color-odd: #050505;
+  --table-head-border-bottom: #1d1d1d;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -58,5 +62,7 @@
     --button-shadow-color-normal: rgba(10, 10, 10, 0.5);
     --button-shadow-color-hover: rgba(10, 10, 10, 0.5);
     --toggle-darkmode-button-color: #efd114;
+    --table-background-color-odd: #050505;
+    --table-head-border-bottom: #1d1d1d;
   }
 }
