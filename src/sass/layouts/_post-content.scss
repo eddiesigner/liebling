@@ -330,7 +330,7 @@
     }
 
     thead {
-      border-bottom: 1px solid #e2e2e2;
+      border-bottom: 1px solid var(--table-head-border-bottom);
 
       td {
         font-weight: 600;
@@ -338,8 +338,11 @@
     }
 
     tbody {
+      tr:nth-child(even) {
+        background-color: var(--background-color);
+      }
       tr:nth-child(odd) {
-        background-color: #fafafa;
+        background-color: var(--table-background-color-odd);
       }
     }
 
