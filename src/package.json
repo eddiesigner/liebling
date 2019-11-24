@@ -13,7 +13,7 @@
     "production": "NODE_ENV=production node node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js && npm run zip",
     "zip": "run-script-os",
     "zip:win32": "cd .. && 7z a -r -x!.git -x!src -x!liebling.zip liebling.zip *",
-    "zip:default": "cd .. && zip -r liebling.zip ./* -x '.git' -x './src' -x 'liebling.zip'"
+    "zip:default": "cd .. && zip -r liebling.zip ./* -x '.git' -x './src/*' -x 'liebling.zip'"
   },
   "keywords": [],
   "author": "",
