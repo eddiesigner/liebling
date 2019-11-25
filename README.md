@@ -79,6 +79,7 @@ To get the latest version please head over the [releases page](https://github.co
 * Russian by [stereohorse](https://github.com/stereohorse)
 * Kyrgyz by [januchaos](https://github.com/januchaos)
 * Hebrew by [cohen604](https://github.com/cohen604)
+* Turkish by [mskoroglu](https://github.com/mskoroglu)
 
 ## Theme tested
 
