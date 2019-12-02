@@ -81,6 +81,7 @@ To get the latest version please head over the [releases page](https://github.co
 * Hebrew by [cohen604](https://github.com/cohen604)
 * Turkish by [mskoroglu](https://github.com/mskoroglu)
 * Romanian by [dsecareanu](https://github.com/dsecareanu)
+* Chinese Simplified by [IvyB](https://github.com/IvyB)
 
 ## Theme tested
 
