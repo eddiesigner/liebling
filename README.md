@@ -110,3 +110,4 @@ Copyright (c) 2018-2019 Eduardo Gómez. Released under the [MIT license](https:/
 ## Credits
 
 All photos I used on this theme are from [Unsplash](https://unsplash.com)
+
