@@ -22,8 +22,11 @@ mix.js('js/helpers.js', 'js/')
   .js('js/post.js', 'js/')
   .js('js/page.js', 'js/')
   .extract()
-  .sass('sass/app.scss', 'css/')
   .setPublicPath('../assets')
+  .sass('sass/app.scss', 'css/')
+  .options({
+    processCssUrls: false
+  })
   .setResourceRoot('/assets')
   .browserSync({
     proxy: "localhost:2368",
