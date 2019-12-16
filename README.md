@@ -82,6 +82,7 @@ To get the latest version please head over the [releases page](https://github.co
 * Turkish by [mskoroglu](https://github.com/mskoroglu)
 * Romanian by [dsecareanu](https://github.com/dsecareanu)
 * Chinese Simplified by [IvyB](https://github.com/IvyB)
+* Indonesian by [iqbalbinsb](https://github.com/iqbalbinsb)
 
 ## Theme tested
 
