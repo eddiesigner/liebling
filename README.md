@@ -84,7 +84,7 @@ To get the latest version please head over the [releases page](https://github.co
 * Chinese Simplified by [IvyB](https://github.com/IvyB)
 * Indonesian by [iqbalbinsb](https://github.com/iqbalbinsb)
 
-## Theme tested
+## Tests performed
 
 * W3C Markup Validation: [Correct validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fliebling.eduardogomez.io%2F)
 * Ghost GScan: [100/100 points](https://gscan.ghost.org/)
@@ -100,7 +100,7 @@ Please take a look to this page to see how it works: https://github.com/eddiesig
 
 ## Help and Support
 
-To enable the search, comments, subscribers and so on, you must follow the steps found in the [Wiki](https://github.com/eddiesigner/liebling/wiki).
+To know how to enable the search, comments, subscribers and more, please head to the [Wiki](https://github.com/eddiesigner/liebling/wiki).
 
 If you have any questions or troubles with this product, please feel free to open an issue [here](https://github.com/eddiesigner/liebling/issues).
 
@@ -110,4 +110,4 @@ Copyright (c) 2018-2019 Eduardo Gómez. Released under the [MIT license](https:/
 
 ## Credits
 
-All photos I used on this theme are from [Unsplash](https://unsplash.com)
+All the photos I used in this theme were taken from [Unsplash](https://unsplash.com)
