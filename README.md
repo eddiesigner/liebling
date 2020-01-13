@@ -104,6 +104,10 @@ To know how to enable the search, comments, subscribers and more, please head to
 
 If you have any questions or troubles with this product, please feel free to open an issue [here](https://github.com/eddiesigner/liebling/issues).
 
+## Related
+
+* [Weiss Pro](https://blog.eduardogomez.io/weiss-pro-modern-and-clean-ghost-theme/) - Modern and beautiful Ghost theme ready to make your content shine ✨
+
 ## License
 
 Copyright (c) 2018-2019 Eduardo Gómez. Released under the [MIT license](https://github.com/eddiesigner/liebling/blob/master/LICENSE).
