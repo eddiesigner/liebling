@@ -110,7 +110,7 @@ If you have any questions or troubles with this product, please feel free to ope
 
 ## License
 
-Copyright (c) 2018-2019 Eduardo Gómez. Released under the [MIT license](https://github.com/eddiesigner/liebling/blob/master/LICENSE).
+Copyright (c) 2019-2020 Eduardo Gómez. Released under the [MIT license](https://github.com/eddiesigner/liebling/blob/master/LICENSE).
 
 ## Credits
 

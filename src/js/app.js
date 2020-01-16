@@ -80,7 +80,7 @@ $(document).ready(() => {
       location: 0,
       distance: 100,
       tokenize: true,
-      matchAllTokens: true,
+      matchAllTokens: false,
       maxPatternLength: 32,
       minMatchCharLength: 1,
       keys: ['title', 'custom_excerpt', 'html']
