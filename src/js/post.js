@@ -69,9 +69,11 @@ function setHeights() {
 }
 
 function setCircleStyles() {
-  const radiusCircle = $progressCircle.parent().width() / 2
+  const svgWidth = $progressCircle.parent().width();
+  const radiusCircle = svgWidth / 2
   const borderWidth = isMobile() ? 2 : 3
 
+  $progressCircle.parent().attr('viewBox', `0 0 ${svgWidth} ${svgWidth}`)
   $progressCircle.attr('stroke-width', borderWidth)
   $progressCircle.attr('r', radiusCircle - (borderWidth - 1))
   $progressCircle.attr('cx', radiusCircle)
