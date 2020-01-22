@@ -11,6 +11,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     {{!-- Styles'n'Scripts --}}
+    <style>
+      /* This font-face is here to make icons work if the Ghost instance is installed in a subdirectory */
+      @font-face {
+        font-family: 'icomoon';
+        src: url("{{asset 'fonts/icomoon.eot?jcg9f9'}}");
+        src: url("{{asset 'fonts/icomoon.eot?jcg9f9#iefix'}}") format('embedded-opentype'),
+        url("{{asset 'fonts/icomoon.ttf?jcg9f9'}}") format('truetype'),
+        url("{{asset 'fonts/icomoon.woff?jcg9f9'}}") format('woff'),
+        url("{{asset 'fonts/icomoon.svg?jcg9f9#icomoon'}}") format('svg');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+    </style>
     <link rel="stylesheet" type="text/css" href="{{asset "css/app.css"}}" media="screen" />
 
     {{!-- This #block helper will pull data from the hero partial 

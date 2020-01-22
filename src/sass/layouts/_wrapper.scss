@@ -28,14 +28,6 @@
     @include respond-to('medium') {
       max-width: 960px;
     }
-
-    &.no-image {
-      padding-top: 40px;
-
-      @include respond-to('medium') {
-        padding-top: 80px;
-      }
-    }
   }
 
   &.in-comments {
@@ -53,5 +45,13 @@
     @include respond-to('largest') {
       max-width: 1200px;
     }
+  }
+}
+
+.l-wrapper.in-post.no-image {
+  padding-top: 40px;
+
+  @include respond-to('medium') {
+    padding-top: 80px;
   }
 }
