@@ -2,11 +2,7 @@
 This header template is shared across all the pages.
 --}}
 
-{{#if background}}
-  <header class="m-header with-picture js-header">
-{{else}}
-  <header class="m-header js-header">
-{{/if}}
+<header class="m-header {{#if background}}with-picture{{/if}} js-header">
   <div class="m-mobile-topbar" data-aos="fade-down">
     <button class="m-icon-button in-mobile-topbar js-open-menu" aria-label="Open menu">
       <span class="icon-menu"></span>
@@ -60,40 +56,40 @@ This header template is shared across all the pages.
                       <h3 class="m-submenu-title in-recent-articles">{{t "Recent articles"}}</h3>
                       <div class="js-recent-articles">
                         {{#get "posts" limit="4" order="published_at desc"}}
-                        {{#foreach posts}}
-                        <div>
-                          <a href="{{url}}" class="m-recent-article">
-                            <div class="m-recent-article__picture">
-                              {{#if feature_image}}
-                              <div class="lozad" data-background-image="{{img_url feature_image size="s"}}"></div>
-                              {{else}}
-                              <div class="no-image lozad" data-background-image="{{asset "images/no-image.png"}}"></div>
-                              {{/if}}
+                          {{#foreach posts}}
+                            <div>
+                              <a href="{{url}}" class="m-recent-article">
+                                <div class="m-recent-article__picture">
+                                  {{#if feature_image}}
+                                    <div class="lozad" data-background-image="{{img_url feature_image size="s"}}"></div>
+                                  {{else}}
+                                    <div class="no-image lozad" data-background-image="{{asset "images/no-image.png"}}"></div>
+                                  {{/if}}
+                                </div>
+                                <h3 class="m-recent-article__title js-recent-article-title" title="{{title}}">
+                                  {{title}}
+                                </h3>
+                                <span class="m-recent-article__date">{{date published_at timeago="true"}}</span>
+                              </a>
                             </div>
-                            <h3 class="m-recent-article__title js-recent-article-title" title="{{title}}">
-                              {{title}}
-                            </h3>
-                            <span class="m-recent-article__date">{{date published_at timeago="true"}}</span>
-                          </a>
-                        </div>
-                        {{else}}
-                        <div class="m-not-found in-recent-articles">{{t "No recent articles found :("}}</div>
-                        {{/foreach}}
+                            {{else}}
+                              <div class="m-not-found in-recent-articles">{{t "No recent articles found :("}}</div>
+                          {{/foreach}}
                         {{/get}}
                       </div>
                     </section>
                     <section class="m-tags">
                       <h3 class="m-submenu-title">{{t "Tags"}}</h3>
                       {{#get "tags" limit="10"}}
-                      <ul>
-                        {{#foreach tags}}
-                        <li>
-                          <a href="{{url}}">{{name}}</a>
-                        </li>
-                        {{else}}
-                        <li class="m-not-found">{{t "No tags found :("}}</li>
-                        {{/foreach}}
-                      </ul>
+                        <ul>
+                          {{#foreach tags}}
+                            <li>
+                              <a href="{{url}}">{{name}}</a>
+                            </li>
+                            {{else}}
+                              <li class="m-not-found">{{t "No tags found :("}}</li>
+                          {{/foreach}}
+                        </ul>
                       {{/get}}
                     </section>
                   </div>

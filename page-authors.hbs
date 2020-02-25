@@ -16,7 +16,7 @@ into the {body} of the default.hbs template --}}
     <div class="m-hero__content" data-aos="fade-down">
       <h1 class="m-hero-title bigger">{{title}}</h1>
       {{#if custom_excerpt}}
-      <p class="m-hero-description">{{custom_excerpt}}</p>
+        <p class="m-hero-description">{{custom_excerpt}}</p>
       {{/if}}
     </div>
     </section>
@@ -24,59 +24,59 @@ into the {body} of the default.hbs template --}}
       <div class="l-content">
         <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
           {{#get 'authors' limit='all' include='count.posts' order='count.posts desc'}}
-          <div class="l-grid centered">
-            {{#foreach authors}}
-            <article class="m-article-card as-author">
-              {{#if profile_image}}
-              <div class="m-article-card__picture lozad" data-background-image="{{img_url profile_image size="m"}}">
-                {{else}}
-                <div class="m-article-card__picture lozad" data-background-image="{{asset "images/default-avatar-rectangle.jpg"}}">
+            <div class="l-grid centered">
+              {{#foreach authors}}
+                <article class="m-article-card as-author">
+                  {{#if profile_image}}
+                    <div class="m-article-card__picture lozad" data-background-image="{{img_url profile_image size="m"}}">
+                  {{else}}
+                    <div class="m-article-card__picture lozad" data-background-image="{{asset "images/default-avatar-rectangle.jpg"}}">
                   {{/if}}
                   <a href="{{url}}" class="m-article-card__picture-link" aria-label="Author"></a>
                   <h3 class="m-article-card__name">{{name}}</h3>
-                </div>
-                <div class="m-article-card__info">
-                  <a href="{{url}}" class="m-article-card__info-link">
-                    {{#if bio}}
-                    <p class="m-article-card__excerpt js-article-card-title">
-                      {{bio}}
-                    </p>
-                    {{/if}}
-                  </a>
-                  <div class="m-article-card__author-stats">
-                    <span>
-                      {{plural count.posts empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}
-                    </span>
-                    {{#has any="twitter, facebook, website"}}
-                    <ul class="m-article-card__social">
-                      {{#if website}}
-                      <li>
-                        <a href="{{website}}" target="_blank" rel="noopener">
-                          <span class="icon-globe"></span>
-                        </a>
-                      </li>
-                      {{/if}}
-                      {{#if facebook}}
-                      <li>
-                        <a href="https://facebook.com/{{facebook}}" target="_blank" rel="noopener">
-                          <span class="icon-facebook"></span>
-                        </a>
-                      </li>
-                      {{/if}}
-                      {{#if twitter}}
-                      <li>
-                        <a href="https://twitter.com/{{twitter}}" target="_blank" rel="noopener">
-                          <span class="icon-twitter"></span>
-                        </a>
-                      </li>
-                      {{/if}}
-                    </ul>
-                    {{/has}}
                   </div>
-                </div>
-            </article>
-            {{/foreach}}
-          </div>
+                  <div class="m-article-card__info">
+                    <a href="{{url}}" class="m-article-card__info-link">
+                      {{#if bio}}
+                        <p class="m-article-card__excerpt js-article-card-title">
+                          {{bio}}
+                        </p>
+                      {{/if}}
+                    </a>
+                    <div class="m-article-card__author-stats">
+                      <span>
+                        {{plural count.posts empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}
+                      </span>
+                      {{#has any="twitter, facebook, website"}}
+                        <ul class="m-article-card__social">
+                          {{#if website}}
+                            <li>
+                              <a href="{{website}}" target="_blank" rel="noopener">
+                                <span class="icon-globe"></span>
+                              </a>
+                            </li>
+                          {{/if}}
+                          {{#if facebook}}
+                            <li>
+                              <a href="https://facebook.com/{{facebook}}" target="_blank" rel="noopener">
+                                <span class="icon-facebook"></span>
+                              </a>
+                            </li>
+                          {{/if}}
+                          {{#if twitter}}
+                            <li>
+                              <a href="https://twitter.com/{{twitter}}" target="_blank" rel="noopener">
+                                <span class="icon-twitter"></span>
+                              </a>
+                            </li>
+                          {{/if}}
+                        </ul>
+                      {{/has}}
+                    </div>
+                  </div>
+                </article>
+              {{/foreach}}
+            </div>
           {{/get}}
         </div>
       </div>

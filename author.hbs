@@ -9,58 +9,58 @@ into the {body} of the default.hbs template --}}
 <div class="main-wrap">
   {{!-- Everything inside the #author tags pulls data from the author --}}
   {{#author}}
-  {{!-- Special header.hbs partial to generate the <header> tag --}}
-  {{> header background=cover_image}}
-  {{!-- Inject styles of the hero image to make it responsive --}}
-  {{> hero background=cover_image}}
-  <div class="m-hero__content" data-aos="fade-down">
-    {{#if profile_image}}
-    <div class="m-hero-avatar" style="background-image: url({{profile_image}});"></div>
-    {{else}}
-    <div class="m-hero-avatar" style="background-image: url({{asset "images/default-avatar-square-normal.jpg"}});"></div>
-    {{/if}}
-    <h1 class="m-hero-title">{{name}}</h1>
-    {{#if bio}}
-    <p class="m-hero-description">{{bio}}</p>
-    {{/if}}
-    <div class="m-hero__meta">
-      {{#has any="twitter, facebook, website"}}
-      <ul class="m-hero-social">
-        {{#if website}}
-        <li>
-          <a href="{{website}}" target="_blank" rel="noopener" aria-label="Website">
-            <span class="icon-globe"></span>
-          </a>
-        </li>
+    {{!-- Special header.hbs partial to generate the <header> tag --}}
+    {{> header background=cover_image}}
+    {{!-- Inject styles of the hero image to make it responsive --}}
+    {{> hero background=cover_image}}
+      <div class="m-hero__content" data-aos="fade-down">
+        {{#if profile_image}}
+          <div class="m-hero-avatar" style="background-image: url({{profile_image}});"></div>
+        {{else}}
+          <div class="m-hero-avatar" style="background-image: url({{asset "images/default-avatar-square-normal.jpg"}});"></div>
         {{/if}}
-        {{#if facebook}}
-        <li>
-          <a href="https://facebook.com/{{facebook}}" target="_blank" rel="noopener" aria-label="Facebook">
-            <span class="icon-facebook"></span>
-          </a>
-        </li>
+        <h1 class="m-hero-title">{{name}}</h1>
+        {{#if bio}}
+          <p class="m-hero-description">{{bio}}</p>
         {{/if}}
-        {{#if twitter}}
-        <li>
-          <a href="https://twitter.com/{{twitter}}" target="_blank" rel="noopener" aria-label="Twitter">
-            <span class="icon-twitter"></span>
-          </a>
-        </li>
-        {{/if}}
-      </ul>
-      {{/has}}
-      <ul class="m-hero-stats">
-        <li>
-          {{plural ../pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}
-        </li>
-        {{#if location}}
-        <li>&bull;</li>
-        <li>{{location}}</li>
-        {{/if}}
-      </ul>
-    </div>
-  </div>
-  </section>
+        <div class="m-hero__meta">
+          {{#has any="twitter, facebook, website"}}
+            <ul class="m-hero-social">
+              {{#if website}}
+                <li>
+                  <a href="{{website}}" target="_blank" rel="noopener" aria-label="Website">
+                    <span class="icon-globe"></span>
+                  </a>
+                </li>
+              {{/if}}
+              {{#if facebook}}
+                <li>
+                  <a href="https://facebook.com/{{facebook}}" target="_blank" rel="noopener" aria-label="Facebook">
+                    <span class="icon-facebook"></span>
+                  </a>
+                </li>
+              {{/if}}
+              {{#if twitter}}
+                <li>
+                  <a href="https://twitter.com/{{twitter}}" target="_blank" rel="noopener" aria-label="Twitter">
+                    <span class="icon-twitter"></span>
+                  </a>
+                </li>
+              {{/if}}
+            </ul>
+          {{/has}}
+          <ul class="m-hero-stats">
+            <li>
+              {{plural ../pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}
+            </li>
+            {{#if location}}
+              <li>&bull;</li>
+              <li>{{location}}</li>
+            {{/if}}
+          </ul>
+        </div>
+      </div>
+    </section>
   {{/author}}
   
   <main>
