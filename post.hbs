@@ -22,11 +22,7 @@ into the {body} of the default.hbs template --}}
         {{!-- Everything inside the #post tags pulls data from the post --}}
         {{#post}}
           <div class="l-wrapper in-post {{#unless feature_image}}no-image{{/unless}} js-aos-wrapper" data-aos="fade-up" data-aos-delay="300">
-            {{#if @labs.subscribers}}
-              <div class="l-post-content has-subscribe-form js-progress-content">
-            {{else}}
-              <div class="l-post-content js-progress-content">
-            {{/if}}
+            <div class="l-post-content {{#if @labs.subscribers}}has-subscribe-form{{/if}} {{#if @labs.members}}has-subscribe-form{{/if}} js-progress-content">
               <header class="m-heading">
                 <h1 class="m-heading__title in-post">{{title}}</h1>
                 <div class="m-heading__meta">
@@ -84,11 +80,24 @@ into the {body} of the default.hbs template --}}
               </div>
             </section>
           {{/if}}
-          {{#if @labs.subscribers}}
-            <section class="m-author">
-          {{else}}
-            <section class="m-author no-subscribers">
+          {{#if @labs.members}}
+            <section class="m-subscribe-section">
+              <div class="l-wrapper in-post">
+                <div class="m-subscribe-section__content">
+                  <div class="m-subscribe-section__text">
+                    <h4 class="m-subscribe-section__title">{{t "Subscribe to our newsletter"}}</h4>
+                    <p class="m-subscribe-section__description">
+                      {{t "Get the latest posts delivered right to your inbox."}}
+                    </p>
+                  </div>
+                  <div class="m-subscribe-section__form">
+                    {{> "newsletter-form"}}
+                  </div>
+                </div>
+              </div>
+            </section>
           {{/if}}
+          <section class="m-author">
             <div class="m-author__content">
               <div class="m-author__picture">
                 <a href="{{primary_author.url}}" class="m-author-picture" aria-label="Author picture">

@@ -17,10 +17,6 @@
   @include respond-to('extra-large') {
     padding: 60px 0;
   }
-
-  &.no-subscribers {
-    background-color: var(--secondary-subtle-color);
-  }
 }
 
 .m-author__content {

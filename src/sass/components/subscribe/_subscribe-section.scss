@@ -67,3 +67,42 @@
     margin: 0 auto;
   }
 }
+
+.m-subscribe-section__container {
+  &.loading {
+    .m-button {
+      pointer-events: none;
+      @extend .loading;
+    }
+  }
+
+  &.success {
+    .m-subscribe__success {
+      display: block;
+    }
+
+    .m-subscribe__invalid,
+    .m-subscribe__error,
+    .m-subscribe__form {
+      display: none;
+    }
+  }
+
+  &.invalid {
+    .m-subscribe__invalid {
+      display: block;
+    }
+  }
+
+  &.error {
+    .m-subscribe__error {
+      display: block;
+    }
+  }
+
+  .m-subscribe__success,
+  .m-subscribe__invalid,
+  .m-subscribe__error {
+    display: none;
+  }
+}
