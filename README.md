@@ -2,9 +2,9 @@
 
 Liebling is a beautiful and clean Ghost theme that is easy and comfortable to use. **It's free** and you can use it for any kind of content you might have. Now with dark mode 🌓!
 
-If you use it and you like it, please consider to make a donation to support its development! 🙏🏼
+If you find this theme useful, please consider to make a donation to support its development! 🙏🏼
 
-<a href="https://www.buymeacoffee.com/eddiesigner" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/black_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+<a href="https://www.buymeacoffee.com/eddiesigner" target="_blank"><img src="https://res.cloudinary.com/edev/image/upload/v1583011476/button_y8hgt8.png" alt="Donate" style="width: 250px !important; height: 60px !important;" width="250" height="60"></a>
 
 ## Preview
 
