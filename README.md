@@ -10,7 +10,7 @@ If you find this theme useful, please consider to make a donation to support its
 
 You can see a live demo here: [https://liebling.eduardogomez.io](https://liebling.eduardogomez.io)
 
-![](https://res.cloudinary.com/edev/image/upload/v1570370297/liebling/liebling-promo-ipad.jpg)
+![](https://res.cloudinary.com/edev/image/upload/v1583792928/liebling/liebling-promo-desktop.jpg)
 <br><br>
 ![](https://res.cloudinary.com/edev/image/upload/v1570370297/liebling/liebling-promo-mobile.jpg)
 
