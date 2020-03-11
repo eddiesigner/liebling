@@ -39,5 +39,9 @@
   "Type to search": "Escribe para buscar",
   "No results for your search, try something different.": "No hay resultados para tu búsqueda, prueba algo diferente.",
   "JavaScript license information": "Información de licencia JavaScript",
-  "Toggle dark mode": "Alternar modo oscuro"
+  "Toggle dark mode": "Alternar modo oscuro",
+  "Great! You've successfully subscribed.": "¡Genial! Te has suscrito con éxito.",
+  "Great! Next, complete checkout for full access.": "¡Genial! Ahora, completa el checkout para tener acceso completo.",
+  "Welcome back! You've successfully signed in.": "¡Bienvenido de nuevo! Has iniciado sesión con éxito.",
+  "Success! Your account is fully activated, you now have access to all content.": "Éxito! Su cuenta está totalmente activada, ahora tienes acceso a todo el contenido."
 }
