@@ -98,6 +98,10 @@
     .m-subscribe__error {
       display: block;
     }
+
+    .m-subscribe__form {
+      margin-bottom: 20px;
+    }
   }
 
   .m-subscribe__success,
@@ -105,4 +109,15 @@
   .m-subscribe__error {
     display: none;
   }
+}
+
+.m-subscribe__success_icon {
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 25px;
+}
+
+.m-subscribe__error {
+  text-align: center;
 }

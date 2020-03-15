@@ -14,4 +14,13 @@
       font-size: 1rem;
     }
   }
+
+  &.in-newsletter-form {
+    font-size: 0.875rem;
+    max-width: 80%;
+
+    @include respond-to('medium') {
+      max-width: 420px;
+    }
+  }
 }
