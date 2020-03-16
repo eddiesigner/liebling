@@ -18,6 +18,8 @@ You can see a live demo here: [https://liebling.eduardogomez.io](https://lieblin
 
 To get the latest version please head over the [releases page](https://github.com/eddiesigner/liebling/releases) and download the file `liebling.zip` of the latest release.
 
+**IMPORTANT: From now on, this theme is only compatible with Ghost 3+**
+
 ## Features
 
 ### General features
