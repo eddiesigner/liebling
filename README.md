@@ -32,7 +32,7 @@ To get the latest version please head over the [releases page](https://github.co
 
 ### Ghost features
 
-* Subscription form
+* Subscription form [more info here](https://github.com/eddiesigner/liebling/wiki/How-to-enable-subscribers)
 * Multiple authors
 * Logo support
 * Featured posts and pages
