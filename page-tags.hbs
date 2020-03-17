@@ -1,0 +1,38 @@
+{{!--
+This template is used for the tags page.
+You must first create a page called Tags in the dashboard to enable it.
+--}}
+
+{{!-- The tag below means: insert everything in this file
+into the {body} of the default.hbs template --}}
+{{!< default}}
+
+{{#post}}
+  <div class="main-wrap">
+    {{!-- Special header.hbs partial to generate the <header> tag --}}
+    {{> header background=feature_image}}
+    {{!-- Inject styles of the hero image to make it responsive --}}
+    {{> hero background=feature_image}}
+    <div class="m-hero__content" data-aos="fade-down">
+      <h1 class="m-hero-title bigger">{{title}}</h1>
+      {{#if custom_excerpt}}
+      <p class="m-hero-description">{{custom_excerpt}}</p>
+      {{/if}}
+    </div>
+    </section>
+    <main id="main-content">
+      <div class="l-content">
+        <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
+            {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
+                {{#foreach tags}}
+                    <a href='{{ url }}'>
+                      <h2>{{ name }} <small>({{ count.posts }})</small></h2>
+                    </a>
+                    <p>{{ description }}</p> 
+                {{/foreach}}
+            {{/get}}
+        </div>
+      </div>
+    </main>
+  </div>
+{{/post}}

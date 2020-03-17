@@ -1,20 +1,14 @@
-{{!--
-This subscribe template is used to display the form where users can subscribe.
-You need to enable the subscription feature first.
---}}
-
-<form method="post" action="{{action}}" id="{{form_id}}" class="{{form_class}}">
-  {{hidden}}
-
-  <fieldset>
-    <label for="{{input_id}}" class="sr-only">{{placeholder}}</label>
-    {{input_email id=input_id class=input_class placeholder=placeholder value=email autofocus=autofocus}}
-  </fieldset>
-  <button id="{{button_id}}" class="{{button_class}}" type="submit">{{t "Subscribe"}}</button>
-
-  {{script}}
-
-  {{#if error}}
-    <p class="m-small-text in-subscribe-page">{{t "Email cannot be blank."}}</p>
-  {{/if}}
-</form>
+<!-- Begin Mailchimp Signup Form -->
+<div id="mc_embed_signup">
+    <form action="https://wonderproxy.us18.list-manage.com/subscribe/post?u=0a89f4a58084a23782b261b16&amp;id=120f27642f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate m-subscribe-section__form" target="_blank" novalidate>
+        <div id="mc_embed_signup_scroll" class="form-newsletter">
+            <label class="sr-only" for="mce-EMAIL">Subscribe</label>
+            <input type="email" value="" name="EMAIL" class="m-input in-subscribe-section" id="mce-EMAIL" placeholder="Enter your email address" required>
+            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_0a89f4a58084a23782b261b16_120f27642f" tabindex="-1" value=""></div>
+            <div class="clear">
+                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="m-button primary block">
+            </div>
+        </div>
+    </form>
+</div>

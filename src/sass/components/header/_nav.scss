@@ -23,14 +23,14 @@
     }
 
     li {
-      color: var(--titles-color);
+      color: var(--primary-button);
       letter-spacing: 0.3px;
-      font-size: 1.125rem;
+      font-size: 1rem;
       margin-bottom: 15px;
 
       @include respond-to('medium') {
         margin-bottom: 0;
-        margin-right: 35px;
+        margin-right: 32px;
         position: relative;
       }
 
@@ -48,22 +48,46 @@
 
       a {
         color: inherit;
+        padding-bottom: 8px;
       }
     }
   }
 }
 
+.nav-log-in {
+  @extend .m-button;
+  @extend .outlined;
+  margin-right: 0.7rem !important;
+}
+
+.nav-blog a {
+  font-weight: 600;
+  color: $wonderGreenDark;
+}
+
+.nav-explore-plans {
+  @extend .m-button;
+  @extend .primary;
+  margin-right: 16px !important;
+}
+
+.js-submenu-option {
+  margin-right: 0 !important;
+}
+
 .m-nav__right {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  @include respond-to('medium') {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+  }
 }
 
 .rtl {
   .m-nav__left ul li {
     @include respond-to('medium') {
       margin-right: 0;
-      margin-left: 35px;
+      margin-left: 32px;
 
       &:last-of-type {
         @include respond-to('medium') {
@@ -73,3 +97,52 @@
     }
   }
 }
+
+// Secondary navigation banner
+.nav-secondary {
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--primary-border-color);
+  @include respond-to('medium') {
+    margin-top: 2rem;
+    background: var(--nav-secondary-bg);
+    border: none;
+  }
+}
+
+.nav-secondary-wrap {
+  text-align: left;
+  @include respond-to('medium') {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.nav-secondary-list {
+  padding: 0; margin: 0;
+  display: flex;
+  align-items: center;
+
+  > li {
+    display: none;
+    margin-right: 2rem;
+
+    @include respond-to('medium') {
+      display: inline-block;
+    }
+
+    &:last-child {
+      display: inline-block;
+    }
+
+    &.current {
+      font-weight: bold;
+      color: var(--link-color);
+    }
+
+    a {
+      color: var(--nav-secondary-link);
+    }
+  }
+}
+

@@ -1,16 +1,29 @@
 .m-logo {
-  display: inline-block;
-  height: 25px;
-
-  img {
-    width: auto;
-    max-width: 150px;
-    height: 100%;
-    object-fit: contain;
+  align-items: center;
+  width: 160px;
+  height: 27px;
+  background-size: 160px 27px;
+  object-fit: contain;
+  background-image: url(#{$image_path}/wonderproxy-colour.svg);
+   
+  @include respond-to('medium') {
+    background-size: 197px 27px;
+    width: 197px;
+    height: 27px;
+    display: flex;
+  }
+  @include respond-to('large') {
+    background-size: 296px 40px;
+    width: 296px;
+    height: 40px;
+    display: flex;
   }
 
-  &.in-mobile-topbar {
-    height: 20px;
-    margin: 0 $mobile-space;
+  @media (prefers-color-scheme: dark) {
+      background-image: url(#{$image_path}/wonderproxy-white.svg);
+  }
+
+  [data-theme="dark"] & {
+     background-image: url(#{$image_path}/wonderproxy-white.svg);
   }
 }

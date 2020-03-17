@@ -5,22 +5,13 @@
   margin: 0 auto;
 
   @include respond-to('medium') {
-    font-size: 1.125rem;
+    font-size: 1.5rem;
   }
 
   &.in-subscribe-page {
     @include respond-to('medium') {
       max-width: 420px;
       font-size: 1rem;
-    }
-  }
-
-  &.in-newsletter-form {
-    font-size: 0.875rem;
-    max-width: 80%;
-
-    @include respond-to('medium') {
-      max-width: 420px;
     }
   }
 }

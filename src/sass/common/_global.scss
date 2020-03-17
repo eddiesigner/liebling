@@ -1,13 +1,50 @@
 /** Global styles */
 
+@font-face {
+  font-family: 'EuclidSquare';
+  src: url(#{$font_path}/euclidsquare-regular.ttf) format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'EuclidSquare';
+  src: url(#{$font_path}/euclidsquare-regularitalic.ttf) format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'EuclidSquare';
+  src: url(#{$font_path}/euclidsquare-medium.ttf) format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'EuclidSquare';
+  src: url(#{$font_path}/euclidsquare-mediumitalic.ttf) format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'EuclidSquare';
+  src: url(#{$font_path}/euclidsquare-semibold.ttf) format('truetype');
+  font-weight: 600;
+  font-style: bold;
+}
+@font-face {
+  font-family: 'EuclidSquare';
+  src: url(#{$font_path}/euclidsquare-bold.ttf) format('truetype');
+  font-weight: 700;
+  font-style: bold;
+}
+
 body {
   display: flex;
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
   color: var(--primary-foreground-color);
-  font-size: 1rem;
-  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-family: "EuclidSquare", "Helvetica Neue", Arial, sans-serif;
   font-display: swap;
   overflow-x: hidden;
   background-color: var(--background-color);
@@ -74,17 +111,17 @@ img.lozad.loaded {
 }
 
 ::-webkit-input-placeholder {
-  color: $gray;
+  color: var(--placeholder);
 }
 
 ::-moz-placeholder {
-  color: $gray;
+  color: var(--placeholder);
 }
 
 :-ms-input-placeholder {
-  color: $gray;
+  color: var(--placeholder);
 }
 
 :-moz-placeholder {
-  color: $gray;
+  color: var(--placeholder);
 }

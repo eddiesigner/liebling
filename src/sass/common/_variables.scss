@@ -1,12 +1,45 @@
 /** Colors */
 
 $white: #fff;
-$black: #000;
-$titles: #333;
-$gray: #9b9b9b;
+
+$wonderGreenDark: #008466;
+$wonderGreen: #06B594;
+$wonderGreen300: #0ADDB4;
+$wonderGreen200: #88FFE8;
+$wonderGreen100: #d2FFF6;
+
+$wonderRed: #EA7363;
+$wonderRed300: #EFA29A;
+$wonderRed200: #F7CDCB;
+$wonderRed100: #FFEBE9;
+
+$wonderTealDark: #0C3233;
+$wonderTeal: #005253;
+$wonderTeal300: #508E8E;
+$wonderTeal200: #8EB2B1;
+
+$wonderBlue: #06A6B7;
+$wonderBlue300: #50D3DD;
+$wonderBlue200: #98EFF4;
+$wonderBlue100: #D7FFFF;
+
+$wonderBlack: #041615;
+$wonderGrey: #3b4241;
+$wonderGrey200: #a6adac;
+$wonderGrey100: #edf0f0;
+
+$font_bold: 700;
+$font_semibold: 600;
+$font_medium: 500;
+$font_regular: 300;
 
 /** Config  */
 
 $mobile-space: 20px;
 $mobile-bar-height: 50px;
 $desktop-bar-height: 64px;
+
+// $image_path: '/assets/images';
+// $font_path: '/assets/fonts';
+$image_path : '/blog/assets/images';
+$font_path: '/blog/assets/fonts';

@@ -7,7 +7,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  @include bs(inset 0  2px 4px rgba(0, 0, 0, 0.25));
+  border: 5px solid white;
 
   @include respond-to('medium') {
     width: 100px;

@@ -4,12 +4,12 @@
   @include respond-to('medium') {
     visibility: hidden;
     position: fixed;
-    top: 45px;
+    top: 64px;
     left: 0;
     width: 100%;
     padding: 30px 0 20px 0;
     background-color: var(--background-color);
-    border-top: 1px solid var(--secondary-border-color);
+    // border-top: 1px solid var(--secondary-border-color);
     z-index: 5;
     @include bs(0 60px 60px rgba(0,0,0,var(--submenu-shadow-color-opacity)));
   }
@@ -61,5 +61,12 @@
 _:-ms-fullscreen, :root .m-submenu {
   @include respond-to('medium') {
     top: 65px;
+  }
+}
+
+.submenu-option {
+  width: 100%;
+  @include respond-to('medium') {
+    width: auto;
   }
 }

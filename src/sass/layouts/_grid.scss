@@ -11,6 +11,12 @@
     margin: 0 -20px;
   }
 
+  &.space-around {
+    @include respond-to('medium') {
+      justify-content: space-around;
+    }
+  }
+
   &.centered {
     @include respond-to('medium') {
       justify-content: center;

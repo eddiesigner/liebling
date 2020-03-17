@@ -1,7 +1,7 @@
 .m-toggle-darkmode {
   position: fixed;
   right: $mobile-space;
-  bottom: 45px;
+  bottom: 20px;
   width: 22px;
   height: 22px;
   border-radius: 50%;
@@ -9,10 +9,10 @@
   z-index: 2;
 
   @include respond-to('medium') {
-    position: relative;
-    right: auto;
+    position: absolute;
+    right: 20px;
     bottom: auto;
-    margin-left: 20px;
+    top: 0;
     z-index: auto;
   }
 
@@ -45,7 +45,7 @@
     height: 100%;
     border-radius: 50%;
     overflow: hidden;
-    background-color: $titles;
+    background-color: $wonderTealDark;
     z-index: 1;
 
     &:after {

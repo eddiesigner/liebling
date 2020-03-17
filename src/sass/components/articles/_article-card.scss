@@ -168,7 +168,7 @@
   right: $mobile-space;
   width: 24px;
   height: 24px;
-  color: $black;
+  color: $wonderBlack;
   background-color: $white;
   border-radius: 50%;
   z-index: 2;
@@ -179,7 +179,7 @@
   }
 
   span {
-    color: inherit;
+    color: $wonderTeal300;
     font-size: 0.750rem;
   }
 }

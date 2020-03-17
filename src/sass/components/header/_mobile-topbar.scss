@@ -5,6 +5,7 @@
   height: $mobile-bar-height;
   position: relative;
   z-index: 2;
+  padding: 0 15px;
 
   @include respond-to('medium') {
     display: none !important;

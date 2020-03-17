@@ -7,6 +7,7 @@
   border-right-width: 0;
   border-style: solid;
   margin: 0 auto;
+  margin-bottom: 20px;
 
   @include respond-to('medium') {
     display: flex;
@@ -16,6 +17,10 @@
 
   @include respond-to('extra-large') {
     padding: 60px 0;
+  }
+
+  &.no-subscribers {
+    background-color: var(--secondary-subtle-color);
   }
 }
 

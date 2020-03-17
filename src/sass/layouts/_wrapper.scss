@@ -5,12 +5,12 @@
   padding: 0 $mobile-space;
 
   @include respond-to('medium') {
-    max-width: 1200px;
+    max-width: 1480px;
   }
 
-  @include respond-to('extra-large') {
-    padding: 0;
-  }
+  // @include respond-to('extra-large') {
+  //   padding: 0;
+  // }
 
   &.in-submenu {
     padding: 0;
@@ -18,15 +18,19 @@
     @include respond-to('medium') {
       padding: 0 $mobile-space;
     }
-
-    @include respond-to('extra-large') {
-      padding: 0;
-    }
   }
 
   &.in-post {
     @include respond-to('medium') {
       max-width: 960px;
+    }
+
+    &.no-image {
+      padding-top: 40px;
+
+      @include respond-to('medium') {
+        padding-top: 80px;
+      }
     }
   }
 
@@ -45,13 +49,5 @@
     @include respond-to('largest') {
       max-width: 1200px;
     }
-  }
-}
-
-.l-wrapper.in-post.no-image {
-  padding-top: 40px;
-
-  @include respond-to('medium') {
-    padding-top: 80px;
   }
 }

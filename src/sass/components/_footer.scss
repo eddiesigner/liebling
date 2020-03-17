@@ -1,45 +1,83 @@
-.m-footer {
+.m-footer-nav {
   flex-shrink: 0;
-  background-color: var(--footer-background-color);
+  background-color: $wonderTeal;
+  font-size: 15px;
+  padding: 2.5rem 0;
+  color: #fff;
+  font-weight: 300;
 }
 
-.m-footer__content {
-  color: $white;
-  text-align: center;
-  padding: 30px $mobile-space;
+.m-footer-nav a {
+  color: #fff;
+}
 
-  @include respond-to('medium') {
-    padding: 70px 0;
-    max-width: 330px;
-    margin: 0 auto;
+.m-footer-heading {
+  color: $wonderTeal200;
+  font-size: 1rem;
+  font-weight: 500;
+  font-size: 18px;
+
+  &.wp {
+    @include respond-to('medium') {
+      margin-left: -20px;
+    }
   }
 }
 
 .m-footer-copyright {
+  background: $wonderTealDark;
+  color: $wonderTeal200;
+  text-align: center;
+  padding: 2rem 0;
+  font-weight: $font_regular;
+}
+
+.m-footer-copyright-text {
+  display: block;
+  font-size: 14px;
+  line-height: 2.5;
+}
+
+.m-footer-copyright a {
+  color: $wonderTeal200;
+  text-decoration: underline;
+}
+
+.m-product-list {
+  font-weight: bold;
+}
+
+.m-product-list a {
+  display: flex;
+}
+
+.m-footer-nav ul {
+  list-style: none;
+  padding: 0;
+  min-width: 160px;
+  margin-top: 0;
+}
+
+.m-footer-nav li a {
+  margin-bottom: 15px;
+  display: block;
+  font-size: 15px;
+}
+
+.product-icon {
+  width: 1.75rem;
+  height: 18px;
+  margin-right: .25rem;
+}
+
+.m-footer__content {
+  text-align: center;
+  padding: 30px $mobile-space;
+}
+
+.m-footer-copyright {
   font-size: 0.875rem;
-  letter-spacing: 0.3px;
   line-height: 1.75rem;
-  margin-bottom: $mobile-space;
-
-  span {
-    display: block;
-
-    @include respond-to('medium') {
-      display: inline;
-    }
-
-    &:nth-child(2) {
-      display: none;
-
-      @include respond-to('medium') {
-        display: inline;
-      }
-    }
-  }
-
-  &.jslicense {
-    margin-bottom: 0;
-  }
 }
 
 .m-footer-social {

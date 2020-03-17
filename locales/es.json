@@ -7,12 +7,9 @@
   "Subscribed!": "Suscrito!",
   "Subscribe to our newsletter": "Suscríbete a nuestro Newsletter",
   "You've successfully subscribed to": "Te has suscrito con éxito a",
-  "Your email address": "Tu dirección de correo electrónico",
-  "with the email address": "con la dirección de correo electrónico",
-  "Now check your inbox and click the link to confirm your subscription.": "Ahora revisa tu bandeja de entrada y haz click en el enlace para confirmar tu suscripción.",
-  "Please enter a valid email address": "Por favor introduce una dirección de correo electrónico válida",
-  "Oops! There was an error sending the email, please try later.": "Oops! Ha ocurrido un error, por favor inténtalo más tarde.",
-  "Email cannot be blank.": "El correo electrónico no puede estar vacío.",
+  "Your email address": "Tu dirección de correo",
+  "with the email address": "con la dirección de correo",
+  "Email cannot be blank.": "El email no puede estar vacío.",
   "Get the latest posts delivered right to your inbox.": "Recibe los últimos artículos directamente en tu bandeja de entrada.",
   "Stay up to date! Get all the latest & greatest posts delivered straight to your inbox.": "Mantente al día! Recibe todos los mejores y más recientes artículos directamente en tu bandeja de entrada.",
   "Recommended for you": "Recomendado para ti",
@@ -39,9 +36,5 @@
   "Type to search": "Escribe para buscar",
   "No results for your search, try something different.": "No hay resultados para tu búsqueda, prueba algo diferente.",
   "JavaScript license information": "Información de licencia JavaScript",
-  "Toggle dark mode": "Alternar modo oscuro",
-  "Great! You've successfully subscribed.": "¡Genial! Te has suscrito con éxito.",
-  "Great! Next, complete checkout for full access.": "¡Genial! Ahora, completa el checkout para tener acceso completo.",
-  "Welcome back! You've successfully signed in.": "¡Bienvenido de nuevo! Has iniciado sesión con éxito.",
-  "Success! Your account is fully activated, you now have access to all content.": "Éxito! Su cuenta está totalmente activada, ahora tienes acceso a todo el contenido."
+  "Toggle dark mode": "Cambiar modo oscuro"
 }

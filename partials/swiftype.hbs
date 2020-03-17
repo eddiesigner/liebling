@@ -1,0 +1,12 @@
+
+{{!-- Define custom properties for swiftype --}}
+{{#post}}
+    {{#if feature_image}}
+        <meta class="swiftype" name="feature_image" data-type="string" content="{{feature_image}}" />
+    {{/if}}
+
+    {{#if primary_tag}}
+        <meta class="swiftype" name="primary_tag" data-type="string" content="{{primary_tag.name}}" />
+        <meta class="swiftype" name="primary_tag_url" data-type="string" content="{{primary_tag.url}}" />
+    {{/if}}
+{{/post}}

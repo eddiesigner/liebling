@@ -1,7 +1,14 @@
 .l-content {
   padding: 40px 0 20px;
+  @extend .bg-sparkle;
+  background-position: bottom center;
+  background-repeat: repeat-x;
 
-  @include respond-to('medium') {
-    padding: 60px 0 40px;
+  &.is-homepage {
+    background: none;
+  }
+
+  &.in-post {
+    background: none;
   }
 }

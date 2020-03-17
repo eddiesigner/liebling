@@ -1,0 +1,176 @@
+<svg width="0" height="0" class="hidden">
+  <symbol viewBox="0 0 61 38" xmlns="http://www.w3.org/2000/svg" id="global-ping">
+    <title>Group</title>
+    <defs>
+      <radialGradient cx="98.894%" cy="100.026%" fx="98.894%" fy="100.026%" r="262.406%" gradientTransform="matrix(1 0 0 .43432 0 .566)" id="a">
+        <stop stop-color="#FFF" stop-opacity=".25" offset="33.34%"></stop>
+        <stop stop-color="#FFF" stop-opacity="0" offset="74.29%"></stop>
+      </radialGradient>
+      <radialGradient cx="-6.71%" cy="105.198%" fx="-6.71%" fy="105.198%" r="270.773%" gradientTransform="matrix(1 0 0 .43432 0 .595)" id="b">
+        <stop stop-color="#FFF" stop-opacity=".25" offset="33.34%"></stop>
+        <stop stop-color="#FFF" stop-opacity="0" offset="75.11%"></stop>
+      </radialGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+      <g transform="translate(0 7)">
+        <path d="M21.4 4.01C16.51-.88 8.57-.88 3.68 4.01c-4.89 4.89-4.89 12.83 0 17.72 8.86 8.86 26.59 8.86 26.59 8.86s-.01-17.71-8.87-26.58z" fill="#FFF"></path>
+        <circle fill="#FF7961" cx="12.53" cy="12.88" r="3.13"></circle>
+      </g>
+      <g transform="translate(17)">
+        <path d="M13.26 0C6.34 0 .73 5.61.73 12.53c0 12.53 12.53 25.07 12.53 25.07s12.53-12.53 12.53-25.07C25.79 5.61 20.18 0 13.26 0z" fill="#FF7961"></path>
+        <circle fill="#FFF" opacity=".4" cx="13.26" cy="12.53" r="3.13"></circle>
+      </g>
+      <g transform="translate(30 7)">
+        <path d="M26.85 4.01c-4.89-4.89-12.83-4.89-17.72 0C.27 12.87.27 30.6.27 30.6s17.72 0 26.59-8.86c4.88-4.9 4.88-12.83-.01-17.73z" fill="#F44336"></path>
+        <circle fill="#FFF" opacity=".4" cx="17.98" cy="12.88" r="3.13"></circle>
+      </g>
+      <path d="M18.31 8.76c-.38 1.19-.58 2.47-.58 3.78 0 12.53 12.53 25.07 12.53 25.07s0-17.72-8.86-26.59a12.83 12.83 0 0 0-3.09-2.26z" fill="url(#a)"></path>
+      <path d="M42.21 8.76c-1.11.58-2.16 1.33-3.09 2.26-8.86 8.86-8.86 26.59-8.86 26.59s12.53-12.53 12.53-25.07c0-1.32-.2-2.59-.58-3.78z" fill="url(#b)"></path>
+    </g>
+  </symbol>
+  <symbol viewBox="0 0 61 38" xmlns="http://www.w3.org/2000/svg" id="shot-sherpa">
+    <title>wp-logo-product-ShotSherpa</title>
+    <defs>
+      <radialGradient cx="98.894%" cy="100.026%" fx="98.894%" fy="100.026%" r="262.406%" gradientTransform="matrix(1 0 0 .43432 0 .566)" id="a">
+        <stop stop-color="#FFF" stop-opacity=".25" offset="33.34%"></stop>
+        <stop stop-color="#FFF" stop-opacity="0" offset="74.29%"></stop>
+      </radialGradient>
+      <radialGradient cx="-6.71%" cy="105.198%" fx="-6.71%" fy="105.198%" r="270.773%" gradientTransform="matrix(1 0 0 .43432 0 .595)" id="b">
+        <stop stop-color="#FFF" stop-opacity=".25" offset="33.34%"></stop>
+        <stop stop-color="#FFF" stop-opacity="0" offset="75.11%"></stop>
+      </radialGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+      <g transform="translate(0 7)">
+        <path d="M21.4 4.01C16.51-.88 8.57-.88 3.68 4.01c-4.89 4.89-4.89 12.83 0 17.72 8.86 8.86 26.59 8.86 26.59 8.86s-.01-17.71-8.87-26.58z" fill="#FFF"></path>
+        <circle fill="#B085F5" cx="12.53" cy="12.88" r="3.13"></circle>
+      </g>
+      <g transform="translate(17)">
+        <path d="M13.26 0C6.34 0 .73 5.61.73 12.53c0 12.53 12.53 25.07 12.53 25.07s12.53-12.53 12.53-25.07C25.79 5.61 20.18 0 13.26 0z" fill="#B085F5"></path>
+        <circle fill="#FFF" opacity=".4" cx="13.26" cy="12.53" r="3.13"></circle>
+      </g>
+      <g transform="translate(30 7)">
+        <path d="M26.85 4.01c-4.89-4.89-12.83-4.89-17.72 0C.27 12.87.27 30.6.27 30.6s17.72 0 26.59-8.86c4.88-4.9 4.88-12.83-.01-17.73z" fill="#7E57C2"></path>
+        <circle fill="#FFF" opacity=".4" cx="17.98" cy="12.88" r="3.13"></circle>
+      </g>
+      <path d="M18.31 8.76c-.38 1.19-.58 2.47-.58 3.78 0 12.53 12.53 25.07 12.53 25.07s0-17.72-8.86-26.59a12.83 12.83 0 0 0-3.09-2.26z" fill="url(#a)"></path>
+      <path d="M42.21 8.76c-1.11.58-2.16 1.33-3.09 2.26-8.86 8.86-8.86 26.59-8.86 26.59s12.53-12.53 12.53-25.07c0-1.32-.2-2.59-.58-3.78z" fill="url(#b)"></path>
+    </g>
+  </symbol>
+  <symbol viewBox="0 0 61 38" xmlns="http://www.w3.org/2000/svg" id="wheres-it-fast">
+    <title>Group</title>
+    <defs>
+      <radialGradient cx="98.894%" cy="100.026%" fx="98.894%" fy="100.026%" r="262.406%" gradientTransform="matrix(1 0 0 .43432 0 .566)" id="a">
+        <stop stop-color="#FFF" stop-opacity=".25" offset="33.34%"></stop>
+        <stop stop-color="#FFF" stop-opacity="0" offset="74.29%"></stop>
+      </radialGradient>
+      <radialGradient cx="-6.71%" cy="105.198%" fx="-6.71%" fy="105.198%" r="270.773%" gradientTransform="matrix(1 0 0 .43432 0 .595)" id="b">
+        <stop stop-color="#FFF" stop-opacity=".25" offset="33.34%"></stop>
+        <stop stop-color="#FFF" stop-opacity="0" offset="75.11%"></stop>
+      </radialGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+      <g transform="translate(0 7)">
+        <path d="M21.4 4.01C16.51-.88 8.57-.88 3.68 4.01c-4.89 4.89-4.89 12.83 0 17.72 8.86 8.86 26.59 8.86 26.59 8.86s-.01-17.71-8.87-26.58z" fill="#FFF"></path>
+        <circle fill="#99D066" cx="12.53" cy="12.88" r="3.13"></circle>
+      </g>
+      <g transform="translate(17)">
+        <path d="M13.26 0C6.34 0 .73 5.61.73 12.53c0 12.53 12.53 25.07 12.53 25.07s12.53-12.53 12.53-25.07C25.79 5.61 20.18 0 13.26 0z" fill="#99D066"></path>
+        <circle fill="#FFF" opacity=".4" cx="13.26" cy="12.53" r="3.13"></circle>
+      </g>
+      <g transform="translate(30 7)">
+        <path d="M26.85 4.01c-4.89-4.89-12.83-4.89-17.72 0C.27 12.87.27 30.6.27 30.6s17.72 0 26.59-8.86c4.88-4.9 4.88-12.83-.01-17.73z" fill="#689F38"></path>
+        <circle fill="#FFF" opacity=".4" cx="17.98" cy="12.88" r="3.13"></circle>
+      </g>
+      <path d="M18.31 8.76c-.38 1.19-.58 2.47-.58 3.78 0 12.53 12.53 25.07 12.53 25.07s0-17.72-8.86-26.59a12.83 12.83 0 0 0-3.09-2.26z" fill="url(#a)"></path>
+      <path d="M42.21 8.76c-1.11.58-2.16 1.33-3.09 2.26-8.86 8.86-8.86 26.59-8.86 26.59s12.53-12.53 12.53-25.07c0-1.32-.2-2.59-.58-3.78z" fill="url(#b)"></path>
+    </g>
+  </symbol>
+  <symbol viewBox="0 0 61 38" xmlns="http://www.w3.org/2000/svg" id="wheres-it-up">
+    <title>wp-logo-product-WheresItUp</title>
+    <defs>
+      <radialGradient cx="98.894%" cy="100.026%" fx="98.894%" fy="100.026%" r="262.406%" gradientTransform="matrix(1 0 0 .43432 0 .566)" id="a">
+        <stop stop-color="#FFF" stop-opacity=".25" offset="33.34%"></stop>
+        <stop stop-color="#FFF" stop-opacity="0" offset="74.29%"></stop>
+      </radialGradient>
+      <radialGradient cx="-6.71%" cy="105.198%" fx="-6.71%" fy="105.198%" r="270.773%" gradientTransform="matrix(1 0 0 .43432 0 .595)" id="b">
+        <stop stop-color="#FFF" stop-opacity=".25" offset="33.34%"></stop>
+        <stop stop-color="#FFF" stop-opacity="0" offset="75.11%"></stop>
+      </radialGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+      <g transform="translate(0 7)">
+        <path d="M21.4 4.01C16.51-.88 8.57-.88 3.68 4.01c-4.89 4.89-4.89 12.83 0 17.72 8.86 8.86 26.59 8.86 26.59 8.86s-.01-17.71-8.87-26.58z" fill="#FFF"></path>
+        <circle fill="#6AB7FF" cx="12.53" cy="12.88" r="3.13"></circle>
+      </g>
+      <g transform="translate(17)">
+        <path d="M13.26 0C6.34 0 .73 5.61.73 12.53c0 12.53 12.53 25.07 12.53 25.07s12.53-12.53 12.53-25.07C25.79 5.61 20.18 0 13.26 0z" fill="#6AB7FF"></path>
+        <circle fill="#FFF" opacity=".4" cx="13.26" cy="12.53" r="3.13"></circle>
+      </g>
+      <g transform="translate(30 7)">
+        <path d="M26.85 4.01c-4.89-4.89-12.83-4.89-17.72 0C.27 12.87.27 30.6.27 30.6s17.72 0 26.59-8.86c4.88-4.9 4.88-12.83-.01-17.73z" fill="#0091EA"></path>
+        <circle fill="#FFF" opacity=".4" cx="17.98" cy="12.88" r="3.13"></circle>
+      </g>
+      <path d="M18.31 8.76c-.38 1.19-.58 2.47-.58 3.78 0 12.53 12.53 25.07 12.53 25.07s0-17.72-8.86-26.59a12.83 12.83 0 0 0-3.09-2.26z" fill="url(#a)"></path>
+      <path d="M42.21 8.76c-1.11.58-2.16 1.33-3.09 2.26-8.86 8.86-8.86 26.59-8.86 26.59s12.53-12.53 12.53-25.07c0-1.32-.2-2.59-.58-3.78z" fill="url(#b)"></path>
+    </g>
+  </symbol>
+  <symbol viewBox="0 0 61 38" xmlns="http://www.w3.org/2000/svg" id="wonder-vpn">
+    <title>Group</title>
+    <defs>
+      <radialGradient cx="98.894%" cy="100.026%" fx="98.894%" fy="100.026%" r="262.406%" gradientTransform="matrix(1 0 0 .43432 0 .566)" id="a">
+        <stop stop-color="#FFF" stop-opacity=".25" offset="33.34%"></stop>
+        <stop stop-color="#FFF" stop-opacity="0" offset="74.29%"></stop>
+      </radialGradient>
+      <radialGradient cx="-6.71%" cy="105.198%" fx="-6.71%" fy="105.198%" r="270.773%" gradientTransform="matrix(1 0 0 .43432 0 .595)" id="b">
+        <stop stop-color="#FFF" stop-opacity=".25" offset="33.34%"></stop>
+        <stop stop-color="#FFF" stop-opacity="0" offset="75.11%"></stop>
+      </radialGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+      <g transform="translate(0 7)">
+        <path d="M21.4 4.01C16.51-.88 8.57-.88 3.68 4.01c-4.89 4.89-4.89 12.83 0 17.72 8.86 8.86 26.59 8.86 26.59 8.86s-.01-17.71-8.87-26.58z" fill="#FFF"></path>
+        <circle fill="#FF77A9" cx="12.53" cy="12.88" r="3.13"></circle>
+      </g>
+      <g transform="translate(17)">
+        <path d="M13.26 0C6.34 0 .73 5.61.73 12.53c0 12.53 12.53 25.07 12.53 25.07s12.53-12.53 12.53-25.07C25.79 5.61 20.18 0 13.26 0z" fill="#FF77A9"></path>
+        <circle fill="#FFF" opacity=".4" cx="13.26" cy="12.53" r="3.13"></circle>
+      </g>
+      <g transform="translate(30 7)">
+        <path d="M26.85 4.01c-4.89-4.89-12.83-4.89-17.72 0C.27 12.87.27 30.6.27 30.6s17.72 0 26.59-8.86c4.88-4.9 4.88-12.83-.01-17.73z" fill="#EC407A"></path>
+        <circle fill="#FFF" opacity=".4" cx="17.98" cy="12.88" r="3.13"></circle>
+      </g>
+      <path d="M18.31 8.76c-.38 1.19-.58 2.47-.58 3.78 0 12.53 12.53 25.07 12.53 25.07s0-17.72-8.86-26.59a12.83 12.83 0 0 0-3.09-2.26z" fill="url(#a)"></path>
+      <path d="M42.21 8.76c-1.11.58-2.16 1.33-3.09 2.26-8.86 8.86-8.86 26.59-8.86 26.59s12.53-12.53 12.53-25.07c0-1.32-.2-2.59-.58-3.78z" fill="url(#b)"></path>
+    </g>
+  </symbol>
+  <symbol viewBox="0 0 61 38" xmlns="http://www.w3.org/2000/svg" id="wondernetwork">
+    <title>Group</title>
+    <defs>
+      <radialGradient cx="98.871%" cy="100.049%" fx="98.871%" fy="100.049%" r="262.381%" gradientTransform="matrix(1 0 0 .43447 0 .566)" id="a">
+        <stop stop-color="#FFF" stop-opacity=".25" offset="33.34%"></stop>
+        <stop stop-color="#FFF" stop-opacity="0" offset="74.29%"></stop>
+      </radialGradient>
+      <radialGradient cx="-6.652%" cy="105.222%" fx="-6.652%" fy="105.222%" r="270.74%" gradientTransform="matrix(1 0 0 .43448 0 .595)" id="b">
+        <stop stop-color="#FFF" stop-opacity=".25" offset="33.34%"></stop>
+        <stop stop-color="#FFF" stop-opacity="0" offset="75.11%"></stop>
+      </radialGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+      <g transform="translate(0 7)">
+        <path d="M21.39 4.01C16.5-.88 8.56-.88 3.67 4.01c-4.89 4.89-4.89 12.83 0 17.72 8.86 8.86 26.58 8.86 26.58 8.86s.01-17.72-8.86-26.58z" fill="#FFF"></path>
+        <circle fill="#FFD149" cx="12.53" cy="12.87" r="3.13"></circle>
+      </g>
+      <g transform="translate(17)">
+        <path d="M13.26 0C6.34 0 .73 5.61.73 12.53c0 12.53 12.53 25.06 12.53 25.06s12.53-12.53 12.53-25.06C25.79 5.61 20.18 0 13.26 0z" fill="#FFD149"></path>
+        <circle fill="#FFF" opacity=".4" cx="13.26" cy="12.53" r="3.13"></circle>
+      </g>
+      <g transform="translate(30 7)">
+        <path d="M26.84 4.01c-4.89-4.89-12.83-4.89-17.72 0C.26 12.87.26 30.59.26 30.59s17.72 0 26.58-8.86c4.89-4.89 4.89-12.82 0-17.72z" fill="#FFA000"></path>
+        <circle fill="#FFF" opacity=".4" cx="17.98" cy="12.87" r="3.13"></circle>
+      </g>
+      <path d="M18.31 8.76c-.38 1.19-.58 2.46-.58 3.78 0 12.53 12.53 25.06 12.53 25.06s0-17.72-8.86-26.58c-.94-.93-1.98-1.69-3.09-2.26z" fill="url(#a)"></path>
+      <path d="M42.2 8.76c-1.11.58-2.16 1.33-3.09 2.26-8.86 8.86-8.86 26.58-8.86 26.58s12.53-12.53 12.53-25.06c.01-1.32-.2-2.59-.58-3.78z" fill="url(#b)"></path>
+    </g>
+  </symbol>
+</svg>

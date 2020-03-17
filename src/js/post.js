@@ -177,11 +177,8 @@ $(document).ready(() => {
       $(this).addClass('js-zoomable')
     }
 
-    const $figcaption = $(this).parent().find('figcaption')
-    if ($figcaption) {
-      $(this).attr('alt', $figcaption.text())
-    } else {
-      $(this).attr('alt', '')
+    if ($(this).hasClass('no-zoom')){
+      $(this).removeClass('js-zoomable')
     }
   })
 

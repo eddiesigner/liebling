@@ -7,6 +7,7 @@
 @import "common/helpers";
 @import "common/global";
 @import "common/icons";
+@import "common/backgrounds";
 
 @import "layouts/wrapper";
 @import "layouts/content";
@@ -22,7 +23,6 @@
 @import "components/ui/back";
 @import "components/ui/small-text";
 @import "components/ui/not-found";
-@import "components/ui/alert";
 @import "components/header/header";
 @import "components/header/mobile-topbar";
 @import "components/header/logo";
@@ -61,6 +61,7 @@
 @import "components/search/search";
 @import "components/search/icon";
 @import "components/search/result";
+@import "components/search/autocomplete";
 @import "components/footer";
 
 @import"components/404/title";

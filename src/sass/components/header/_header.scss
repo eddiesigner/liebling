@@ -1,15 +1,13 @@
 .m-header {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   z-index: 4;
+  padding: 5px 0;
   background-color: var(--background-color);
   will-change: transform;
   @include transition(transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1));
 
   @include respond-to('medium') {
-    padding: 20px 0;
+    padding: 40px 0 0 0;
   }
 
   &.mobile-menu-opened {
@@ -21,7 +19,6 @@
   }
 
   &.headroom--pinned {
-    @include bs(0 4px 8px rgba(0, 0, 0, 0.05));
     @include transform(translateY(0%));
 
     .m-header__shadow {
@@ -44,4 +41,31 @@
   &.with-picture {
     background-color: var(--background-color);
   }
+}
+
+// a11y Skip Navigation
+.skip-nav {
+  position: absolute;
+  top: -1000px;
+  left: -1000px;
+  height: 1px;
+  width: 1px;
+  text-align: left;
+  overflow: hidden;
+}
+
+a.skip-nav:active,
+a.skip-nav:focus,
+a.skip-nav:hover {
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: auto;
+  height: auto;
+  background: var(--background-color);
+  padding: .5rem;
+  font-size:1.2rem;
+  color: var(--secondary-foreground-color);
+  border: 3px solid var(--secondary-foreground-color);
+  overflow: visible;
 }

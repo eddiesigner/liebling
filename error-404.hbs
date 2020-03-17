@@ -9,13 +9,13 @@ into the {body} of the default.hbs template --}}
 {{!-- Special header.hbs partial to generate the <header> tag --}}
 {{> header}}
 
-<main class="l-fullscreen">
+<main class="l-fullscreen" id="main-content">
   <section class="l-fullscreen__content" data-aos="fade-up" data-aos-delay="300">
     <h1 class="m-404-title">404</h1>
     <p class="m-404-subtitle">{{t "Page not found"}}</p>
     <p class="m-404-text">
       {{t "Unfortunately the page you were looking for could not be found."}}
     </p>
-    <a href="{{@site.url}}" class="m-button outlined">{{t "Go to the home page"}}</a>
+    <a href="{{@blog.url}}" class="m-button outlined">{{t "Go to the blog home page"}}</a>
   </section>
 </main>

@@ -1,4 +1,17 @@
+.icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--primary-foreground-color);
+}
+
+.icon-bar+.icon-bar {
+  margin-top: 4px;
+}
+
 .m-icon-button {
+  display: flex;
   color: var(--titles-color);
   font-size: 1.125rem;
   border: 0;
@@ -8,6 +21,7 @@
   background-color: transparent;
   @extend .content-centered;
   @extend .no-appearance;
+  display: block;
 
   &.outlined {
     border-radius: 50%;
@@ -26,7 +40,6 @@
   }
 
   &.in-mobile-topbar {
-    width: 65px;
     height: 100%;
   }
 
@@ -81,10 +94,9 @@
 
   &.more {
     font-size: 6px;
-    z-index: 6;
     position: relative;
-
-    &.active {
+    color: var(--nav-secondary-link);
+    &.active{
       color: var(--primary-subtle-color);
     }
   }
@@ -94,6 +106,7 @@
     width: 40px;
     height: 40px;
     font-size: 0.625rem;
+    display: flex;
 
     @include respond-to('medium') {
       width: 46px;
@@ -180,6 +193,7 @@
     width: 31px;
     height: 31px;
     margin: 0 25px;
+    display: flex;
 
     @include respond-to('large') {
       font-size: 0.875rem;

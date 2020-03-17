@@ -9,12 +9,16 @@
 
   @include respond-to('medium') {
     min-height: 400px;
-    padding: 150px 0 75px;
+    padding: 100px 0 75px;
+  }
+
+  &.is-bottom {
+    margin: 3rem 0;
+    background-color: transparent;
   }
 
   &.with-picture {
     color: $white;
-    background-color: $black;
 
     @include respond-to('medium') {
       min-height: 450px;
@@ -26,6 +30,30 @@
 
     .m-hero-title {
       color: $white;
+    }
+  }
+
+  &.no-picture {
+    @include respond-to('medium') {
+      background-color: transparent;
+      margin-top:1rem;
+      background-image: 
+          url('#{$image_path}/main-1.svg'), 
+          url('#{$image_path}/main-2.svg'), 
+          url('#{$image_path}/main-3.svg'), 
+          url('#{$image_path}/oval.svg'), 
+          url('#{$image_path}/oval.svg');
+      background-repeat: no-repeat;
+      background-position: top right, left top, 10% 75%, top left, right center;
+      background-size: contain, 25% 45%, 25% 40%, contain, contain;
+    }
+    
+    @media (prefers-color-scheme: dark) {
+        background: none;
+    }
+
+    [data-theme="dark"] & {
+      background-image: none;
     }
   }
 

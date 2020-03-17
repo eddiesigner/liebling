@@ -1,0 +1,32 @@
+.bg-ovals {
+    background-image: 
+        url(#{$image_path}/oval-2.svg), 
+        url(#{$image_path}/oval-3.svg);
+}
+
+.bg-sparkle {
+    background-image:
+        url(#{$image_path}/sparkle.svg), 
+}
+
+.bg-zhuzh {
+    @include respond-to('medium') {
+    background-image: 
+          url('#{$image_path}/main-1.svg'), 
+          url('#{$image_path}/main-2.svg'), 
+          url('#{$image_path}/main-3.svg'), 
+          url('#{$image_path}/oval.svg'), 
+          url('#{$image_path}/oval.svg');
+      background-repeat: no-repeat;
+      background-position: top right, left top, 10% 75%, top left, right center;
+      background-size: contain, 25% 45%, 25% 40%, contain, contain;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        background: none;
+    }
+    
+    [data-theme="dark"] & {
+        background: none;
+    }
+}

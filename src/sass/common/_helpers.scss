@@ -45,6 +45,10 @@
   padding: 0;
 }
 
+.p-bottom {
+  padding-bottom: 16px;
+}
+
 .no-margin {
   margin: 0
 }
@@ -53,7 +57,8 @@
   overflow-y: hidden;
 }
 
-.align-center {
+.align-center,
+.text-center {
   text-align: center;
 }
 

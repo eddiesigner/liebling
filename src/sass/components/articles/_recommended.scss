@@ -1,6 +1,10 @@
 .m-recommended {
   padding-top: 40px;
 
+  @extend .bg-ovals;
+      background-position: top right, bottom left;
+      background-size: 30% 43%, 30% 45%;
+
   @include respond-to('medium') {
     padding-top: 60px;
   }

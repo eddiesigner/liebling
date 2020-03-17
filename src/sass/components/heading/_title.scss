@@ -11,17 +11,17 @@
     margin-bottom: 15px;
   }
 
-  &.in-post {
-    letter-spacing: 0.5px;
-    font-size: 2rem;
-    margin-bottom: 15px;
+  // &.in-post {
+  //   letter-spacing: 0.5px;
+  //   font-size: 2rem;
+  //   margin-bottom: 15px;
 
-    @include respond-to('medium') {
-      letter-spacing: 0.7px;
-      font-size: 2.625rem;
-      margin-bottom: 20px;
-    }
-  }
+  //   @include respond-to('medium') {
+  //     letter-spacing: 0.7px;
+  //     font-size: 2.625rem;
+  //     margin-bottom: 20px;
+  //   }
+  // }
 
   &.in-page {
     margin: 0;
