@@ -10,7 +10,7 @@ import Fuse from 'fuse.js'
 import {
   isRTL,
   formatDate,
-  getParameterByName
+  getParameterByName,
   isDarkMode
 } from './helpers'
 
@@ -32,6 +32,7 @@ $(document).ready(() => {
   const $recentArticles = $('.js-recent-articles')
   const $toggleDarkMode = $('.js-toggle-darkmode')
   const currentSavedTheme = localStorage.getItem('theme')
+  const $closeNotification = $('.js-notification-close')
 
   let fuse = null
   let submenuIsOpen = false
