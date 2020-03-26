@@ -1,6 +1,6 @@
 export const isRTL = () => {
   const $html = document.querySelector('html')
-  return $html.getAttribute('lang') === 'ar' || $html.getAttribute('lang') === 'he'
+  return ['ar', 'he', 'fa'].includes($html.getAttribute('lang'))
 }
 
 export const isMobile = (width = '768px') => {
