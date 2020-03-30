@@ -14,7 +14,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.icon-letterboxd:before {
+  content: "\e91f";
+}
 .icon-star:before {
   content: "\e900";
 }
@@ -50,4 +52,91 @@
 }
 .icon-twitter:before {
   content: "\e90b";
+}
+.icon-behance:before {
+  content: "\e951";
+}
+.icon-deviantart:before {
+  content: "\e928";
+}
+.icon-discord:before {
+  content: "\e929";
+}
+.icon-flickr:before {
+  content: "\e91e";
+}
+.icon-github:before {
+  content: "\e930";
+}
+.icon-gitlab:before {
+  content: "\e92d";
+}
+.icon-imdb:before {
+  content: "\e90c";
+}
+.icon-instagram:before {
+  content: "\e92a";
+}
+.icon-linkedin:before {
+  content: "\e92b";
+}
+.icon-mixcloud:before {
+  content: "\e925";
+}
+.icon-mixer:before {
+  content: "\e926";
+}
+.icon-odnoklassniki:before {
+  content: "\e920";
+}
+.icon-pinterest:before {
+  content: "\e921";
+}
+.icon-reddit:before {
+  content: "\e919";
+}
+.icon-rss:before {
+  content: "\e91a";
+}
+.icon-snapchat:before {
+  content: "\e92c";
+}
+.icon-soundcloud:before {
+  content: "\e91d";
+}
+.icon-spotify:before {
+  content: "\e91b";
+}
+.icon-steam:before {
+  content: "\e914";
+}
+.icon-telegram:before {
+  content: "\e91c";
+}
+.icon-tiktok:before {
+  content: "\e922";
+}
+.icon-tumblr:before {
+  content: "\e923";
+}
+.icon-twitch:before {
+  content: "\e915";
+}
+.icon-vimeo:before {
+  content: "\e917";
+}
+.icon-vk:before {
+  content: "\e90d";
+}
+.icon-wechat:before {
+  content: "\e927";
+}
+.icon-whatsapp:before {
+  content: "\e918";
+}
+.icon-xing:before {
+  content: "\e924";
+}
+.icon-youtube:before {
+  content: "\e916";
 }
