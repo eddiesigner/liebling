@@ -5,7 +5,7 @@ services:
     image: ghost:3.7.0
     container_name: ghost
     volumes:
-      - ${PWD}/..:/var/lib/ghost/content/themes/liebling:Z
+      - ${PWD}/..:/var/lib/ghost/content/themes/ieee-ghost:Z
       - ${PWD}/localdata:/var/lib/ghost/content/data:Z
     environment:
       - NODE_ENV=development
