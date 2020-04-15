@@ -108,6 +108,10 @@ To know how to enable the search, comments, subscribers and more, please head to
 
 If you have any questions or troubles with this product, please feel free to open an issue [here](https://github.com/eddiesigner/liebling/issues).
 
+## Contributing
+
+Contributions are very welcome. First, please read the [Pull Request Guidelines](https://github.com/eddiesigner/liebling/wiki/Pull-Request-Guidelines) on the wiki.
+
 ## Related
 
 * [Weiss Pro](https://blog.eduardogomez.io/weiss-pro-modern-and-clean-ghost-theme/) - Modern and beautiful Ghost theme ready to make your content shine ✨
