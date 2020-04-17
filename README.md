@@ -87,6 +87,7 @@ To get the latest version please head over the [releases page](https://github.co
 * Indonesian by [iqbalbinsb](https://github.com/iqbalbinsb)
 * Lithuanian by [pintom](https://github.com/pintom)
 * Dutch by [Qballjos](https://github.com/Qballjos)
+* Traditional Chinese by [weixiang](https://github.com/weixiang)
 
 ## Tests performed
 
