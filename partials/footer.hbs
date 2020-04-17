@@ -11,19 +11,33 @@ This footer template is shared across all the pages.
     </p>
 
     <nav class="m-footer-social">
+
+<a href="//shang.qq.com/wpa/qunwpa?idkey=23a87d6f80e991f03482b35b48b4bff82c297b0f3bdc2ea2d6e1792318852c62" target="_blank" rel="noopener" aria-label="QQ群">
+        <i class="fa fa-qq"> 加入QQ群</i>
+      </a>
       {{#if @site.facebook}}
-        <a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener" aria-label="Facebook">
-          <span class="icon-facebook"></span>
-        </a>
+      <a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener" aria-label="Facebook">
+        <span class="icon-facebook"></span>
+      </a>
       {{/if}}
       {{#if @site.twitter}}
-        <a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener" aria-label="Twitter">
-          <span class="icon-twitter"></span>
-        </a>
+      <a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener" aria-label="Twitter">
+        <span class="icon-twitter"></span>
+      </a>
       {{/if}}
     </nav>
     <p class="m-footer-copyright jslicense">
-      <a href="{{asset "html/javascript.html"}}" rel="jslicense">{{t "JavaScript license information"}}</a>
+      <i class="fa fa-check-circle"></i>
+      <a href="//www.beian.miit.gov.cn" rel="jslicense">粤 ICP 备 20025819 号 - 1</a>
+      <br>
+      <span id="busuanzi_container_site_pv" style="white-space: nowrap;display: inline-block;">
+      </span><i class="fa fa-area-chart"></i> 你是第 <span id="busuanzi_value_site_pv"
+        style="white-space: nowrap;display: inline-block;font-weight:bold;"></span> 个来这的同学</span>
+      <br>
+      <i class="fa fa-calendar-check-o"></i> 今天是科技社成立的第 <b><strong>
+          <script language="JavaScript"
+            type="text/javascript">var urodz = new Date("12/24/2017"); var now = new Date(); var ile = now.getTime() - urodz.getTime(); var dni = Math.floor(ile / (1000 * 60 * 60 * 24)); document.write(+ dni)</script>
+        </strong></b> 天
     </p>
   </div>
 </footer>
