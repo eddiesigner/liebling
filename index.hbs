@@ -17,12 +17,8 @@ into the {body} of the default.hbs template --}}
     {{#if @site.description}}
       <p class="m-hero-description bigger">{{@site.description}}</p>
     {{/if}}
-    {{#if @labs.subscribers}}
       <a href="https://forms.gle/UgBT3SkstEGejAJc7" class="m-button filled">{{t "Volunteer"}}</a>
-    {{/if}}
-    {{#if @labs.members}}
-      <a href="https://forms.gle/UgBT3SkstEGejAJc7" class="m-button filled">{{t "Volunteer"}}</a>
-    {{/if}}
+      <a href="/register" class="m-button filled">{{t "Register"}}</a>
   </div>
   </section>
   
