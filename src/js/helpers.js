@@ -42,3 +42,32 @@ export const getParameterByName = (name, url) => {
 
   return decodeURIComponent(results[2].replace(/\+/g, ' '))
 }
+
+export const makeImagesZoomable = ($, mediumZoom) => {
+  const zoom = mediumZoom('.js-zoomable')
+
+  zoom.on('open', (event) => {
+    if (isMobile() && $(event.target).parent().hasClass('kg-gallery-image')) {
+      setTimeout(() => {
+        const $mediumZoomImage = $('.medium-zoom-image--opened')
+        const transform = $mediumZoomImage[0].style.transform
+        const scale = transform.substr(0, transform.indexOf(' '))
+        const scaleValue = parseFloat(scale.substr(scale.indexOf('(') + 1).split(')')[0])
+        const translate = transform.substr(transform.indexOf(' ') + 1)
+        const translateY = parseFloat(translate.split(',')[1])
+        const newTranslateY = (translateY < 0) ? (scaleValue * translateY) + translateY : (scaleValue * translateY) - translateY
+        const newTransform = `scale(1) translate3d(0, ${newTranslateY}px, 0)`
+
+        $mediumZoomImage.addClass('medium-zoom-image-mobile')
+        $mediumZoomImage[0].style.transform = newTransform
+      }, 10)
+    }
+  })
+
+  zoom.on('close', () => {
+    if (isMobile() && $(event.target).parent().hasClass('kg-gallery-image')) {
+      const $mediumZoomImage = $('.medium-zoom-image')
+      $mediumZoomImage.removeClass('medium-zoom-image-mobile')
+    }
+  })
+}

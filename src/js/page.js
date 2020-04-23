@@ -1,6 +1,7 @@
 import $ from 'jquery'
-import mediumZoom from 'medium-zoom'
 import fitvids from 'fitvids'
+import mediumZoom from 'medium-zoom'
+import { makeImagesZoomable } from './helpers'
 
 $(document).ready(() => {
   fitvids('.js-post-content')
@@ -32,5 +33,5 @@ $(document).ready(() => {
     }
   })
 
-  mediumZoom('.js-zoomable')
+  makeImagesZoomable($, mediumZoom)
 })

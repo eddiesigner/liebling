@@ -6,7 +6,8 @@ import fitvids from 'fitvids'
 import shave from 'shave'
 import {
   isRTL,
-  isMobile
+  isMobile,
+  makeImagesZoomable
 } from './helpers'
 
 let $aosWrapper = null
@@ -185,7 +186,7 @@ $(document).ready(() => {
     }
   })
 
-  mediumZoom('.js-zoomable')
+  makeImagesZoomable($, mediumZoom)
 
   window.addEventListener('scroll', onScrolling, { passive: true })
   window.addEventListener('resize', onResizing, { passive: true })
