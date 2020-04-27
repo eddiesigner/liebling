@@ -252,10 +252,8 @@ $(document).ready(() => {
     }
   }
 
-  const headerElement = document.querySelector('.js-header')
-
-  if (headerElement) {
-    const headroom = new Headroom(headerElement, {
+  if ($header.length > 0) {
+    const headroom = new Headroom($header[0], {
       tolerance: {
         down: 10,
         up: 20
