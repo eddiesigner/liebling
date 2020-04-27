@@ -252,10 +252,10 @@ $(document).ready(() => {
     }
   }
 
-  var headerElement = document.querySelector('.js-header')
+  const headerElement = document.querySelector('.js-header')
 
   if (headerElement) {
-    var headroom = new Headroom(headerElement, {
+    const headroom = new Headroom(headerElement, {
       tolerance: {
         down: 10,
         up: 20
@@ -263,7 +263,6 @@ $(document).ready(() => {
       offset: 15,
       onUnpin: () => {
         if (!isMobile() && secondaryMenuTippy) {
-          console.log(secondaryMenuTippy)
           const desktopSecondaryMenuTippy = secondaryMenuTippy[0]
 
           if (
