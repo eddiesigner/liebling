@@ -46,6 +46,14 @@ This header template is shared across all the pages.
               {{#if @site.navigation}}
                 {{navigation}}
               {{/if}}
+              {{#if @site.secondary_navigation}}
+                <li class="more" role="menuitem">
+                  <a href="javascript:void(0);" class="js-open-secondary-menu">
+                    {{t "More"}}
+                    <span class="icon-chevron-down"></span>
+                  </a>
+                </li>
+              {{/if}}
               <li role="menuitem" class="js-submenu-option">
                 <button class="m-icon-button in-menu-main more js-toggle-submenu" aria-label="Toggle submenu">
                   <span class="icon-more"></span>
@@ -110,4 +118,10 @@ This header template is shared across all the pages.
       </div>
     </div>
   </div>
+
+  {{#if @site.secondary_navigation}}
+    <div id="secondary-navigation-template" style="display: none;">
+      {{navigation type="secondary"}}
+    </div>
+  {{/if}}
 </header>

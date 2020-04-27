@@ -3,8 +3,18 @@ This navigation template is shared across all the pages.
 Also it includes the big submenu.
 --}}
 
-{{#foreach navigation}}
-  <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}">
-    <a href="{{url absolute="true"}}">{{label}}</a>
-  </li>
-{{/foreach}}
+{{#if isSecondary}}
+  <ul class="m-secondary-menu" role="menu">
+    {{#foreach navigation}}
+      <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="menuitem">
+        <a href="{{url absolute="true"}}">{{label}}</a>
+      </li>
+    {{/foreach}}
+  </ul>
+{{else}}
+  {{#foreach navigation}}
+    <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="menuitem">
+      <a href="{{url absolute="true"}}">{{label}}</a>
+    </li>
+  {{/foreach}}
+{{/if}}
