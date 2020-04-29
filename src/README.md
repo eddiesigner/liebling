@@ -7,7 +7,7 @@ install all dependencies with `npm install`, then launch the environment with
 `npm run docker-watch`. Webpack will watch changes made to the repository and
 update the theme (+ refresh your browser) accordingly.
 
-### Setting up watch development **Without Docker**
+#### Setting up watch development **Without Docker**
 0. Install [NodeJS](https://nodejs.org/en/download/)
 1. Install Ghost's CLI `npm install -g ghost-cli@latest` (Windows) or `sudo npm install -g ghost-cli@latest`
 2. Verify Ghost's installation by running `ghost --version`
