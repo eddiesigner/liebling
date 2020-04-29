@@ -8,6 +8,7 @@ install all dependencies with `npm install`, then launch the environment with
 update the theme (+ refresh your browser) accordingly.
 
 ### Setting up watch development **Without Docker**
+0. Install [NodeJS](https://nodejs.org/en/download/)
 1. Install Ghost's CLI `npm install -g ghost-cli@latest` (Windows) or `sudo npm install -g ghost-cli@latest`
 2. Verify Ghost's installation by running `ghost --version`
 3. Install BrowserSync `npm install -g browser-sync`
@@ -23,6 +24,12 @@ update the theme (+ refresh your browser) accordingly.
 13. Run `ghost start --development`
 14. From the ghost directory, `cd contents/themes/ieee-ghost/src/`
 15. Run `npm run watch`
+16. Follow the procedures to [Selecting Theme](#selecting-theme) (ieee-ghost)
+17. Follow the procedures to [Importing Content](#importing-content)
+
+#### Selecting Theme
+1. Head to your local Ghost Admin portal (usually found at [http://localhost:2368/ghost](http://localhost:2368/ghost))
+2. Go to `Design`, scroll down, and activate `ieee-ghost`
 
 #### Importing Content
 1. Head to the Ghost Admin portal on IEEE
