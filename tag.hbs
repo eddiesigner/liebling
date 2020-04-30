@@ -15,11 +15,11 @@ into the {body} of the default.hbs template --}}
     {{> hero background=feature_image}}
     <div class="m-hero__content" data-aos="fade-down">
       <h1 class="m-hero-title bigger">{{name}}</h1>
-        {{#if description}}
-          <p class="m-hero-description">
-            {{description}}
-          </p>
-        {{/if}}
+      {{#if description}}
+        <p class="m-hero-description">
+          {{description}}
+        </p>
+      {{/if}}
       <div class="m-hero__meta">
         <ul class="m-hero-stats">
           <li>
