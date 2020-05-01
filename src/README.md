@@ -16,7 +16,7 @@ update the theme (+ refresh your browser) accordingly.
 5. Create an empty directory for Ghost
 6. cd into the empty directory
 7. Run `ghost install local --no-start`
-8. From within the Ghost directory `cd contents/themes/`
+8. From within the Ghost directory `cd content/themes/`
 9. Clone this repository inside of the themes folder
 10. `cd ieee-ghost/src`
 11. Run `npm install`
