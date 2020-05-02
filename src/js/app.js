@@ -16,6 +16,19 @@ import {
 
 cssVars({})
 
+// Your web app's Firebase configuration
+var firebaseConfig = {
+  apiKey: "AIzaSyBpcd-h19ooAHrfy0fxg1kQvAnkv4lETo4",
+  authDomain: "mobilelabs-in.firebaseapp.com",
+  databaseURL: "https://mobilelabs-in.firebaseio.com",
+  projectId: "mobilelabs-in",
+  storageBucket: "mobilelabs-in.appspot.com",
+  messagingSenderId: "681943753189",
+  appId: "1:681943753189:web:82e2a230c076bc46b48f0c",
+  measurementId: "G-TTWTBSRFT7"
+};
+
+
 $(document).ready(() => {
   if (isRTL()) {
     $('html').attr('dir', 'rtl').addClass('rtl')

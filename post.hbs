@@ -147,7 +147,7 @@ into the {body} of the default.hbs template --}}
             </div>
           </section>
           {{!-- If you want to embed comments, this is a good place to do it! --}}
-          {{!--
+          
           <section class="m-comments">
             <div class="m-load-comments">
               <div class="m-load-comments__line"></div>
@@ -164,14 +164,14 @@ into the {body} of the default.hbs template --}}
                 };
                 (function () {
                   var d = document, s = d.createElement('script');
-                  s.src = 'https://CHANGETHIS.disqus.com/embed.js';
+                  s.src = 'https://mobilelabs-in.disqus.com/embed.js';
                   s.setAttribute('data-timestamp', +new Date());
                   (d.head || d.body).appendChild(s);
                 })();
               </script>
             </div>
           </section>
-          --}}
+         
         {{/post}}
         {{!-- Related posts --}}
         {{#get "posts" limit="3" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags,authors" as |related|}}
