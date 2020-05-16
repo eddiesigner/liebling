@@ -15,9 +15,12 @@ $default-blue: rgb(55, 76, 129);
         }
     }
     @else if $device == phones {
-        @media only screen and (max-device-width: 667px) {
+        @media only screen and (max-width: 715px) {
             @content;
         }
+    }
+    @else {
+        @error "Invalid device: #{$device}";
     }
 }
 
@@ -54,7 +57,7 @@ $default-blue: rgb(55, 76, 129);
         }
 
         @include respond(phones) {
-            height: 25vw;
+            height: 5em;
         }
 
         img {
@@ -78,7 +81,7 @@ $default-blue: rgb(55, 76, 129);
                 }
 
                 @include respond(phones) {
-                    font-size: 0.25em;
+                    font-size: 0.27em;
                 }
             }
 
@@ -108,7 +111,7 @@ $default-blue: rgb(55, 76, 129);
         }
 
         @include respond(phones) {
-            height: 25vw;
+            height: 5em;
             margin-top: 0.5em;
         }
 
@@ -120,6 +123,8 @@ $default-blue: rgb(55, 76, 129);
                 margin: 0;
                 margin-right: 1em;
                 font-size: 3em;
+                text-align: right;
+                width: 100%;
             }
 
             @include respond(phones) {
@@ -243,7 +248,7 @@ $default-blue: rgb(55, 76, 129);
 
         @include respond(phones) {
             @include unsetVals(clip-path);
-            height: 29vw;
+            height: 6em;
         }
     }
     @include respond(phones) {
