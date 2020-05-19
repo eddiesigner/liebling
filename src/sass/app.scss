@@ -71,123 +71,133 @@
 @import "libs/aos/aos";
 
 
-/************ custome theme ***********************/
+/************ custom theme ***********************/
 @media screen and (max-width: 767.98px) {
-    .two-columns {
-      width: 100% !important;
-    }
-  
-    .three-columns{
-      width: 100% !important;
-    }
-  
-    .four-columns {
-      width: 100% !important;
-    }
-  
-    .footer-columns {
-      margin-bottom: 1.5rem;
-    }
-  
-    .stats-columns {
-      margin-bottom: 1rem;
-    }
-  }
-  
-  
-  .ieee-blue{
-    color: #1a5298 !important;
-  }
-  
-  .link {
-      text-decoration: none !important;
-  }
-  
-  .container {
-      margin-left: 4em;
-      margin-right: 4em;
-  }
-  
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  
-  .text-center {
-    text-align: center;
-  }
-  
   .two-columns {
-    width: 50%;
-    float: left;
+      width: 100% !important;
   }
   
-  .three-columns {
-    width: 33.3%;
-    float: left;
-  }
+	.three-columns{
+		width: 100% !important;
+	}
   
-  .four-columns {
-    width: 25%;
-    float: left;
-  }
-  
-  .stats-bubbles {
-    width: 70%;
-    display: block;
-      background-color: #1A5298 !important;
-      padding: 3rem;
-    border-radius: 50%;
-    margin: auto;
-  }
-  
-  .stats {
-      color: white;
-      font-size: 1em;
-  }
-  
-  .ieee-btn {
-      background-color: #004080;
-      color: white;
-      font-size: 1.5em;
-      border-radius: 0.3rem;
-      padding: 1rem;
-  }
-  
-  .btn-text {
-      margin: 1rem;
-      color: white;
-  }
-  
-  .join-div {
-      text-align: center !important;
-  }
-  
-  .div-spacing {
-      margin-top: 4rem;
-  }
-  
-  .paragraph {
-      font-size: 1.3em;
-  }
-  
-  .footer-content {
-    padding: 2rem;
-    color: white;
-  }
-  
-  .copyright-row {
-    color: white;
-    margin-top: 2rem;
-    margin-bottom: 0.5rem;
-    /*background-color: rgb(34, 34, 34);*/
-  }
-  
+	.four-columns {
+		width: 100% !important;
+	}
 
-  .footer-link:hover {
-    color: #166bbb;
-  }
+	.footer-columns {
+		margin-bottom: 1.5rem;
+	}
+
+	.stats-columns {
+		margin-bottom: 1rem;
+	}
+
+	.stats-bubbles {
+		padding: 20% !important;
+	}
+}
+  
+  
+.ieee-blue{
+	color: #1a5298 !important;
+}
+
+.link {
+	text-decoration: none !important;
+}
+
+.container {
+	margin-left: 4em;
+	margin-right: 4em;
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.two-columns {
+	width: 50%;
+	float: left;
+}
+
+.three-columns {
+	width: 33.3%;
+	float: left;
+}
+
+.four-columns {
+	width: 25%;
+	float: left;
+}
+
+.stats-bubbles {
+	width: 65%;
+	display: inline-block;
+	background-color: #1A5298 !important;
+	padding: 4rem 2rem 4rem 2rem;
+	border-radius: 50%;
+	margin: auto;
+}
+
+.stats {
+	color: white;
+	font-size: 1.3em;
+}
+
+.ieee-btn {
+	background-color: #004080;
+	color: white;
+	font-size: 1.5em;
+	border-radius: 0.3rem;
+	padding: 1rem;
+	border: 1px solid black;
+}
+
+.ieee-btn:hover {
+	background-color: rgb(0, 49, 109);
+	transform: translateY(-1px);
+	box-shadow: 2px 2px 2px rgb(34, 34, 34);
+}
+
+.btn-text {
+	margin: 1rem;
+	color: white;
+}
+
+.join-div {
+	text-align: center !important;
+}
+
+.div-spacing {
+	margin-top: 4rem;
+}
+
+.paragraph {
+	font-size: 1.25em;
+}
+
+.footer-content {
+	padding: 2rem;
+	color: white;
+}
+
+.copyright-row {
+	color: white;
+	margin-top: 2rem;
+	margin-bottom: 0.5rem;
+}
+
+
+.footer-link:hover {
+	color: #166bbb;
+}
+  
   
   /************* end custom theme ***********************/
