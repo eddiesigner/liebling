@@ -32,7 +32,14 @@
 
 .footer-social a {
   font-size: 25px;
-  color: #fff;
+  color: rgba(255, 255, 255, 0.85);
+  margin-right: 15px;
+}
+
+.footer-social a:hover,
+.footer-social a:active {
+  font-size: 25px;
+  color: rgba(255, 255, 255);
   margin-right: 15px;
 }
 
@@ -47,7 +54,7 @@
   font-weight: bolder;
   text-decoration: none;
   padding: 10px;
-  border-color: white;
+  border: 2px solid rgba(255, 255, 255, 0.85);
 
   transition-duration: 0.3s;
 }
@@ -56,6 +63,7 @@
   background-color: white;
   color: #003262;
   cursor: pointer;
+  border-color: #fff;
 }
 
 .footer-right {
@@ -83,7 +91,11 @@
   display: block;
   font-size: 18px;
   font-weight: bolder;
-  color: rgba(253, 180, 21);
+  color: #fed966;
+}
+
+.footer-col a:hover {
+  color: #ffffff;
 }
 
 .footer-copyright {

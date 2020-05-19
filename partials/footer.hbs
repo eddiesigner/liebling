@@ -36,23 +36,23 @@ This footer template is shared across all the pages.
     <nav class="footer-right">
       <div class="footer-col">
         <ul>
-          <li><a href="." rel="noopener">Home</a></li>
-          <li><a href="about" rel="noopener">About</a></li>
-          <li><a href="events" rel="noopener">Events</a></li>
-          <li><a href="apply" rel="noopener">Apply</a></li>
+          <li><a href="{{ @site.url }}" rel="noopener">Home</a></li>
+          <li><a href="{{ @site.url }}/about" rel="noopener">About</a></li>
+          <li><a href="{{ @site.url }}/events" rel="noopener">Events</a></li>
+          <li><a href="{{ @site.url }}/apply" rel="noopener">Apply</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <ul>
-          <li><a href="micromouse" rel="noopener">Micromouse</a></li>
-          <li><a href="hope" rel="noopener">HOPE</a></li>
-          <li><a href="industry" rel="noopener">Industrial Relations</a></li>
+          <li><a href="{{ @site.url }}/micromouse" rel="noopener">Micromouse</a></li>
+          <li><a href="{{ @site.url }}/hope" rel="noopener">HOPE</a></li>
+          <li><a href="{{ @site.url }}/industry" rel="noopener">Industrial Relations</a></li>
         </ul>
       </div>
     </nav>
   </div>
   <div class="footer-copyright">
-    <p>{{@site.title}} &copy; {{date format="YYYY"}}</p>
+    <p>&copy; Copyright {{date format="YYYY"}} IEEE Student Branch at UC Berkeley</p>
     <!-- <a href="{{asset "html/javascript.html"}}" rel="jslicense">{{t "JavaScript license information"}}</a> -->
   </div>
 </footer>
