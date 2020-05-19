@@ -163,13 +163,13 @@
 	font-size: 1.5em;
 	border-radius: 0.3rem;
   padding: 1rem;
-  border: 1px solid black;
+  transition: background-color 0.2s, box-shadow 0.2s;
 }
 
 .ieee-btn:hover {
-  background-color: rgb(0, 49, 109);
-  transform: translateY(-1px);
-  /*box-shadow: 2px 2px 2px rgb(34, 34, 34);*/
+  background-color: #004c97;
+  /*transform: translateY(-1px);*/
+  box-shadow: 2px 2px 4px black;
 }
 
 .btn-text {
@@ -201,11 +201,12 @@
   padding: 1rem;  
 }
 
+.footer-link {
+  transition: color 0.2s;
+}
 
 .footer-link:hover {
   color: #166bbb;
 }
-
-  
   
   /************* end custom theme ***********************/
