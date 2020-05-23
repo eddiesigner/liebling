@@ -19,6 +19,11 @@ $default-blue: rgb(55, 76, 129);
             @content;
         }
     }
+    @else if $device == small-phones {
+        @media only screen and (max-width: 320px) {
+            @content;
+        }
+    }
     @else {
         @error "Invalid device: #{$device}";
     }
@@ -50,6 +55,7 @@ $default-blue: rgb(55, 76, 129);
         display: flex;
         position: relative;
         align-items: center;
+        cursor: pointer;
 
         @include respond(tablets) {
             height: 6.5em;
@@ -58,6 +64,10 @@ $default-blue: rgb(55, 76, 129);
 
         @include respond(phones) {
             height: 5em;
+        }
+
+        @include respond(small-phones) {
+            height: 4em;
         }
 
         img {
@@ -83,6 +93,10 @@ $default-blue: rgb(55, 76, 129);
                 @include respond(phones) {
                     font-size: 0.27em;
                 }
+
+                @include respond(small-phones) {
+                    font-size: 0.24em;
+                }
             }
 
             .branch {
@@ -99,7 +113,7 @@ $default-blue: rgb(55, 76, 129);
 
         @include respond(tablets) {
             height: 6em;
-
+            margin-left: 1em;
             .close-dropdown-wrap {
                 height: 6em;
                 display: flex;
@@ -107,12 +121,19 @@ $default-blue: rgb(55, 76, 129);
                 align-items: center;
                 justify-content: flex-end;
                 cursor: pointer;
+                @include respond(small-phones) {
+                    height: 5em;
+                }
             }
         }
 
         @include respond(phones) {
             height: 5em;
             margin-top: 0.5em;
+        }
+
+        @include respond(small-phones) {
+            height: 4em;
         }
 
         .open-dropdown, .close-dropdown {
@@ -250,7 +271,11 @@ $default-blue: rgb(55, 76, 129);
             @include unsetVals(clip-path);
             height: 6em;
         }
+        @include respond(small-phones) {
+            height: 5em;
+        }
     }
+
     @include respond(phones) {
 
         .site-nav {
