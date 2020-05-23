@@ -1,0 +1,80 @@
+.ieee-officer-container {
+  text-align: center;
+}
+
+.ieee-officer-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  
+  &:before, &:after {
+    background-color: #aaa;
+    display: inline-block;
+    content: '';
+    width: 100px;
+    height: 2px;
+    margin: 0 20px;
+  }
+  
+  @media(max-width: 600px) {
+    & {
+      flex-direction: column;
+    }
+    &:before, &:after {
+      width: 80px;
+    }
+  }
+}
+
+.ieee-officer-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.ieee-officer-card {
+  background-color: #D0D0E0;
+  border-radius: 2px;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  
+  img {
+    height: 150px;
+    border-radius: 75px;
+    margin-bottom: 10px;
+  }
+  
+  h3 {
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+  }
+  
+  p {
+    font-size: 0.8em;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .ieee-officer-socials {
+    cursor: default;
+    display: block;
+    margin-top: 10px;
+    
+    a {
+      color: darken(#4e5ee0, 10%);
+      cursor: pointer;
+      display: inline-block;
+      margin: 0 4px;
+      text-decoration: none;
+      transition: color 80ms ease;
+      
+      &:hover {
+        color: darken(#4e5ee0, 0%);
+      }
+    }
+  }
+}
