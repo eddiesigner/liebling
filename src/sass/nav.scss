@@ -1,6 +1,6 @@
 $default-font: 'Open Sans', sans-serif;
 $logo-font: 'Formata', Verdana, Calibri;
-$default-blue: rgb(55, 76, 129);
+$default-blue: #00629B;
 
 @mixin still($type) {
     position: $type;
