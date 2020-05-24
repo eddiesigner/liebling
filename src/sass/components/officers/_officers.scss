@@ -37,14 +37,17 @@
 .ieee-officer-card {
   background-color: #D0D0E0;
   border-radius: 2px;
-  padding: 20px;
+  box-sizing: border-box;
+  padding: 25px;
   margin: 10px;
   text-align: center;
+  width: 200px;
   
   img {
     height: 150px;
     border-radius: 75px;
     margin-bottom: 10px;
+    overflow: hidden;
   }
   
   h3 {
@@ -65,7 +68,7 @@
     margin-top: 10px;
     
     a {
-      color: darken(#4e5ee0, 10%);
+      color: darken(#00629B, 0%);
       cursor: pointer;
       display: inline-block;
       margin: 0 4px;
@@ -73,7 +76,7 @@
       transition: color 80ms ease;
       
       &:hover {
-        color: darken(#4e5ee0, 0%);
+        color: darken(#00629B, 8%);
       }
     }
   }
