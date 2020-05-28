@@ -36,6 +36,9 @@
           <h2 class="m-article-card__title js-article-card-title {{#unless feature_image}}js-article-card-title-no-image{{/unless}}" title="{{title}}">
             {{title}}
           </h2>
+          {{#if meta_description}}
+            <div class="m-article__meta-description">{{ meta_description }}</div>
+          {{/if}}
         </div>
         <div class="m-article-card__timestamp">
           <span>{{date published_at timeago="true"}}</span>
