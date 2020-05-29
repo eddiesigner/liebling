@@ -5,16 +5,13 @@ This footer template is shared across all the pages.
 <footer class="m-footer">
   <div class="m-footer__content">
     <p class="m-footer-copyright">
-      <span>{{@site.title}} &copy; {{date format="YYYY"}}</span>
+      <span> The Fundamentals &copy; {{date format="YYYY"}}</span>
       <span>&nbsp; &bull; &nbsp;</span>
-      <span>{{t "Published with"}} <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a></span>
+      <span>{{t "Hosted With"}} <a href="https://ghost.org" target="_blank" rel="noopener">Ghost CMS</a></span>
+      <a href="https://www.patreon.com/bePatron?u=35936275" data-patreon-widget-type="become-patron-button"> Support Us!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script>
     </p>
 
-    <nav class="m-footer-social">
-      {{#if @site.facebook}}
-        <a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener" aria-label="Facebook">
-          <span class="icon-facebook"></span>
-        </a>
+   
       {{/if}}
       {{#if @site.twitter}}
         <a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener" aria-label="Twitter">
