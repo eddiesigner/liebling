@@ -1,14 +1,14 @@
 {
   "author": {
-    "email": "this.eduardo@gmail.com",
-    "name": "Eduardo Gómez",
-    "url": "https://eduardogomez.io"
+    "email": "arav.1tb@gmail.com",
+    "name": "Arav Narula",
+    "url": "https://Thefundamentals.xyz"
   },
   "config": {
-    "posts_per_page": 10,
+    "posts_per_page": 5,
     "image_sizes": {
       "xxs": {
-        "width": 30
+        "width": 25
       },
       "xs": {
         "width": 100
@@ -27,8 +27,8 @@
       }
     }
   },
-  "demo": "https://liebling.eduardogomez.io",
-  "description": "Beautiful and clean theme that is easy and comfortable to use.",
+  "demo": "https://Thefundamentals.xyz",
+  "description": "Beautiful and Cofortable Fork of the Theme Liebling For Nesletters and Publilcations",
   "engines": {
     "ghost": ">=3.0.0",
     "ghost-api": "v3"
@@ -41,18 +41,23 @@
       "Magazine",
       "Minimal",
       "Responsive"
+      "newsletter"
+      "simple"
+      "free"
     ]
   },
   "keywords": [
     "ghost",
     "theme",
     "ghost-theme"
+      "newsletter"
+    "Mobile-first"
   ],
   "license": "MIT",
-  "name": "liebling",
+  "name": "SlipX",
   "screenshots": {
     "desktop": "assets/screenshot-desktop.jpg",
     "mobile": "assets/screenshot-mobile.jpg"
   },
-  "version": "0.7.0"
+  "version": "0.1.0"
 }
