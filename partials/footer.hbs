@@ -2,98 +2,66 @@
 This footer template is shared across all the pages.
 --}}
 
-<footer class="m-footer">
-  <div class="footer-content row">
-    <div class="four-columns footer-columns">
-      <div class="footer-brand-div text-center">
-        <h2>University of California, Berkeley IEEE Student Branch</h2>
+<footer class="footer">
+  <div class="footer-main">
+    <div class="footer-left">
+      <div class="footer-header">
+        <p class="footer-title">IEEE Student Branch</p>
+        <p class="footer-subtitle">University of California, Berkeley</p>
+      </div>
+      <div>
+        <br>
         <p>2626 Hearst Avenue, 251 Cory Hall, Berkeley, California 94720</p>
       </div>
     </div>
-
-    <div class="four-columns footer-columns">
-      <div class="text-center">
-        <h3 class="footer-heading">Links</h3>
-        <p>
-          <a href="faq" class="footer-link">FAQ</a><br />
-          <a href="checkin" class="footer-link">Check-In</a><br />
-          <a href="/about" class="footer-link">About Us</a><br />
-          <a href="/sponsors" class="footer-link">Sponsors</a><br />
-          <a href="/resources" class="footer-link">Resources</a>
-        </p>
+    <div class="footer-middle">
+      <nav class="footer-social">
+        {{#if @site.facebook}}
+        <a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener" aria-label="Facebook">
+          <span class="icon-facebook"></span>
+        </a>
+        {{/if}}
+        {{#if @site.twitter}}
+        <a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener" aria-label="Twitter">
+          <span class="icon-twitter"></span>
+        </a>
+        {{/if}}
+        <a href="https://www.linkedin.com/company/ieee-ucb/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <span class="icon-linkedin"></span>
+        </a>
+        <a href="https://www.instagram.com/ieeeucb/" target="_blank" rel="noopener" aria-label="Instagram">
+          <span class="icon-instagram"></span>
+        </a>
+      </nav>
+      <p class="footer-email"><u><a href="mailto:ieee@berkeley.edu">ieee@berkeley.edu</a></u></p>
+      <div class="footer-mailing-list">
+        <form action="https://eepurl.com/c-RpPr">
+          <button type="submit">Join our mailing list</button>
+        </form>
       </div>
     </div>
-
-    <div class="four-columns footer-columns text-center">
-      <h3 class="footer-heading">For Officers</h3>
-      <p>
-          <!--<a href="#" class="footer-link">Blog</a><br />-->
-          <a href="/checkin" class="footer-link">Check In</a><br />
-          <a href="#" class="footer-link">Execs and Officers</a><br />
-        </p>
-    </div>
-
-    <div class="four-columns footer-columns text-center">
-      <h3 class="footer-heading">Contact Us</h3>
-      <nav class="m-footer-social">
-        {{#if @site.facebook}}
-          <a  class="footer-link" href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener" aria-label="Facebook">
-            <span class="icon-facebook"></span>
-          </a>
-        {{/if}}
-        {{#if @site.twitter}}
-          <a  class="footer-link" href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener" aria-label="Twitter">
-            <span class="icon-twitter"></span>
-          </a>
-        {{/if}}
-      </nav>
-     
-      <br /><br />
-      <a href="https://facebook.us17.list-manage.com/subscribe?u=f43f17217941cf92bdb222347&id=654800b45c" type="button" target="blank" class="ieee-btn link"><span class="footer-btn-txt">Join Our Mailing List</span></a>
-    </div>
+    <nav class="footer-right">
+      <div class="footer-col">
+        <ul>
+          <li>Links</li>
+          <li><a href="{{ @site.url }}/faq" rel="noopener">FAQ</a></li>
+          <li><a href="{{ @site.url }}/checkin" rel="noopener">Check-In</a></li>
+          <li><a href="{{ @site.url }}/about" rel="noopener">About Us</a></li>
+          <li><a href="{{ @site.url }}/sponsors" rel="noopener">Sponsors</a></li>
+          <li><a href="#" rel="noopener">Resources</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <ul>
+          <li>For Officers</li>
+          <li><a href="{{ @site.url }}/checkin" rel="noopener">Check-In</a></li>
+          <li><a href="#" rel="noopener">Execs &amp; Officers</a></li>
+        </ul>
+      </div>
+    </nav>
   </div>
-  <div class="row copyright-row text-center">
-    <p class="">© Copyright 2020 IEEE Student Branch at University of California, Berkeley</p>
+  <div class="footer-copyright">
+    <p class="footer-jslicense"><u><a href="{{asset "html/javascript.html"}}" rel="jslicense">{{t "JavaScript license information"}}</u></a></p>
+    <p>&copy; Copyright {{date format="YYYY"}} IEEE Student Branch at UC Berkeley</p>
   </div>
-    
-
-
-    <!--<p class="m-footer-copyright">
-      <span>{{@site.title}} &copy; {{date format="YYYY"}}</span>
-      <span>&nbsp; &bull; &nbsp;</span>
-      <span>{{t "Published with"}} <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a></span>
-    </p> -->
-
-    <!--<div class="footer-column">
-      <nav class="m-footer-social">
-        {{#if @site.facebook}}
-          <a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener" aria-label="Facebook">
-            <span class="icon-facebook"></span>
-          </a>
-        {{/if}}
-        {{#if @site.twitter}}
-          <a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener" aria-label="Twitter">
-            <span class="icon-twitter"></span>
-          </a>
-        {{/if}}
-      </nav>
-    </div>
-    <div class="footer-column">
-      <p>
-      <ul>
-        <li>FAQ</li>
-      </ul>
-      </p>
-    </div>
-    
-    
-    
-    <div class="footer-column">
-      <p class="m-footer-copyright jslicense">
-        <a href="{{asset "html/javascript.html"}}" rel="jslicense">{{t "JavaScript license information"}}</a>
-      </p>
-    </div>-->
-  
-  
-  
 </footer>
