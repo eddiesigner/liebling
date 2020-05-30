@@ -69,3 +69,148 @@
 
 @import "libs/slick";
 @import "libs/aos/aos";
+
+
+/************ custom theme ***********************/
+@media screen and (max-width: 767.98px) {
+  .two-columns {
+    width: 100% !important;
+  }
+
+  .three-columns{
+    width: 100% !important;
+  }
+
+  .four-columns {
+    width: 100% !important;
+  }
+
+  .footer-columns {
+    margin-bottom: 1.5rem;
+  }
+
+  .stats-columns {
+    margin-bottom: 1rem;
+  }
+
+  .stats-bubbles {
+    padding: 20% !important;
+  }
+
+  .stats-hr {
+    width: 35% !important;
+  }
+}
+
+
+.ieee-blue{
+  color: #1a5298 !important;
+}
+
+.link {
+	text-decoration: none !important;
+}
+
+.container {
+	margin-left: 4em;
+	margin-right: 4em;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.two-columns {
+  width: 50%;
+  float: left;
+}
+
+.three-columns {
+  width: 33.3%;
+  float: left;
+}
+
+.four-columns {
+  width: 25%;
+  float: left;
+}
+
+.stats-bubbles {
+  width: 65%;
+  display: inline-block;
+	background-color: #1A5298 !important;
+  padding: 4rem 2rem 4rem 2rem;
+  border-radius: 50%;
+  margin: auto;
+}
+
+.stats {
+  font-size: 3rem;
+}
+
+.stats-hr {
+  height: 2px;
+  background-color: grey;
+  margin: 10px auto !important;
+  width: 50%;
+}
+
+.ieee-btn {
+	background-color: #004080;
+	color: white;
+	font-size: 1.5em;
+	border-radius: 0.3rem;
+  padding: 1rem;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.ieee-btn:hover {
+  background-color: #004c97;
+  /*transform: translateY(-1px);*/
+  box-shadow: 2px 2px 4px black;
+}
+
+.btn-text {
+	margin: 1rem;
+	color: white;
+}
+
+.join-div {
+	text-align: center !important;
+}
+
+.div-spacing {
+	margin-top: 4rem;
+}
+
+.paragraph {
+	font-size: 1.25em;
+}
+
+.footer-content {
+  padding: 2rem;
+  color: white;
+}
+
+.copyright-row {
+  color: white;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding: 1rem;  
+}
+
+.footer-link {
+  transition: color 0.2s;
+}
+
+.footer-link:hover {
+  color: #166bbb;
+}
+  
+  /************* end custom theme ***********************/

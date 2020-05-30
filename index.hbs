@@ -28,9 +28,9 @@ into the {body} of the default.hbs template --}}
   
   <main>
     <div class="l-content">
-      <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
+      {{!--<div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
         <div class="l-grid centered">
-          {{#get "posts" filter="featured:true" include="authors,tags" limit="5" as |featured|}}
+        {{#get "posts" filter="featured:true" include="authors,tags" limit="5" as |featured|}}
             {{#if featured}}
               <div class="m-featured-slider">
                 <div class="m-featured-slider__list js-featured-articles">
@@ -76,11 +76,91 @@ into the {body} of the default.hbs template --}}
             {{/if}}
           {{/get}}
           {{!-- The tag below iterates over all the posts --}}
-          {{> "loop"}}
-        </div>
-      </div>
+          {{!-- {{> "loop"}} 
+        </div> 
+        </div> --}}
+
+        <div class="l-wrapper in-post aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
+            <div class="l-post-content">
+              <div class="pos-relative js-post-content">
+                <h1 class="ieee-blue">Who We Are</h1>
+                <h3 class="ieee-blue">Student Leaders</h2>
+                <div class="paragraph-div">
+                  <p class="paragraph">
+                    The University of California, Berkeley IEEE Student Branch was established in 1912 and has been one of the most active engineering student organizations on campus ever since.
+                  </p>
+                </div>
+
+                <h3 class="ieee-blue">What We Do</h1>
+                <div class="paragraph-div">
+                  <p class="paragraph">
+                    We aim to promote professional development, encourage academic growth, and organize social activities within the greater engineering community. <br />
+                    Some of the activities we host:
+                    <div class="row">
+                      <div class="two-columns">
+                        <ul class="paragraph">
+                          <li>Technical Workshops</li>
+                          <li>Resume and Interview Workshops</li>
+                          <li>Startup Fair</li>
+                          <li>Dinner with Corporate Sponsors</li>
+                        </ul>
+                      </div>
+                      <div class="two-columns">
+                        <ul class="paragraph">
+                          <li>Company Info-sessions</li>
+                          <li>Mentorship Program</li>
+                          <li>Two Decals (Hope, Micromouse)</li>
+                          <li>Socials (Dinner, bowling, ice-skating, etc.)</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </p>
+                </div>  {{!-- End of paragraph-div --}}
+
+
+                <div class="stats-div text-center div-spacing">
+                  <div class="row">
+                    <div class="three-columns stats-columns">
+                      <div class="">
+                        <span class="stats ieee-blue">500+</span>
+                        <div class="stats-hr"></div>
+                        <span class="sub-stats">General Members</span>
+                      </div>
+                    </div>
+                    <div class="three-columns stats-columns">
+                      <div class="">
+                        <span class="stats ieee-blue">50+</span>
+                        <div class="stats-hr"></div>
+                        <span class="sub-stats">Officers and Directors</span>
+                      </div>
+                    </div>
+                    <div class="three-columns stats-columns">
+                      <div class="">
+                        <span class="stats ieee-blue">100%</span>
+                        <div class="stats-hr"></div>
+                        <span class="sub-stats">General Member Acceptance</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--<div class="stats-div div-spacing">
+                  <span class="stats-bubbles"><span class="stats">500 General Members</span></span><span class="stats-bubbles"><span class="stats">50 Club Officers and Directors</span></span><span class="stats-bubbles"><span class="stats">100% General Member Acceptance</span></span>
+                </div>-->
+
+                <div class="join-div div-spacing">
+                  <h2 class="ieee-blue">Join Our Community!</h4>
+                  <a href="/apply" type="button" class="ieee-btn link"><span class="btn-text"> Apply Now</span></a>
+                </div>
+
+        </div>  {{!-- End of pos-relative div--}}
+      </div>  {{!-- l-post-content div --}}
+      </div>  {{!-- l-wrapper div --}}
+
+
+
+      
       {{!-- Links to Previous/Next posts --}}
-      {{pagination}}
+      {{!--{{pagination}} --}}
     </div>
   </main>
 </div>
