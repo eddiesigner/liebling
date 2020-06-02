@@ -20,3 +20,7 @@ collections:
 taxonomies:
   tag: /tag/{slug}/
   author: /author/{slug}/
+
+ /news/rss/:
+    template: /rss
+    content_type: text/xml
