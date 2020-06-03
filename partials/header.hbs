@@ -1,113 +1,23 @@
-{{!--
-This header template is shared across all the pages.
---}}
-
-<header class="m-header {{#if background}}with-picture{{/if}} js-header">
-  <div class="m-mobile-topbar" data-aos="fade-down">
-    <button class="m-icon-button in-mobile-topbar js-open-menu" aria-label="Open menu">
-      <span class="icon-menu"></span>
-    </button>
-    {{#if @site.logo}}
-      <a href="{{@site.url}}" class="m-logo in-mobile-topbar">
-        <img src="{{@site.logo}}" alt="{{@site.title}}">
-      </a>
-    {{else}}
-      <a href="{{@site.url}}" class="m-site-name in-mobile-topbar">
-        {{@site.title}}
-      </a>
-    {{/if}}
-    <button class="m-icon-button in-mobile-topbar js-open-search" aria-label="Open search">
-      <span class="icon-search"></span>
-    </button>
-  </div>
-
-  <div class="m-menu js-menu">
-    <button class="m-icon-button outlined as-close-menu js-close-menu" aria-label="Close menu">
-      <span class="icon-close"></span>
-    </button>
-    <div class="m-menu__main" data-aos="fade-down">
-      <div class="l-wrapper">
-        <div class="m-nav">
-          <nav class="m-nav__left">
-            <ul role="submenu">
-              {{#if @site.logo}}
-                <li class="only-desktop" role="menuitem">
-                  <a href="{{@site.url}}" class="m-logo">
-                    <img src="{{@site.logo}}" alt="{{@site.title}}">
-                  </a>
-                </li>
-                {{else}}
-                <li class="only-desktop" role="menuitem">
-                  <a href="{{@site.url}}" class="m-site-name in-desktop-menu">
-                    {{@site.title}}
-                  </a>
-                </li>
-              {{/if}}
-              {{#if @site.navigation}}
+<header class="home-header">
+<nav class="site-nav">
+	<a href="{{@site.url}}" class="nav-left">
+		<img src="{{asset "images/logo.png"}}">
+			<div class="lockup-template">
+				<div class="branch">University of California, Berkeley</div>
+				<div>IEEE Student Branch</div>
+			</div>
+	</a>
+	<div class="nav-right">
+		<div class="open-dropdown"><i class="fas fa-bars"></i></div>
+		<div class="dropdown">
+			<div class="close-dropdown-wrap">
+				<div class="close-dropdown"><i class="fas fa-times"></i></div>
+			</div>
+			{{#if @site.navigation}}
                 {{navigation}}
-              {{/if}}
-              <li role="menuitem" class="js-submenu-option">
-                <button class="m-icon-button in-menu-main more js-toggle-submenu" aria-label="Toggle submenu">
-                  <span class="icon-more"></span>
-                </button>
-                <div class="m-submenu js-submenu">
-                  <div class="l-wrapper in-submenu">
-                    <section class="m-recent-articles">
-                      <h3 class="m-submenu-title in-recent-articles">{{t "Recent articles"}}</h3>
-                      <div class="js-recent-articles">
-                        {{#get "posts" limit="4" order="published_at desc"}}
-                          {{#foreach posts}}
-                            <div>
-                              <a href="{{url}}" class="m-recent-article">
-                                <div class="m-recent-article__picture">
-                                  {{#if feature_image}}
-                                    <div class="lozad" data-background-image="{{img_url feature_image size="s"}}"></div>
-                                  {{else}}
-                                    <div class="no-image lozad" data-background-image="{{asset "images/no-image.png"}}"></div>
-                                  {{/if}}
-                                </div>
-                                <h3 class="m-recent-article__title js-recent-article-title" title="{{title}}">
-                                  {{title}}
-                                </h3>
-                                <span class="m-recent-article__date">{{date published_at timeago="true"}}</span>
-                              </a>
-                            </div>
-                            {{else}}
-                              <div class="m-not-found in-recent-articles">{{t "No recent articles found :("}}</div>
-                          {{/foreach}}
-                        {{/get}}
-                      </div>
-                    </section>
-                    <section class="m-tags">
-                      <h3 class="m-submenu-title">{{t "Tags"}}</h3>
-                      {{#get "tags" limit="10"}}
-                        <ul>
-                          {{#foreach tags}}
-                            <li>
-                              <a href="{{url}}">{{name}}</a>
-                            </li>
-                            {{else}}
-                              <li class="m-not-found">{{t "No tags found :("}}</li>
-                          {{/foreach}}
-                        </ul>
-                      {{/get}}
-                    </section>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </nav>
-          <div class="m-nav__right">
-            <button class="m-icon-button in-menu-main js-open-search" aria-label="Open search">
-              <span class="icon-search"></span>
-            </button>
-            <div class="m-toggle-darkmode js-tooltip" data-tippy-content="{{t "Toggle dark mode"}}">
-              <input type="checkbox" class="js-toggle-darkmode">
-              <div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+            {{/if}}				
+		</div>
+	</div>
+	<div class="overlay"></div>
+</nav>
 </header>

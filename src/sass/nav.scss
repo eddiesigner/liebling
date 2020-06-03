@@ -1,0 +1,297 @@
+$default-font: 'Open Sans', sans-serif;
+$logo-font: 'Formata', Verdana, Calibri;
+$default-blue: #00629B;
+
+@mixin still($type) {
+    position: $type;
+    top: 0;
+    left: 0;
+}
+
+@mixin respond($device) {
+    @if $device == tablets {
+        @media only screen and (max-width: 1018px) {
+            @content;
+        }
+    }
+    @else if $device == phones {
+        @media only screen and (max-width: 715px) {
+            @content;
+        }
+    }
+    @else if $device == small-phones {
+        @media only screen and (max-width: 320px) {
+            @content;
+        }
+    }
+    @else {
+        @error "Invalid device: #{$device}";
+    }
+}
+
+@mixin unsetVals($values...) {
+    @each $val in $values {
+        #{$val}: unset;
+    }
+}
+
+@mixin multiSet($value, $keys...) {
+    @each $key in $keys {
+        #{$key}: $value;
+    }
+}
+
+.home-header {
+    z-index: 1;
+    @include still(fixed);
+    width: 100%;
+    user-select: none;
+
+    .nav-left {
+        margin-left: 1rem;
+        height: 6.771vw;
+        margin-top: 0.5rem;
+        float: left;
+        display: flex;
+        position: relative;
+        align-items: center;
+        cursor: pointer;
+
+        @include respond(tablets) {
+            height: 6.5em;
+            max-height: 80%;
+        }
+
+        @include respond(phones) {
+            height: 5em;
+        }
+
+        @include respond(small-phones) {
+            height: 4em;
+        }
+
+        img {
+            height: 100%;
+            width: auto;
+        }
+
+        .lockup-template {
+            margin: 0 1rem;
+            text-align: left;
+            font-size: 4rem;
+
+            div {
+                display: block;
+                font-size: 2vw;
+                color: $default-blue;
+                font-family: $logo-font;
+
+                @include respond(tablets) {
+                    font-size: 0.5em;
+                }
+
+                @include respond(phones) {
+                    font-size: 0.27em;
+                }
+
+                @include respond(small-phones) {
+                    font-size: 0.24em;
+                }
+            }
+
+            .branch {
+                font-weight: 700;
+            }
+        }
+    }
+
+    .nav-right {
+        float: right;
+        display: flex;
+        height: 6.250vw;
+        align-items: center;
+
+        @include respond(tablets) {
+            height: 6em;
+            margin-left: 1em;
+            .close-dropdown-wrap {
+                height: 6em;
+                display: flex;
+                background-color: $default-blue;
+                align-items: center;
+                justify-content: flex-end;
+                cursor: pointer;
+                @include respond(small-phones) {
+                    height: 5em;
+                }
+            }
+        }
+
+        @include respond(phones) {
+            height: 5em;
+            margin-top: 0.5em;
+        }
+
+        @include respond(small-phones) {
+            height: 4em;
+        }
+
+        .open-dropdown, .close-dropdown {
+            display: none;
+
+            @include respond(tablets) {
+                display: block;
+                margin: 0;
+                margin-right: 1em;
+                font-size: 3em;
+                text-align: right;
+                width: 100%;
+            }
+
+            @include respond(phones) {
+                font-size: 6vw;
+            }
+        }
+
+        .open-dropdown {
+            color: $default-blue;
+        }
+
+        .dropdown {
+            display: flex;
+
+            .close-dropdown {
+                color: white;
+            }
+
+            @include respond(tablets) {
+                position: fixed;
+                margin: 0;
+                display: none;
+                align-items: center;
+                @include multiSet(0, top, right);
+                height: 100%;
+                background-color: $default-blue;
+
+                &[show] {
+                    display: block;
+                }
+            }
+
+            .nav-btn-container {
+                display: inline-block;
+                position: relative;
+                width: calc(10.573vw * 0.8);
+                height: calc(3.281vw * 0.8);
+                margin: 0 1.302vw;
+                cursor: pointer;
+
+                @include respond(tablets) {
+                    display: block;
+                    margin: 0;
+                    @include unsetVals(width, height);
+                }
+
+                svg {
+                    position: absolute;
+                    top: -10%;
+                    left: -4.2%;
+                    height: 120%;
+                    z-index: 2;
+                    pointer-events: none;
+
+                    @include respond(tablets) {
+                        display: none;
+                    }
+                }
+
+                .btn {
+                    @include still(absolute);
+                    @include multiSet(100%, width, height);
+                    background-color: $default-blue;
+                    color: white;
+                    text-align: center;
+                    transition: background-color 100ms;
+                    z-index: 0;
+
+                    &:hover {
+                        background-color: rgb(87, 119, 201);
+                    }
+
+                    @include respond(tablets) {
+                        font-size: 1em;
+                        padding: 1em 2em;
+                        position: relative;
+                        @include unsetVals(top, width, left, height);
+                    }
+
+                    @include respond(phones) {
+                        font-size: 3em;
+                        padding: 0.5em 1em;
+                    }
+
+                    .txt {
+                        font-size: 1.042vw;
+                        pointer-events: none;
+                        white-space: nowrap;
+                        font-family: $default-font;
+                        position: absolute;
+                        @include multiSet(50%, top, left);
+                        transform: translate(-50%, -50%);
+
+                        @include respond(tablets) {
+                            position: relative;
+                            font-size: 115%;
+                            @include multiSet(auto, width, height, top, left);
+                            @include unsetVals(transform);
+                        }
+
+                        @include respond(phones) {
+                            font-size: 0.5em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .overlay {
+        @include still(absolute);
+        clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%);
+        height: 8.333vw;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.7);
+        z-index: -1;
+
+        @include respond(tablets) {
+            height: 8em;
+        }
+
+        @include respond(phones) {
+            @include unsetVals(clip-path);
+            height: 6em;
+        }
+        @include respond(small-phones) {
+            height: 5em;
+        }
+    }
+
+    @include respond(phones) {
+
+        .site-nav {
+            display: flex;
+        }
+
+        .nav-left {
+            flex-grow: 2;
+            flex-shrink: 2;
+            float: unset;
+        }
+
+        .nav-right {
+            flex-grow: 1;
+            flex-shrink: 2;
+            float: unset;
+        }
+    }
+}

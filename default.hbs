@@ -24,9 +24,16 @@
         font-style: normal;
         font-display: swap;
       }
+      @font-face {
+        font-family: Formata;
+        src: url("{{asset 'fonts/formata.otf'}}");
+      }
     </style>
     <link rel="stylesheet" type="text/css" href="{{asset "css/app.css"}}" media="screen" />
-
+    <link rel="stylesheet" type="text/css" href="{{asset "css/nav.css"}}" media="screen">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js"></script>
     {{!-- This #block helper will pull data from the hero partial 
     to inject styles of the hero image to make it responsive --}}
     {{{block "herobackground"}}}
@@ -76,7 +83,8 @@
     <script defer src="{{asset "js/manifest.js"}}"></script>
     <script defer src="{{asset "js/vendor.js"}}"></script>
     <script defer src="{{asset "js/app.js"}}"></script>
-
+    <script src="{{asset "js/header.js"}}"></script>
+    
     {{!-- The #block helper will pull in data from the #contentFor other template files --}}
     {{{block "scripts"}}}
 

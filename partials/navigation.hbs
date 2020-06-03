@@ -2,9 +2,15 @@
 This navigation template is shared across all the pages.
 Also it includes the big submenu.
 --}}
-
 {{#foreach navigation}}
-  <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}">
-    <a href="{{url absolute="true"}}">{{label}}</a>
-  </li>
+<a href="{{url absolute="true"}}">
+	<div class="nav-btn-container">
+		<svg viewBox="-1.5 -1.5 183 63" xmlns="http://www.w3.org/2000/svg">
+			<polygon points="0,30 30,0 180,0 180,30 150,60 0,60" fill="none" stroke="white" stroke-width="3"></polygon>
+		</svg>
+		<div class="btn">
+			<div class="center txt">{{label}}</div>
+		</div>
+	</div>
+</a>
 {{/foreach}}
