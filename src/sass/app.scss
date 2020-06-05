@@ -105,7 +105,7 @@
 
 
 .ieee-blue{
-  color: #1a5298 !important;
+  color: $ieee-blue !important;
 }
 
 .link {
@@ -145,14 +145,15 @@
 .stats-bubbles {
   width: 65%;
   display: inline-block;
-	background-color: #1A5298 !important;
+	background-color: $ieee-blue !important;
   padding: 4rem 2rem 4rem 2rem;
   border-radius: 50%;
   margin: auto;
 }
 
 .stats {
-  font-size: 3rem;
+  font-size: 4rem;
+  font-weight: 500;
 }
 
 .stats-hr {
@@ -162,8 +163,12 @@
   width: 50%;
 }
 
+.sub-stats {
+  font-size: 1.25rem;
+}
+
 .ieee-btn {
-	background-color: #004080;
+	background-color: $ieee-blue;
 	color: white;
 	font-size: 1.5em;
 	border-radius: 0.3rem;

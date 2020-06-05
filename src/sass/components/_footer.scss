@@ -1,5 +1,5 @@
 .footer {
-  background-color: #003262;
+  background-color: $ieee-blue;
   padding: 15px;
 }
 
@@ -77,7 +77,7 @@
 
 .footer-mailing-list button:hover {
   background-color: white;
-  color: #003262;
+  color: $ieee-blue;
   cursor: pointer;
   border-color: #fff;
 }
