@@ -1,5 +1,4 @@
 import $ from 'jquery'
-import lozad from 'lozad'
 import Headroom from "headroom.js"
 import Glide, {
   Swipe,
@@ -317,13 +316,6 @@ $(document).ready(() => {
   } else {
     $('[data-aos]').addClass('no-aos-animation')
   }
-
-  const observer = lozad('.lozad', {
-    loaded: (el) => {
-      el.classList.add('loaded')
-    }
-  })
-  observer.observe()
 
   if ($openSecondaryMenu.length > 0) {
     const template = document.getElementById('secondary-navigation-template')

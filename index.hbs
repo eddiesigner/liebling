@@ -40,7 +40,7 @@ into the {body} of the default.hbs template --}}
                         <article class="m-featured-article {{#unless feature_image}}no-picture{{/unless}}">
                           <div class="m-featured-article__picture">
                             {{#if feature_image}}
-                              <div class="lozad no-fade-animation" data-background-image="{{img_url feature_image size="l"}}"></div>
+                              <img src="{{img_url feature_image size="l"}}" loading="lazy" alt="">
                             {{/if}}
                           </div>
                           <div class="m-featured-article__meta">

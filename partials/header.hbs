@@ -70,11 +70,11 @@ This header template is shared across all the pages.
                                 {{#foreach recent}}
                                 <div class="glide__slide">
                                   <a href="{{url}}" class="m-recent-article">
-                                    <div class="m-recent-article__picture">
+                                    <div class="m-recent-article__picture {{#unless feature_image}}no-picture{{/unless}}">
                                       {{#if feature_image}}
-                                        <div class="lozad" data-background-image="{{img_url feature_image size="s"}}"></div>
+                                        <img src="{{img_url feature_image size="s"}}" loading="lazy" alt="">
                                       {{else}}
-                                        <div class="no-image lozad" data-background-image="{{asset "images/no-image.png"}}"></div>
+                                        <img src="{{asset "images/no-image.png"}}" loading="lazy" alt="">
                                       {{/if}}
                                     </div>
                                     <h3 class="m-recent-article__title js-recent-article-title" title="{{title}}">
