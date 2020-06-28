@@ -1,12 +1,14 @@
-import cssVars from 'css-vars-ponyfill'
 import $ from 'jquery'
 import lozad from 'lozad'
 import Headroom from "headroom.js"
-import slick from 'slick-carousel'
+import Glide, {
+  Swipe,
+  Breakpoints
+} from '@glidejs/glide/dist/glide.modular.esm'
 import tippy from 'tippy.js'
 import shave from 'shave'
 import AOS from 'aos'
-import Fuse from 'fuse.js'
+import Fuse from 'fuse.js/dist/fuse.basic.esm.min.js'
 import {
   isRTL,
   formatDate,
@@ -14,8 +16,6 @@ import {
   isMobile,
   getParameterByName
 } from './helpers'
-
-cssVars({})
 
 $(document).ready(() => {
   if (isRTL()) {
@@ -30,7 +30,7 @@ $(document).ready(() => {
   const $toggleSubmenu = $('.js-toggle-submenu')
   const $submenuOption = $('.js-submenu-option')[0]
   const $submenu = $('.js-submenu')
-  const $recentArticles = $('.js-recent-articles')
+  const $recentSlider = $('.js-recent-slider')
   const $openSecondaryMenu = $('.js-open-secondary-menu')
   const $openSearch = $('.js-open-search')
   const $closeSearch = $('.js-close-search')
@@ -81,12 +81,10 @@ $(document).ready(() => {
     const allPosts = []
     const fuseOptions = {
       shouldSort: true,
-      threshold: 0,
+      threshold: 0.6,
       location: 0,
       distance: 100,
-      tokenize: true,
-      matchAllTokens: false,
-      maxPatternLength: 32,
+      findAllMatches: true,
       minMatchCharLength: 1,
       keys: ['title', 'custom_excerpt', 'html']
     }
@@ -195,9 +193,9 @@ $(document).ready(() => {
         for (var i = 0, len = results.length; i < len; i++) {
           htmlString += `
           <article class="m-result">\
-            <a href="${results[i].url}" class="m-result__link">\
-              <h3 class="m-result__title">${results[i].title}</h3>\
-              <span class="m-result__date">${formatDate(results[i].published_at)}</span>\
+            <a href="${results[i].item.url}" class="m-result__link">\
+              <h3 class="m-result__title">${results[i].item.title}</h3>\
+              <span class="m-result__date">${formatDate(results[i].item.published_at)}</span>\
             </a>\
           </article>`
         }
@@ -274,19 +272,41 @@ $(document).ready(() => {
     headroom.init()
   }
 
-  if ($recentArticles.length > 0) {
-    $recentArticles.on('init', function () {
+  if ($recentSlider.length > 0) {
+    const recentSlider = new Glide('.js-recent-slider', {
+      type: 'slider',
+      rewind: false,
+      perView: 4,
+      swipeThreshold: false,
+      dragThreshold: false,
+      gap: 0,
+      direction: isRTL() ? 'rtl' : 'ltr',
+      breakpoints: {
+        1024: {
+          perView: 3,
+          swipeThreshold: 80,
+          dragThreshold: 120
+        },
+        768: {
+          perView: 2,
+          swipeThreshold: 80,
+          dragThreshold: 120,
+          peek: { before: 0, after: 115 }
+        },
+        568: {
+          perView: 1,
+          swipeThreshold: 80,
+          dragThreshold: 120,
+          peek: { before: 0, after: 115 }
+        }
+      }
+    })
+
+    recentSlider.on('mount.after', () => {
       shave('.js-recent-article-title', 50)
     })
 
-    $recentArticles.slick({
-      adaptiveHeight: true,
-      arrows: false,
-      infinite: false,
-      mobileFirst: true,
-      variableWidth: true,
-      rtl: isRTL()
-    })
+    recentSlider.mount({ Swipe, Breakpoints })
   }
 
   if (typeof disableFadeAnimation === 'undefined' || !disableFadeAnimation) {

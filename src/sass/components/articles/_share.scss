@@ -69,6 +69,8 @@
   height: 100%;
 
   @include respond-to('large') {
+    position: sticky;
+    top: 100px;
     flex-direction: column-reverse;
     align-items: flex-start;
     height: auto;

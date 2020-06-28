@@ -5,10 +5,6 @@
   background-color: var(--primary-subtle-color);
   z-index: 1;
 
-  @include respond-to('medium') {
-    border-radius: 10px;
-  }
-
   &:hover {
     .m-featured-article__author {
       @include bs(0 4px 8px rgba(0, 0, 0, 0.3));

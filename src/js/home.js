@@ -1,27 +1,46 @@
 import $ from 'jquery'
-import slick from 'slick-carousel'
 import shave from 'shave'
+import Glide, {
+  Controls,
+  Swipe,
+  Breakpoints
+} from '@glidejs/glide/dist/glide.modular.esm'
 import { isRTL } from './helpers'
 
 $(document).ready(() => {
-  const $featuredArticles = $('.js-featured-articles')
+  const $featuredSlider = $('.js-featured-slider')
 
-  if ($featuredArticles.length > 0) {
-    $featuredArticles.on('init', function () {
+  if ($featuredSlider.length > 0) {
+    const numSlides = $featuredSlider.find('.js-featured-slide').length
+    const featuredSlider = new Glide('.js-featured-slider', {
+      type: numSlides === 1 ? 'slider' : 'carousel',
+      rewind: false,
+      gap: 0,
+      swipeThreshold: false,
+      dragThreshold: false,
+      direction: isRTL() ? 'rtl' : 'ltr',
+      breakpoints: {
+        768: {
+          swipeThreshold: numSlides === 1 ? false : 80,
+          dragThreshold: numSlides === 1 ? false : 120
+        }
+      }
+    })
+
+    if (numSlides === 1) {
+      $featuredSlider.find('.js-controls').remove()
+    }
+
+    featuredSlider.on('mount.after', () => {
       shave('.js-featured-article-title', 200)
     })
-
-    $featuredArticles.slick({
-      arrows: true,
-      infinite: true,
-      prevArrow: '<button class="m-icon-button in-featured-articles slick-prev" aria-label="Previous"><span class="icon-arrow-left"></span></button>',
-      nextArrow: '<button class="m-icon-button in-featured-articles slick-next" aria-label="Next"><span class="icon-arrow-right"></span></button>',
-      mobileFirst: true,
-      rtl: isRTL()
-    })
     
+    featuredSlider.mount({ Controls, Swipe, Breakpoints })
+
     setTimeout(() => {
-      $featuredArticles.slick('setPosition')
+      window.dispatchEvent(new Event('resize'))
     }, 350)
   }
+
+  shave('.js-featured-article-title', 200)
 })
