@@ -2,21 +2,21 @@
   ul {
     display: flex;
     flex-wrap: wrap;
+  }
 
-    li {
-      letter-spacing: 0.2px;
-      font-size: 0.875rem;
-      font-weight: 600;
-      margin-right: 30px;
-      margin-bottom: 10px !important;
+  li {
+    letter-spacing: 0.2px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-right: 30px;
+    margin-bottom: 10px !important;
 
-      &:last-of-type {
-        margin-right: 0;
-      }
+    &:last-of-type {
+      margin-right: 0;
+    }
 
-      a {
-        color: var(--link-color);
-      }
+    a {
+      color: var(--link-color);
     }
   }
 }

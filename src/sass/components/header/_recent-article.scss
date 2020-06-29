@@ -47,7 +47,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    -webkit-backface-visibility: visible !important;
     backface-visibility: visible !important;
     @include transition(transform .5s cubic-bezier(0.165, 0.84, 0.44, 1));
   }

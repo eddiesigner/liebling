@@ -5,11 +5,13 @@
 }
 
 .sr-only {
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
   position: absolute;
-  left: -10000px;
   width: 1px;
   height: 1px;
   overflow: hidden;
+  white-space: nowrap;
 }
 
 .clearfix:before,
@@ -35,9 +37,6 @@
 
 .no-appearance {
   -webkit-appearance: none !important;
-  -moz-appearance: none !important;
-  -o-appearance: none !important;
-  -ms-appearance: none !important;
   appearance: none !important;
 }
 

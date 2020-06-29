@@ -30,7 +30,6 @@ $break-largest: 90rem; // >= 1440px @ 16px
 @mixin bs($bsval: 0 0 0.83em #333, $due: 0 0 0 transparent) {
   -moz-box-shadow: $bsval, $due;
   -webkit-box-shadow: $bsval, $due;
-  -o-box-shadow: $bsval, $due;
   box-shadow: $bsval, $due;
 }
 
@@ -51,7 +50,6 @@ $break-largest: 90rem; // >= 1440px @ 16px
 
 // Transforms
 @mixin transform($transform: translate3d(0, 0, 0)) {
-  -webkit-transform: $transform;
   -moz-transform: $transform;
   -ms-transform: $transform;
   -o-transform: $transform;
