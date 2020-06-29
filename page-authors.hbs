@@ -27,13 +27,14 @@ into the {body} of the default.hbs template --}}
             <div class="l-grid centered">
               {{#foreach authors}}
                 <article class="m-article-card as-author">
-                  {{#if profile_image}}
-                    <div class="m-article-card__picture lozad" data-background-image="{{img_url profile_image size="m"}}">
-                  {{else}}
-                    <div class="m-article-card__picture lozad" data-background-image="{{asset "images/default-avatar-rectangle.jpg"}}">
-                  {{/if}}
-                  <a href="{{url}}" class="m-article-card__picture-link" aria-label="Author"></a>
-                  <h3 class="m-article-card__name">{{name}}</h3>
+                  <div class="m-article-card__picture">
+                    {{#if profile_image}}
+                      <img clasS="m-article-card__picture-background" src="{{img_url profile_image size="m"}}" loading="lazy" alt="">
+                    {{else}}
+                      <img clasS="m-article-card__picture-background" src="{{asset "images/default-avatar-rectangle.jpg"}}" loading="lazy" alt="">
+                    {{/if}}
+                    <a href="{{url}}" class="m-article-card__picture-link" aria-label="Author"></a>
+                    <h3 class="m-article-card__name">{{name}}</h3>
                   </div>
                   <div class="m-article-card__info">
                     <a href="{{url}}" class="m-article-card__info-link">

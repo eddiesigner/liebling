@@ -3,12 +3,23 @@
   padding: 0;
   margin: 0;
 
-  .slick-list {
-    padding: 40px 0 60px;
-
-    @include respond-to('large') {
-      padding: 40px 40px 60px;
+  .glide__track {
+    @include respond-to('medium') {
+      padding: 0 40px 0;
       margin: 0 -40px;
+    }
+  }
+
+  .glide__slides {
+    padding: 40px 0 60px;
+    margin: 0 auto;
+
+    @include respond-to('medium') {
+      padding: 40px 0 60px;
+    }
+
+    @include respond-to('extra-large') {
+      overflow: visible;
     }
   }
 

@@ -179,9 +179,21 @@ into the {body} of the default.hbs template --}}
             <div class="l-wrapper in-recommended">
               <h3 class="m-section-title in-recommended">{{t "Recommended for you"}}</h3>
               <div class="m-recommended-articles">
-                <div class="m-recommended-slider js-recommended-articles">
-                  {{!-- The tag below iterates over all the related posts --}}
-                  {{> "loop"}}
+                <div class="m-recommended-slider glide js-recommended-slider">
+                  <div class="glide__track" data-glide-el="track">
+                    <div class="glide__slides">
+                      {{!-- The tag below iterates over all the related posts --}}
+                      {{> "loop"}}
+                    </div>
+                  </div>
+                  <div data-glide-el="controls" class="glide__arrows js-controls">
+                    <button data-glide-dir="<" class="m-icon-button filled in-recommended-articles glide-prev" aria-label="Previous">
+                      <span class="icon-arrow-left" aria-hidden="true"></span>
+                    </button>
+                    <button data-glide-dir=">" class="m-icon-button filled in-recommended-articles glide-next" aria-label="Next">
+                      <span class="icon-arrow-right" aria-hidden="true"></span>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

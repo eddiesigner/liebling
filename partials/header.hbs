@@ -62,29 +62,35 @@ This header template is shared across all the pages.
                   <div class="l-wrapper in-submenu">
                     <section class="m-recent-articles">
                       <h3 class="m-submenu-title in-recent-articles">{{t "Recent articles"}}</h3>
-                      <div class="js-recent-articles">
-                        {{#get "posts" limit="4" order="published_at desc"}}
-                          {{#foreach posts}}
-                            <div>
-                              <a href="{{url}}" class="m-recent-article">
-                                <div class="m-recent-article__picture">
-                                  {{#if feature_image}}
-                                    <div class="lozad" data-background-image="{{img_url feature_image size="s"}}"></div>
-                                  {{else}}
-                                    <div class="no-image lozad" data-background-image="{{asset "images/no-image.png"}}"></div>
-                                  {{/if}}
+                      {{#get "posts" limit="4" order="published_at desc" as |recent|}}
+                        {{#if recent}}
+                          <div class="glide js-recent-slider">
+                            <div class="glide__track" data-glide-el="track">
+                              <div class="glide__slides">
+                                {{#foreach recent}}
+                                <div class="glide__slide">
+                                  <a href="{{url}}" class="m-recent-article">
+                                    <div class="m-recent-article__picture {{#unless feature_image}}no-picture{{/unless}}">
+                                      {{#if feature_image}}
+                                        <img src="{{img_url feature_image size="s"}}" loading="lazy" alt="">
+                                      {{else}}
+                                        <img src="{{asset "images/no-image.png"}}" loading="lazy" alt="">
+                                      {{/if}}
+                                    </div>
+                                    <h3 class="m-recent-article__title js-recent-article-title" title="{{title}}">
+                                      {{title}}
+                                    </h3>
+                                    <span class="m-recent-article__date">{{date published_at timeago="true"}}</span>
+                                  </a>
                                 </div>
-                                <h3 class="m-recent-article__title js-recent-article-title" title="{{title}}">
-                                  {{title}}
-                                </h3>
-                                <span class="m-recent-article__date">{{date published_at timeago="true"}}</span>
-                              </a>
+                                {{/foreach}}
+                              </div>
                             </div>
-                            {{else}}
-                              <div class="m-not-found in-recent-articles">{{t "No recent articles found :("}}</div>
-                          {{/foreach}}
-                        {{/get}}
-                      </div>
+                          </div>
+                        {{else}}
+                          <div class="m-not-found in-recent-articles">{{t "No recent articles found :("}}</div>
+                        {{/if}}
+                      {{/get}}
                     </section>
                     <section class="m-tags">
                       <h3 class="m-submenu-title">{{t "Tags"}}</h3>
