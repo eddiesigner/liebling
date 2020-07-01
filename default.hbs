@@ -27,6 +27,9 @@
     </style>
     <link rel="stylesheet" type="text/css" href="{{asset "css/app.css"}}" media="screen" />
 
+    {{!-- This #block helper will inject a stylesheet for a specific page --}}
+    {{{block "styles"}}}
+
     {{!-- This #block helper will pull data from the hero partial 
     to inject styles of the hero image to make it responsive --}}
     {{{block "herobackground"}}}

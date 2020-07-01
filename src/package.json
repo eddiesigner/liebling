@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "@glidejs/glide": "^3.4.1",
-    "aos": "git://github.com/eddiesigner/aos.git#v2",
+    "aos": "eddiesigner/aos.git#v2",
     "fitvids": "^2.0.0",
     "fuse.js": "^6.3.0",
     "headroom.js": "^0.10.3",
