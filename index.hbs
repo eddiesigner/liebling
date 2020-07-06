@@ -5,8 +5,8 @@ It can be used also as the home page or the default page.
 
 {{!-- This block loads specific styles for the index page --}}
 {{#contentFor "styles"}}
-  <link rel="stylesheet" type="text/css" href="{{asset "css/home.css"}}" media="screen" />
-  <link rel="stylesheet" type="text/css" href="{{asset "css/listing.css"}}" media="screen" />
+  <link rel="stylesheet" type="text/css" href="{{asset "css/home.css"}}" media="screen" rel="preload" as="style" />
+  <link rel="stylesheet" type="text/css" href="{{asset "css/listing.css"}}" media="screen" rel="preload" as="style" />
 {{/contentFor}}
 
 {{!-- The tag below means: insert everything in this file
