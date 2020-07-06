@@ -40,14 +40,13 @@
     border-radius: 10px;
     overflow: hidden;
   }
-
-  .slick-list,
-  .slick-track,
-  .slick-slide > div {
-    height: 100%;
-  }
 }
 
 .m-featured-slider__list__item {
   height: 100%;
+  overflow: hidden;
+
+  @include respond-to('medium') {
+    border-radius: 10px;
+  }
 }

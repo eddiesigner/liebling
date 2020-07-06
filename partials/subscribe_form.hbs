@@ -6,10 +6,10 @@ You need to enable the subscription feature first.
 <form method="post" action="{{action}}" id="{{form_id}}" class="{{form_class}}">
   {{hidden}}
 
-  <fieldset>
+  <div class="pos-relative">
     <label for="{{input_id}}" class="sr-only">{{placeholder}}</label>
     {{input_email id=input_id class=input_class placeholder=placeholder value=email autofocus=autofocus}}
-  </fieldset>
+  </div>
   <button id="{{button_id}}" class="{{button_class}}" type="submit">{{t "Subscribe"}}</button>
 
   {{script}}

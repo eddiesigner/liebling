@@ -28,6 +28,7 @@
     cursor: pointer;
     z-index: 2;
     @extend .no-appearance;
+    @extend .focusable;
   }
 
   input::-moz-focus-inner { 
