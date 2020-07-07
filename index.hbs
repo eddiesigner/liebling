@@ -52,7 +52,18 @@ into the {body} of the default.hbs template --}}
                       <article class="m-featured-article {{#unless feature_image}}no-picture{{/unless}}">
                         <div class="m-featured-article__picture">
                           {{#if feature_image}}
-                            <img src="{{img_url feature_image size="l"}}" loading="lazy" alt="">
+                            <style>
+                              #featured-bg-{{id}} {
+                                background-image: url({{img_url feature_image size='l'}});
+                              }
+                            
+                              @media(max-width: 768px) {
+                                #featured-bg-{{id}} {
+                                  background-image: url({{img_url feature_image size='m'}});
+                                }
+                              }
+                            </style>
+                            <div id="featured-bg-{{id}}"></div>
                           {{/if}}
                         </div>
                         <div class="m-featured-article__meta">
