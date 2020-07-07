@@ -49,7 +49,7 @@ into the {body} of the default.hbs template --}}
                           {{/if}}
                         </div>
                         <div class="m-featured-article__meta">
-                          <a href="{{primary_author.url}}" class="m-featured-article__author js-tooltip" aria-label="Authors" data-tippy-content="{{t "Posted by"}} {{primary_author.name}} {{authors autolink="false" from="2" prefix=(t "Among with") separator=" , "}}">
+                          <a href="{{primary_author.url}}" class="m-featured-article__author js-tooltip" aria-label="{{primary_author.name}}" data-tippy-content="{{t "Posted by"}} {{primary_author.name}} {{authors autolink="false" from="2" prefix=(t "Among with") separator=" , "}}">
                             {{#if primary_author.profile_image}}
                               <div style="background-image: url({{img_url primary_author.profile_image size="xs"}});"></div>
                             {{else}}
@@ -80,10 +80,10 @@ into the {body} of the default.hbs template --}}
                 </div>
               </div>
               <div data-glide-el="controls" class="glide__arrows js-controls">
-                <button data-glide-dir="<" class="m-icon-button in-featured-articles glide-prev" aria-label="Previous">
+                <button data-glide-dir="<" class="m-icon-button in-featured-articles glide-prev" aria-label="{{t "Previous"}}">
                   <span class="icon-arrow-left" aria-hidden="true"></span>
                 </button>
-                <button data-glide-dir=">" class="m-icon-button in-featured-articles glide-next" aria-label="Next">
+                <button data-glide-dir=">" class="m-icon-button in-featured-articles glide-next" aria-label="{{t "Next"}}">
                   <span class="icon-arrow-right" aria-hidden="true"></span>
                 </button>
               </div>

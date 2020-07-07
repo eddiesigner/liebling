@@ -16,8 +16,7 @@
 
 .focusable {
   &:focus {
-    outline: 2px solid #2997ff !important;
-    outline-offset: 1px;
+    box-shadow: 0 0 0 2px #2997ff !important;
   }
 }
 

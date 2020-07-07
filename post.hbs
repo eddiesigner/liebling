@@ -52,7 +52,7 @@ into the {body} of the default.hbs template --}}
                     class="m-icon-button filled in-share" target="_blank" rel="noopener" aria-label="Twitter">
                     <span class="icon-twitter" aria-hidden="true"></span>
                   </a>
-                  <button class="m-icon-button filled in-share progress js-scrolltop" aria-label="Scroll to top">
+                  <button class="m-icon-button filled in-share progress js-scrolltop" aria-label="{{t "Scroll to top"}}">
                     <span class="icon-arrow-top" aria-hidden="true"></span>
                     <svg aria-hidden="true">
                       <circle class="progress-ring__circle js-progress" fill="transparent" r="0" />
@@ -110,7 +110,7 @@ into the {body} of the default.hbs template --}}
         <section class="m-author">
           <div class="m-author__content">
             <div class="m-author__picture">
-              <a href="{{primary_author.url}}" class="m-author-picture" aria-label="Author picture">
+              <a href="{{primary_author.url}}" class="m-author-picture" aria-label="{{primary_author.name}}">
                 {{#if primary_author.profile_image}}
                   <div style="background-image: url({{primary_author.profile_image}});"></div>
                 {{else}}
@@ -133,24 +133,22 @@ into the {body} of the default.hbs template --}}
               <ul class="m-author-links">
                 {{#if primary_author.website}}
                   <li>
-                    <a href="{{primary_author.website}}" target="_blank" rel="noopener" aria-label="Website">
-                      <span class="icon-globe"></span>
+                    <a href="{{primary_author.website}}" target="_blank" rel="noopener" aria-label="{{t "Website"}}">
+                      <span class="icon-globe" aria-hidden="true"></span>
                     </a>
                   </li>
                 {{/if}}
                 {{#if primary_author.facebook}}
                   <li>
-                    <a href="https://facebook.com/{{primary_author.facebook}}" target="_blank" rel="noopener"
-                      aria-label="Facebook">
-                      <span class="icon-facebook"></span>
+                    <a href="https://facebook.com/{{primary_author.facebook}}" target="_blank" rel="noopener" aria-label="Facebook">
+                      <span class="icon-facebook" aria-hidden="true"></span>
                     </a>
                   </li>
                 {{/if}}
                 {{#if primary_author.twitter}}
                   <li>
-                    <a href="https://twitter.com/{{primary_author.twitter}}" target="_blank" rel="noopener"
-                      aria-label="Twitter">
-                      <span class="icon-twitter"></span>
+                    <a href="https://twitter.com/{{primary_author.twitter}}" target="_blank" rel="noopener" aria-label="Twitter">
+                      <span class="icon-twitter" aria-hidden="true"></span>
                     </a>
                   </li>
                 {{/if}}
@@ -199,10 +197,10 @@ into the {body} of the default.hbs template --}}
                   </div>
                 </div>
                 <div data-glide-el="controls" class="glide__arrows js-controls">
-                  <button data-glide-dir="<" class="m-icon-button filled in-recommended-articles glide-prev" aria-label="Previous">
+                  <button data-glide-dir="<" class="m-icon-button filled in-recommended-articles glide-prev" aria-label="{{t "Previous"}}">
                     <span class="icon-arrow-left" aria-hidden="true"></span>
                   </button>
-                  <button data-glide-dir=">" class="m-icon-button filled in-recommended-articles glide-next" aria-label="Next">
+                  <button data-glide-dir=">" class="m-icon-button filled in-recommended-articles glide-next" aria-label="{{t "Next"}}">
                     <span class="icon-arrow-right" aria-hidden="true"></span>
                   </button>
                 </div>
