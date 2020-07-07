@@ -11,6 +11,10 @@
   background-color: var(--background-color);
   @extend .no-appearance;
 
+  &:focus {
+    border-color: var(--primary-subtle-color);
+  }
+
   &.in-search {
     font-weight: 600;
     padding-left: 40px;

@@ -14,19 +14,10 @@
   white-space: nowrap;
 }
 
-.clearfix:before,
-.clearfix:after {
-  content: " "; /* 1 */
-  line-height: 0;
-  display: table; /* 2 */
-}
-
-.clearfix:after {
-  clear: both;
-}
-
-.clearfix {
-  *zoom: 1;
+.focusable {
+  &:focus {
+    box-shadow: 0 0 0 2px #2997ff !important;
+  }
 }
 
 .content-centered {

@@ -4,8 +4,8 @@ This header template is shared across all the pages.
 
 <header class="m-header {{#if background}}with-picture{{/if}} js-header">
   <div class="m-mobile-topbar" data-aos="fade-down">
-    <button class="m-icon-button in-mobile-topbar js-open-menu" aria-label="Open menu">
-      <span class="icon-menu"></span>
+    <button class="m-icon-button in-mobile-topbar js-open-menu" aria-label="{{t "Open menu"}}">
+      <span class="icon-menu" aria-hidden="true"></span>
     </button>
     {{#if @site.logo}}
       <a href="{{@site.url}}" class="m-logo in-mobile-topbar">
@@ -16,28 +16,28 @@ This header template is shared across all the pages.
         {{@site.title}}
       </a>
     {{/if}}
-    <button class="m-icon-button in-mobile-topbar js-open-search" aria-label="Open search">
-      <span class="icon-search"></span>
+    <button class="m-icon-button in-mobile-topbar js-open-search" aria-label="{{t "Open search"}}">
+      <span class="icon-search" aria-hidden="true"></span>
     </button>
   </div>
 
   <div class="m-menu js-menu">
-    <button class="m-icon-button outlined as-close-menu js-close-menu" aria-label="Close menu">
+    <button class="m-icon-button outlined as-close-menu js-close-menu" aria-label="{{t "Close menu"}}">
       <span class="icon-close"></span>
     </button>
     <div class="m-menu__main" data-aos="fade-down">
       <div class="l-wrapper">
         <div class="m-nav">
-          <nav class="m-nav__left">
-            <ul role="submenu">
+          <nav class="m-nav__left" role="navigation" aria-label="{{t "Main menu"}}">
+            <ul>
               {{#if @site.logo}}
-                <li class="only-desktop" role="menuitem">
+                <li class="only-desktop">
                   <a href="{{@site.url}}" class="m-logo">
                     <img src="{{@site.logo}}" alt="{{@site.title}}">
                   </a>
                 </li>
                 {{else}}
-                <li class="only-desktop" role="menuitem">
+                <li class="only-desktop">
                   <a href="{{@site.url}}" class="m-site-name in-desktop-menu">
                     {{@site.title}}
                   </a>
@@ -47,16 +47,16 @@ This header template is shared across all the pages.
                 {{navigation}}
               {{/if}}
               {{#if @site.secondary_navigation}}
-                <li class="more" role="menuitem">
+                <li class="more">
                   <a href="javascript:void(0);" class="js-open-secondary-menu">
                     {{t "More"}}
-                    <span class="icon-chevron-down"></span>
+                    <span class="icon-chevron-down" aria-hidden="true"></span>
                   </a>
                 </li>
               {{/if}}
-              <li role="menuitem" class="js-submenu-option">
-                <button class="m-icon-button in-menu-main more js-toggle-submenu" aria-label="Toggle submenu">
-                  <span class="icon-more"></span>
+              <li class="js-submenu-option">
+                <button class="m-icon-button in-menu-main more js-toggle-submenu" aria-label="{{t "Open submenu"}}">
+                  <span class="icon-more" aria-hidden="true"></span>
                 </button>
                 <div class="m-submenu js-submenu">
                   <div class="l-wrapper in-submenu">
@@ -112,11 +112,14 @@ This header template is shared across all the pages.
             </ul>
           </nav>
           <div class="m-nav__right">
-            <button class="m-icon-button in-menu-main js-open-search" aria-label="Open search">
-              <span class="icon-search"></span>
+            <button class="m-icon-button in-menu-main js-open-search" aria-label="{{t "Open search"}}">
+              <span class="icon-search" aria-hidden="true"></span>
             </button>
-            <div class="m-toggle-darkmode js-tooltip" data-tippy-content="{{t "Toggle dark mode"}}">
-              <input type="checkbox" class="js-toggle-darkmode">
+            <div class="m-toggle-darkmode js-tooltip" data-tippy-content="{{t "Toggle dark mode"}}" tabindex="0">
+              <label for="toggle-darkmode" class="sr-only">
+                {{t "Toggle dark mode"}}
+              </label>
+              <input id="toggle-darkmode" type="checkbox" class="js-toggle-darkmode">
               <div></div>
             </div>
           </div>

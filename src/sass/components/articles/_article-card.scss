@@ -53,6 +53,10 @@
   }
 
   &.as-author {
+    .m-article-card__picture {
+      background-color: $black;
+    }
+
     .m-article-card__picture-link {
       z-index: 2;
     }

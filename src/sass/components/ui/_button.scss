@@ -14,6 +14,7 @@
   position: relative;
   background-color: transparent;
   @extend .no-appearance;
+  @extend .focusable;
   @include transition(all .25s cubic-bezier(.02,.01,.47,1));
 
   &.outlined {

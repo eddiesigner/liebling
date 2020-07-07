@@ -5,24 +5,29 @@
   outline: 0;
   padding: 0;
   cursor: pointer;
+  border-radius: 50%;
   background-color: transparent;
   @extend .content-centered;
   @extend .no-appearance;
+  @extend .focusable;
 
   &.outlined {
-    border-radius: 50%;
     border: 1px solid var(--primary-foreground-color);
   }
 
   &.filled {
     background-color: var(--background-color);
-    border-radius: 50%;
     @include bs(0 2px 4px var(--button-shadow-color-normal));
     @include transition(all .25s cubic-bezier(.02,.01,.47,1));
 
     &:hover {
       @include bs(0 4px 8px var(--button-shadow-color-hover));
     }
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.5;
   }
 
   &.in-mobile-topbar {
