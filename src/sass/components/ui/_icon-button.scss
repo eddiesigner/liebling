@@ -25,6 +25,11 @@
     }
   }
 
+  &:disabled {
+    cursor: default;
+    opacity: 0.5;
+  }
+
   &.in-mobile-topbar {
     width: 65px;
     height: 100%;

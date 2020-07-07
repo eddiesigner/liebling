@@ -10,7 +10,20 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    {{!-- Styles'n'Scripts --}}
+    {{!-- Preload assets --}}
+    <link rel="preload" href="{{asset "css/app.css"}}" as="style" />
+    <link rel="preload" href="{{asset 'fonts/icomoon.woff?vukg2s'}}" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="{{asset "js/vendor/content-api.min.js"}}" as="script" />
+    <link rel="preload" href="{{asset "js/manifest.js"}}" as="script" />
+    <link rel="preload" href="{{asset "js/vendor.js"}}" as="script" />
+    <link rel="preload" href="{{asset "js/app.js"}}" as="script" />
+    <link rel="preconnect" href="https://polyfill.io">
+    <link rel="dns-prefetch" href="https://polyfill.io">
+
+    {{!-- This #block helper will try to preload page-specific assets --}}
+    {{{block "preload"}}}
+
+    {{!-- Styles & Scripts --}}
     <style>
       /* This font-face is here to make icons work if the Ghost instance is installed in a subdirectory */
       @font-face {
@@ -25,8 +38,6 @@
         font-display: swap;
       }
     </style>
-
-    <link rel="preload" href="{{asset "css/app.css"}}" as="style" />
 
     <link rel="stylesheet" type="text/css" href="{{asset "css/app.css"}}" media="screen" />
 

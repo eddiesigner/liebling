@@ -3,11 +3,15 @@ This template is used for the index page.
 It can be used also as the home page or the default page.
 --}}
 
-{{!-- This block loads specific styles for the index page --}}
-{{#contentFor "styles"}}
+{{!-- This block preloads specific assets for the index page --}}
+{{#contentFor "preload"}}
   <link rel="preload" href="{{asset "css/home.css"}}" as="style" />
   <link rel="preload" href="{{asset "css/listing.css"}}" as="style" />
+  <link rel="preload" href="{{asset "js/home.js"}}" as="script" />
+{{/contentFor}}
 
+{{!-- This block loads specific styles for the index page --}}
+{{#contentFor "styles"}}
   <link rel="stylesheet" type="text/css" href="{{asset "css/home.css"}}" media="screen" />
   <link rel="stylesheet" type="text/css" href="{{asset "css/listing.css"}}" media="screen" />
 {{/contentFor}}
@@ -82,11 +86,11 @@ into the {body} of the default.hbs template --}}
                   {{/foreach}}
                 </div>
               </div>
-              <div data-glide-el="controls" class="glide__arrows js-controls">
-                <button data-glide-dir="<" class="m-icon-button in-featured-articles glide-prev" aria-label="{{t "Previous"}}">
+              <div data-glide-el="controls" class="glide__arrows js-featured-slider-controls">
+                <button data-glide-dir="<" class="m-icon-button in-featured-articles glide-prev js-featured-slider-previous" aria-label="{{t "Previous"}}">
                   <span class="icon-arrow-left" aria-hidden="true"></span>
                 </button>
-                <button data-glide-dir=">" class="m-icon-button in-featured-articles glide-next" aria-label="{{t "Next"}}">
+                <button data-glide-dir=">" class="m-icon-button in-featured-articles glide-next js-featured-slider-next" aria-label="{{t "Next"}}">
                   <span class="icon-arrow-right" aria-hidden="true"></span>
                 </button>
               </div>
