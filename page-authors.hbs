@@ -5,6 +5,8 @@ You must first create a page called Authors in the dashboard to enable it.
 
 {{!-- This block loads specific styles for the authors page --}}
 {{#contentFor "styles"}}
+  <link rel="preload" href="{{asset "css/listing.css"}}" as="style" />
+
   <link rel="stylesheet" type="text/css" href="{{asset "css/listing.css"}}" media="screen" />
 {{/contentFor}}
 

@@ -4,6 +4,8 @@ This template is used for the tag page.
 
 {{!-- This block loads specific styles for the tag page --}}
 {{#contentFor "styles"}}
+  <link rel="preload" href="{{asset "css/listing.css"}}" as="style" />
+
   <link rel="stylesheet" type="text/css" href="{{asset "css/listing.css"}}" media="screen" />
 {{/contentFor}}
 

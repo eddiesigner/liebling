@@ -4,6 +4,8 @@ This template is used for the posts that are marked as pages.
 
 {{!-- This block loads specific styles for the post page --}}
 {{#contentFor "styles"}}
+  <link rel="preload" href="{{asset "css/post.css"}}" as="style" />
+
   <link rel="stylesheet" type="text/css" href="{{asset "css/post.css"}}" media="screen" />
 {{/contentFor}}
 
