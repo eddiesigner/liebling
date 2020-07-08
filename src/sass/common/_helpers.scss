@@ -16,7 +16,7 @@
 
 .focusable {
   &:focus {
-    box-shadow: 0 0 0 2px #2997ff !important;
+    box-shadow: 0 0 0 2px var(--primary-subtle-color) !important;
   }
 }
 
