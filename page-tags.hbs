@@ -1,0 +1,61 @@
+{{!--
+This template is used for the tags page.
+You must first create a page called Tags in the dashboard to enable it.
+--}}
+
+{{!-- This block loads specific styles for the authors page --}}
+{{#contentFor "styles"}}
+  <link rel="preload" href="{{asset "css/tags.css"}}" as="style" />
+
+  <link rel="stylesheet" type="text/css" href="{{asset "css/tags.css"}}" media="screen" />
+{{/contentFor}}
+
+{{!-- The tag below means: insert everything in this file
+into the {body} of the default.hbs template --}}
+{{!< default}}
+
+{{!-- Special header.hbs partial to generate the <header> tag --}}
+{{#post}}
+  {{> header background=feature_image}}
+{{/post}}
+
+<main class="main-wrap">
+  {{#post}}
+    {{!-- Inject styles of the hero image to make it responsive --}}
+    {{> hero background=feature_image}}
+    <div class="m-hero__content" data-aos="fade-down">
+      <h1 class="m-hero-title bigger">{{title}}</h1>
+      {{#if custom_excerpt}}
+        <p class="m-hero-description">{{custom_excerpt}}</p>
+      {{/if}}
+    </div>
+    </section>
+  {{/post}}
+  <div class="l-content">
+    <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
+      <div class="l-tags-container">
+        {{#get 'tags' limit='all' include='count.posts'}}
+          {{#foreach tags}}
+            <div class="m-tag-card">
+              <a href="{{url}}" class="m-tag-card__link {{#unless feature_image}}no-picture{{/unless}}" aria-label="{{name}}">
+                {{#if feature_image}}
+                  <img class="m-tag-card__picture" src="{{img_url feature_image size="m"}}" loading="lazy" alt="">
+                {{/if}}
+                <div class="m-tag-card__info {{#unless feature_image}}no-picture{{/unless}}">
+                  <h4 class="m-tag-card__name">{{name}}</h4>
+                  <span class="m-tag-card__counter">
+                    {{plural count.posts empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}
+                  </span>
+                </div>
+              </a>
+            </div>
+            {{else}}
+              <p class="m-not-found">
+                {{t "No tags found :("}}
+              </p>
+          {{/foreach}}
+        {{/get}}
+      </div>
+    </div>
+  </div>
+</main>
