@@ -185,19 +185,21 @@ $(document).ready(() => {
   $inputSearch.keyup(() => {
     if ($inputSearch.val().length > 0 && fuse) {
       const results = fuse.search($inputSearch.val())
+      const bestResults = results.filter((result) => {
+        if (result.score <= 0.5) {
+          return result
+        }
+      })
+
       let htmlString = ''
 
-      if (results.length > 0) {
-        for (let i = 0, len = results.length; i < len; i++) {
-          if (results[i].score > 0.5) {
-            continue
-          }
-  
+      if (bestResults.length > 0) {
+        for (let i = 0, len = bestResults.length; i < len; i++) {
           htmlString += `
           <article class="m-result">\
-            <a href="${results[i].item.url}" class="m-result__link">\
-              <h3 class="m-result__title">${results[i].item.title}</h3>\
-              <span class="m-result__date">${formatDate(results[i].item.published_at)}</span>\
+            <a href="${bestResults[i].item.url}" class="m-result__link">\
+              <h3 class="m-result__title">${bestResults[i].item.title}</h3>\
+              <span class="m-result__date">${formatDate(bestResults[i].item.published_at)}</span>\
             </a>\
           </article>`
         }
