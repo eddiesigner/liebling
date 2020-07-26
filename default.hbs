@@ -12,8 +12,8 @@
 
     {{!-- Preload assets --}}
     <link rel="preload" href="{{asset "css/app.css"}}" as="style" />
-    <link rel="preload" href="{{asset "js/vendor/content-api.min.js"}}" as="script" />
     <link rel="preload" href="{{asset "js/manifest.js"}}" as="script" />
+    <link rel="preload" href="{{asset "js/vendor/content-api.min.js"}}" as="script" />
     <link rel="preload" href="{{asset "js/vendor.js"}}" as="script" />
     <link rel="preload" href="{{asset "js/app.js"}}" as="script" />
     <link rel="preconnect" href="https://polyfill.io">
@@ -24,17 +24,52 @@
 
     {{!-- Styles & Scripts --}}
     <style>
-      /* This font-face is here to make icons work if the Ghost instance is installed in a subdirectory */
+      /* These font-faces are here to make fonts work if the Ghost instance is installed in a subdirectory */
+
+      /* source-sans-pro-regular - latin */
+      @font-face {
+        font-family: 'Source Sans Pro';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'),
+            url("{{asset 'fonts/source-sans-pro/source-sans-pro-v13-latin-regular.woff2'}}") format('woff2'),
+            url("{{asset 'fonts/source-sans-pro/source-sans-pro-v13-latin-regular.woff'}}") format('woff');
+      }
+
+      /* source-sans-pro-600 - latin */
+      @font-face {
+        font-family: 'Source Sans Pro';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: local('Source Sans Pro SemiBold'), local('SourceSansPro-SemiBold'),
+            url("{{asset 'fonts/source-sans-pro/source-sans-pro-v13-latin-600.woff2'}}") format('woff2'),
+            url("{{asset 'fonts/source-sans-pro/source-sans-pro-v13-latin-600.woff'}}") format('woff');
+      }
+
+      /* source-sans-pro-700 - latin */
+      @font-face {
+        font-family: 'Source Sans Pro';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'),
+            url("{{asset 'fonts/source-sans-pro/source-sans-pro-v13-latin-700.woff2'}}") format('woff2'),
+            url("{{asset 'fonts/source-sans-pro/source-sans-pro-v13-latin-700.woff'}}") format('woff');
+      }
+
+      /* iconmoon */
       @font-face {
         font-family: 'icomoon';
-        src: url("{{asset 'fonts/icomoon.eot?vukg2s'}}");
-        src: url("{{asset 'fonts/icomoon.eot?vukg2s#iefix'}}") format('embedded-opentype'),
-        url("{{asset 'fonts/icomoon.ttf?vukg2s'}}") format('truetype'),
-        url("{{asset 'fonts/icomoon.woff?vukg2s'}}") format('woff'),
-        url("{{asset 'fonts/icomoon.svg?vukg2s#icomoon'}}") format('svg');
         font-weight: normal;
         font-style: normal;
         font-display: swap;
+        src: url("{{asset 'fonts/icomoon/icomoon.eot?vukg2s'}}");
+        src: url("{{asset 'fonts/icomoon/icomoon.eot?vukg2s#iefix'}}") format('embedded-opentype'),
+        url("{{asset 'fonts/icomoon/icomoon.ttf?vukg2s'}}") format('truetype'),
+        url("{{asset 'fonts/icomoon/icomoon.woff?vukg2s'}}") format('woff'),
+        url("{{asset 'fonts/icomoon/icomoon.svg?vukg2s#icomoon'}}") format('svg');
       }
     </style>
 
@@ -56,22 +91,6 @@
       const ghostHost = "{{@site.url}}"
       // @license-end
     </script>
-
-    {{!-- This script loads the Google font asynchronously --}}
-    <script>
-      // @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
-      WebFontConfig = {
-        google: { families: ['Source+Sans+Pro:400,600,700&display=swap'] }
-      };
-
-      (function (d) {
-        var wf = d.createElement('script'), s = d.scripts[0];
-        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
-        wf.async = true;
-        s.parentNode.insertBefore(wf, s);
-      })(document);
-      // @license-end
-    </script>
   </head>
   <body class="{{body_class}}">
     {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
@@ -88,8 +107,8 @@
 
     {{!-- Common scripts shared between pages --}}
     <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver%2CPromise%2CArray.prototype.includes%2CString.prototype.endsWith%2CString.prototype.startsWith%2CObject.assign%2CNodeList.prototype.forEach"></script>
-    <script defer src="{{asset "js/vendor/content-api.min.js"}}"></script>
     <script defer src="{{asset "js/manifest.js"}}"></script>
+    <script defer src="{{asset "js/vendor/content-api.min.js"}}"></script>
     <script defer src="{{asset "js/vendor.js"}}"></script>
     <script defer src="{{asset "js/app.js"}}"></script>
 

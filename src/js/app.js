@@ -80,20 +80,19 @@ $(document).ready(() => {
     const allPosts = []
     const fuseOptions = {
       shouldSort: true,
-      threshold: 0.6,
-      location: 0,
-      distance: 100,
+      ignoreLocation: true,
       findAllMatches: true,
-      minMatchCharLength: 1,
-      keys: ['title', 'custom_excerpt', 'html']
+      includeScore: true,
+      minMatchCharLength: 2,
+      keys: ['title', 'custom_excerpt']
     }
 
     api.posts.browse({
       limit: 'all',
-      fields: 'id, title, url, published_at, custom_excerpt, html'
+      fields: 'id, title, url, published_at, custom_excerpt'
     })
       .then((posts) => {
-        for (var i = 0, len = posts.length; i < len; i++) {
+        for (let i = 0, len = posts.length; i < len; i++) {
           allPosts.push(posts[i])
         }
 
@@ -189,7 +188,11 @@ $(document).ready(() => {
       let htmlString = ''
 
       if (results.length > 0) {
-        for (var i = 0, len = results.length; i < len; i++) {
+        for (let i = 0, len = results.length; i < len; i++) {
+          if (results[i].score > 0.5) {
+            continue
+          }
+  
           htmlString += `
           <article class="m-result">\
             <a href="${results[i].item.url}" class="m-result__link">\
@@ -234,6 +237,12 @@ $(document).ready(() => {
         submenuIsOpen = false
         hideSubmenu()
       }
+    }
+  })
+
+  $(document).keyup((e) => {
+    if (e.key === 'Escape' && $search.hasClass('opened')) {
+      $closeSearch.click()
     }
   })
 
