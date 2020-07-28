@@ -35,9 +35,9 @@ This footer template is shared across all the pages.
       </nav>
       <p class="footer-email"><u><a href="mailto:ieee@berkeley.edu">ieee@berkeley.edu</a></u></p>
       <div class="footer-mailing-list">
-        <form action="https://eepurl.com/c-RpPr">
-          <button type="submit">Join our mailing list</button>
-        </form>
+        <a href="https://eepurl.com/c-RpPr" rel="noopener" target="_blank">
+          <div>Join our mailing list</div>
+        </a>
       </div>
     </div>
     <nav class="footer-right">
@@ -45,7 +45,6 @@ This footer template is shared across all the pages.
         <ul>
           <li>Links</li>
           <li><a href="{{ @site.url }}/faq" rel="noopener">FAQ</a></li>
-          <li><a href="{{ @site.url }}/checkin" rel="noopener">Check-In</a></li>
           <li><a href="{{ @site.url }}/about" rel="noopener">About Us</a></li>
           <li><a href="{{ @site.url }}/sponsors" rel="noopener">Sponsors</a></li>
           <li><a href="#" rel="noopener">Resources</a></li>
@@ -55,7 +54,7 @@ This footer template is shared across all the pages.
         <ul>
           <li>For Officers</li>
           <li><a href="{{ @site.url }}/checkin" rel="noopener">Check-In</a></li>
-          <li><a href="#" rel="noopener">Execs &amp; Officers</a></li>
+          <li><a href="{{ @site.url }}/officers" rel="noopener">Execs &amp; Officers</a></li>
         </ul>
       </div>
     </nav>

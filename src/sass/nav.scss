@@ -1,6 +1,6 @@
+@import "common/variables";
 $default-font: 'Open Sans', sans-serif;
 $logo-font: 'Formata', Verdana, Calibri;
-$default-blue: #00629B;
 
 @mixin still($type) {
     position: $type;
@@ -43,7 +43,7 @@ $default-blue: #00629B;
 
 .home-header {
     z-index: 1;
-    @include still(fixed);
+    @include still(absolute);
     width: 100%;
     user-select: none;
 
@@ -83,7 +83,7 @@ $default-blue: #00629B;
             div {
                 display: block;
                 font-size: 2vw;
-                color: $default-blue;
+                color: $ieee-blue;
                 font-family: $logo-font;
 
                 @include respond(tablets) {
@@ -117,7 +117,7 @@ $default-blue: #00629B;
             .close-dropdown-wrap {
                 height: 6em;
                 display: flex;
-                background-color: $default-blue;
+                background-color: $ieee-blue;
                 align-items: center;
                 justify-content: flex-end;
                 cursor: pointer;
@@ -154,7 +154,7 @@ $default-blue: #00629B;
         }
 
         .open-dropdown {
-            color: $default-blue;
+            color: $ieee-blue;
         }
 
         .dropdown {
@@ -171,7 +171,7 @@ $default-blue: #00629B;
                 align-items: center;
                 @include multiSet(0, top, right);
                 height: 100%;
-                background-color: $default-blue;
+                background-color: $ieee-blue;
 
                 &[show] {
                     display: block;
@@ -208,14 +208,14 @@ $default-blue: #00629B;
                 .btn {
                     @include still(absolute);
                     @include multiSet(100%, width, height);
-                    background-color: $default-blue;
+                    background-color: $ieee-blue;
                     color: white;
                     text-align: center;
                     transition: background-color 100ms;
                     z-index: 0;
 
                     &:hover {
-                        background-color: rgb(87, 119, 201);
+                        background-color: lighten($ieee-blue, 10%);
                     }
 
                     @include respond(tablets) {
