@@ -53,19 +53,16 @@
   }
 
   &.as-author {
+    .m-article-card__picture {
+      background-color: $black;
+    }
+
     .m-article-card__picture-link {
       z-index: 2;
     }
 
-    .m-article-card__picture {
-      &:before {
-        content: '';
-        display: block;
-        width: 100%;
-        height: 100%;
-        border-radius: 10px 10px 0 0;
-        background-color: rgba(0,0,0,0.25);
-      }
+    .m-article-card__picture-background {
+      opacity: 0.75;
     }
 
     .m-article-card__info {
@@ -95,9 +92,7 @@
   height: 200px;
   border-radius: 10px 10px 0 0;
   background-color: var(--secondary-subtle-color);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  overflow: hidden;
 
   @include respond-to('medium') {
     height: 220px;
@@ -111,6 +106,16 @@
   width: 100%;
   height: 100%;
   z-index: 1;
+}
+
+.m-article-card__picture-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
 .m-article-card__name {
@@ -214,11 +219,12 @@
   position: absolute;
   top: $mobile-space;
   left: $mobile-space;
+  right: $mobile-space;
   color: var(--link-color);
   letter-spacing: 0.2px;
+  line-height: 1.3;
   font-size: 0.875rem;
   font-weight: 600;
-  @include strip(1, 14px, 1.3, calc(100% - 40px));
 
   @include respond-to('medium') {
     top: 25px;
@@ -244,12 +250,8 @@
   letter-spacing: 0.4px;
   line-height: 1.3;
   font-size: 1.250rem;
-  font-weight: 400;
+  font-weight: 600;
   margin: 0;
-
-  @include respond-to('medium') {
-    font-weight: 600;
-  }
 }
 
 .m-article-card__excerpt {

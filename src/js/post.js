@@ -1,12 +1,17 @@
 import $ from 'jquery'
-import slick from 'slick-carousel'
-import stickybits from 'stickybits'
 import mediumZoom from 'medium-zoom'
 import fitvids from 'fitvids'
 import shave from 'shave'
+import Glide, {
+  Controls,
+  Swipe,
+  Breakpoints
+} from '@glidejs/glide/dist/glide.modular.esm'
 import {
   isRTL,
   isMobile,
+  adjustImageGallery,
+  managePostImages,
   makeImagesZoomable
 } from './helpers'
 
@@ -25,7 +30,6 @@ function onScrolling() {
 
 function adjustShare(timeout) {
   if (!isMobile('1023px')) {
-    stickybits('.js-sticky', { stickyBitStickyOffset: 100 })
     $('body').removeClass('share-menu-displayed')
   } else {
     $('body').addClass('share-menu-displayed')
@@ -110,57 +114,69 @@ $(document).ready(() => {
   const $scrollButton = $('.js-scrolltop')
   const $loadComments = $('.js-load-comments')
   const $commentsIframe = $('.js-comments-iframe')
-  const $recommendedArticles = $('.js-recommended-articles')
+  const $recommendedSlider = $('.js-recommended-slider')
 
   fitvids('.js-post-content')
-
-  function adjustImageGallery() {
-    const images = document.querySelectorAll('.kg-gallery-image img')
-
-    for (var i = 0, len = images.length; i < len; i++) {
-      const container = images[i].closest('.kg-gallery-image')
-      const width = images[i].attributes.width.value
-      const height = images[i].attributes.height.value
-      const ratio = width / height
-      container.style.flex = `${ratio} 1 0%`
-    }
-  }
 
   adjustImageGallery()
   adjustShare(1000)
 
-  if ($recommendedArticles.length > 0) {
-    $recommendedArticles.on('init', function () {
-      prepareProgressCircle()
+  if ($recommendedSlider.length > 0) {
+    const recommendedSlider = new Glide('.js-recommended-slider', {
+      type: 'slider',
+      rewind: false,
+      perView: 3,
+      swipeThreshold: false,
+      dragThreshold: false,
+      gap: 0,
+      direction: isRTL() ? 'rtl' : 'ltr',
+      breakpoints: {
+        1023: {
+          type: 'carousel',
+          perView: 2,
+          swipeThreshold: 80,
+          dragThreshold: 120
+        },
+        720: {
+          type: 'carousel',
+          perView: 2,
+          swipeThreshold: 80,
+          dragThreshold: 120
+        },
+        568: {
+          type: 'carousel',
+          perView: 1,
+          swipeThreshold: 80,
+          dragThreshold: 120
+        }
+      }
+    })
 
+    const Length = (Glide, Components, Events) => {
+      return {
+        mount() {
+          Events.emit('length.change', Components.Sizes.length)
+        }
+      }
+    }
+
+    recommendedSlider.on('mount.after', () => {
       shave('.js-article-card-title', 100)
       shave('.js-article-card-title-no-image', 250)
     })
 
-    $recommendedArticles.slick({
-      arrows: true,
-      infinite: true,
-      prevArrow: '<button class="m-icon-button filled in-recommended-articles slick-prev" aria-label="Previous"><span class="icon-arrow-left"></span></button>',
-      nextArrow: '<button class="m-icon-button filled in-recommended-articles slick-next" aria-label="Next"><span class="icon-arrow-right"></span></button>',
-      mobileFirst: true,
-      responsive: [
-        {
-          breakpoint: 720,
-          settings: {
-            slidesToShow: 2
-          }
-        },
-        {
-          breakpoint: 1023,
-          settings: {
-            arrows: false,
-            slidesToShow: 3
-          }
-        }
-      ],
-      rtl: isRTL()
+    recommendedSlider.on('length.change', (length) => {
+      if (length === 1) {
+        recommendedSlider.update({ type: 'slider' })
+        $recommendedSlider.find('.js-controls').remove()
+      }
     })
+
+    recommendedSlider.mount({ Controls, Swipe, Breakpoints, Length })
   }
+
+  shave('.js-article-card-title', 100)
+  shave('.js-article-card-title-no-image', 250)
 
   $scrollButton.click(() => {
     $('html, body').animate({
@@ -173,19 +189,7 @@ $(document).ready(() => {
     $commentsIframe.fadeIn('slow')
   })
 
-  $('.js-post-content').find('img').each(function() {
-    if (!$(this).closest('figure').hasClass('kg-bookmark-card')) {
-      $(this).addClass('js-zoomable')
-    }
-
-    const $figcaption = $(this).parent().find('figcaption')
-    if ($figcaption) {
-      $(this).attr('alt', $figcaption.text())
-    } else {
-      $(this).attr('alt', '')
-    }
-  })
-
+  managePostImages($)
   makeImagesZoomable($, mediumZoom)
 
   window.addEventListener('scroll', onScrolling, { passive: true })

@@ -45,17 +45,14 @@
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
-    "aos": "^2.3.4",
-    "css-vars-ponyfill": "^2.1.2",
+    "@glidejs/glide": "^3.4.1",
+    "aos": "eddiesigner/aos.git#v2",
     "fitvids": "^2.0.0",
-    "fuse.js": "^3.4.6",
+    "fuse.js": "^6.3.0",
     "headroom.js": "^0.10.3",
     "jquery": "^3.3.1",
-    "lozad": "^1.14.0",
     "medium-zoom": "^1.0.3",
     "shave": "^2.5.6",
-    "slick-carousel": "^1.8.1",
-    "stickybits": "^3.6.1",
     "tippy.js": "^4.0.1"
   },
   "optionalDependencies": {

@@ -22,7 +22,6 @@
 .m-author__content {
   @include respond-to('medium') {
     display: flex;
-    width: 100%;
     max-width: 820px;
   }
 }

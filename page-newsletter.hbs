@@ -2,27 +2,36 @@
 This template is used for the subscription page.
 --}}
 
+{{!-- This block loads specific styles for the newsletter page --}}
+{{#contentFor "styles"}}
+  <link rel="preload" href="{{asset "css/newsletter.css"}}" as="style" />
+
+  <link rel="stylesheet" type="text/css" href="{{asset "css/newsletter.css"}}" media="screen" />
+{{/contentFor}}
+
 {{!-- The tag below means: insert everything in this file
 into the {body} of the default.hbs template --}}
 {{!< default}}
 
-<div class="l-wrapper" data-aos="fade-down">
-  <a href="{{@site.url}}" class="m-back">
-    <span class="m-back__icon icon-arrow-left"></span>
-    <span>{{t "Back to home"}}</span>
-  </a>
-</div>
-
-<main class="l-fullscreen">
-  <section class="l-fullscreen__content in-subscribe-page" data-aos="fade-up" data-aos-delay="300">
-    <div>
-      <header class="m-heading in-subscribe-page">
-        <h1 class="m-heading__title">{{t "Subscribe to"}} {{@site.title}}</h1>
-        <p class="m-heading__description in-subscribe-page">
-          {{t "Stay up to date! Get all the latest & greatest posts delivered straight to your inbox."}}
-        </p>
-      </header>
-      {{> "newsletter-form"}}
-    </div>
-  </section>
+<main>
+  <div class="l-wrapper" data-aos="fade-down">
+    <a href="{{@site.url}}" class="m-back">
+      <span class="m-back__icon icon-arrow-left"></span>
+      <span>{{t "Back to home"}}</span>
+    </a>
+  </div>
+  
+  <div class="l-fullscreen">
+    <section class="l-fullscreen__content in-subscribe-page" data-aos="fade-up" data-aos-delay="300">
+      <div>
+        <header class="m-heading in-subscribe-page">
+          <h1 class="m-heading__title">{{t "Subscribe to"}} {{@site.title}}</h1>
+          <p class="m-heading__description in-subscribe-page">
+            {{t "Stay up to date! Get all the latest & greatest posts delivered straight to your inbox."}}
+          </p>
+        </header>
+        {{> "newsletter-form"}}
+      </div>
+    </section>
+  </div>
 </main>

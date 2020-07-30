@@ -1,6 +1,6 @@
 .m-featured-slider {
   position: relative;
-  overflow: hidden;
+  overflow: hidden !important;
   height: 350px;
   margin: -40px -#{$mobile-space} 40px;
   @include transition(all .25s cubic-bezier(.02,.01,.47,1));
@@ -8,9 +8,6 @@
   &:hover {
     @include respond-to('medium') {
       @include transform(translateY(-5px));
-    }
-
-    &:before {
       @include bs(var(--article-shadow-hover));
     }
   }
@@ -26,18 +23,6 @@
     width: calc(100% - (100% / 3) - 40px);
     margin: 0 20px 40px 20px;
     overflow: unset;
-  }
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    bottom: 0;
-    left: 10px;
-    border-radius: 10px;
-    @include bs(var(--article-shadow-normal));
-    @include transition(all .25s cubic-bezier(.02,.01,.47,1));
   }
 }
 
@@ -55,14 +40,13 @@
     border-radius: 10px;
     overflow: hidden;
   }
-
-  .slick-list,
-  .slick-track,
-  .slick-slide > div {
-    height: 100%;
-  }
 }
 
 .m-featured-slider__list__item {
   height: 100%;
+  overflow: hidden;
+
+  @include respond-to('medium') {
+    border-radius: 10px;
+  }
 }

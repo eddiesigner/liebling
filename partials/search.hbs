@@ -4,16 +4,19 @@ You need to create a custom integration first to get a Content API key and then
 follow the instructions to enable the search feature.
 --}}
 
-<div class="m-search js-search">
+<div class="m-search js-search" role="dialog" aria-modal="true" aria-label="Search">
   <button class="m-icon-button outlined as-close-search js-close-search" aria-label="Close search">
-    <span class="icon-close"></span>
+    <span class="icon-close" aria-hidden="true"></span>
   </button>
   <div class="m-search__content">
     <form class="m-search__form">
-      <fieldset>
-        <span class="icon-search m-search-icon"></span>
-        <input type="text" class="m-input in-search js-input-search" placeholder="{{t "Type to search"}}" aria-label="Type to search">
-      </fieldset>
+      <div class="pos-relative">
+        <span class="icon-search m-search-icon" aria-hidden="true"></span>
+        <label for="search-input" class="sr-only">
+          {{t "Type to search"}}
+        </label>
+        <input id="search-input" type="text" class="m-input in-search js-input-search" placeholder="{{t "Type to search"}}">
+      </div>
     </form>
     <div class="js-search-results hide"></div>
     <p class="m-not-found align-center hide js-no-results">

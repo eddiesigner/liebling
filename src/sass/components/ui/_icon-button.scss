@@ -5,24 +5,29 @@
   outline: 0;
   padding: 0;
   cursor: pointer;
+  border-radius: 50%;
   background-color: transparent;
   @extend .content-centered;
   @extend .no-appearance;
+  @extend .focusable;
 
   &.outlined {
-    border-radius: 50%;
     border: 1px solid var(--primary-foreground-color);
   }
 
   &.filled {
     background-color: var(--background-color);
-    border-radius: 50%;
     @include bs(0 2px 4px var(--button-shadow-color-normal));
     @include transition(all .25s cubic-bezier(.02,.01,.47,1));
 
     &:hover {
       @include bs(0 4px 8px var(--button-shadow-color-hover));
     }
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.5;
   }
 
   &.in-mobile-topbar {
@@ -114,24 +119,24 @@
     position: absolute;
     color: $white;
     font-size: 0.875rem;
-    width: 29px;
-    height: 22px;
-    bottom: 16px;
+    width: 40px;
+    height: 40px;
+    bottom: 5px;
     z-index: 2;
 
     @include respond-to('medium') {
-      bottom: 36px;
+      bottom: 26px;
     }
 
-    &.slick-prev {
-      right: 52px;
+    &.glide-prev {
+      right: 56px;
 
       @include respond-to('medium') {
-        right: 72px;
+        right: 76px;
       }
     }
 
-    &.slick-next {
+    &.glide-next {
       right: 16px;
 
       @include respond-to('medium') {
@@ -149,11 +154,15 @@
     z-index: 2;
     @include transform(translateY(-50%));
 
-    &.slick-prev {
+    @include respond-to('large') {
+      display: none;
+    }
+
+    &.glide-prev {
       left: 0;
     }
 
-    &.slick-next {
+    &.glide-next {
       right: 0;
     }
   }
@@ -219,7 +228,7 @@
 .rtl {
   .m-icon-button {
     &.in-featured-articles {
-      &.slick-prev {
+      &.glide-prev {
         right: auto;
         left: 16px;
 
@@ -229,7 +238,7 @@
         }
       }
 
-      &.slick-next {
+      &.glide-next {
         right: auto;
         left: 52px;
 
@@ -241,13 +250,13 @@
     }
 
     &.in-recommended-articles {
-      &.slick-prev {
+      &.glide-prev {
         left: auto;
         right: 0;
         @include transform(rotate(180deg));
       }
 
-      &.slick-next {
+      &.glide-next {
         right: auto;
         left : 0;
         @include transform(rotate(180deg));

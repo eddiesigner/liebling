@@ -2,17 +2,15 @@
 
 {{#foreach posts}}
   {{#is "post"}}
-    <div class="m-recommended-slider__item">
+    <div class="m-recommended-slider__item glide__slide">
   {{/is}}
-  {{#if feature_image}}
-    <article class="m-article-card {{post_class}}">
-      <div class="m-article-card__picture lozad" data-background-image="{{img_url feature_image size="m"}}">
-  {{else}}
-    <article class="m-article-card no-picture {{post_class}}">
-      <div class="m-article-card__picture">
-  {{/if}}
-      <a href="{{url}}" class="m-article-card__picture-link" aria-label="Article"></a>
-      <a href="{{primary_author.url}}" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="{{t "Posted by"}} {{primary_author.name}} {{authors autolink="false" from="2" prefix=(t "Among with") separator=" , "}}">
+  <article class="m-article-card {{#unless feature_image}}no-picture{{/unless}} {{post_class}}">
+    <div class="m-article-card__picture">
+      <a href="{{url}}" class="m-article-card__picture-link" aria-hidden="true" tabindex="-1"></a>
+      {{#if feature_image}}
+        <img class="m-article-card__picture-background" src="{{img_url feature_image size="m"}}" loading="lazy" alt="">
+      {{/if}}
+      <a href="{{primary_author.url}}" class="m-article-card__author js-tooltip" aria-label="{{primary_author.name}}" data-tippy-content="{{t "Posted by"}} {{primary_author.name}} {{authors autolink="false" from="2" prefix=(t "Among with") separator=" , "}}">
         {{#if primary_author.profile_image}}
           <div style="background-image: url({{img_url primary_author.profile_image size="xs"}});"></div>
         {{else}}
@@ -20,8 +18,8 @@
         {{/if}}
       </a>
       {{#if featured}}
-        <a href="{{url}}" class="m-article-card__featured js-tooltip" data-tippy-content="{{t "Featured"}}" aria-label="Article">
-          <span class="icon-star"></span>
+        <a href="{{url}}" class="m-article-card__featured js-tooltip" data-tippy-content="{{t "Featured"}}" aria-label="{{t "Featured"}}">
+          <span class="icon-star" aria-hidden="true"></span>
         </a>
       {{/if}}
     </div>
@@ -31,7 +29,7 @@
     {{else}}
       <div class="m-article-card__info no-tag">
     {{/if}}
-      <a href="{{url}}" class="m-article-card__info-link">
+      <a href="{{url}}" class="m-article-card__info-link" aria-label="{{title}}">
         <div>
           <h2 class="m-article-card__title js-article-card-title {{#unless feature_image}}js-article-card-title-no-image{{/unless}}" title="{{title}}">
             {{title}}

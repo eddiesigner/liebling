@@ -43,6 +43,37 @@ export const getParameterByName = (name, url) => {
   return decodeURIComponent(results[2].replace(/\+/g, ' '))
 }
 
+export const adjustImageGallery = () => {
+  const images = document.querySelectorAll('.kg-gallery-image img')
+
+  for (var i = 0, len = images.length; i < len; i++) {
+    const container = images[i].closest('.kg-gallery-image')
+    const width = images[i].attributes.width.value
+    const height = images[i].attributes.height.value
+    const ratio = width / height
+    container.style.flex = `${ratio} 1 0%`
+  }
+}
+
+export const managePostImages = ($) => {
+  $('.js-post-content').find('img').each(function () {
+    if (
+      !$(this).closest('figure').hasClass('kg-bookmark-card') &&
+      !$(this).parent().is('a')
+    ) {
+      $(this).addClass('js-zoomable')
+    }
+
+    const $figcaption = $(this).parent().find('figcaption')
+
+    if ($figcaption) {
+      $(this).attr('alt', $figcaption.text())
+    } else {
+      $(this).attr('alt', '')
+    }
+  })
+}
+
 export const makeImagesZoomable = ($, mediumZoom) => {
   const zoom = mediumZoom('.js-zoomable')
 

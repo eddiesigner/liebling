@@ -4,8 +4,7 @@ $aos-distance: 100px !default;
 /**
  * Fade animations:
  * fade
- * fade-up, fade-down, fade-left, fade-right
- * fade-up-right, fade-up-left, fade-down-right, fade-down-left
+ * fade-up, fade-down
  */
 
 [data-aos^='fade'][data-aos^='fade']:not(.no-aos-animation) {
@@ -24,28 +23,4 @@ $aos-distance: 100px !default;
 
 [data-aos='fade-down']:not(.no-aos-animation) {
   transform: translate3d(0, -$aos-distance, 0);
-}
-
-[data-aos='fade-right']:not(.no-aos-animation) {
-  transform: translate3d(-$aos-distance, 0, 0);
-}
-
-[data-aos='fade-left']:not(.no-aos-animation) {
-  transform: translate3d($aos-distance, 0, 0);
-}
-
-[data-aos='fade-up-right']:not(.no-aos-animation) {
-  transform: translate3d(-$aos-distance, $aos-distance, 0);
-}
-
-[data-aos='fade-up-left']:not(.no-aos-animation) {
-  transform: translate3d($aos-distance, $aos-distance, 0);
-}
-
-[data-aos='fade-down-right']:not(.no-aos-animation) {
-  transform: translate3d(-$aos-distance, -$aos-distance, 0);
-}
-
-[data-aos='fade-down-left']:not(.no-aos-animation) {
-  transform: translate3d($aos-distance, -$aos-distance, 0);
 }

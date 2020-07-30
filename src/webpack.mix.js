@@ -25,10 +25,17 @@ mix.js('js/helpers.js', 'js/')
   .setResourceRoot('/assets')
   .setPublicPath('../assets')
   .sass('sass/app.scss', 'css/')
+  .sass('sass/home.scss', 'css/')
+  .sass('sass/listing.scss', 'css/')
+  .sass('sass/post.scss', 'css/')
+  .sass('sass/newsletter.scss', 'css/')
+  .sass('sass/tags.scss', 'css/')
+  .sass('sass/404.scss', 'css/')
   .options({
     processCssUrls: false
   })
-  .copy('sass/fonts/icomoon/*.*', '../assets/fonts/')
+  .copy('sass/fonts/icomoon/*.*', '../assets/fonts/icomoon/')
+  .copy('sass/fonts/source-sans-pro/*.*', '../assets/fonts/source-sans-pro/')
   .copy('js/vendor/content-api.min.js', '../assets/js/vendor/')
   .browserSync({
     proxy: "localhost:2368",

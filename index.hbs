@@ -3,13 +3,27 @@ This template is used for the index page.
 It can be used also as the home page or the default page.
 --}}
 
+{{!-- This block preloads specific assets for the index page --}}
+{{#contentFor "preload"}}
+  <link rel="preload" href="{{asset "css/home.css"}}" as="style" />
+  <link rel="preload" href="{{asset "css/listing.css"}}" as="style" />
+  <link rel="preload" href="{{asset "js/home.js"}}" as="script" />
+{{/contentFor}}
+
+{{!-- This block loads specific styles for the index page --}}
+{{#contentFor "styles"}}
+  <link rel="stylesheet" type="text/css" href="{{asset "css/home.css"}}" media="screen" />
+  <link rel="stylesheet" type="text/css" href="{{asset "css/listing.css"}}" media="screen" />
+{{/contentFor}}
+
 {{!-- The tag below means: insert everything in this file
 into the {body} of the default.hbs template --}}
 {{!< default}}
 
-<div class="main-wrap">
-  {{!-- Special header.hbs partial to generate the <header> tag --}}
-  {{> header background=@site.cover_image}}
+{{!-- Special header.hbs partial to generate the <header> tag --}}
+{{> header background=@site.cover_image}}
+
+<main class="main-wrap">
   {{!-- Inject styles of the hero image to make it responsive --}}
   {{> hero background=@site.cover_image}}
   <div class="m-hero__content" data-aos="fade-down">
@@ -25,25 +39,35 @@ into the {body} of the default.hbs template --}}
     {{/if}}
   </div>
   </section>
-  
-  <main>
-    <div class="l-content">
-      <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
-        <div class="l-grid centered">
-          {{#get "posts" filter="featured:true" include="authors,tags" limit="5" as |featured|}}
-            {{#if featured}}
-              <div class="m-featured-slider">
-                <div class="m-featured-slider__list js-featured-articles">
+  <div class="l-content">
+    <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
+      <div class="l-grid centered">
+        {{#get "posts" filter="featured:true" include="authors,tags" limit="5" as |featured|}}
+          {{#if featured}}
+            <div class="m-featured-slider glide js-featured-slider">
+              <div class="glide__track" data-glide-el="track">
+                <div class="m-featured-slider__list glide__slides">
                   {{#foreach featured}}
-                    <div class="m-featured-slider__list__item">
+                    <div class="m-featured-slider__list__item glide__slide js-featured-slide">
                       <article class="m-featured-article {{#unless feature_image}}no-picture{{/unless}}">
                         <div class="m-featured-article__picture">
                           {{#if feature_image}}
-                            <div class="lozad no-fade-animation" data-background-image="{{img_url feature_image size="l"}}"></div>
+                            <style>
+                              #featured-bg-{{id}} {
+                                background-image: url({{img_url feature_image size='l'}});
+                              }
+                            
+                              @media(max-width: 768px) {
+                                #featured-bg-{{id}} {
+                                  background-image: url({{img_url feature_image size='m'}});
+                                }
+                              }
+                            </style>
+                            <div id="featured-bg-{{id}}"></div>
                           {{/if}}
                         </div>
                         <div class="m-featured-article__meta">
-                          <a href="{{primary_author.url}}" class="m-featured-article__author js-tooltip" aria-label="Authors" data-tippy-content="{{t "Posted by"}} {{primary_author.name}} {{authors autolink="false" from="2" prefix=(t "Among with") separator=" , "}}">
+                          <a href="{{primary_author.url}}" class="m-featured-article__author js-tooltip" aria-label="{{primary_author.name}}" data-tippy-content="{{t "Posted by"}} {{primary_author.name}} {{authors autolink="false" from="2" prefix=(t "Among with") separator=" , "}}">
                             {{#if primary_author.profile_image}}
                               <div style="background-image: url({{img_url primary_author.profile_image size="xs"}});"></div>
                             {{else}}
@@ -59,9 +83,9 @@ into the {body} of the default.hbs template --}}
                           <span>{{t "Featured"}}</span>
                         </div>
                         <a href="{{url}}" class="m-featured-article__content">
-                          <h1 class="m-featured-article__title js-featured-article-title" title="{{title}}">
+                          <h2 class="m-featured-article__title js-featured-article-title" title="{{title}}">
                             {{title}}
-                          </h1>
+                          </h2>
                           <div class="m-featured-article__timestamp">
                             <span>{{date published_at timeago="true"}}</span>
                             <span>&bull;</span>
@@ -73,17 +97,25 @@ into the {body} of the default.hbs template --}}
                   {{/foreach}}
                 </div>
               </div>
-            {{/if}}
-          {{/get}}
-          {{!-- The tag below iterates over all the posts --}}
-          {{> "loop"}}
-        </div>
+              <div data-glide-el="controls" class="glide__arrows js-featured-slider-controls">
+                <button data-glide-dir="<" class="m-icon-button in-featured-articles glide-prev js-featured-slider-previous" aria-label="{{t "Previous"}}">
+                  <span class="icon-arrow-left" aria-hidden="true"></span>
+                </button>
+                <button data-glide-dir=">" class="m-icon-button in-featured-articles glide-next js-featured-slider-next" aria-label="{{t "Next"}}">
+                  <span class="icon-arrow-right" aria-hidden="true"></span>
+                </button>
+              </div>
+            </div>
+          {{/if}}
+        {{/get}}
+        {{!-- The tag below iterates over all the posts --}}
+        {{> "loop"}}
       </div>
-      {{!-- Links to Previous/Next posts --}}
-      {{pagination}}
     </div>
-  </main>
-</div>
+    {{!-- Links to Previous/Next posts --}}
+    {{pagination}}
+  </div>
+</main>
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}

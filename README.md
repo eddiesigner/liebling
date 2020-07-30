@@ -18,7 +18,9 @@ You can see a live demo here: [https://liebling.eduardogomez.io](https://lieblin
 
 To get the latest version please head over the [releases page](https://github.com/eddiesigner/liebling/releases) and download the file `liebling.zip` of the latest release.
 
-**IMPORTANT: From now on, this theme is only compatible with Ghost 3+**
+**IMPORTANT: To know how to enable the search, comments, newsletter and more, please head to the [Wiki](https://github.com/eddiesigner/liebling/wiki).**
+
+From now on, this theme is only compatible with Ghost 3
 
 ## Features
 
@@ -35,6 +37,7 @@ To get the latest version please head over the [releases page](https://github.co
 * Subscription form [more info here](https://github.com/eddiesigner/liebling/wiki/How-to-enable-subscribers)
 * Multiple authors
 * Logo support
+* Secondary menu
 * Featured posts and pages
 * Post, Page, Tag, Authors, pages
 * Koenig editor
@@ -88,6 +91,7 @@ To get the latest version please head over the [releases page](https://github.co
 * Lithuanian by [pintom](https://github.com/pintom)
 * Dutch by [Qballjos](https://github.com/Qballjos)
 * Traditional Chinese by [weixiang](https://github.com/weixiang)
+* Persian (Farsi) by [Aminoiz](https://github.com/Aminoiz)
 
 ## Tests performed
 
@@ -104,8 +108,6 @@ Thanks to [D3473R](https://github.com/D3473R) 💪🏼 for creating a developmen
 Please take a look to this page to see how it works: https://github.com/eddiesigner/liebling/wiki/Theme-development-with-Docker
 
 ## Help and Support
-
-To know how to enable the search, comments, subscribers and more, please head to the [Wiki](https://github.com/eddiesigner/liebling/wiki).
 
 If you have any questions or troubles with this product, please feel free to open an issue [here](https://github.com/eddiesigner/liebling/issues).
 
