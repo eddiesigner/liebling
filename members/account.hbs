@@ -1,0 +1,106 @@
+{{!< ../default}}
+
+<header class="site-header">
+    {{> header background=@site.cover_image}}
+</header>
+<main id="site-main" class="site-main site-account outer">
+    <div class="inner">
+
+    {{#if @member.paid}}
+
+        {{!-- Logged in, paying member: Show account info --}}
+        <div class="subscriber-box">
+
+            {{#foreach @member.subscriptions}}
+                <div class="subscription">
+                    <div class="subscriber-header">
+                        <div class="subscription-title">
+                            {{#if @first}}
+                                <h1>Your account</h1>
+                            {{/if}}
+                            {{#if cancel_at_period_end}}
+                                <p>
+                                    <strong class="subscription-expiration-warning">Your subscription will expire on {{date current_period_end format="DD MMM YYYY"}}.</strong> If you change your mind in the meantime you can turn auto-renew back on to continue your subscription.
+                                </p>
+                            {{else}}
+                                <p>
+                                    Hey! You have an active <strong>{{@site.title}}</strong> account with access to all areas. Get in touch if have any problems or need some help getting things updated, and thanks for subscribing.
+                                </p>
+                            {{/if}}
+                        </div>
+                        {{#if @first}}
+                            <div class="subscriber-avatar">
+                                {{> "icons/avatar"}}
+                                {{#if @member.avatar_image}}
+                                    <img src="{{@member.avatar_image}}" />
+                                {{/if}}
+                            </div>
+                        {{/if}}
+                    </div>
+                    <div class="subscriber-details">
+                        <div class="subscriber-detail">
+                            <label class="subscriber-detail-label">Email address</label>
+                            <span class="subscriber-detail-content">{{@member.email}}</span>
+                        </div>
+
+                        <div class="subscriber-detail">
+                            <label class="subscriber-detail-label">Your plan</label>
+                                <span class="subscriber-detail-content">{{plan.currency_symbol}}{{price plan.amount}}/{{plan.interval}}</span>
+                        </div>
+
+                        <div class="subscriber-detail">
+                            <label class="subscriber-detail-label">Card</label>
+                            <span class="subscriber-detail-content">**** **** **** {{default_payment_card_last4}}</span>
+                        </div>
+
+                        <div class="subscriber-detail">
+                            <label class="subscriber-detail-label">
+                                {{#if cancel_at_period_end}}
+                                    Expires
+                                {{else}}
+                                    Next bill date
+                                {{/if}}
+                            </label>
+                            <span class="subscriber-detail-content">{{date current_period_end format="DD MMM YYYY"}}</span>
+                        </div>
+                    </div>
+
+                    <ul class="subscription-actions">
+                        <li><a href="javascript:"
+                                data-members-edit-billing
+                                data-members-success="{{@site.url}}/account/?stripe=billing-update-success"
+                                data-members-cancel="{{@site.url}}/account/?stripe=billing-update-cancel">Edit billing info</a></li>
+                        <li>{{cancel_link}}</li>
+                    </ul>
+                </div>
+            {{/foreach}}
+        </div>
+
+    {{else if @member}}
+
+        {{!-- Logged in, not paying: Link to checkout --}}
+        <div class="account-box">
+            <div class="subscriber-avatar">
+                {{> "icons/avatar"}}
+                {{#if @member.avatar_image}}
+                    <img src="{{@member.avatar_image}}" />
+                {{/if}}
+            </div>
+            <h1 class="account-box-title">Currently, you're not a subscriber</h1>
+            <p>Hey there! <strong>{{@member.email}}</strong> is subscribed to free updates from {{@site.title}}, but doesn't have a paid subscription to unlock full access.</p>
+            <div class="authbox-signup">
+                <a class="button primary" href="{{@site.url}}/signup/">
+                    <span class="button-content">Subscribe now</span>
+                </a>
+            </div>
+        </div>
+
+    {{else}}
+
+        {{!-- Not logged in: Redirect to signin --}}
+        <script>window.location = '{{@site.url}}/signin/';</script>
+
+    {{/if}}
+
+    </div>
+</main>

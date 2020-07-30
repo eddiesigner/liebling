@@ -1,0 +1,59 @@
+{{!--
+This template is used for the posts that are marked as pages.
+--}}
+
+{{!-- The tag below means: insert everything in this file
+into the {body} of the default.hbs template --}}
+{{!< ../default}}
+
+{{!-- Everything inside the #post tags pulls data from the post --}}
+{{#post}}
+<div class="main-wrap">
+    {{!-- Special header.hbs partial to generate the <header> tag --}}
+    {{> header background=@site.cover_image}}
+    <main>
+        <article>
+            <div class="l-content">
+                <div class="l-wrapper in-post" data-aos="fade-up" data-aos-delay="300">
+                    <div class="l-post-content">
+                        <div class="pos-relative js-post-content">
+                            {{#if @member}}
+
+                            {{!-- Logged in: Redirect home --}}
+                            <script>window.location = '{{@site.url}}';</script>
+
+                            {{else}}
+
+                            {{!-- Not logged in: Signin form --}}
+                            <form class="signin-form" data-members-form="signin">
+                                <h1 class="signin-title">Welcome back!</h1>
+                                <p>Sign into your account again for full access</p>
+                                <div class="signin-box">
+                                    <input data-members-email type="email" placeholder="Your email address"
+                                        required="true" autocomplete="false" />
+                                    <button class="button primary" type="submit">
+                                        <span class="button-content">Send login link</span>
+                                        <span class="button-loader">{{> "icons/loader"}}</span>
+                                    </button>
+                                </div>
+                                <p><small>Don't have an account yet? <a href="{{@site.url}}/signup/">Sign up</a></small>
+                                </p>
+                                <div class="message-success"><strong>Great!</strong> Check your inbox and click the link
+                                    to complete signin</div>
+                                <div class="message-error">Please enter a valid email address!</div>
+                            </form>
+
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+</div>
+{{/post}}
+
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+{{#contentFor "scripts"}}
+<script defer src="{{asset "js/page.js"}}"></script>
+{{/contentFor}}
