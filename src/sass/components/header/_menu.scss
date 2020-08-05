@@ -8,7 +8,7 @@
   opacity: 0;
   overflow-y: auto;
   z-index: 2;
-  background-color: var(--transparent-background-color);
+  background-color: var(--background-color);
   -webkit-overflow-scrolling: touch;
   @include transform(scale(1.2));
   @include transition(all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1));

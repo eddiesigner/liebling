@@ -6,7 +6,7 @@
   --primary-subtle-color: #0470ee;
   --secondary-subtle-color: #f4f8fd;
   --titles-color: #333;
-  --link-color: #293951;
+  --link-color: #133467;
   --primary-border-color: #9b9b9b;
   --secondary-border-color: aliceblue;
   --article-shadow-normal: 0 10px 10px rgba(0,0,0,0.08);
@@ -16,9 +16,13 @@
   --submenu-shadow-color-opacity: 0.25;
   --button-shadow-color-normal: rgba(108, 108, 108, 0.2);
   --button-shadow-color-hover: rgba(108, 108, 108, 0.3);
-  --toggle-darkmode-button-color: #fff;
   --table-background-color-odd: #fafafa;
   --table-head-border-bottom: #e2e2e2;
+  --toggle-darkmode-button-display-moon: block;
+  --toggle-darkmode-button-display-sun: none;
+  --toggle-darkmode-background-color: rgba(0, 0, 0, 0.05);
+  --header-menu-gradient-first-color: rgba(255, 255, 255, 0);
+  --header-menu-gradient-secound-color: rgba(255, 255, 255, 1);
 }
 
 [data-theme="dark"] {
@@ -38,9 +42,13 @@
   --submenu-shadow-color-opacity: 0.55;
   --button-shadow-color-normal: rgba(10, 10, 10, 0.5);
   --button-shadow-color-hover: rgba(10, 10, 10, 0.5);
-  --toggle-darkmode-button-color: #efd114;
   --table-background-color-odd: #050505;
   --table-head-border-bottom: #1d1d1d;
+  --toggle-darkmode-button-display-moon: none;
+  --toggle-darkmode-button-display-sun: block;
+  --toggle-darkmode-background-color: rgba(0, 0, 0, 0.5);
+  --header-menu-gradient-first-color: rgba(17, 17, 17, 0);
+  --header-menu-gradient-secound-color: rgba(17, 17, 17, 0.65);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -61,8 +69,12 @@
     --submenu-shadow-color-opacity: 0.55;
     --button-shadow-color-normal: rgba(10, 10, 10, 0.5);
     --button-shadow-color-hover: rgba(10, 10, 10, 0.5);
-    --toggle-darkmode-button-color: #efd114;
     --table-background-color-odd: #050505;
     --table-head-border-bottom: #1d1d1d;
+    --toggle-darkmode-button-display-moon: none;
+    --toggle-darkmode-button-display-sun: block;
+    --toggle-darkmode-background-color: rgba(0, 0, 0, 0.5);
+    --header-menu-gradient-first-color: rgba(17, 17, 17, 0);
+    --header-menu-gradient-secound-color: rgba(17, 17, 17, 0.65);
   }
 }

@@ -31,8 +31,8 @@
   }
 
   &.in-mobile-topbar {
-    width: 65px;
-    height: 100%;
+    width: 50px;
+    height: 50px;
   }
 
   &.as-close-menu {
@@ -79,8 +79,8 @@
 
     @include respond-to('medium') {
       display: flex;
-      width: 26px;
-      height: 25px;
+      width: 32px;
+      height: 32px;
     }
   }
 

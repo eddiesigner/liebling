@@ -39,29 +39,31 @@ $(document).ready(() => {
   const $searchNoResults = $('.js-no-results')
   const $toggleDarkMode = $('.js-toggle-darkmode')
   const $closeNotification = $('.js-notification-close')
+  const $mainNav = $('.js-main-nav')
+  const $mainNavLeft = $('.js-main-nav-left')
   const currentSavedTheme = localStorage.getItem('theme')
 
   let fuse = null
   let submenuIsOpen = false
   let secondaryMenuTippy = null
 
-  function showSubmenu() {
+  const showSubmenu = () => {
     $header.addClass('submenu-is-active')
     $toggleSubmenu.addClass('active')
     $submenu.removeClass('closed').addClass('opened')
   }
 
-  function hideSubmenu() {
+  const hideSubmenu = () => {
     $header.removeClass('submenu-is-active')
     $toggleSubmenu.removeClass('active')
     $submenu.removeClass('opened').addClass('closed')
   }
 
-  function toggleScrollVertical() {
+  const toggleScrollVertical = () => {
     $body.toggleClass('no-scroll-y')
   }
 
-  function trySearchFeature() {
+  const trySearchFeature = () => {
     if (typeof ghostSearchApiKey !== 'undefined') {
       getAllPosts(ghostHost, ghostSearchApiKey)
     } else {
@@ -71,7 +73,7 @@ $(document).ready(() => {
     }
   }
 
-  function getAllPosts(host, key) {
+  const getAllPosts = (host, key) => {
     const api = new GhostContentAPI({
       url: host,
       key,
@@ -84,11 +86,12 @@ $(document).ready(() => {
       findAllMatches: true,
       includeScore: true,
       minMatchCharLength: 2,
-      keys: ['title', 'custom_excerpt']
+      keys: ['title', 'custom_excerpt', 'tags.name']
     }
 
     api.posts.browse({
       limit: 'all',
+      include: 'tags',
       fields: 'id, title, url, published_at, custom_excerpt'
     })
       .then((posts) => {
@@ -143,6 +146,18 @@ $(document).ready(() => {
 
     if (stripe === 'success') {
       showNotification('checkout')
+    }
+  }
+
+  const toggleDesktopTopbarOverflow = (disableOverflow) => {
+    if (!isMobile()) {
+      if (disableOverflow) {
+        $mainNav.addClass('toggle-overflow')
+        $mainNavLeft.addClass('toggle-overflow')
+      } else {
+        $mainNav.removeClass('toggle-overflow')
+        $mainNavLeft.removeClass('toggle-overflow')
+      }
     }
   }
 
@@ -227,6 +242,12 @@ $(document).ready(() => {
       $('html').attr('data-theme', 'light')
       localStorage.setItem('theme', 'light')
     }
+  })
+
+  $toggleDarkMode.hover(() => {
+    toggleDesktopTopbarOverflow(true)
+  }, () => {
+    toggleDesktopTopbarOverflow(false)
   })
 
   $closeNotification.click(function () {
@@ -333,9 +354,16 @@ $(document).ready(() => {
 
     secondaryMenuTippy = tippy('.js-open-secondary-menu', {
       content: template.innerHTML,
+      allowHTML: true,
       arrow: true,
       trigger: 'click',
-      interactive: true
+      interactive: true,
+      onShow() {
+        toggleDesktopTopbarOverflow(true)
+      },
+      onHidden() {
+        toggleDesktopTopbarOverflow(false)
+      }
     })
   }
 
