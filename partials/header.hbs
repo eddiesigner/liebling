@@ -27,8 +27,8 @@ This header template is shared across all the pages.
     </button>
     <div class="m-menu__main" data-aos="fade-down">
       <div class="l-wrapper">
-        <div class="m-nav">
-          <nav class="m-nav__left" role="navigation" aria-label="{{t "Main menu"}}">
+        <div class="m-nav js-main-nav">
+          <nav class="m-nav__left js-main-nav-left" role="navigation" aria-label="{{t "Main menu"}}">
             <ul>
               {{#if @site.logo}}
                 <li class="only-desktop">
@@ -48,13 +48,15 @@ This header template is shared across all the pages.
               {{/if}}
               {{#if @site.secondary_navigation}}
                 <li class="more">
-                  <a href="javascript:void(0);" class="js-open-secondary-menu">
-                    {{t "More"}}
-                    <span class="icon-chevron-down" aria-hidden="true"></span>
-                  </a>
+                  <span>
+                    <a href="javascript:void(0);" class="js-open-secondary-menu">
+                      {{t "More"}}
+                      <span class="icon-chevron-down" aria-hidden="true"></span>
+                    </a>
+                  </span>
                 </li>
               {{/if}}
-              <li class="js-submenu-option">
+              <li class="submenu-option js-submenu-option">
                 <button class="m-icon-button in-menu-main more js-toggle-submenu" aria-label="{{t "Open submenu"}}">
                   <span class="icon-more" aria-hidden="true"></span>
                 </button>
@@ -120,7 +122,10 @@ This header template is shared across all the pages.
                 {{t "Toggle dark mode"}}
               </label>
               <input id="toggle-darkmode" type="checkbox" class="js-toggle-darkmode">
-              <div></div>
+              <div>
+                <span class="icon-moon moon" aria-hidden="true"></span>
+                <span class="icon-sunny sun" aria-hidden="true"></span>
+              </div>
             </div>
           </div>
         </div>

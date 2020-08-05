@@ -101,6 +101,11 @@
   a {
     color: var(--primary-foreground-color);
     text-decoration: underline;
+    @include transition(color linear 0.2s);
+
+    &:hover {
+      color: var(--link-color);
+    }
   }
 
   ul, ol {

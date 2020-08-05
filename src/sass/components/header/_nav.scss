@@ -3,6 +3,18 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 37px;
+    overflow-y: hidden;
+  }
+
+  @include respond-to('largest') {
+    margin: 0 -5px;
+  }
+
+  &.toggle-overflow {
+    @include respond-to('medium') {
+      overflow-y: initial;
+    }
   }
 }
 
@@ -10,7 +22,23 @@
   margin-bottom: 30px;
 
   @include respond-to('medium') {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 5px;
     margin-bottom: 0;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &.toggle-overflow {
+    @include respond-to('medium') {
+      overflow-x: hidden;
+    }
   }
 
   ul {
@@ -37,10 +65,6 @@
 
     &:last-of-type {
       margin-bottom: 0;
-
-      @include respond-to('medium') {
-        margin-right: 0;
-      }
     }
 
     &.nav-current {
@@ -69,6 +93,12 @@
         }
       }
     }
+
+    &.submenu-option {
+      @include respond-to('medium') {
+        z-index: 2;
+      }
+    }
   }
 }
 
@@ -76,18 +106,55 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
+  @include respond-to('medium') {
+    flex-shrink: 0;
+    position: relative;
+    padding-left: 20px;
+    padding-right: 5px;
+  }
+
+  &:before {
+    @include respond-to('medium') {
+      content: '';
+      position: absolute;
+      pointer-events: none;
+      top: 0;
+      left: -20px;
+      width: 20px;
+      height: 100%;
+      z-index: 2;
+      background: linear-gradient(90deg, var(--header-menu-gradient-first-color) 0, var(--header-menu-gradient-secound-color));
+    }
+  }
 }
 
 .rtl {
-  .m-nav__left li {
+  .m-nav__left {
     @include respond-to('medium') {
-      margin-right: 0;
-      margin-left: 35px;
+      padding-left: 0;
+      padding-right: 5px;
+    }
 
-      &:last-of-type {
-        @include respond-to('medium') {
-          margin-left: 0;
-        }
+    li {
+      @include respond-to('medium') {
+        margin-right: 0;
+        margin-left: 35px;
+      }
+    }
+  }
+
+  .m-nav__right {
+    @include respond-to('medium') {
+      padding-left: 5px;
+      padding-right: 20px;
+    }
+
+    &:before {
+      @include respond-to('medium') {
+        left: auto;
+        right: -20px;
+        @include transform(rotate(180deg));
       }
     }
   }

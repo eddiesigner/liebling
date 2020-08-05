@@ -2,8 +2,8 @@
   position: fixed;
   right: $mobile-space;
   bottom: 45px;
-  width: 22px;
-  height: 22px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   overflow: hidden;
   z-index: 2;
@@ -46,16 +46,20 @@
     height: 100%;
     border-radius: 50%;
     overflow: hidden;
-    background-color: $titles;
+    background-color: var(--toggle-darkmode-background-color);
     z-index: 1;
+  }
 
-    &:after {
-      content: '';
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background-color: var(--toggle-darkmode-button-color);
-      @include transition(background-color linear 0.2s);
+  span {
+    color: var(--titles-color);
+    font-size: 0.9375rem;
+
+    &.moon {
+      display: var(--toggle-darkmode-button-display-moon);
+    }
+
+    &.sun {
+      display: var(--toggle-darkmode-button-display-sun);
     }
   }
 }

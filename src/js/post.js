@@ -23,12 +23,12 @@ let lastDocumentHeight = 0
 let circumference = 0
 let isTicking = false
 
-function onScrolling() {
+const onScrolling = () => {
   lastScrollingY = window.pageYOffset
   requestTicking()
 }
 
-function adjustShare(timeout) {
+const adjustShare = (timeout) => {
   if (!isMobile('1023px')) {
     $('body').removeClass('share-menu-displayed')
   } else {
@@ -39,7 +39,7 @@ function adjustShare(timeout) {
   }
 }
 
-function onResizing() {
+const onResizing = () => {
   setHeights()
   adjustShare(100)
 
@@ -49,7 +49,7 @@ function onResizing() {
   }, 200)
 }
 
-function requestTicking() {
+const requestTicking = () => {
   if (!isTicking) {
     requestAnimationFrame(updating)
   }
@@ -57,7 +57,7 @@ function requestTicking() {
   isTicking = true
 }
 
-function updating() {
+const updating = () => {
   const progressMax = lastDocumentHeight - lastWindowHeight
   const percent = Math.ceil((lastScrollingY / progressMax) * 100)
 
@@ -68,12 +68,12 @@ function updating() {
   isTicking = false
 }
 
-function setHeights() {
+const setHeights = () => {
   lastWindowHeight = window.innerHeight
   lastDocumentHeight = $(document).height()
 }
 
-function setCircleStyles() {
+const setCircleStyles = () => {
   const svgWidth = $progressCircle.parent().width();
   const radiusCircle = svgWidth / 2
   const borderWidth = isMobile() ? 2 : 3
@@ -90,14 +90,14 @@ function setCircleStyles() {
   $progressCircle[0].style.strokeDashoffset = circumference
 }
 
-function setProgress(percent) {
+const setProgress = (percent) => {
   if (percent <= 100) {
     const offset = circumference - percent / 100 * circumference
     $progressCircle[0].style.strokeDashoffset = offset
   }
 }
 
-function prepareProgressCircle() {
+const prepareProgressCircle = () => {
   $progressCircle = $('.js-progress')
 
   setHeights()

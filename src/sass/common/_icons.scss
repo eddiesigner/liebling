@@ -15,6 +15,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-moon:before {
+  content: "\e90f";
+}
+.icon-sunny:before {
+  content: "\e910";
+}
 .icon-chevron-down:before {
   content: "\e900";
 }
