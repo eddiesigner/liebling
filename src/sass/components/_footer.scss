@@ -63,7 +63,7 @@
   margin-right: 0px;
 }
 
-.footer-mailing-list button {
+.footer-mailing-list a {
   background-color: transparent;
   color: #fff;
   font-size: 16px;
@@ -73,9 +73,10 @@
   border: 2px solid rgba(255, 255, 255, 0.85);
 
   transition-duration: 0.3s;
+  display: inline-block;
 }
 
-.footer-mailing-list button:hover {
+.footer-mailing-list a:hover {
   background-color: white;
   color: $ieee-blue;
   cursor: pointer;
