@@ -46,11 +46,12 @@
   {{#is "post"}}
     </div>
   {{/is}}
-  {{else}}
+  {{^is "post"}}
     <header class="m-heading no-margin">
       <h3>{{t "No posts found"}}</h3>
       <p>
         {{t "Apparently there are no posts at the moment, check again later."}}
       </p>
     </header>
+  {{/is}}
 {{/foreach}}
