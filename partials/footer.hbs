@@ -7,19 +7,19 @@ This footer template is shared across all the pages.
     <p class="m-footer-copyright">
       <span>{{@site.title}} &copy; {{date format="YYYY"}}</span>
       <span>&nbsp; &bull; &nbsp;</span>
-      <span>{{t "Published with"}} <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a></span>
+      <span>{{t "Published with"}} <a href="https://ntotao.com" target="_blank" rel="noopener">Ntotao</a></span>
     </p>
 
     <nav class="m-footer-social">
       {{#if @site.facebook}}
-        <a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener" aria-label="Facebook">
-          <span class="icon-facebook" aria-hidden="true"></span>
-        </a>
+      <a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener" aria-label="Facebook">
+        <span class="icon-facebook" aria-hidden="true"></span>
+      </a>
       {{/if}}
       {{#if @site.twitter}}
-        <a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener" aria-label="Twitter">
-          <span class="icon-twitter" aria-hidden="true"></span>
-        </a>
+      <a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener" aria-label="Twitter">
+        <span class="icon-twitter" aria-hidden="true"></span>
+      </a>
       {{/if}}
       <a href="{{@site.url}}/rss" aria-label="RSS">
         <span class="icon-rss" aria-hidden="true"></span>
