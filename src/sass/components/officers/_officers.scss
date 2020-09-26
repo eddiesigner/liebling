@@ -2,6 +2,17 @@
   text-align: center;
 }
 
+.ieee-decal-warning {
+  font-size: 1.6em;
+  padding: 1em;
+  text-align: center;
+
+  a {
+    color: #004080;
+    text-decoration: underline;
+  }
+}
+
 .ieee-officer-divider {
   display: flex;
   justify-content: center;
