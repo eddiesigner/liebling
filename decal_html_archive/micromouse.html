@@ -1,0 +1,759 @@
+<!-- GUIDE -->
+
+<!--
+
+Notes on editing this page
+    
+1. Please do not modify any of the HTML boxes that have "DO NOT MODIFY" comments. They are mostly static designs for the site.
+
+2. If you have deleted any of the HTML boxes on accident, a backup of this document is available at github.com/johnlee-jh/IEEE-HOPE (please contact John or the website committee to fix)
+
+3. Each row in the 'timeline' table is listed seperately, so feel free to enter/modify course content as needed.
+
+-->
+
+<!DOCTYPE html>
+<!-- DO NOT MODIFY -->
+<html lang="en">
+<title>Micromouse</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css">
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Open Sans"}
+body {font-size:16px;}
+
+.introbox {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+/* Columns */
+.keep-column {
+  float: left;
+}
+
+.remove-column {
+  display: block;
+}
+
+/* intro sections */
+.intro-left {
+width: 50%;
+}
+
+.intro-filler {
+width: 20%;
+}
+
+.intro-right {
+width: 30%;
+}
+
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+
+/* Timeline */
+.timeline-head {
+	background-color: #DDDDDD;
+	color: black;
+	text-align: center;
+	font-size: 30px;
+	font-weight: 500;
+}
+.timeline-odd {
+	background-color: #EFEFEF;
+	color: black;
+	font-size: 16px;
+	font-weight: 500;
+	text-align: center;
+}
+.timeline-even {
+	background-color: #F5F5F5;
+	color: black;
+	font-size: 16px;
+	font-weight: 500;
+	text-align: center;
+}
+.timeline-1 {
+width: 10%;
+border-right: 1px solid white;
+min-height: 150px;
+}
+
+.timeline-2 {
+width: 20%;
+border-right: 1px solid white;
+min-height: 150px;
+}
+
+.timeline-3 {
+width: 40%;
+border-right: 1px solid white;
+min-height: 150px;
+}
+
+.timeline-4 {
+width: 30%;
+min-height: 150px;
+}
+
+.timeline-h1 {
+width: 10%;
+border-right: 1px solid white;
+}
+
+.timeline-h2 {
+width: 20%;
+border-right: 1px solid white;
+}
+
+.timeline-h3 {
+width: 40%;
+border-right: 1px solid white;
+}
+
+.timeline-h4 {
+width: 30%;
+}
+
+.timeline-content1 {
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+	padding-left: 2px; padding-right: 2px;
+}
+.timeline-content2 {
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+	padding-left: 15px; padding-right: 15px;
+
+}
+.timeline-content3 {
+	display: flex;
+	padding-left: 30px; padding-right: 30px;
+}
+.timeline-content4 {
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+	padding-left: 15px; padding-right: 15px;
+}
+
+
+/* Nav Bar */
+.topnav {
+  overflow: hidden;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 40px;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.topnav b {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 0px;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav b {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive b {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .keep-column {
+	  width: 100%;
+  }
+  .remove-column {
+	  display: none;
+  }
+}
+</style>
+<script>
+	function myFunction() {
+	  var x = document.getElementById("myTopnav");
+	  if (x.className === "topnav") {
+		x.className += " responsive";
+	  } else {
+		x.className = "topnav";
+	  }
+	}
+</script>
+
+</head>
+
+<!-- COURSE INTRO (DO NOT MODIFY) -->
+<body>
+
+  <div>
+      
+  <div class="background-box row" style="background-color: white;">
+  
+  <div class="topnav" id="myTopnav">
+    <b>Contents: </b>
+    <a href="#about">About</a>
+    <a href="#notices">Notices</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#register">Register</a>
+  </div>
+  
+  <div style="height: 1px; background-color: grey;"></div>
+      
+  <div style="height: 50px;"></div>
+  
+  <div id="#about">
+    <div class="row">
+      <div class="keep-column intro-left">
+        <strong style="font-size: 40px; font-weight: 650; color: #003366;">Welcome to Micromouse!</strong>
+        <div style="height: 20px;"></div>
+        <n style="font-size: 17px; font-weight: 400;">	The IEEE Micromouse DeCal is aimed at students with a strong interest in robotics, who want to pursue a hardware project but may not have the resources to do so on their own. The course will be taught in the context of IEEE’s Micromouse competition, in which students form teams of 2-3 to navigate a 16x16 maze. By the end of the semester, students will be able to build an autonomous, maze-solving robot with minimal assistance, using skills that are extendable to real-world robotics problems. Special focus is given to topics including electrical and firmware engineering, brushed motors, sensing, pathfinding, and control theory.  This course fits in with other courses in the department like EE16B. 
+        </n>
+        <br><br>
+        <n style="font-size: 17px; font-weight: 400;">
+          <strong>Semester:</strong> Fall 2020<br>
+          <strong>Time/Location:</strong> Remote<br>
+          <strong>Units: </strong>1<br>
+                  <br>
+                  <b><a href="https://ieee.berkeley.edu/micromouse-syllabus/" style="font-size: 24px; color: #003d7a; text-decoration: none;">Syllabus <em class="fa fa-external-link" aria-hidden="true" style="font-size: 16px; color: #004080;"></em></a></b>
+        </n>
+      </div>
+  
+      <div class="keep-column intro-filler" style="margin-top: 20px;"></div>
+  
+      <div class="keep-column intro-right">
+      <div style="width: 100%;">
+              <div style="height: 10px;"></div>
+        <strong style="font-size: 30px; font-weight: 700;">Instructors</strong><br><br>
+        <div>
+          <div class="font-size: 20px;">
+                      <b>Ethan Mehta</b> <br>
+                      ethanbmehta@berkeley.edu <br>
+                      510-513-5782 <br>
+                      <br>
+          </div>
+          <div class="font-size: 20px;">
+                      <b>Matthew Tran</b> <br>
+                      matthewlamtran@berkeley.edu <br>
+                      626-297-7932 <br>
+                      <br>
+          </div>
+        </div>
+        <div style="height: 40px;"></div>
+        <strong style="font-size: 30px; font-weight: 700;">Office Hours</strong><br><br>
+        <n style="font-size: 17px; font-weight: 400;">
+          TBD
+        </n>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div style="height: 50px;"></div>
+
+  <!-- TIMELINE END -->
+
+<div style="height: 50px;"></div>
+</div>
+
+<div id="timeline" style="min-width: 1000px;">
+	<div style="height: 50px;"></div>
+	<b style="font-size: 40px; font-weight: 650;">Timeline</b>
+	<div style="height: 50px;"></div>
+
+	<div class="timeline-head">
+		<div class="row">
+			<div class="column timeline-h1" style="float: left;">
+				Week
+			</div>
+			<div class="column timeline-h2" style="float: left;">
+				Title
+			</div>
+			<div class="column timeline-h3" style="float: left;">
+				Content
+			</div>
+			<div class="column timeline-h4" style="float: left;">
+				Lab
+			</div>
+		</div>
+	</div>
+	<div class="timeline-odd">
+		<div class="row">
+			<div class="column timeline-1" style="float: left;">
+				<div class="timeline-content1">
+					1
+					<br> (Date)
+				</div>
+			</div>
+			<div class="column timeline-2" style="float: left;">
+				<div class="timeline-content2">
+					Introduction
+				</div>
+			</div>
+			<div class="column timeline-3" style="float: left; text-align: left;">
+				<div class="timeline-content3">
+				• What is HOPE? <br>
+				• What is a PCB? <br>
+				• PCB EDA Tools <br>
+				• General PCB Project Workflow <br>
+				</div>
+			</div>
+			<div class="column timeline-4" style="float: left;">
+				<div class="timeline-content4">
+					<a href="">Intro to KiCad</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="timeline-even">
+		<div class="row">
+			<div class="column timeline-1" style="float: left;">
+				<div class="timeline-content1">
+					2
+					<br> (Date)
+				</div>
+			</div>
+			<div class="column timeline-2" style="float: left;">
+				<div class="timeline-content2">
+					Schematics & Components, Pt.1
+				</div>
+			</div>
+			<div class="column timeline-3" style="float: left; text-align: left;">
+				<div class="timeline-content3">
+					• PCB Design <br>
+
+					&nbsp;&nbsp;&nbsp;&nbsp;> Design Abstraction for PCBs, Introduction to Stakeholders <br>
+
+					• Schematics for <br>
+					
+					&nbsp;&nbsp;&nbsp;&nbsp;> Connectivity of Components, Communication <br>
+				</div>
+			</div>
+			<div class="column timeline-4" style="float: left;">
+				<div class="timeline-content4">
+					<a href="">Schematics & KiCad</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="timeline-odd">
+		<div class="row">
+			<div class="column timeline-1" style="float: left;">
+				<div class="timeline-content1">
+					3
+					<br> (Date)
+				</div>
+			</div>
+			<div class="column timeline-2" style="float: left;">
+				<div class="timeline-content2">
+					Schematics & Components, Pt.2
+				</div>
+			</div>
+			<div class="column timeline-3" style="float: left; text-align: left;">
+				<div class="timeline-content3">
+					Components <br>
+					Component in KiCad schematics,
+					Selecting components, and
+					ICs and Product Families <br>
+					Design Compromise <br>
+					Introduction to DFX
+				</div>
+			</div>
+			<div class="column timeline-4" style="float: left;">
+				<div class="timeline-content4">
+					<a href="">USB Charger: Component Selection and Schematic Creation</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="timeline-even">
+		<div class="row">
+			<div class="column timeline-1" style="float: left;">
+				<div class="timeline-content1">
+					4
+					<br> (Date)
+				</div>
+			</div>
+			<div class="column timeline-2" style="float: left;">
+				<div class="timeline-content2">
+					PCB Layout, Pt.1
+				</div>
+			</div>
+			<div class="column timeline-3" style="float: left; text-align: left;">
+				<div class="timeline-content3">
+				> What is HOPE? <br>
+				> What is a PCB? <br>
+				> PCB EDA Tools <br>
+				> General PCB Project Workflow <br>
+				</div>
+			</div>
+			<div class="column timeline-4" style="float: left;">
+				<div class="timeline-content4">
+					<a href="">USB Charger: Footprint Creation and Board Setup</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="timeline-odd">
+		<div class="row">
+			<div class="column timeline-1" style="float: left;">
+				<div class="timeline-content1">
+					5
+					<br> (Date)
+				</div>
+			</div>
+			<div class="column timeline-2" style="float: left;">
+				<div class="timeline-content2">
+					PCB Layout, Pt.2
+				</div>
+			</div>
+			<div class="column timeline-3" style="float: left; text-align: left;">
+				<div class="timeline-content3">
+				> What is HOPE? <br>
+				> What is a PCB? <br>
+				> PCB EDA Tools <br>
+				> General PCB Project Workflow <br>
+				</div>
+			</div>
+			<div class="column timeline-4" style="float: left;">
+				<div class="timeline-content4">
+					<a href="">USB Charger: Layout</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="timeline-even">
+		<div class="row">
+			<div class="column timeline-1" style="float: left;">
+				<div class="timeline-content1">
+					6
+					<br> (Date)
+				</div>
+			</div>
+			<div class="column timeline-2" style="float: left;">
+				<div class="timeline-content2">
+					PCB Layout, Pt.3
+				</div>
+			</div>
+			<div class="column timeline-3" style="float: left; text-align: left;">
+				<div class="timeline-content3">
+				> What is HOPE? <br>
+				> What is a PCB? <br>
+				> PCB EDA Tools <br>
+				> General PCB Project Workflow <br>
+				</div>
+			</div>
+			<div class="column timeline-4" style="float: left;">
+				<div class="timeline-content4">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="timeline-odd">
+		<div class="row">
+			<div class="column timeline-1" style="float: left;">
+				<div class="timeline-content1">
+					7
+					<br> (Date)
+				</div>
+			</div>
+			<div class="column timeline-2" style="float: left;">
+				<div class="timeline-content2">
+					PCB Layout, Pt.4
+				</div>
+			</div>
+			<div class="column timeline-3" style="float: left; text-align: left;">
+				<div class="timeline-content3">
+				> What is HOPE? <br>
+				> What is a PCB? <br>
+				> PCB EDA Tools <br>
+				> General PCB Project Workflow <br>
+				</div>
+			</div>
+			<div class="column timeline-4" style="float: left;">
+				<div class="timeline-content4">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="timeline-even">
+		<div class="row">
+			<div class="column timeline-1" style="float: left;">
+				<div class="timeline-content1">
+					8
+					<br> (Date)
+				</div>
+			</div>
+			<div class="column timeline-2" style="float: left;">
+				<div class="timeline-content2">
+					Microcontrollers and Even More Layout Concerns?
+				</div>
+			</div>
+			<div class="column timeline-3" style="float: left; text-align: left;">
+				<div class="timeline-content3">
+				> What is HOPE? <br>
+				> What is a PCB? <br>
+				> PCB EDA Tools <br>
+				> General PCB Project Workflow <br>
+				</div>
+			</div>
+			<div class="column timeline-4" style="float: left;">
+				<div class="timeline-content4">
+					<a href="">Microbug layout</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="timeline-odd">
+		<div class="row">
+			<div class="column timeline-1" style="float: left;">
+				<div class="timeline-content1">
+					9
+					<br> (Date)
+				</div>
+			</div>
+			<div class="column timeline-2" style="float: left;">
+				<div class="timeline-content2">
+					Spring Break
+				</div>
+			</div>
+			<div class="column timeline-3" style="float: left; text-align: left;">
+				<div class="timeline-content3">
+				Enjoy your spring break!
+				</div>
+			</div>
+			<div class="column timeline-4" style="float: left;">
+				<div class="timeline-content4">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="timeline-even">
+		<div class="row">
+			<div class="column timeline-1" style="float: left;">
+				<div class="timeline-content1">
+					10
+					<br> (Date)
+				</div>
+			</div>
+			<div class="column timeline-2" style="float: left;">
+				<div class="timeline-content2">
+					Even more PCB Layout? and Design Reviews
+				</div>
+			</div>
+			<div class="column timeline-3" style="float: left; text-align: left;">
+				<div class="timeline-content3">
+				> What is HOPE? <br>
+				> What is a PCB? <br>
+				> PCB EDA Tools <br>
+				> General PCB Project Workflow <br>
+				</div>
+			</div>
+			<div class="column timeline-4" style="float: left;">
+				<div class="timeline-content4">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="timeline-odd">
+		<div class="row">
+			<div class="column timeline-1" style="float: left;">
+				<div class="timeline-content1">
+					11
+					<br> (Date)
+				</div>
+			</div>
+			<div class="column timeline-2" style="float: left;">
+				<div class="timeline-content2">
+					PCB Assembly
+				</div>
+			</div>
+			<div class="column timeline-3" style="float: left; text-align: left;">
+				<div class="timeline-content3">
+				> What is HOPE? <br>
+				> What is a PCB? <br>
+				> PCB EDA Tools <br>
+				> General PCB Project Workflow <br>
+				</div>
+			</div>
+			<div class="column timeline-4" style="float: left;">
+				<div class="timeline-content4">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="timeline-even">
+		<div class="row">
+			<div class="column timeline-1" style="float: left;">
+				<div class="timeline-content1">
+					12
+					<br> (Date)
+				</div>
+			</div>
+			<div class="column timeline-2" style="float: left;">
+				<div class="timeline-content2">
+					Fun Lecture
+				</div>
+			</div>
+			<div class="column timeline-3" style="float: left; text-align: left;">
+				<div class="timeline-content3">
+				> What is HOPE? <br>
+				> What is a PCB? <br>
+				> PCB EDA Tools <br>
+				> General PCB Project Workflow <br>
+				</div>
+			</div>
+			<div class="column timeline-4" style="float: left;">
+				<div class="timeline-content4">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="timeline-odd">
+		<div class="row">
+			<div class="column timeline-1" style="float: left;">
+				<div class="timeline-content1">
+					13
+					<br> (Date)
+				</div>
+			</div>
+			<div class="column timeline-2" style="float: left;">
+				<div class="timeline-content2">
+					Project Assembly
+				</div>
+			</div>
+			<div class="column timeline-3" style="float: left; text-align: left;">
+				<div class="timeline-content3">
+				> What is HOPE? <br>
+				> What is a PCB? <br>
+				> PCB EDA Tools <br>
+				> General PCB Project Workflow <br>
+				</div>
+			</div>
+			<div class="column timeline-4" style="float: left;">
+				<div class="timeline-content4">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="timeline-even">
+		<div class="row">
+			<div class="column timeline-1" style="float: left;">
+				<div class="timeline-content1">
+					14
+					<br> (Date)
+				</div>
+			</div>
+			<div class="column timeline-2" style="float: left;">
+				<div class="timeline-content2">
+					Project Presentations
+				</div>
+			</div>
+			<div class="column timeline-3" style="float: left; text-align: left;">
+				<div class="timeline-content3">
+				> What is HOPE? <br>
+				> What is a PCB? <br>
+				> PCB EDA Tools <br>
+				> General PCB Project Workflow <br>
+				</div>
+			</div>
+			<div class="column timeline-4" style="float: left;">
+				<div class="timeline-content4">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<div style="height: 50px;"></div>
+</div>
+
+<hr style="border: 1px solid grey;">
+
+<div style="height: 50px;"></div>
+
+<div id="register">
+	<b style="font-size: 40px; font-weight: 650;">Register</b>
+	<div style="height: 30px;"></div>
+	<n style="font-size: 17px; font-weight: 300;"> Interested in this course? <br>
+		Go to the <a href="">DeCal registration website</a> to register for Fall 2020.
+	</n>
+</div>
+
+<div style="height: 50px;"></div>
+
+<hr style="border: 1px solid grey;">
+
+<div id="notices">
+	<b style="font-size: 40px; font-weight: 650;">Notices</b>
+	<div style="height: 30px;"></div>
+	{{content}}
+</div>
+
+<div style="height: 300px;"></div>
+
+<!---->
+
+</div>
+</div>
+
+<!---->
+
+
+<!-- End of Content-->
+</div>
+
+</body>
+</html>
