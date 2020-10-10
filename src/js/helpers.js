@@ -80,7 +80,9 @@ export const makeImagesZoomable = ($, mediumZoom) => {
   zoom.on('opened', () => {
     setTimeout(() => {
       const $mediumZoomImages = $('.medium-zoom-image--opened')
-      $mediumZoomImages.last().hide()
+      if ($mediumZoomImages.length > 1) {
+        $mediumZoomImages.last().hide()
+      }
     }, 10)
   })
 }
