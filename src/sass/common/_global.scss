@@ -54,13 +54,6 @@ fieldset {
   background-color: var(--background-color) !important;
 }
 
-.medium-zoom-image-mobile {
-  left: 0 !important;
-  width: 100% !important;
-  height: auto !important;
-  @include transition(all .3s cubic-bezier(.2,0,.2,1) !important);
-}
-
 .medium-zoom-overlay,
 .medium-zoom-image {
   z-index: 5;
