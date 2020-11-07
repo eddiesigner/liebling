@@ -2,10 +2,13 @@
 This template is used for the subscription page.
 --}}
 
+{{!-- This block preloads specific assets for the newsletter page --}}
+{{#contentFor "preload"}}
+  <link rel="preload" href="{{asset "css/newsletter.css"}}" as="style" />
+{{/contentFor}}
+
 {{!-- This block loads specific styles for the newsletter page --}}
 {{#contentFor "styles"}}
-  <link rel="preload" href="{{asset "css/newsletter.css"}}" as="style" />
-
   <link rel="stylesheet" type="text/css" href="{{asset "css/newsletter.css"}}" media="screen" />
 {{/contentFor}}
 

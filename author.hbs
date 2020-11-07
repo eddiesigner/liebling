@@ -2,10 +2,13 @@
 This template is used for the author page.
 --}}
 
+{{!-- This block preloads specific assets for the author page --}}
+{{#contentFor "preload"}}
+  <link rel="preload" href="{{asset "css/listing.css"}}" as="style" />
+{{/contentFor}}
+
 {{!-- This block loads specific styles for the author page --}}
 {{#contentFor "styles"}}
-  <link rel="preload" href="{{asset "css/listing.css"}}" as="style" />
-
   <link rel="stylesheet" type="text/css" href="{{asset "css/listing.css"}}" media="screen" />
 {{/contentFor}}
 

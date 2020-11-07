@@ -4,12 +4,11 @@ This footer template is shared across all the pages.
 
 <footer class="m-footer">
   <div class="m-footer__content">
-    <p class="m-footer-copyright">
-      <span>{{@site.title}} &copy; {{date format="YYYY"}}</span>
-      <span>&nbsp; &bull; &nbsp;</span>
-      <span>{{t "Published with"}} <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a></span>
-    </p>
-
+    {{#if @site.secondary_navigation}}
+      <nav class="m-footer__nav-secondary" role="navigation" aria-label="{{t "Secondary menu in footer"}}">
+        {{navigation type="secondary"}}
+      </nav>
+    {{/if}}
     <nav class="m-footer-social">
       {{#if @site.facebook}}
         <a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener" aria-label="Facebook">
@@ -25,6 +24,11 @@ This footer template is shared across all the pages.
         <span class="icon-rss" aria-hidden="true"></span>
       </a>
     </nav>
+    <p class="m-footer-copyright">
+      <span>{{@site.title}} &copy; {{date format="YYYY"}}</span>
+      <span>&nbsp; &bull; &nbsp;</span>
+      <span>{{t "Published with"}} <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a></span>
+    </p>
     <p class="m-footer-copyright jslicense">
       <a href="{{asset "html/javascript.html"}}" rel="jslicense">{{t "JavaScript license information"}}</a>
     </p>

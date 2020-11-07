@@ -3,10 +3,13 @@ This template is used for the authors page.
 You must first create a page called Authors in the dashboard to enable it.
 --}}
 
+{{!-- This block preloads specific assets for the authors page --}}
+{{#contentFor "preload"}}
+  <link rel="preload" href="{{asset "css/listing.css"}}" as="style" />
+{{/contentFor}}
+
 {{!-- This block loads specific styles for the authors page --}}
 {{#contentFor "styles"}}
-  <link rel="preload" href="{{asset "css/listing.css"}}" as="style" />
-
   <link rel="stylesheet" type="text/css" href="{{asset "css/listing.css"}}" media="screen" />
 {{/contentFor}}
 

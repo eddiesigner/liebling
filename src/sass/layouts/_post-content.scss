@@ -98,6 +98,10 @@
     font-weight: 600;
   }
 
+  em {
+    font-style: italic;
+  }
+
   a {
     color: var(--primary-foreground-color);
     text-decoration: underline;
