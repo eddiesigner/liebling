@@ -92,6 +92,7 @@ From now on, this theme is only compatible with Ghost 3
 * Dutch by [Qballjos](https://github.com/Qballjos)
 * Traditional Chinese by [weixiang](https://github.com/weixiang)
 * Persian (Farsi) by [Aminoiz](https://github.com/Aminoiz)
+* Ukrainian by [partizan007](https://github.com/partizan007)
 
 ## Tests performed
 
