@@ -118,7 +118,9 @@ Contributions are very welcome. First, please read the [Pull Request Guidelines]
 
 ## Related
 
-* [Weiss Pro](https://blog.eduardogomez.io/weiss-pro-modern-and-clean-ghost-theme/) - Modern and beautiful Ghost theme ready to make your content shine ✨
+* [Firma](https://gum.co/ZXLha) - Ghost theme that can be used by startups to large companies to publish any kind of articles related to their business. It stands out for its clean design and is able to adapt to any company's identity.
+
+* [Weiss Pro](https://blog.eduardogomez.io/weiss-pro-modern-and-clean-ghost-theme/) - Modern and beautiful Ghost theme ready to make your content shine.
 
 ## License
 
