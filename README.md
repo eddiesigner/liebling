@@ -87,7 +87,7 @@ From now on, this theme is only compatible with Ghost 3
 * Turkish by [mskoroglu](https://github.com/mskoroglu)
 * Romanian by [dsecareanu](https://github.com/dsecareanu)
 * Chinese Simplified by [IvyB](https://github.com/IvyB)
-* Indonesian by [iqbalbinsb](https://github.com/iqbalbinsb)
+* Indonesian by [iqbalbinsb](https://github.com/iqbalbinsb), [khannedy](https://github.com/khannedy)
 * Lithuanian by [pintom](https://github.com/pintom)
 * Dutch by [Qballjos](https://github.com/Qballjos)
 * Traditional Chinese by [weixiang](https://github.com/weixiang)
