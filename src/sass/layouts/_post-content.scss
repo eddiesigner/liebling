@@ -3,6 +3,7 @@
 
   @include respond-to('medium') {
     max-width: 820px;
+    min-height: 400px;
     margin: 0 auto;
 
     @include respond-to('medium') {

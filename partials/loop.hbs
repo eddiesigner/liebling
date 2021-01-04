@@ -47,10 +47,12 @@
     </div>
   {{/is}}
   {{else}}
-    <header class="m-heading no-margin">
-      <h3>{{t "No posts found"}}</h3>
-      <p>
-        {{t "Apparently there are no posts at the moment, check again later."}}
-      </p>
-    </header>
+    <div class="m-recommended-slider__item glide__slide">
+      <div class="m-heading no-margin">
+        <h3>{{t "No posts found"}}</h3>
+        <p>
+          {{t "Apparently there are no posts at the moment, check again later."}}
+        </p>
+      </div>
+    </div>
 {{/foreach}}

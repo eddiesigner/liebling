@@ -48,6 +48,9 @@
   text-align: center;
 
   @include respond-to('medium') {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     flex: 1;
     text-align: left;
   }
