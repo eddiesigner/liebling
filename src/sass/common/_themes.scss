@@ -22,7 +22,7 @@
   --toggle-darkmode-button-display-sun: none;
   --toggle-darkmode-background-color: rgba(0, 0, 0, 0.05);
   --header-menu-gradient-first-color: rgba(255, 255, 255, 0);
-  --header-menu-gradient-secound-color: rgba(255, 255, 255, 1);
+  --header-menu-gradient-second-color: rgba(255, 255, 255, 1);
 }
 
 [data-theme="dark"] {
@@ -48,7 +48,7 @@
   --toggle-darkmode-button-display-sun: block;
   --toggle-darkmode-background-color: rgba(0, 0, 0, 0.5);
   --header-menu-gradient-first-color: rgba(17, 17, 17, 0);
-  --header-menu-gradient-secound-color: rgba(17, 17, 17, 0.65);
+  --header-menu-gradient-second-color: rgba(17, 17, 17, 0.65);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -75,6 +75,6 @@
     --toggle-darkmode-button-display-sun: block;
     --toggle-darkmode-background-color: rgba(0, 0, 0, 0.5);
     --header-menu-gradient-first-color: rgba(17, 17, 17, 0);
-    --header-menu-gradient-secound-color: rgba(17, 17, 17, 0.65);
+    --header-menu-gradient-second-color: rgba(17, 17, 17, 0.65);
   }
 }
