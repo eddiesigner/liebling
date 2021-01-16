@@ -2,6 +2,11 @@
 *.zip
 *.db
 
+assets/css
+assets/js
+assets/fonts
+assets/mix-manifest.json
+
 npm-debug.log
 node_modules
 
