@@ -15,7 +15,7 @@
     "production": "npm run build && npm run zip",
     "build": "NODE_ENV=production node node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "zip": "run-script-os",
-    "zip:win32": "cd .. && 7z a -r -x!.git -x!src -x!liebling.zip liebling.zip *",
+    "zip:win32": "cd .. && 7z a -r -x!.git -x!src -x!liebling.zip -x!.github -x!.idea liebling.zip *",
     "zip:default": "cd .. && zip -r liebling.zip ./* -x '*.git*' -x '*src*' -x 'liebling.zip'",
     "order-locales": "node order-locales.js"
   },
@@ -28,8 +28,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@tryghost/admin-api": "^1.3.7",
     "7zip": "0.0.6",
-    "@tryghost/admin-api": "^1.0.1",
     "browser-sync": "^2.26.7",
     "browser-sync-webpack-plugin": "^2.0.1",
     "concurrently": "^5.3.0",
@@ -40,14 +40,15 @@
     "laravel-mix": "^4.0.0-beta.2",
     "path": "^0.12.7",
     "resolve-url-loader": "3.1.0",
-    "run-script-os": "^1.0.7",
+    "run-script-os": "https://github.com/jamesmstone/run-script-os/tarball/master",
     "sass": "^1.22.9",
     "sass-loader": "7.*",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "win-node-env": "^0.4.0"
   },
   "dependencies": {
     "@glidejs/glide": "^3.4.1",
-    "aos": "eddiesigner/aos.git#v2",
+    "aos": "https://github.com/eddiesigner/aos/tarball/v2",
     "fitvids": "^2.0.0",
     "fuse.js": "^6.3.0",
     "headroom.js": "^0.10.3",
@@ -55,8 +56,5 @@
     "medium-zoom": "^1.0.3",
     "shave": "^2.5.6",
     "tippy.js": "^4.0.1"
-  },
-  "optionalDependencies": {
-    "win-node-env": "^0.4.0"
   }
 }
