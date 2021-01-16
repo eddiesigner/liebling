@@ -93,6 +93,7 @@
   border-radius: 10px 10px 0 0;
   background-color: var(--secondary-subtle-color);
   overflow: hidden;
+  @include transform(translateZ(0));
 
   @include respond-to('medium') {
     height: 220px;

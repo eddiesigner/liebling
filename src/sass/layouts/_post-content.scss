@@ -470,6 +470,13 @@
     @include respond-to('medium') {
       margin: 40px auto !important;
     }
+
+    &:hover {
+      .kg-bookmark-container {
+        opacity: 0.8;
+        color: var(--primary-foreground-color);
+      }
+    }
   }
 
   .kg-card + .kg-bookmark-card {
@@ -484,6 +491,7 @@
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px,
       rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
     border-radius: 3px;
+    @include transition(opacity linear 0.2s);
   }
 
   .kg-bookmark-content {
