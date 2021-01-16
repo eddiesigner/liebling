@@ -2,8 +2,6 @@
 *.zip
 *.db
 
-assets/mix-manifest.json
-
 npm-debug.log
 node_modules
 
