@@ -112,8 +112,6 @@ const prepareProgressCircle = () => {
 $(document).ready(() => {
   $aosWrapper = $('.js-aos-wrapper')
   const $scrollButton = $('.js-scrolltop')
-  const $loadComments = $('.js-load-comments')
-  const $commentsIframe = $('.js-comments-iframe')
   const $recommendedSlider = $('.js-recommended-slider')
 
   fitvids('.js-post-content')
@@ -182,11 +180,6 @@ $(document).ready(() => {
     $('html, body').animate({
       scrollTop: 0
     }, 500)
-  })
-
-  $loadComments.click(() => {
-    $loadComments.parent().hide()
-    $commentsIframe.fadeIn('slow')
   })
 
   managePostImages($)
