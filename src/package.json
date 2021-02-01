@@ -9,7 +9,7 @@
     "dev": "NODE_ENV=development node node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "NODE_ENV=development node node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "hot": "NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "docker-watch": "concurrently --names 'DOCKER,WEBPACK' --prefix-colors 'yellow,magenta' --kill-others 'docker-compose up' 'npm run watch'",
+    "docker-watch": "concurrently --names 'DOCKER,WEBPACK' --prefix-colors 'yellow,magenta' --kill-others \"docker-compose up\" \"npm run watch\"",
     "podman-watch": "podman-compose up -d && node node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "deploy": "npm run production && node deploy/index.js",
     "production": "npm run build && npm run zip",
