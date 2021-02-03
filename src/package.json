@@ -12,7 +12,7 @@
     "docker-watch": "concurrently --names 'DOCKER,WEBPACK' --prefix-colors 'yellow,magenta' --kill-others \"docker-compose up\" \"yarn run watch\"",
     "podman-watch": "podman-compose up -d && node node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "deploy": "yarn run production && node deploy/index.js",
-    "production": "yarn run build && yarn run zip",
+    "production": "yarn run build && yarn run zip && mv ../liebling.zip ../liebling-henry.zip",
     "build": "NODE_ENV=production node node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "zip": "run-script-os",
     "zip:win32": "cd .. && 7z a -r -x!.git -x!src -x!liebling.zip liebling.zip *",
