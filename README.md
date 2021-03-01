@@ -94,6 +94,8 @@ From now on, this theme is only compatible with Ghost 3
 * Persian (Farsi) by [Aminoiz](https://github.com/Aminoiz)
 * Ukrainian by [partizan007](https://github.com/partizan007)
 * Kazakh by [arshyn-t](https://github.com/arshyn-t)
+* Korean by [chocosobo](https://github.com/chocosobo)
+* Japanese by [ViaSnake](https://github.com/ViaSnake)
 
 ## Tests performed
 
