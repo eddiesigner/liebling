@@ -36,7 +36,7 @@ into the {body} of the default.hbs template --}}
         <div class="l-wrapper in-post {{#unless feature_image}}no-image{{/unless}} js-aos-wrapper" data-aos="fade-up"
           data-aos-delay="300">
           <div
-            class="l-post-content {{#if @labs.subscribers}}has-subscribe-form{{/if}} {{#if @labs.members}}has-subscribe-form{{/if}} js-progress-content">
+            class="l-post-content {{#if @labs.subscribers}}has-subscribe-form{{/if}} has-subscribe-form js-progress-content">
             <header class="m-heading">
               <h1 class="m-heading__title in-post">{{title}}</h1>
               <div class="m-heading__meta">
@@ -109,7 +109,6 @@ into the {body} of the default.hbs template --}}
             </div>
           </section>
         {{/if}}
-        {{#if @labs.members}}
           <section class="m-subscribe-section">
             <div class="l-wrapper in-post">
               <div class="m-subscribe-section__content">
@@ -125,7 +124,6 @@ into the {body} of the default.hbs template --}}
               </div>
             </div>
           </section>
-        {{/if}}
         <section class="m-author">
           <div class="m-author__content">
             <div class="m-author__picture">
