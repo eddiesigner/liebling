@@ -4,7 +4,8 @@ import Glide, {
   Swipe,
   Breakpoints
 } from '@glidejs/glide/dist/glide.modular.esm'
-import tippy from 'tippy.js'
+import tippy from 'tippy.js';
+import 'tippy.js/dist/tippy.css';
 import shave from 'shave'
 import AOS from 'aos'
 import Fuse from 'fuse.js/dist/fuse.basic.esm.min.js'
@@ -16,7 +17,7 @@ import {
   getParameterByName
 } from './helpers'
 
-$(document).ready(() => {
+$(() => {
   if (isRTL()) {
     $('html').attr('dir', 'rtl').addClass('rtl')
   }
@@ -41,6 +42,7 @@ $(document).ready(() => {
   const $closeNotification = $('.js-notification-close')
   const $mainNav = $('.js-main-nav')
   const $mainNavLeft = $('.js-main-nav-left')
+  const $newsletterElements = $('.js-newsletter')
   const currentSavedTheme = localStorage.getItem('theme')
 
   let fuse = null
@@ -61,6 +63,12 @@ $(document).ready(() => {
 
   const toggleScrollVertical = () => {
     $body.toggleClass('no-scroll-y')
+  }
+
+  const tryToRemoveNewsletter = () => {
+    if (typeof disableNewsletter !== 'undefined' && disableNewsletter) {
+      $newsletterElements.remove()
+    }
   }
 
   const trySearchFeature = () => {
@@ -161,19 +169,19 @@ $(document).ready(() => {
     }
   }
 
-  $openMenu.click(() => {
+  $openMenu.on('click', () => {
     $header.addClass('mobile-menu-opened')
     $menu.addClass('opened')
     toggleScrollVertical()
   })
 
-  $closeMenu.click(() => {
+  $closeMenu.on('click', () => {
     $header.removeClass('mobile-menu-opened')
     $menu.removeClass('opened')
     toggleScrollVertical()
   })
 
-  $toggleSubmenu.click(() => {
+  $toggleSubmenu.on('click', () => {
     submenuIsOpen = !submenuIsOpen
 
     if (submenuIsOpen) {
@@ -183,21 +191,21 @@ $(document).ready(() => {
     }
   })
 
-  $openSearch.click(() => {
+  $openSearch.on('click', () => {
     $search.addClass('opened')
     setTimeout(() => {
-      $inputSearch.focus()
+      $inputSearch.trigger('focus')
     }, 400);
     toggleScrollVertical()
   })
 
-  $closeSearch.click(() => {
-    $inputSearch.blur()
+  $closeSearch.on('click', () => {
+    $inputSearch.trigger('blur')
     $search.removeClass('opened')
     toggleScrollVertical()
   })
 
-  $inputSearch.keyup(() => {
+  $inputSearch.on('keyup', () => {
     if ($inputSearch.val().length > 0 && fuse) {
       const results = fuse.search($inputSearch.val())
       const bestResults = results.filter((result) => {
@@ -234,7 +242,7 @@ $(document).ready(() => {
     }
   })
 
-  $toggleDarkMode.change(() => {
+  $toggleDarkMode.on('change', () => {
     if ($toggleDarkMode.is(':checked')) {
       $('html').attr('data-theme', 'dark')
       localStorage.setItem('theme', 'dark')
@@ -244,17 +252,17 @@ $(document).ready(() => {
     }
   })
 
-  $toggleDarkMode.hover(() => {
+  $toggleDarkMode.on('hover', () => {
     toggleDesktopTopbarOverflow(true)
   }, () => {
     toggleDesktopTopbarOverflow(false)
   })
 
-  $closeNotification.click(function () {
+  $closeNotification.on('click', function () {
     closeNotification($(this).parent())
   })
 
-  $(window).click((e) => {
+  $(window).on('click', (e) => {
     if (submenuIsOpen) {
       if ($submenuOption && !$submenuOption.contains(e.target)) {
         submenuIsOpen = false
@@ -263,7 +271,7 @@ $(document).ready(() => {
     }
   })
 
-  $(document).keyup((e) => {
+  $(document).on('keyup', (e) => {
     if (e.key === 'Escape' && $search.hasClass('opened')) {
       $closeSearch.click()
     }
@@ -353,6 +361,7 @@ $(document).ready(() => {
     const template = document.getElementById('secondary-navigation-template')
 
     secondaryMenuTippy = tippy('.js-open-secondary-menu', {
+      appendTo: document.body,
       content: template.innerHTML,
       allowHTML: true,
       arrow: true,
@@ -373,5 +382,6 @@ $(document).ready(() => {
   shave('.js-article-card-title-no-image', 250)
 
   checkForActionParameter()
+  tryToRemoveNewsletter()
   trySearchFeature()
 })
