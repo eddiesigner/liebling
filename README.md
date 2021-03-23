@@ -6,6 +6,10 @@ If you find this theme useful, please consider to make a donation to support its
 
 <a href="https://ko-fi.com/eddiesigner" target="_blank"><img src="https://res.cloudinary.com/edev/image/upload/v1583011476/button_y8hgt8.png" alt="Donate" style="width: 250px !important; height: 60px !important;" width="250" height="60"></a>
 
+## Ghost 4
+
+This theme has been optimized for Ghost 4, if you are looking for a Ghost 3 compatible version please refer to [this link](https://github.com/eddiesigner/liebling/releases/tag/v.0.9.4).
+
 ## Preview
 
 You can see a live demo here: [https://liebling.eduardogomez.io](https://liebling.eduardogomez.io)
@@ -18,9 +22,9 @@ You can see a live demo here: [https://liebling.eduardogomez.io](https://lieblin
 
 To get the latest version please head over the [releases page](https://github.com/eddiesigner/liebling/releases) and download the file `liebling.zip` of the latest release.
 
-**IMPORTANT: To know how to enable the search, comments, newsletter and more, please head to the [Wiki](https://github.com/eddiesigner/liebling/wiki).**
+## Documentation
 
-From now on, this theme is only compatible with Ghost 3
+To know how to enable the search, comments, newsletter and more, please head to the [Wiki](https://github.com/eddiesigner/liebling/wiki).
 
 ## Features
 
@@ -123,7 +127,7 @@ Contributions are very welcome. First, please read the [Pull Request Guidelines]
 
 * [Firma](https://gum.co/ZXLha) - Ghost theme that can be used by startups to large companies to publish any kind of articles related to their business. It stands out for its clean design and is able to adapt to any company's identity.
 
-* [Weiss Pro](https://eduardogomez.io/weiss-pro/) - Modern and beautiful Ghost theme ready to make your content shine.
+* [Weiss Pro](https://gum.co/pzvDn) - Modern and beautiful Ghost theme ready to make your content shine.
 
 ## License
 

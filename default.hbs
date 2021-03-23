@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{@site.lang}}">
+<html lang="{{@site.locale}}">
   <head>
     {{!-- Document Settings --}}
     <meta charset="utf-8" />
@@ -32,7 +32,7 @@
         font-style: normal;
         font-weight: 400;
         font-display: swap;
-        src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'),
+        src: local('SourceSansPro-Regular'),
             url("{{asset 'fonts/source-sans-pro/latin/source-sans-pro-regular.woff2'}}") format('woff2'),
             url("{{asset 'fonts/source-sans-pro/latin/source-sans-pro-regular.woff'}}") format('woff');
       }
@@ -43,7 +43,7 @@
         font-style: normal;
         font-weight: 600;
         font-display: swap;
-        src: local('Source Sans Pro SemiBold'), local('SourceSansPro-SemiBold'),
+        src: local('SourceSansPro-SemiBold'),
             url("{{asset 'fonts/source-sans-pro/latin/source-sans-pro-600.woff2'}}") format('woff2'),
             url("{{asset 'fonts/source-sans-pro/latin/source-sans-pro-600.woff'}}") format('woff');
       }
@@ -54,7 +54,7 @@
         font-style: normal;
         font-weight: 700;
         font-display: swap;
-        src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'),
+        src: local('SourceSansPro-Bold'),
             url("{{asset 'fonts/source-sans-pro/latin/source-sans-pro-700.woff2'}}") format('woff2'),
             url("{{asset 'fonts/source-sans-pro/latin/source-sans-pro-700.woff'}}") format('woff');
       }
@@ -103,9 +103,7 @@
     {{> footer}}
 
     {{!-- Notifications alerts --}}
-    {{#if @labs.members}}
-      {{> "notifications"}}
-    {{/if}}
+    {{> "notifications"}}
 
     {{!-- Common scripts shared between pages --}}
     <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver%2CPromise%2CArray.prototype.includes%2CString.prototype.endsWith%2CString.prototype.startsWith%2CObject.assign%2CNodeList.prototype.forEach"></script>

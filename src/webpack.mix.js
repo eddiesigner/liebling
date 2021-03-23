@@ -1,5 +1,11 @@
 let mix = require('laravel-mix');
 
+mix.options({
+  terser: {
+    extractComments: false,
+  }
+});
+
 mix.webpackConfig({
   module: {
     rules: [
