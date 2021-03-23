@@ -31,9 +31,7 @@ into the {body} of the default.hbs template --}}
     {{#if @site.description}}
       <p class="m-hero-description bigger">{{@site.description}}</p>
     {{/if}}
-    {{#if @labs.members}}
-      <a href="{{@site.url}}/newsletter" class="m-button filled js-newsletter">{{t "Subscribe"}}</a>
-    {{/if}}
+    <a href="{{@site.url}}/newsletter" class="m-button filled js-newsletter">{{t "Subscribe"}}</a>
   </div>
   </section>
   <div class="l-content">
