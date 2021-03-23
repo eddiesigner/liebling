@@ -36,7 +36,7 @@ into the {body} of the default.hbs template --}}
         <div class="l-wrapper in-post {{#unless feature_image}}no-image{{/unless}} js-aos-wrapper" data-aos="fade-up"
           data-aos-delay="300">
           <div
-            class="l-post-content {{#if @labs.subscribers}}has-subscribe-form{{/if}} has-subscribe-form js-progress-content">
+            class="l-post-content js-progress-content">
             <header class="m-heading">
               <h1 class="m-heading__title in-post">{{title}}</h1>
               <div class="m-heading__meta">
@@ -84,46 +84,21 @@ into the {body} of the default.hbs template --}}
           </div>
         </div>
         {{!-- Email subscribe form at the bottom of the page --}}
-        {{#if @labs.subscribers}}
-          <section class="m-subscribe-section">
-            <div class="l-wrapper in-post">
-              <div class="m-subscribe-section__content">
-                <div class="m-subscribe-section__text">
-                  <h4 class="m-subscribe-section__title">{{t "Subscribe to our newsletter"}}</h4>
-                  <p class="m-subscribe-section__description">
-                    {{t "Get the latest posts delivered right to your inbox."}}
-                  </p>
-                </div>
-                <div class="m-subscribe-section__form">
-                  {{subscribe_form
-                    form_id="subscribe-form"
-                    form_class="m-subscribe-section__form"
-                    input_id="subscribe_input"
-                    input_class="m-input in-subscribe-section"
-                    button_id="subscribe_button"
-                    button_class="m-button primary block"
-                    placeholder=(t "Your email address")
-                  }}
-                </div>
+        <section class="m-subscribe-section js-newsletter">
+          <div class="l-wrapper in-post">
+            <div class="m-subscribe-section__content">
+              <div class="m-subscribe-section__text">
+                <h4 class="m-subscribe-section__title">{{t "Subscribe to our newsletter"}}</h4>
+                <p class="m-subscribe-section__description">
+                  {{t "Get the latest posts delivered right to your inbox."}}
+                </p>
+              </div>
+              <div class="m-subscribe-section__form">
+                {{> "newsletter-form"}}
               </div>
             </div>
-          </section>
-        {{/if}}
-          <section class="m-subscribe-section">
-            <div class="l-wrapper in-post">
-              <div class="m-subscribe-section__content">
-                <div class="m-subscribe-section__text">
-                  <h4 class="m-subscribe-section__title">{{t "Subscribe to our newsletter"}}</h4>
-                  <p class="m-subscribe-section__description">
-                    {{t "Get the latest posts delivered right to your inbox."}}
-                  </p>
-                </div>
-                <div class="m-subscribe-section__form">
-                  {{> "newsletter-form"}}
-                </div>
-              </div>
-            </div>
-          </section>
+          </div>
+        </section>
         <section class="m-author">
           <div class="m-author__content">
             <div class="m-author__picture">
