@@ -252,10 +252,12 @@ $(() => {
     }
   })
 
-  $toggleDarkMode.on('hover', () => {
+  $toggleDarkMode.on('mouseenter', () => {
     toggleDesktopTopbarOverflow(true)
-  }, () => {
-    toggleDesktopTopbarOverflow(false)
+  })
+
+  $toggleDarkMode.on('mouseleave', () => {
+    toggleDesktopTopbarOverflow(true)
   })
 
   $closeNotification.on('click', function () {
