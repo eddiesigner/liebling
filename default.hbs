@@ -11,11 +11,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     {{!-- Preload assets --}}
-    <link rel="preload" href="{{asset "css/app.css"}}" as="style" />
-    <link rel="preload" href="{{asset "js/manifest.js"}}" as="script" />
-    <link rel="preload" href="{{asset "js/vendor/content-api.min.js"}}" as="script" />
-    <link rel="preload" href="{{asset "js/vendor.js"}}" as="script" />
-    <link rel="preload" href="{{asset "js/app.js"}}" as="script" />
+    <link rel="preload" href="{{asset 'css/app.css'}}" as="style" />
+    <link rel="preload" href="{{asset 'js/manifest.js'}}" as="script" />
+    <link rel="preload" href="{{asset 'js/vendor.js'}}" as="script" />
+    <link rel="preload" href="{{asset 'js/app.js'}}" as="script" />
     <link rel="preconnect" href="https://polyfill.io">
     <link rel="dns-prefetch" href="https://polyfill.io">
 
@@ -73,14 +72,14 @@
       }
     </style>
 
-    <link rel="stylesheet" type="text/css" href="{{asset "css/app.css"}}" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{{asset 'css/app.css'}}" media="screen" />
 
     {{!-- This #block helper will inject a stylesheet for a specific page --}}
-    {{{block "styles"}}}
+    {{{block 'styles'}}}
 
-    {{!-- This #block helper will pull data from the hero partial 
+    {{!-- This #block helper will pull data from the hero partial
     to inject styles of the hero image to make it responsive --}}
-    {{{block "herobackground"}}}
+    {{{block 'herobackground'}}}
 
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
@@ -103,14 +102,13 @@
     {{> footer}}
 
     {{!-- Notifications alerts --}}
-    {{> "notifications"}}
+    {{> 'notifications'}}
 
     {{!-- Common scripts shared between pages --}}
     <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver%2CPromise%2CArray.prototype.includes%2CString.prototype.endsWith%2CString.prototype.startsWith%2CObject.assign%2CNodeList.prototype.forEach"></script>
-    <script defer src="{{asset "js/manifest.js"}}"></script>
-    <script defer src="{{asset "js/vendor/content-api.min.js"}}"></script>
-    <script defer src="{{asset "js/vendor.js"}}"></script>
-    <script defer src="{{asset "js/app.js"}}"></script>
+    <script defer src="{{asset 'js/manifest.js'}}"></script>
+    <script defer src="{{asset 'js/vendor.js'}}"></script>
+    <script defer src="{{asset 'js/app.js'}}"></script>
 
     {{!-- The #block helper will pull in data from the #contentFor other template files --}}
     {{{block "scripts"}}}

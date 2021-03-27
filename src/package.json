@@ -46,6 +46,7 @@
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
+    "@tryghost/content-api": "^1.5.1",
     "@glidejs/glide": "^3.4.1",
     "aos": "2.3.4",
     "fitvids": "^2.0.0",
