@@ -1,6 +1,6 @@
 {{!-- The template below includes the markup for each post --}}
 
-{{#foreach posts visibility="all" limit=4}}
+{{#foreach posts limit=4}}
   {{#is "post"}}
     <div class="m-recommended-slider__item glide__slide">
   {{/is}}
@@ -9,7 +9,7 @@
       <a href="{{url}}" class="m-article-card__picture-link" aria-hidden="true" tabindex="-1"></a>
       {{#if feature_image}}
         <img class="m-article-card__picture-background" src="{{img_url feature_image size="m"}}" loading="lazy" alt="">
-      {{/if}}      
+      {{/if}}
       {{!-- {{#if featured}}
         <a href="{{url}}" class="m-article-card__featured js-tooltip" data-tippy-content="{{t "Featured"}}" aria-label="{{t "Featured"}}">
           <span class="icon-star" aria-hidden="true"></span>

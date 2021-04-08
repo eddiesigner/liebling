@@ -109,7 +109,7 @@ const prepareProgressCircle = () => {
   }, 300)
 }
 
-$(document).ready(() => {
+$(() => {
   $aosWrapper = $('.js-aos-wrapper')
   const $scrollButton = $('.js-scrolltop')
   const $recommendedSlider = $('.js-recommended-slider')
@@ -176,7 +176,7 @@ $(document).ready(() => {
   shave('.js-article-card-title', 100)
   shave('.js-article-card-title-no-image', 250)
 
-  $scrollButton.click(() => {
+  $scrollButton.on('click', () => {
     $('html, body').animate({
       scrollTop: 0
     }, 500)

@@ -7,7 +7,7 @@ import {
   makeImagesZoomable
 } from './helpers'
 
-$(document).ready(() => {
+$(() => {
   fitvids('.js-post-content')
 
   adjustImageGallery()
