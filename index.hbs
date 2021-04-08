@@ -14,6 +14,7 @@ It can be used also as the home page or the default page.
 {{#contentFor "styles"}}
   <link rel="stylesheet" type="text/css" href="{{asset "css/home.css"}}" media="screen" />
   <link rel="stylesheet" type="text/css" href="{{asset "css/listing.css"}}" media="screen" />
+  <link rel="stylesheet" type="text/css" href="{{asset "css/post.css"}}" media="screen" />
 {{/contentFor}}
 
 {{!-- The tag below means: insert everything in this file
@@ -25,7 +26,7 @@ into the {body} of the default.hbs template --}}
 
 <main class="main-wrap">
   {{!-- Inject styles of the hero image to make it responsive --}}
-  {{> hero background=@site.cover_image}}
+  {{!-- {{> hero background=@site.cover_image}}
   <div class="m-hero__content" data-aos="fade-down">
     <h1 class="m-hero-title bigger">{{@site.title}}</h1>
     {{#if @site.description}}
@@ -38,11 +39,11 @@ into the {body} of the default.hbs template --}}
       <a href="{{@site.url}}/newsletter" class="m-button filled">{{t "Subscribe"}}</a>
     {{/if}}
   </div>
-  </section>
-  <div class="l-content">
+  </section> --}}
+  <div class="l-content home-content">
     <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
       <div class="l-grid centered">
-        {{#get "posts" filter="featured:true" include="authors,tags" limit="5" as |featured|}}
+        {{#get "posts" filter="featured:true" include="authors,tags" limit="3" as |featured|}}
           {{#if featured}}
             <div class="m-featured-slider glide js-featured-slider">
               <div class="glide__track" data-glide-el="track">
@@ -66,22 +67,15 @@ into the {body} of the default.hbs template --}}
                             <div id="featured-bg-{{id}}"></div>
                           {{/if}}
                         </div>
-                        <div class="m-featured-article__meta">
-                          <a href="{{primary_author.url}}" class="m-featured-article__author js-tooltip" aria-label="{{primary_author.name}}" data-tippy-content="{{t "Posted by"}} {{primary_author.name}} {{authors autolink="false" from="2" prefix=(t "Among with") separator=" , "}}">
-                            {{#if primary_author.profile_image}}
-                              <div style="background-image: url({{img_url primary_author.profile_image size="xs"}});"></div>
-                            {{else}}
-                              <div style="background-image: url({{asset "images/default-avatar-square-small.jpg"}});"></div>
-                            {{/if}}
-                          </a>
+                        {{!-- <div class="m-featured-article__meta">
                           {{#if primary_tag}}
                             <a href="{{primary_tag.url}}" class="m-featured-article__tag">{{primary_tag.name}}</a>
                           {{/if}}
-                        </div>
-                        <div class="m-featured-article__ribbon">
+                        </div> --}}
+                        {{!-- <div class="m-featured-article__ribbon">
                           <span class="icon-star"></span>
                           <span>{{t "Featured"}}</span>
-                        </div>
+                        </div> --}}
                         <a href="{{url}}" class="m-featured-article__content">
                           <h2 class="m-featured-article__title js-featured-article-title" title="{{title}}">
                             {{title}}
@@ -109,12 +103,158 @@ into the {body} of the default.hbs template --}}
           {{/if}}
         {{/get}}
         {{!-- The tag below iterates over all the posts --}}
+        {{#get "posts" filter="featured:false" include="authors,tags" limit="4"}}
         {{> "loop"}}
+        {{/get}}
       </div>
     </div>
     {{!-- Links to Previous/Next posts --}}
-    {{pagination}}
+    {{!-- {{pagination}} --}}
+
+    <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
+      <br/>
+      <a href="https://blog.soyhenry.com/tag/desarrollo-web/" class="title-tag-ver">
+        <h2 class="m-hero-title">Desarrollo Web</h2>
+        <h2 class="m-hero-title ver-todo">Ver todo &#10140;</h2>
+      </a>
+      <div class="l-grid centered">
+        {{#get "posts" filter="featured:true+tag:desarrollo-web" include="authors,tags" limit="1" as |featured2|}}
+          {{#if featured2}}
+            <div class="m-featured-slider glide js-featured-slider">
+              <div class="glide__track" data-glide-el="track">
+                <div class="m-featured-slider__list glide__slides">
+                  {{#foreach featured2}}
+                    <div class="m-featured-slider__list__item glide__slide js-featured-slide">
+                      <article class="m-featured-article {{#unless feature_image}}no-picture{{/unless}}">
+                        <div class="m-featured-article__picture">
+                          {{#if feature_image}}
+                            <style>
+                              #featured-bg-{{id}} {
+                                background-image: url({{img_url feature_image size='l'}});
+                              }
+                            
+                              @media(max-width: 768px) {
+                                #featured-bg-{{id}} {
+                                  background-image: url({{img_url feature_image size='m'}});
+                                }
+                              }
+                            </style>
+                            <div id="featured-bg-{{id}}"></div>
+                          {{/if}}
+                        </div>
+                        {{!-- <div class="m-featured-article__meta">
+                          {{#if primary_tag}}
+                            <a href="{{primary_tag.url}}" class="m-featured-article__tag">{{primary_tag.name}}</a>
+                          {{/if}}
+                        </div> --}}
+                        {{!-- <div class="m-featured-article__ribbon">
+                          <span class="icon-star"></span>
+                          <span>{{t "Featured"}}</span>
+                        </div> --}}
+                        <a href="{{url}}" class="m-featured-article__content">
+                          <h2 class="m-featured-article__title js-featured-article-title" title="{{title}}">
+                            {{title}}
+                          </h2>
+                          <div class="m-featured-article__timestamp">
+                            <span>{{date published_at timeago="true"}}</span>
+                            <span>&bull;</span>
+                            <span>{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</span>
+                          </div>
+                        </a>
+                      </article>
+                    </div>
+                  {{/foreach}}
+                </div>
+              </div>
+              {{!-- <div data-glide-el="controls" class="glide__arrows js-featured-slider-controls">
+                <button data-glide-dir="<" class="m-icon-button in-featured-articles glide-prev js-featured-slider-previous" aria-label="{{t "Previous"}}">
+                  <span class="icon-arrow-left" aria-hidden="true"></span>
+                </button>
+                <button data-glide-dir=">" class="m-icon-button in-featured-articles glide-next js-featured-slider-next" aria-label="{{t "Next"}}">
+                  <span class="icon-arrow-right" aria-hidden="true"></span>
+                </button>
+              </div> --}}
+            </div>
+          {{/if}}
+        {{/get}}
+        {{!-- The tag below iterates over all the posts --}}
+        {{> "loop-tag2"}}
+      </div>
+    </div>
+
+    <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
+      <br/>
+      <a href="https://blog.soyhenry.com/tag/mundo-henry/" class="title-tag-ver title-tag-mundo-henry">
+        <h2 class="m-hero-title">Mundo Henry</h2>
+        <h2 class="m-hero-title ver-todo">Ver todo &#10140;</h2>
+      </a>
+      <div class="l-grid centered">
+        {{!-- The tag below iterates over all the posts --}}
+        {{> "loop-tag3"}}
+      </div>
+    </div>
+
+    <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
+      <br/>
+      <a href="https://blog.soyhenry.com/tag/novedades/" class="title-tag-ver title-tag-mundo-henry">
+        <h2 class="m-hero-title">Novedades</h2>
+        <h2 class="m-hero-title ver-todo">Ver todo &#10140;</h2>
+      </a>
+      <div class="l-grid centered">
+        {{!-- The tag below iterates over all the posts --}}
+        {{> "loop-tag4"}}
+      </div>      
+    </div>
   </div>
+
+    {{!-- Inject styles of the hero image to make it responsive --}}
+  <article>
+    <div class="l-content in-post">
+      {{!-- Email subscribe form at the bottom of the page --}}
+        {{#if @labs.subscribers}}
+          <section class="m-subscribe-section">
+            <div class="l-wrapper in-post">
+              <div class="m-subscribe-section__content">
+                <div class="m-subscribe-section__text">
+                  <h4 class="m-subscribe-section__title">{{t "Subscribe to our newsletter"}}</h4>
+                  <p class="m-subscribe-section__description">
+                    {{t "Get the latest posts delivered right to your inbox."}}
+                  </p>
+                </div>
+                <div class="m-subscribe-section__form">
+                  {{subscribe_form
+                    form_id="subscribe-form"
+                    form_class="m-subscribe-section__form"
+                    input_id="subscribe_input"
+                    input_class="m-input in-subscribe-section"
+                    button_id="subscribe_button"
+                    button_class="m-button primary block"
+                    placeholder=(t "Your email address")
+                  }}
+                </div>
+              </div>
+            </div>
+          </section>
+        {{/if}}
+        {{#if @labs.members}}
+          <section class="m-subscribe-section">
+            <div class="l-wrapper in-post">
+              <div class="m-subscribe-section__content">
+                <div class="m-subscribe-section__text">
+                  <h4 class="m-subscribe-section__title">{{t "Subscribe to our newsletter"}}</h4>
+                  <p class="m-subscribe-section__description">
+                    {{t "Get the latest posts delivered right to your inbox."}}
+                  </p>
+                </div>
+                <div class="m-subscribe-section__form">
+                  {{> "newsletter-form"}}
+                </div>
+              </div>
+            </div>
+          </section>
+        {{/if}}
+    </div>
+  </article>
 </main>
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}

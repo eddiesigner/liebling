@@ -1,0 +1,45 @@
+{{!-- The template below includes the markup for each post --}}
+
+{{#get "posts" filter="tag:novedades" include="authors,tags" limit="6"}}
+{{#foreach posts visibility="all" include="tags,authors" limit=6}}
+{{#is "post"}}
+<div class="m-recommended-slider__item glide__slide">
+  {{/is}}
+  <article class="m-article-card m-article-card-tag2 {{#unless feature_image}}no-picture{{/unless}} {{post_class}}">
+    {{#if primary_tag}}
+    <div class="m-article-card__info">
+      <a href="{{primary_tag.url}}" class="m-article-card__tag">{{primary_tag.name}}</a>
+      {{else}}
+      <div class="m-article-card__info no-tag">
+        {{/if}}
+        <a href="{{url}}" class="m-article-card__info-link" aria-label="{{title}}">
+          <div class="content-title">
+            <h2
+              class="m-article-card__title js-article-card-title {{#unless feature_image}}js-article-card-title-no-image{{/unless}}"
+              title="{{title}}">
+              {{title}}
+            </h2>
+            <p class="excerpt-text">{{excerpt}}</p>
+          </div>
+          <div class="m-article-card__timestamp">
+            <span>{{date published_at timeago="true"}}</span>
+            <span>&bull;</span>
+            <span>{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</span>
+          </div>
+        </a>
+      </div>
+  </article>
+  {{#is "post"}}
+</div>
+{{/is}}
+{{else}}
+<div class="m-recommended-slider__item glide__slide">
+  <div class="m-heading no-margin">
+    <h3>{{t "No posts found"}}</h3>
+    <p>
+      {{t "Apparently there are no posts at the moment, check again later."}}
+    </p>
+  </div>
+</div>
+{{/foreach}}
+{{/get}}

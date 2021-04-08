@@ -83,98 +83,7 @@ into the {body} of the default.hbs template --}}
             </div>
           </div>
         </div>
-        {{!-- Email subscribe form at the bottom of the page --}}
-        {{#if @labs.subscribers}}
-          <section class="m-subscribe-section">
-            <div class="l-wrapper in-post">
-              <div class="m-subscribe-section__content">
-                <div class="m-subscribe-section__text">
-                  <h4 class="m-subscribe-section__title">{{t "Subscribe to our newsletter"}}</h4>
-                  <p class="m-subscribe-section__description">
-                    {{t "Get the latest posts delivered right to your inbox."}}
-                  </p>
-                </div>
-                <div class="m-subscribe-section__form">
-                  {{subscribe_form
-                    form_id="subscribe-form"
-                    form_class="m-subscribe-section__form"
-                    input_id="subscribe_input"
-                    input_class="m-input in-subscribe-section"
-                    button_id="subscribe_button"
-                    button_class="m-button primary block"
-                    placeholder=(t "Your email address")
-                  }}
-                </div>
-              </div>
-            </div>
-          </section>
-        {{/if}}
-        {{#if @labs.members}}
-          <section class="m-subscribe-section">
-            <div class="l-wrapper in-post">
-              <div class="m-subscribe-section__content">
-                <div class="m-subscribe-section__text">
-                  <h4 class="m-subscribe-section__title">{{t "Subscribe to our newsletter"}}</h4>
-                  <p class="m-subscribe-section__description">
-                    {{t "Get the latest posts delivered right to your inbox."}}
-                  </p>
-                </div>
-                <div class="m-subscribe-section__form">
-                  {{> "newsletter-form"}}
-                </div>
-              </div>
-            </div>
-          </section>
-        {{/if}}
-        <section class="m-author">
-          <div class="m-author__content">
-            <div class="m-author__picture">
-              <a href="{{primary_author.url}}" class="m-author-picture" aria-label="{{primary_author.name}}">
-                {{#if primary_author.profile_image}}
-                  <div style="background-image: url({{primary_author.profile_image}});"></div>
-                {{else}}
-                  <div style="background-image: url({{asset "images/default-avatar-square-small.jpg"}});"></div>
-                {{/if}}
-              </a>
-            </div>
-            <div class="m-author__info">
-              <h4 class="m-author__name">
-                <a href="{{primary_author.url}}">{{primary_author.name}}</a>
-              </h4>
-              {{#has author="count:>1"}}
-                <p class="m-small-text in-author-along-with">
-                  {{authors separator=", " prefix=(t "Among with no break line") from="2"}}
-                </p>
-              {{/has}}
-              {{#if primary_author.bio}}
-                <p class="m-author__bio">{{primary_author.bio}}</p>
-              {{/if}}
-              <ul class="m-author-links">
-                {{#if primary_author.website}}
-                  <li>
-                    <a href="{{primary_author.website}}" target="_blank" rel="noopener" aria-label="{{t "Website"}}">
-                      <span class="icon-globe" aria-hidden="true"></span>
-                    </a>
-                  </li>
-                {{/if}}
-                {{#if primary_author.facebook}}
-                  <li>
-                    <a href="https://facebook.com/{{primary_author.facebook}}" target="_blank" rel="noopener" aria-label="Facebook">
-                      <span class="icon-facebook" aria-hidden="true"></span>
-                    </a>
-                  </li>
-                {{/if}}
-                {{#if primary_author.twitter}}
-                  <li>
-                    <a href="https://twitter.com/{{primary_author.twitter}}" target="_blank" rel="noopener" aria-label="Twitter">
-                      <span class="icon-twitter" aria-hidden="true"></span>
-                    </a>
-                  </li>
-                {{/if}}
-              </ul>
-            </div>
-          </div>
-        </section>
+               
         {{!-- If you want to embed comments, this is a good place to do it! --}}
         {{!--
           <section class="m-comments">
@@ -246,6 +155,50 @@ into the {body} of the default.hbs template --}}
           </div>
         </section>
       {{/if}}
+
+      {{!-- Email subscribe form at the bottom of the page --}}
+        {{#if @labs.subscribers}}
+          <section class="m-subscribe-section">
+            <div class="l-wrapper in-post">
+              <div class="m-subscribe-section__content">
+                <div class="m-subscribe-section__text">
+                  <h4 class="m-subscribe-section__title">{{t "Subscribe to our newsletter"}}</h4>
+                  <p class="m-subscribe-section__description">
+                    {{t "Get the latest posts delivered right to your inbox."}}
+                  </p>
+                </div>
+                <div class="m-subscribe-section__form">
+                  {{subscribe_form
+                    form_id="subscribe-form"
+                    form_class="m-subscribe-section__form"
+                    input_id="subscribe_input"
+                    input_class="m-input in-subscribe-section"
+                    button_id="subscribe_button"
+                    button_class="m-button primary block"
+                    placeholder=(t "Your email address")
+                  }}
+                </div>
+              </div>
+            </div>
+          </section>
+        {{/if}}
+        {{#if @labs.members}}
+          <section class="m-subscribe-section">
+            <div class="l-wrapper in-post">
+              <div class="m-subscribe-section__content">
+                <div class="m-subscribe-section__text">
+                  <h4 class="m-subscribe-section__title">{{t "Subscribe to our newsletter"}}</h4>
+                  <p class="m-subscribe-section__description">
+                    {{t "Get the latest posts delivered right to your inbox."}}
+                  </p>
+                </div>
+                <div class="m-subscribe-section__form">
+                  {{> "newsletter-form"}}
+                </div>
+              </div>
+            </div>
+          </section>
+        {{/if}} 
     </div>
   </article>
 </main>
