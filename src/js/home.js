@@ -7,7 +7,7 @@ import Glide, {
 } from '@glidejs/glide/dist/glide.modular.esm'
 import { isRTL } from './helpers'
 
-$(document).ready(() => {
+$(() => {
   const $featuredSlider = $('.js-featured-slider')
 
   if ($featuredSlider.length > 0) {
@@ -82,7 +82,7 @@ $(document).ready(() => {
     featuredSlider.on('mount.after', () => {
       shave('.js-featured-article-title', 200)
     })
-    
+
     featuredSlider.mount({ Controls, Swipe, Breakpoints, ArrowDisabler })
 
     setTimeout(() => {
