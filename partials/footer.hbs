@@ -3,34 +3,65 @@ This footer template is shared across all the pages.
 --}}
 
 <footer class="m-footer">
-  <div class="m-footer__content">
-    {{#if @site.secondary_navigation}}
-      <nav class="m-footer__nav-secondary" role="navigation" aria-label="{{t "Secondary menu in footer"}}">
-        {{navigation type="secondary"}}
-      </nav>
-    {{/if}}
-    <nav class="m-footer-social">
-      {{#if @site.facebook}}
-        <a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener" aria-label="Facebook">
-          <span class="icon-facebook" aria-hidden="true"></span>
+  <div class="l-wrapper footer-bottom">
+    <div style="width: 252px;" class="m-logo-footer">
+      <div class="footer-logo">
+        <a href="{{@site.url}}" class="m-logo in-mobile-topbar" style="margin:0px; height: 28px;">
+          <img class="img-logo-footer" src="{{@site.logo}}" alt="{{@site.title}}">
         </a>
-      {{/if}}
-      {{#if @site.twitter}}
-        <a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener" aria-label="Twitter">
-          <span class="icon-twitter" aria-hidden="true"></span>
+      </div><br />
+      <div class="social-left">        
+        <a href="https://www.linkedin.com/school/soyhenry/" target="_blank"
+          class="styles__LinkSocialMedia-sc-1raxi42-11 SNUzS">
+          <div class="styles__IconWrapper-sc-1raxi42-15 iSvqeG"><svg
+              class="MuiSvgIcon-root styles__CustomLinkedIn-sc-1raxi42-20 kNguNC icon-svg" focusable="false" viewBox="0 0 24 24"
+              aria-hidden="true" style="font-size: 0.9rem;">
+              <path
+                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z">
+              </path>
+            </svg></div>
+        </a><a href="https://www.instagram.com/soyhenry_ok" target="_blank"
+          class="styles__LinkSocialMedia-sc-1raxi42-11 SNUzS">
+          <div class="styles__IconWrapper-sc-1raxi42-15 iSvqeG"><svg
+              class="MuiSvgIcon-root styles__CustomInstagram-sc-1raxi42-16 WXSgB icon-svg" focusable="false" viewBox="0 0 24 24"
+              aria-hidden="true" style="font-size: 0.9rem;">
+              <path
+                d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z">
+              </path>
+            </svg></div>
+        </a><a href="https://twitter.com/soyhenry_ok" target="_blank"
+          class="styles__LinkSocialMedia-sc-1raxi42-11 SNUzS">
+          <div class="styles__IconWrapper-sc-1raxi42-15 iSvqeG"><svg
+              class="MuiSvgIcon-root styles__CustomTwitter-sc-1raxi42-18 hoebru icon-svg" focusable="false" viewBox="0 0 24 24"
+              aria-hidden="true" style="font-size: 0.9rem;">
+              <path
+                d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z">
+              </path>
+            </svg></div>
+        </a><a href="https://www.facebook.com/HENRY-108437840594440/" target="_blank"
+          class="styles__LinkSocialMedia-sc-1raxi42-11 SNUzS">
+          <div class="styles__IconWrapper-sc-1raxi42-15 iSvqeG"><svg
+              class="MuiSvgIcon-root styles__CustomFacebook-sc-1raxi42-19 gyaMzy icon-svg" focusable="false" viewBox="0 0 24 24"
+              aria-hidden="true" style="font-size: 0.9rem;">
+              <path
+                d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m13 2h-2.5A3.5 3.5 0 0 0 12 8.5V11h-2v3h2v7h3v-7h3v-3h-3V9a1 1 0 0 1 1-1h2V5z">
+              </path>
+            </svg></div>
         </a>
-      {{/if}}
-      <a href="{{@site.url}}/rss" aria-label="RSS">
-        <span class="icon-rss" aria-hidden="true"></span>
-      </a>
-    </nav>
-    <p class="m-footer-copyright">
-      <span>{{@site.title}} &copy; {{date format="YYYY"}}</span>
-      <span>&nbsp; &bull; &nbsp;</span>
-      <span>{{t "Published with"}} <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a></span>
-    </p>
-    <p class="m-footer-copyright jslicense">
-      <a href="{{asset "html/javascript.html"}}" rel="jslicense">{{t "JavaScript license information"}}</a>
-    </p>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>Hecho con <span class="henry-heart" role="img" aria-label="Heart">💛 </span>por alumnos de
+        Henry.</span><br><span> Henry © 2021
+        | Todos los derechos reservados.</span>
+    </div>
+    <div style="text-align: center;width: 252px;">
+      <a class="link-url-web" href="https://soyhenry.com/" target="_blank">www.soyhenry.com</a><br /><br />
+      <div class="founded-by">
+        <span>Funded By</span><img
+          src="data:image/png;base64,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"
+          class="styles__YCombinatorImg-sc-1raxi42-10 cikpiz" />
+      </div>
+    </div>
   </div>
 </footer>

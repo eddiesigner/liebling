@@ -2,16 +2,17 @@
 This subscribe template is used to display the form where users can subscribe.
 You need to enable the members feature first.
 --}}
+{{!-- <form data-members-form="subscribe" id="newsletter-form" class="m-subscribe-section__container"></form> --}}
 
 <div class="m-subscribe-section__form">
-  <form data-members-form="subscribe" id="newsletter-form" class="m-subscribe-section__container">
+  <form id="newsletter-form" class="m-subscribe-section__container">
     <div class="m-subscribe__form">
       <div class="pos-relative">
         <label for="newsletter-input" class="sr-only">{{t "Your email address"}}</label>
         <input data-members-email id="newsletter-input" class="m-input in-subscribe-section" type="email"
           placeholder="{{t "Your email address"}}" required />
       </div>
-      <button id="newsletter-button" class="m-button primary block" type="submit">{{t "Subscribe"}}</button>
+      <button id="newsletter-button" class="m-button primary block" style="color:yellow;background-color:black;" type="submit">{{t "Subscribe"}}</button>
     </div>
     <div class="m-subscribe__success">
       <header class="m-heading no-margin">
