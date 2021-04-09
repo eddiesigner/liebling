@@ -36,7 +36,7 @@
 }
 
 .no-margin {
-  margin: 0
+  margin: 0;
 }
 
 .no-scroll-y {
@@ -82,7 +82,35 @@
 .only-desktop {
   display: none;
 
-  @include respond-to('medium') {
+  @include respond-to("medium") {
     display: block;
   }
+}
+
+@media (max-width: 767px) {
+  .content-main-menu {
+    display: block;
+  }
+  
+  .button-mobile {
+    margin-left: 2px !important;
+    margin-top: 20px;
+    position: absolute;
+  }
+}
+
+@media (min-width: 768px) {
+  .content-main-menu {
+    display: flex;
+  }
+}
+
+.button-aplica {
+  background-color: #ffff00;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 60px;
+  margin-left: -45px;
+  color: #222222;
+  cursor: pointer;
 }

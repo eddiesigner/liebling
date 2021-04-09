@@ -7,7 +7,7 @@ body {
   min-height: 100vh;
   color: var(--primary-foreground-color);
   font-size: 1rem;
-  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   font-display: swap;
   overflow-x: hidden;
   background-color: var(--background-color);
@@ -17,7 +17,7 @@ body {
   &.share-menu-displayed {
     padding-bottom: 45px;
 
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       padding-bottom: 0;
     }
   }
@@ -27,6 +27,10 @@ body {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+}
+
+.home-content {
+  padding-top: 130px !important;
 }
 
 p {
