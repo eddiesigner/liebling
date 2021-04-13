@@ -1,18 +1,18 @@
 .m-input {
-  color: var(--primary-foreground-color);
+  color: #111111;
   letter-spacing: 0.2px;
   line-height: 1.3;
   font-size: 1rem;
   width: 100%;
   border-radius: 5px;
   padding: 11px 15px;
-  border: 1px solid var(--primary-border-color);
+  border: 1px solid #a4a4a4;
   outline: 0;
-  background-color: var(--background-color);
+  background-color: #ffffff;
   @extend .no-appearance;
 
   &:focus {
-    border-color: var(--primary-subtle-color);
+    border-color: #222222;
   }
 
   &.in-search {

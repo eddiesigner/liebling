@@ -1,14 +1,15 @@
 .m-toggle-darkmode {
   position: fixed;
-  right: $mobile-space;
+  right: 20px;
   bottom: 45px;
   width: 28px;
   height: 28px;
+  margin-left: 20px;
   border-radius: 50%;
   overflow: hidden;
   z-index: 2;
 
-  @include respond-to('medium') {
+  @include respond-to("medium") {
     position: relative;
     right: auto;
     bottom: auto;
@@ -31,8 +32,8 @@
     @extend .focusable;
   }
 
-  input::-moz-focus-inner { 
-    border: 0; 
+  input::-moz-focus-inner {
+    border: 0;
   }
 
   div {
@@ -56,14 +57,17 @@
 
     &.moon {
       display: var(--toggle-darkmode-button-display-moon);
+      color: #ffffff;
     }
 
     &.sun {
       display: var(--toggle-darkmode-button-display-sun);
+      color: #ffffff;
     }
   }
 }
 
-_:-ms-fullscreen, :root .m-toggle-darkmode {
+_:-ms-fullscreen,
+:root .m-toggle-darkmode {
   display: none;
 }

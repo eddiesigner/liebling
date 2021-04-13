@@ -1,18 +1,18 @@
 .m-nav {
-  @include respond-to('medium') {
+  @include respond-to("medium") {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 37px;
+    height: 60px;
     overflow-y: hidden;
   }
 
-  @include respond-to('largest') {
+  @include respond-to("largest") {
     margin: 0 -5px;
   }
 
   &.toggle-overflow {
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       overflow-y: initial;
     }
   }
@@ -21,7 +21,7 @@
 .m-nav__left {
   margin-bottom: 30px;
 
-  @include respond-to('medium') {
+  @include respond-to("medium") {
     display: flex;
     flex: 1 1 auto;
     align-items: center;
@@ -36,8 +36,17 @@
   }
 
   &.toggle-overflow {
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       overflow-x: hidden;
+    }
+  }
+
+  ul {
+    @include respond-to("medium") {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
     }
   }
 
@@ -45,7 +54,7 @@
     padding: 0;
     margin: 0;
 
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       display: flex;
       align-items: center;
     }
@@ -54,12 +63,12 @@
   li {
     color: var(--titles-color);
     letter-spacing: 0.3px;
-    font-size: 1.125rem;
+    font-size: 1rem;
     margin-bottom: 15px;
 
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       margin-bottom: 0;
-      margin-right: 35px;
+      margin-right: 18px;
       position: relative;
     }
 
@@ -69,10 +78,16 @@
 
     &.nav-current {
       font-weight: 600;
+      a {
+        color: #ffff00;
+      }
     }
 
     a {
-      color: inherit;
+      color: #ffffff;
+      &:hover {
+        color: #ffff00;
+      }
     }
 
     &.more {
@@ -80,7 +95,7 @@
         display: inline-flex;
         align-items: center;
 
-        @include respond-to('medium') {
+        @include respond-to("medium") {
           display: flex;
         }
 
@@ -95,7 +110,7 @@
     }
 
     &.submenu-option {
-      @include respond-to('medium') {
+      @include respond-to("medium") {
         z-index: 2;
       }
     }
@@ -107,7 +122,7 @@
   align-items: center;
   justify-content: flex-end;
 
-  @include respond-to('medium') {
+  @include respond-to("medium") {
     flex-shrink: 0;
     position: relative;
     padding-left: 20px;
@@ -115,8 +130,8 @@
   }
 
   &:before {
-    @include respond-to('medium') {
-      content: '';
+    @include respond-to("medium") {
+      content: "";
       position: absolute;
       pointer-events: none;
       top: 0;
@@ -124,20 +139,20 @@
       width: 20px;
       height: 100%;
       z-index: 2;
-      background: linear-gradient(90deg, var(--header-menu-gradient-first-color) 0, var(--header-menu-gradient-second-color));
+      // background: linear-gradient(90deg, var(--header-menu-gradient-first-color) 0, var(--header-menu-gradient-second-color));
     }
   }
 }
 
 .rtl {
   .m-nav__left {
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       padding-left: 0;
       padding-right: 5px;
     }
 
     li {
-      @include respond-to('medium') {
+      @include respond-to("medium") {
         margin-right: 0;
         margin-left: 35px;
       }
@@ -145,13 +160,13 @@
   }
 
   .m-nav__right {
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       padding-left: 5px;
       padding-right: 20px;
     }
 
     &:before {
-      @include respond-to('medium') {
+      @include respond-to("medium") {
         left: auto;
         right: -20px;
         @include transform(rotate(180deg));

@@ -2,23 +2,29 @@
   color: var(--titles-color);
   letter-spacing: 0.4px;
   line-height: 1.3;
-  font-size: 1.750rem;
-  font-weight: 700;
+  font-size: 1.75rem;
+  font-weight: 600;
   margin: 0 0 15px;
 
-  @include respond-to('medium') {
+  @include respond-to("medium") {
     letter-spacing: 0.5px;
-    font-size: 2.250rem;
+    font-size: 2rem;
   }
 
   &.bigger {
     letter-spacing: 0.5px;
     font-size: 2rem;
 
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       letter-spacing: 0.8px;
-      font-size: 3.250rem;
+      font-size: 3.25rem;
       margin-bottom: 10px;
     }
+  }
+}
+
+.ver-todo {
+  &:hover {
+    color: var(--link-color);
   }
 }

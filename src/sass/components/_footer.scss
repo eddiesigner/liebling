@@ -1,6 +1,87 @@
 .m-footer {
   flex-shrink: 0;
-  background-color: var(--footer-background-color);
+  background-color: #000000;
+  padding: 55px 0px 25px;
+
+  @media (max-width: 767px) {
+    .footer-bottom {
+      flex-direction: column;
+
+      .m-logo-footer {
+        display: contents;
+
+        .footer-logo {
+          margin-bottom: 15px;
+        }
+      }
+
+      .copyright {
+        padding: 30px 0px;
+      }
+    }
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0px 60px;
+
+    .social-left {
+      width: 187px;
+      display: flex;
+
+      .iSvqeG {
+        width: 42px;
+        height: 42px;
+        background-color: #ffff00;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 6px;
+
+        .icon-svg {
+          width: 1em;
+          height: 1em;
+          color: #000000;
+        }
+      }
+    }
+
+    .copyright {
+      color: #ffffff73;
+      text-align: center;
+      font-size: 19px;
+      line-height: 43px;
+      font-weight: 100;
+      letter-spacing: 0.2px;
+
+      .henry-heart {
+        &:hover {
+          color: #ffff00;
+        }
+      }
+    }
+
+    .link-url-web {
+      color: #ffffff;
+      font-size: 20px;
+      letter-spacing: 0.8px;
+    }
+
+    .founded-by {
+      color: white;
+      display: flex;
+      align-items: center;
+
+      span {
+        font-size: 18px;
+        font-weight: 400;
+        margin-right: 19px;
+      }
+    }
+  }
 }
 
 .m-footer__content {
@@ -8,7 +89,7 @@
   text-align: center;
   padding: 50px $mobile-space;
 
-  @include respond-to('medium') {
+  @include respond-to("medium") {
     padding: 75px 0;
     max-width: 680px;
     margin: 0 auto;
@@ -24,7 +105,7 @@
     flex-wrap: wrap;
 
     li {
-      @include respond-to('medium') {
+      @include respond-to("medium") {
         margin: 0 5px;
       }
     }
@@ -40,14 +121,14 @@
   span {
     display: block;
 
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       display: inline;
     }
 
     &:nth-child(2) {
       display: none;
 
-      @include respond-to('medium') {
+      @include respond-to("medium") {
         display: inline;
       }
     }
