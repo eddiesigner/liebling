@@ -100,6 +100,7 @@ To know how to enable the search, comments, newsletter and more, please head to 
 * Kazakh by [arshyn-t](https://github.com/arshyn-t)
 * Korean by [chocosobo](https://github.com/chocosobo)
 * Japanese by [ViaSnake](https://github.com/ViaSnake)
+* Czech by [Fjuro](https://github.com/Fjuro)
 
 ## Tests performed
 
