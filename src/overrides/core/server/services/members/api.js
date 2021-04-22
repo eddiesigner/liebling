@@ -43,14 +43,14 @@ function createApiInstance(config) {
                 const siteTitle = settingsCache.get('title');
                 switch (type) {
                 case 'subscribe':
-                    return `📫 Confirm your subscription to ${siteTitle}`;
+                    return `Confirm your subscription to ${siteTitle} 🚀`;
                 case 'signup':
-                    return `🙌 Complete your sign up to ${siteTitle}!`;
+                    return `Complete your sign up to ${siteTitle}! 🚀`;
                 case 'updateEmail':
-                    return `📫 Confirm your email update for ${siteTitle}!`;
+                    return `Confirm your email update for ${siteTitle}! 🚀`;
                 case 'signin':
                 default:
-                    return `🔑 Secure sign in link for ${siteTitle}`;
+                    return `Secure sign in link for ${siteTitle} 🚀`;
                 }
             },
             getText(url, type, email) {

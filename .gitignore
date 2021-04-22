@@ -2,7 +2,7 @@
 *.zip
 *.db
 
-assets/
+assets/mix-manifest.json
 
 npm-debug.log
 node_modules
