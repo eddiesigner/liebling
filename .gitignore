@@ -2,7 +2,7 @@
 *.zip
 *.db
 
-assets/*
+assets/
 
 npm-debug.log
 node_modules
