@@ -30,7 +30,7 @@
   }
 
   &.headroom--unpinned {
-    @include transform(translateY(-100%));
+    // @include transform(translateY(-100%));
   }
 
   &.submenu-is-active {
