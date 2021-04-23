@@ -51,6 +51,21 @@ $(() => {
   let submenuIsOpen = false;
   let secondaryMenuTippy = null;
 
+  const aplica = document.querySelector(".button-aplica");
+
+  //button effect
+  setInterval(() => {
+    setTimeout(() => {
+      aplica.style.padding = "10px 60px";
+      aplica.style.boxShadow = "none";
+      aplica.style.transform = "none";
+      aplica.style.fontWeight = "500";
+    }, 1000);
+    aplica.style.padding = "11px 60px";
+    aplica.style.boxShadow = "rgba(255, 255, 0, 0.95) 0px 0px 15px";
+    aplica.style.fontWeight = "600";
+  }, 10000);
+
   const showSubmenu = () => {
     $header.addClass("submenu-is-active");
     $toggleSubmenu.addClass("active");
@@ -88,10 +103,11 @@ $(() => {
     const hrefURL = window.location.href;
     const popup = document.querySelector(".popup-wrapper");
     const close = document.querySelector(".popup-close");
+
     if (hrefURL === `${protocol}${ghostHost}/`) {
       setTimeout(() => {
         popup.style.display = "flex";
-      }, 20000);
+      }, 22000);
     }
     window.addEventListener("keyup", (e) => {
       const codigo = e.keyCode || e.which;
@@ -107,6 +123,7 @@ $(() => {
         popup.style.display = "none";
       }
     });
+
     const api = new GhostContentAPI({
       url: host,
       key,
