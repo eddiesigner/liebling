@@ -24,6 +24,30 @@ into the {body} of the default.hbs template --}}
 {{!-- Special header.hbs partial to generate the <header> tag --}}
 {{> header background=@site.cover_image}}
 
+<div class="popup-wrapper">
+  <div class="popup">
+    <div class="popup-close">x</div>
+    <div class="popup-content">
+      <section class="m-subscribe-section m-subscribe-section__popup">
+        <div class="l-wrapper in-post">
+          {{!-- <img src="https://i.ibb.co/KN6RkGQ/logo-henry-blog.png" alt="{{@site.title}}"> --}}
+          <div class="m-subscribe-section__content m-subscribe-content__popup">
+            <div class="m-subscribe-section__text m-subscribe-section__popup">
+              <h4 class="m-subscribe-section__title title-subscribe-popup">{{t "Subscribe to our newsletter"}}</h4>
+              <p class="m-subscribe-section__description description-popup">
+                {{t "Get the latest posts delivered right to your inbox."}}
+              </p>
+            </div>
+            <div class="m-subscribe-section__form m-subscribe-section-form__popup">
+              {{> "newsletter-form"}}
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
 <main class="main-wrap">
   {{!-- Inject styles of the hero image to make it responsive --}}
   {{!-- {{> hero background=@site.cover_image}}

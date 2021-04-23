@@ -23,6 +23,53 @@ body {
   }
 }
 
+.popup-wrapper {
+  background: rgba(0, 0, 0, 0.75);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  display: none;
+  justify-content: center;
+  align-items: center;  
+}
+
+.popup {
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  max-height: 400px;
+  padding: 20px;
+  position: relative;
+  background-color: #ffff00;
+}
+
+.popup a {
+  background: salmon;
+  color: white;
+  text-decoration: none;
+  padding: 6px 10px;
+  margin: 30px auto;
+  display: block;
+  width: 50%;
+}
+
+.popup a:hover {
+  background: palevioletred;
+  transition: all 0.2s;
+}
+
+.popup-close {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #000000;
+}
+
 .main-wrap {
   display: flex;
   flex-direction: column;
