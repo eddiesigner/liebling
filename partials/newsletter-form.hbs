@@ -5,7 +5,7 @@ You need to enable the members feature first.
 {{!-- <form data-members-form="subscribe" id="newsletter-form" class="m-subscribe-section__container"></form> --}}
 
 <div class="m-subscribe-section__form">
-  <form id="newsletter-form" class="m-subscribe-section__container">
+  <form data-members-form="subscribe" id="newsletter-form" class="m-subscribe-section__container">
     <div class="m-subscribe__form">
       <div class="pos-relative">
         <label for="newsletter-input" class="sr-only">{{t "Your email address"}}</label>
@@ -17,7 +17,7 @@ You need to enable the members feature first.
     <div class="m-subscribe__success">
       <header class="m-heading no-margin">
         <img src="{{asset "images/success.png"}}" alt="Success!" class="m-subscribe__success_icon">
-        <p class="m-heading__description in-newsletter-form">
+        <p class="m-heading__description in-newsletter-form" style="color: #000000">
           {{t "Now check your inbox and click the link to confirm your subscription."}}
         </p>
       </header>

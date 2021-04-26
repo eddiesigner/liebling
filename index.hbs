@@ -231,23 +231,21 @@ into the {body} of the default.hbs template --}}
             </div>
           </section>
         {{/if}}
-        {{#if @labs.members}}
-          <section class="m-subscribe-section">
-            <div class="l-wrapper in-post">
-              <div class="m-subscribe-section__content">
-                <div class="m-subscribe-section__text">
-                  <h4 class="m-subscribe-section__title">{{t "Subscribe to our newsletter"}}</h4>
-                  <p class="m-subscribe-section__description">
-                    {{t "Get the latest posts delivered right to your inbox."}}
-                  </p>
-                </div>
-                <div class="m-subscribe-section__form">
-                  {{> "newsletter-form"}}
-                </div>
+        <section class="m-subscribe-section">
+          <div class="l-wrapper in-post">
+            <div class="m-subscribe-section__content">
+              <div class="m-subscribe-section__text">
+                <h4 class="m-subscribe-section__title">{{t "Subscribe to our newsletter"}}</h4>
+                <p class="m-subscribe-section__description">
+                  {{t "Get the latest posts delivered right to your inbox."}}
+                </p>
+              </div>
+              <div class="m-subscribe-section__form">
+                {{> "newsletter-form"}}
               </div>
             </div>
-          </section>
-        {{/if}}
+          </div>
+        </section>
     </div>
   </article>
 </main>
