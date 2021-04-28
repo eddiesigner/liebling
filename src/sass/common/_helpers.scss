@@ -102,6 +102,7 @@
 @media (min-width: 768px) {
   .content-main-menu {
     display: flex;
+    margin-left: 20px;
   }
 }
 
@@ -110,7 +111,7 @@
   border: none;
   border-radius: 5px;
   padding: 10px 60px;
-  margin-left: -45px;
+  margin: 10px;
   color: #222222;
   cursor: pointer;
 }
