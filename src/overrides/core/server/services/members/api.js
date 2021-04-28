@@ -43,7 +43,7 @@ function createApiInstance(config) {
                 const siteTitle = settingsCache.get('title');
                 switch (type) {
                 case 'subscribe':
-                    return `Confirma tu suscripción la Newsletter de Henry 🚀`;
+                    return `Confirma tu suscripción a la Newsletter de Henry 🚀`;
                 case 'signup':
                     return `Complete your sign up to ${siteTitle}! 🚀`;
                 case 'updateEmail':
