@@ -99,7 +99,6 @@ $(() => {
   };
 
   const getAllPosts = (host, key) => {
-    const protocol = window.location.protocol;
     const hrefURL = window.location.href;
     const popup = document.querySelector(".popup-wrapper");
     const close = document.querySelector(".popup-close");
