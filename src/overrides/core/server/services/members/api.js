@@ -43,36 +43,37 @@ function createApiInstance(config) {
                 const siteTitle = settingsCache.get('title');
                 switch (type) {
                 case 'subscribe':
-                    return `Confirm your subscription to ${siteTitle} 🚀`;
+                    return `Confirma tu suscripción la Newsletter de Henry 🚀`;
                 case 'signup':
                     return `Complete your sign up to ${siteTitle}! 🚀`;
                 case 'updateEmail':
                     return `Confirm your email update for ${siteTitle}! 🚀`;
                 case 'signin':
                 default:
-                    return `Secure sign in link for ${siteTitle} 🚀`;
+                    return `Inicie sesión de forma segura en ${siteTitle} 🚀`;
                 }
             },
             getText(url, type, email) {
                 const siteTitle = settingsCache.get('title');
+                const nameUser = email.split("@", 1);
                 switch (type) {
                 case 'subscribe':
                     return `
-                        Hey there,
+                        Hola, ${nameUser},
 
-                        You're one tap away from subscribing to ${siteTitle} — please confirm your email address with this link:
+                        Estás a un paso de suscribirte a la Newsletter de Henry. Por favor, confirma tu correo en el siguiente link:
 
                         ${url}
 
-                        For your security, the link will expire in 24 hours time.
+                        Por tu seguridad, el link expirará en las próximas 24 horas.
 
-                        All the best!
-                        The team at ${siteTitle}
+                        Un abrazo
+                        Equipo Henry
 
                         ---
 
-                        Sent to ${email}
-                        If you did not make this request, you can simply delete this message. You will not be subscribed.
+                        Enviado a ${email}
+                        Si no hiciste este pedido, puedes simplemente ignorar este mensaje. No estarás suscripto.
                         `;
                 case 'signup':
                     return `
@@ -110,21 +111,22 @@ function createApiInstance(config) {
                 case 'signin':
                 default:
                     return `
-                        Hey there,
+                        Hola, ${nameUser},
 
-                        Welcome back! Use this link to securely sign in to your ${siteTitle} account:
+                        ¡Bienvenido de nuevo! Utilizá este enlace para iniciar sesión de forma segura en tu cuenta de ${siteTitle}:
 
                         ${url}
 
-                        For your security, the link will expire in 24 hours time.
+                        Por tu seguridad, el link expirará en las próximas 24 horas.
 
-                        See you soon!
-                        The team at ${siteTitle}
+                        Un abrazo
+                        Equipo Henry
+
 
                         ---
 
-                        Sent to ${email}
-                        If you did not make this request, you can safely ignore this email.
+                        Enviado a ${email}
+                        Si no hiciste este pedido, puedes simplemente ignorar este mensaje.
                         `;
                 }
             },
@@ -134,16 +136,17 @@ function createApiInstance(config) {
                 const domain = urlUtils.urlFor('home', true).match(new RegExp('^https?://([^/:?#]+)(?:[/:?#]|$)', 'i'));
                 const siteDomain = (domain && domain[1]);
                 const accentColor = settingsCache.get('accent_color');
+                const nameUser = email.split("@", 1);
                 switch (type) {
                 case 'subscribe':
-                    return subscribeEmail({url, email, siteTitle, accentColor, siteDomain, siteUrl});
+                    return subscribeEmail({url, email, siteTitle, accentColor, siteDomain, siteUrl, nameUser});
                 case 'signup':
-                    return signupEmail({url, email, siteTitle, accentColor, siteDomain, siteUrl});
+                    return signupEmail({url, email, siteTitle, accentColor, siteDomain, siteUrl, nameUser});
                 case 'updateEmail':
-                    return updateEmail({url, email, siteTitle, accentColor, siteDomain, siteUrl});
+                    return updateEmail({url, email, siteTitle, accentColor, siteDomain, siteUrl, nameUser});
                 case 'signin':
                 default:
-                    return signinEmail({url, email, siteTitle, accentColor, siteDomain, siteUrl});
+                    return signinEmail({url, email, siteTitle, accentColor, siteDomain, siteUrl, nameUser});
                 }
             }
         },
