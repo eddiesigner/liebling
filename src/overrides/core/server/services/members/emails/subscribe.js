@@ -4,7 +4,7 @@ module.exports = ({siteTitle, email, url, accentColor = '#15212A', siteDomain, s
   <head>
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>📫 Confirm your subscription to ${siteTitle}</title>
+    <title>Confirm your subscription to ${siteTitle} 🚀</title>
     <style>
     /* -------------------------------------
         RESPONSIVE AND MOBILE FRIENDLY STYLES
@@ -109,7 +109,9 @@ module.exports = ({siteTitle, email, url, accentColor = '#15212A', siteDomain, s
             <!-- START CENTERED WHITE CONTAINER -->
             <span class="preheader" style="color: transparent; display: none; height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; mso-hide: all; visibility: hidden; width: 0;">You're one tap away from subscribing to ${siteTitle}!</span>
             <table class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #ffffff; border-radius: 8px;">
-
+              <a href="https://blog.soyhenry.com" class="m-logo">
+                <img src="https://i.ibb.co/NFqN3cg/logo-henry-blog.png" alt="Henry Blog"><br/><br/>
+              </a>
               <!-- START MAIN CONTENT AREA -->
               <tr>
                 <td class="wrapper" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; vertical-align: top; box-sizing: border-box;">
