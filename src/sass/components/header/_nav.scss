@@ -91,6 +91,12 @@
     }
 
     &.more {
+      @media (max-width: 768px) {
+        margin: 0px 0px 16px 0px;
+      }
+      @media (min-width: 769px) {
+        margin: 0px 0px 0px 13px;
+      }
       a {
         display: inline-flex;
         align-items: center;

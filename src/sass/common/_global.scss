@@ -33,7 +33,7 @@ body {
   z-index: 999;
   display: none;
   justify-content: center;
-  align-items: center;  
+  align-items: center;
 }
 
 .popup {
@@ -101,6 +101,12 @@ fieldset {
   text-align: left !important;
 }
 
+.tippy-tooltip {
+  left: -48px !important;
+  .tippy-arrow {
+    left: 110px !important;
+  }
+}
 .medium-zoom-overlay {
   background-color: var(--background-color) !important;
 }
