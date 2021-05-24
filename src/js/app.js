@@ -257,7 +257,7 @@ $(() => {
   })
 
   $toggleDarkMode.on('mouseleave', () => {
-    toggleDesktopTopbarOverflow(true)
+    toggleDesktopTopbarOverflow(false)
   })
 
   $closeNotification.on('click', function () {
@@ -275,7 +275,7 @@ $(() => {
 
   $(document).on('keyup', (e) => {
     if (e.key === 'Escape' && $search.hasClass('opened')) {
-      $closeSearch.click()
+      $closeSearch.trigger('click')
     }
   })
 
