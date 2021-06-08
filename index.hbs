@@ -3,6 +3,16 @@ This template is used for the index page.
 It can be used also as the home page or the default page.
 --}}
 
+{{#contentFor "preload"}}
+  <link rel="preload" href="{{asset "css/post.css"}}" as="style" />
+  <link rel="preload" href="{{asset "js/post.js"}}" as="script" />
+{{/contentFor}}
+
+{{!-- This block loads specific styles for the post page --}}
+{{#contentFor "styles"}}
+  <link rel="stylesheet" type="text/css" href="{{asset "css/post.css"}}" media="screen" />
+{{/contentFor}}
+
 {{!-- This block preloads specific assets for the index page --}}
 {{#contentFor "preload"}}
   <link rel="preload" href="{{asset "css/home.css"}}" as="style" />
@@ -31,7 +41,6 @@ into the {body} of the default.hbs template --}}
     {{#if @site.description}}
       <p class="m-hero-description bigger">{{@site.description}}</p>
     {{/if}}
-    <a href="{{@site.url}}/newsletter" class="m-button filled js-newsletter">{{t "Subscribe"}}</a>
   </div>
   </section>
   <div class="l-content">
@@ -110,6 +119,21 @@ into the {body} of the default.hbs template --}}
     {{!-- Links to Previous/Next posts --}}
     {{pagination}}
   </div>
+  <section class="m-subscribe-section js-newsletter">
+    <div class="l-wrapper in-post">
+      <div class="m-subscribe-section__content">
+        <div class="m-subscribe-section__text">
+          <h4 class="m-subscribe-section__title">{{t "Subscribe to our newsletter"}}</h4>
+          <p class="m-subscribe-section__description">
+            {{t "Get the latest posts delivered right to your inbox."}}
+          </p>
+        </div>
+        <div class="m-subscribe-section__form">
+          {{> "newsletter-form"}}
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
