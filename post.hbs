@@ -2,41 +2,49 @@
 This template is used for the post page.
 --}}
 
+{{!-- This block preloads specific assets for the post page --}}
+{{#contentFor "preload"}}
+  <link rel="preload" href="{{asset "css/post.css"}}" as="style" />
+  <link rel="preload" href="{{asset "js/post.js"}}" as="script" />
+{{/contentFor}}
+
+{{!-- This block loads specific styles for the post page --}}
+{{#contentFor "styles"}}
+  <link rel="stylesheet" type="text/css" href="{{asset "css/post.css"}}" media="screen" />
+{{/contentFor}}
+
 {{!-- The tag below means: insert everything in this file
 into the {body} of the default.hbs template --}}
 {{!< default}}
 
-<div class="main-wrap">
-  {{!-- Everything inside the #post tags pulls data from the post --}}
-  {{#post}}
-  {{!-- Special header.hbs partial to generate the <header> tag --}}
+{{!-- Special header.hbs partial to generate the <header> tag --}}
+{{#post}}
   {{> header background=feature_image}}
-  {{!-- Inject styles of the hero image to make it responsive --}}
-  {{> hero background=feature_image}}
-  </section>
-  {{/post}}
+{{/post}}
 
-  <main>
-    <article>
-      <div class="l-content in-post">
-        {{!-- Everything inside the #post tags pulls data from the post --}}
-        {{#post}}
+<main class="main-wrap">
+  {{#post}}
+    {{!-- Inject styles of the hero image to make it responsive --}}
+    {{> hero background=feature_image}}
+    </section>
+  {{/post}}
+  
+  <article>
+    <div class="l-content in-post">
+      {{!-- Everything inside the #post tags pulls data from the post --}}
+      {{#post}}
         <div class="l-wrapper in-post {{#unless feature_image}}no-image{{/unless}} js-aos-wrapper" data-aos="fade-up"
           data-aos-delay="300">
           <div
-            class="l-post-content {{#if @labs.subscribers}}has-subscribe-form{{/if}} {{#if @labs.members}}has-subscribe-form{{/if}} js-progress-content">
+            class="l-post-content js-progress-content">
             <header class="m-heading">
               <h1 class="m-heading__title in-post">{{title}}</h1>
               <div class="m-heading__meta">
                 {{#if primary_tag}}
-                <a href="{{primary_tag.url}}" class="m-heading__meta__tag">{{primary_tag.name}}</a>
-                <span class="m-heading__meta__divider">&bull;</span>
+                  <a href="{{primary_tag.url}}" class="m-heading__meta__tag">{{primary_tag.name}}</a>
+                  <span class="m-heading__meta__divider" aria-hidden="true">&bull;</span>
                 {{/if}}
                 <span class="m-heading__meta__time">{{date published_at}}</span>
-                <span class="m-heading__meta__divider">&bull;</span>
-                <span id="busuanzi_container_page_pv" style="display: inline; color: var(--link-color)!important;">
-                  <span id="busuanzi_value_page_pv"></span> &#8451;
-                </span>
               </div>
             </header>
             <div class="pos-relative js-post-content">
@@ -44,21 +52,34 @@ into the {body} of the default.hbs template --}}
                 <div class="m-share__content js-sticky">
                   <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute='true'}}"
                     class="m-icon-button filled in-share" target="_blank" rel="noopener" aria-label="Facebook">
-                    <span class="icon-facebook"></span>
+                    <span class="icon-facebook" aria-hidden="true"></span>
                   </a>
                   <a href="https://twitter.com/intent/tweet?text={{encode title}}&url={{url absolute='true'}}"
                     class="m-icon-button filled in-share" target="_blank" rel="noopener" aria-label="Twitter">
-                    <span class="icon-twitter"></span>
+                    <span class="icon-twitter" aria-hidden="true"></span>
                   </a>
-                  <button class="m-icon-button filled in-share progress js-scrolltop" aria-label="Scroll to top">
-                    <span class="icon-arrow-top"></span>
-                    <svg>
+                  <button class="m-icon-button filled in-share progress js-scrolltop" aria-label="{{t "Scroll to top"}}">
+                    <span class="icon-arrow-top" aria-hidden="true"></span>
+                    <svg aria-hidden="true">
                       <circle class="progress-ring__circle js-progress" fill="transparent" r="0" />
                     </svg>
                   </button>
                 </div>
               </div>
               {{content}}
+              {{!-- List of tags  --}}
+              {{#if tags}}
+                <section class="m-tags in-post">
+                  <h3 class="m-submenu-title">{{t "Tags"}}</h3>
+                  <ul>
+                    {{#foreach tags}}
+                      <li>
+                        <a href="{{url}}" title="{{name}}">{{name}}</a>
+                      </li>
+                    {{/foreach}}
+                  </ul>
+                </section>
+              {{/if}}
             </div>
           </div>
         </div>
@@ -73,116 +94,8 @@ into the {body} of the default.hbs template --}}
             href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="color: var(--link-color);"> 知识共享署名 - 非商业性使用
             - 相同方式共享 4.0 国际许可协议 </a>进行许可。</div>
 
-        {{!-- 赞赏模块 --}}
-        <div style="padding: 10px 0;margin: 20px auto;width: 90%;text-align: center;">
-          <div style="border-bottom-width: 5px; padding-bottom: 0px;">您的支持将鼓励我们继续创作！</div>
-
-          <button style="width: 150px;display: inline-block;margin-top: 10px;margin-bottom: 10px;" disable="enable"
-            onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}"
-            class="m-button primary block"><i class="fa fa-thumbs-o-up"></i> 赞赏</button>
-
-          <style>
-            @-webkit-keyframes scale-in-top {
-              0% {
-                -webkit-transform: scale(0);
-                transform: scale(0);
-                -webkit-transform-origin: 50% 0%;
-                transform-origin: 50% 0%;
-                opacity: 1;
-              }
-
-              100% {
-                -webkit-transform: scale(1);
-                transform: scale(1);
-                -webkit-transform-origin: 50% 0%;
-                transform-origin: 50% 0%;
-                opacity: 1;
-              }
-            }
-
-            @keyframes scale-in-top {
-              0% {
-                -webkit-transform: scale(0);
-                transform: scale(0);
-                -webkit-transform-origin: 50% 0%;
-                transform-origin: 50% 0%;
-                opacity: 1;
-              }
-
-              100% {
-                -webkit-transform: scale(1);
-                transform: scale(1);
-                -webkit-transform-origin: 50% 0%;
-                transform-origin: 50% 0%;
-                opacity: 1;
-              }
-            }
-
-            .QR {
-              -webkit-animation: scale-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-              animation: scale-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-            }
-
-            #QR img {
-              width: 180px;
-              max-width: 100%;
-              display: inline-block;
-              margin: 0.8em 2em 0 2em;
-            }
-          </style>
-          <div style="display: none;" class="QR" id="QR">
-
-            <div id="wechat" style="display: inline-block">
-              <a href="https://md-1256058189.cos.ap-guangzhou.myqcloud.com/WeChatPay.png" rel="group"><img
-                  id="wechat_qr" src="https://md-1256058189.cos.ap-guangzhou.myqcloud.com/WeChatPay.png" alt="微信"></a>
-              <p><i class="fa fa-wechat" style="color: #08ba06;"></i> 微信 (保存后扫码）</p>
-            </div>
-
-            <div id="alipay" style="display: inline-block">
-              <a href="https://qr.alipay.com/fkx179129f6btcelz1vc8bd" rel="group"><img id="alipay_qr"
-                  src="https://md-1256058189.cos.ap-guangzhou.myqcloud.com/AliPay.png" alt="支付宝"></a>
-              <p><i class="fa fa-credit-card" style="color: #21a2ef;"></i> 支付宝</p>
-            </div>
-
-            <div id="paypal" style="display: inline-block">
-              <a href="https://www.paypal.com/qrcodes/managed/0ee58049-dc1f-4f9f-906a-a000580ae622" rel="group"><img
-                  id="paypal_qr" src="https://md-1256058189.cos.ap-guangzhou.myqcloud.com/PayPal.png" alt="PayPal"></a>
-              <p><i class="fa fa-paypal" style="color: #113984;"></i> PayPal</p>
-            </div>
-            <div style="margin-top: 20px;margin-bottom: 0px;">
-              <i class="fa fa-check-circle" style="color:green"></i> 赞赏收入都将用于本站运营，感谢您的支持！
-            </div>
-          </div>
-        </div>
-
         {{!-- Email subscribe form at the bottom of the page --}}
-        {{#if @labs.subscribers}}
-        <section class="m-subscribe-section">
-          <div class="l-wrapper in-post">
-            <div class="m-subscribe-section__content">
-              <div class="m-subscribe-section__text">
-                <h4 class="m-subscribe-section__title">{{t "Subscribe to our newsletter"}}</h4>
-                <p class="m-subscribe-section__description">
-                  {{t "Get the latest posts delivered right to your inbox."}}
-                </p>
-              </div>
-              <div class="m-subscribe-section__form">
-                {{subscribe_form
-                            form_id="subscribe-form"
-                            form_class="m-subscribe-section__form"
-                            input_id="subscribe_input"
-                            input_class="m-input in-subscribe-section"
-                            button_id="subscribe_button"
-                            button_class="m-button primary block"
-                            placeholder=(t "Your email address")
-                          }}
-              </div>
-            </div>
-          </div>
-        </section>
-        {{/if}}
-        {{#if @labs.members}}
-        <section class="m-subscribe-section">
+        <section class="m-subscribe-section js-newsletter">
           <div class="l-wrapper in-post">
             <div class="m-subscribe-section__content">
               <div class="m-subscribe-section__text">
@@ -197,15 +110,14 @@ into the {body} of the default.hbs template --}}
             </div>
           </div>
         </section>
-        {{/if}}
         <section class="m-author">
           <div class="m-author__content">
             <div class="m-author__picture">
-              <a href="{{primary_author.url}}" class="m-author-picture" aria-label="Author picture">
+              <a href="{{primary_author.url}}" class="m-author-picture" aria-label="{{primary_author.name}}">
                 {{#if primary_author.profile_image}}
-                <div style="background-image: url({{primary_author.profile_image}});"></div>
+                  <div style="background-image: url({{primary_author.profile_image}});"></div>
                 {{else}}
-                <div style="background-image: url({{asset "images/default-avatar-square-small.jpg"}});"></div>
+                  <div style="background-image: url({{asset "images/default-avatar-square-small.jpg"}});"></div>
                 {{/if}}
               </a>
             </div>
@@ -214,36 +126,34 @@ into the {body} of the default.hbs template --}}
                 <a href="{{primary_author.url}}">{{primary_author.name}}</a>
               </h4>
               {{#has author="count:>1"}}
-              <p class="m-small-text in-author-along-with">
-                {{authors separator=", " prefix=(t "Among with no break line") from="2"}}
-              </p>
+                <p class="m-small-text in-author-along-with">
+                  {{authors separator=", " prefix=(t "Among with no break line") from="2"}}
+                </p>
               {{/has}}
               {{#if primary_author.bio}}
-              <p class="m-author__bio">{{primary_author.bio}}</p>
+                <p class="m-author__bio">{{primary_author.bio}}</p>
               {{/if}}
               <ul class="m-author-links">
                 {{#if primary_author.website}}
-                <li>
-                  <a href="{{primary_author.website}}" target="_blank" rel="noopener" aria-label="Website">
-                    <span class="icon-globe"></span>
-                  </a>
-                </li>
+                  <li>
+                    <a href="{{primary_author.website}}" target="_blank" rel="noopener" aria-label="{{t "Website"}}">
+                      <span class="icon-globe" aria-hidden="true"></span>
+                    </a>
+                  </li>
                 {{/if}}
                 {{#if primary_author.facebook}}
-                <li>
-                  <a href="https://facebook.com/{{primary_author.facebook}}" target="_blank" rel="noopener"
-                    aria-label="Facebook">
-                    <span class="icon-facebook"></span>
-                  </a>
-                </li>
+                  <li>
+                    <a href="https://facebook.com/{{primary_author.facebook}}" target="_blank" rel="noopener" aria-label="Facebook">
+                      <span class="icon-facebook" aria-hidden="true"></span>
+                    </a>
+                  </li>
                 {{/if}}
                 {{#if primary_author.twitter}}
-                <li>
-                  <a href="https://twitter.com/{{primary_author.twitter}}" target="_blank" rel="noopener"
-                    aria-label="Twitter">
-                    <span class="icon-twitter"></span>
-                  </a>
-                </li>
+                  <li>
+                    <a href="https://twitter.com/{{primary_author.twitter}}" target="_blank" rel="noopener" aria-label="Twitter">
+                      <span class="icon-twitter" aria-hidden="true"></span>
+                    </a>
+                  </li>
                 {{/if}}
               </ul>
             </div>
@@ -269,27 +179,62 @@ into the {body} of the default.hbs template --}}
           </script>
           <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
         </div>
-        <!-- City版安装代码已完成 -->
 
-        {{/post}}
-        {{!-- Related posts --}}
+      {{/post}}
+      {{!-- Related posts --}}
+      {{#if post.tags.length}}
         {{#get "posts" limit="3" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags,authors" as |related|}}
-        <section class="m-recommended">
-          <div class="l-wrapper in-recommended">
-            <h3 class="m-section-title in-recommended">{{t "Recommended for you"}}</h3>
-            <div class="m-recommended-articles">
-              <div class="m-recommended-slider js-recommended-articles">
-                {{!-- The tag below iterates over all the related posts --}}
-                {{> "loop"}}
+          <section class="m-recommended">
+            <div class="l-wrapper in-recommended">
+              <h3 class="m-section-title in-recommended">{{t "Recommended for you"}}</h3>
+              <div class="m-recommended-articles">
+                <div class="m-recommended-slider glide js-recommended-slider">
+                  <div class="glide__track" data-glide-el="track">
+                    <div class="glide__slides">
+                      {{!-- The tag below iterates over all the related posts --}}
+                      {{> "loop"}}
+                    </div>
+                  </div>
+                  <div data-glide-el="controls" class="glide__arrows js-controls">
+                    <button data-glide-dir="<" class="m-icon-button filled in-recommended-articles glide-prev" aria-label="{{t "Previous"}}">
+                      <span class="icon-arrow-left" aria-hidden="true"></span>
+                    </button>
+                    <button data-glide-dir=">" class="m-icon-button filled in-recommended-articles glide-next" aria-label="{{t "Next"}}">
+                      <span class="icon-arrow-right" aria-hidden="true"></span>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
         {{/get}}
-      </div>
-    </article>
-  </main>
-</div>
+      {{else}}
+        <section class="m-recommended">
+          <div class="l-wrapper in-recommended">
+            <h3 class="m-section-title in-recommended">{{t "Recommended for you"}}</h3>
+            <div class="m-recommended-articles">
+              <div class="m-recommended-slider glide js-recommended-slider">
+                <div class="glide__track" data-glide-el="track">
+                  <div class="glide__slides">
+                    <div class="m-recommended-slider__item glide__slide">
+                      <div class="m-heading no-margin">
+                        <h3>{{t "No posts found"}}</h3>
+                        <p>
+                          {{t "Apparently there are no posts at the moment, check again later."}}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      {{/if}}
+    </div>
+  </article>
+</main>
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}

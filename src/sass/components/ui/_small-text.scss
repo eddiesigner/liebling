@@ -1,5 +1,5 @@
 .m-small-text {
-  color: $gray;
+  color: var(--titles-color);
   font-size: 0.875rem;
 
   &.in-subscribe-page {

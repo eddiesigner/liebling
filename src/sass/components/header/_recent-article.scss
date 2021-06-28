@@ -9,7 +9,7 @@
 
   &:hover {
     .m-recent-article__picture {
-      div {
+      img {
         @include transform(scale(1.1));
       }
     }
@@ -26,23 +26,29 @@
 
 .m-recent-article__picture {
   height: 130px;
+  position: relative;
   margin-bottom: 15px;
   border-radius: 5px;
+  background-color: var(--secondary-subtle-color);
   overflow: hidden;
 
-  div {
+  &.no-picture {
+    img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 64px;
+      height: 64px;
+      margin: -32px 0 0 -32px;
+    }
+  }
+
+  img {
+    width: 100%;
     height: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-color: var(--secondary-subtle-color);
-    -webkit-backface-visibility: visible !important;
+    object-fit: cover;
     backface-visibility: visible !important;
     @include transition(transform .5s cubic-bezier(0.165, 0.84, 0.44, 1));
-
-    &.no-image {
-      background-size: 64px 64px;
-    }
   }
 }
 

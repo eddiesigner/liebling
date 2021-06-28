@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{@site.lang}}">
+<html lang="{{@site.locale}}">
   <head>
     {{!-- Document Settings --}}
     <meta charset="utf-8" />
@@ -10,22 +10,73 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    {{!-- Styles'n'Scripts --}}
+    {{!-- Preload assets --}}
+    <link rel="preload" href="{{asset "css/app.css"}}" as="style" />
+    <link rel="preload" href="{{asset "js/manifest.js"}}" as="script" />
+    <link rel="preload" href="{{asset "js/vendor/content-api.min.js"}}" as="script" />
+    <link rel="preload" href="{{asset "js/vendor.js"}}" as="script" />
+    <link rel="preload" href="{{asset "js/app.js"}}" as="script" />
+    <link rel="preconnect" href="https://polyfill.io">
+    <link rel="dns-prefetch" href="https://polyfill.io">
+
+    {{!-- This #block helper will try to preload page-specific assets --}}
+    {{{block "preload"}}}
+
+    {{!-- Styles & Scripts --}}
     <style>
-      /* This font-face is here to make icons work if the Ghost instance is installed in a subdirectory */
+      /* These font-faces are here to make fonts work if the Ghost instance is installed in a subdirectory */
+
+      /* source-sans-pro-regular */
+      @font-face {
+        font-family: 'Source Sans Pro';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: local('SourceSansPro-Regular'),
+            url("{{asset 'fonts/source-sans-pro/latin/source-sans-pro-regular.woff2'}}") format('woff2'),
+            url("{{asset 'fonts/source-sans-pro/latin/source-sans-pro-regular.woff'}}") format('woff');
+      }
+
+      /* source-sans-pro-600 */
+      @font-face {
+        font-family: 'Source Sans Pro';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: local('SourceSansPro-SemiBold'),
+            url("{{asset 'fonts/source-sans-pro/latin/source-sans-pro-600.woff2'}}") format('woff2'),
+            url("{{asset 'fonts/source-sans-pro/latin/source-sans-pro-600.woff'}}") format('woff');
+      }
+
+      /* source-sans-pro-700 */
+      @font-face {
+        font-family: 'Source Sans Pro';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: local('SourceSansPro-Bold'),
+            url("{{asset 'fonts/source-sans-pro/latin/source-sans-pro-700.woff2'}}") format('woff2'),
+            url("{{asset 'fonts/source-sans-pro/latin/source-sans-pro-700.woff'}}") format('woff');
+      }
+
+      /* iconmoon */
       @font-face {
         font-family: 'icomoon';
-        src: url("{{asset 'fonts/icomoon.eot?o5zacw'}}");
-        src: url("{{asset 'fonts/icomoon.eot?o5zacw#iefix'}}") format('embedded-opentype'),
-        url("{{asset 'fonts/icomoon.ttf?o5zacw'}}") format('truetype'),
-        url("{{asset 'fonts/icomoon.woff?o5zacw'}}") format('woff'),
-        url("{{asset 'fonts/icomoon.svg?o5zacw#icomoon'}}") format('svg');
         font-weight: normal;
         font-style: normal;
         font-display: swap;
+        src: url("{{asset 'fonts/icomoon/icomoon.eot?101fc3'}}");
+        src: url("{{asset 'fonts/icomoon/icomoon.eot?101fc3#iefix'}}") format('embedded-opentype'),
+        url("{{asset 'fonts/icomoon/icomoon.ttf?101fc3'}}") format('truetype'),
+        url("{{asset 'fonts/icomoon/icomoon.woff?101fc3'}}") format('woff'),
+        url("{{asset 'fonts/icomoon/icomoon.svg?101fc3#icomoon'}}") format('svg');
       }
     </style>
+
     <link rel="stylesheet" type="text/css" href="{{asset "css/app.css"}}" media="screen" />
+
+    {{!-- This #block helper will inject a stylesheet for a specific page --}}
+    {{{block "styles"}}}
 
     {{!-- This #block helper will pull data from the hero partial 
     to inject styles of the hero image to make it responsive --}}
@@ -38,22 +89,6 @@
     <script>
       // @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
       const ghostHost = "{{@site.url}}"
-      // @license-end
-    </script>
-
-    {{!-- This script loads the Google font asynchronously --}}
-    <script>
-      // @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
-      WebFontConfig = {
-        google: { families: ['Source+Sans+Pro:400,600,700&display=swap'] }
-      };
-
-      (function (d) {
-        var wf = d.createElement('script'), s = d.scripts[0];
-        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
-        wf.async = true;
-        s.parentNode.insertBefore(wf, s);
-      })(document);
       // @license-end
     </script>
   </head>
@@ -72,8 +107,8 @@
 
     {{!-- Common scripts shared between pages --}}
     <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver%2CPromise%2CArray.prototype.includes%2CString.prototype.endsWith%2CString.prototype.startsWith%2CObject.assign%2CNodeList.prototype.forEach"></script>
-    <script defer src="https://unpkg.com/@tryghost/content-api@1.2.7/umd/content-api.min.js"></script>
     <script defer src="{{asset "js/manifest.js"}}"></script>
+    <script defer src="{{asset "js/vendor/content-api.min.js"}}"></script>
     <script defer src="{{asset "js/vendor.js"}}"></script>
     <script defer src="{{asset "js/app.js"}}"></script>
 

@@ -5,26 +5,19 @@
 }
 
 .sr-only {
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
   position: absolute;
-  left: -10000px;
   width: 1px;
   height: 1px;
   overflow: hidden;
+  white-space: nowrap;
 }
 
-.clearfix:before,
-.clearfix:after {
-  content: " "; /* 1 */
-  line-height: 0;
-  display: table; /* 2 */
-}
-
-.clearfix:after {
-  clear: both;
-}
-
-.clearfix {
-  *zoom: 1;
+.focusable {
+  &:focus {
+    box-shadow: 0 0 0 2px var(--primary-subtle-color) !important;
+  }
 }
 
 .content-centered {
@@ -35,9 +28,6 @@
 
 .no-appearance {
   -webkit-appearance: none !important;
-  -moz-appearance: none !important;
-  -o-appearance: none !important;
-  -ms-appearance: none !important;
   appearance: none !important;
 }
 

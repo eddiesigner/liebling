@@ -4,4 +4,9 @@
   @include respond-to('medium') {
     padding-top: 60px;
   }
+
+  iframe {
+    width: 100%;
+    max-width: 100%;
+  }
 }

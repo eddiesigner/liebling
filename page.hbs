@@ -2,15 +2,29 @@
 This template is used for the posts that are marked as pages.
 --}}
 
+{{!-- This block preloads specific assets for the post page --}}
+{{#contentFor "preload"}}
+  <link rel="preload" href="{{asset "css/post.css"}}" as="style" />
+  <link rel="preload" href="{{asset "js/page.js"}}" as="script" />
+{{/contentFor}}
+
+{{!-- This block loads specific styles for the post page --}}
+{{#contentFor "styles"}}
+  <link rel="stylesheet" type="text/css" href="{{asset "css/post.css"}}" media="screen" />
+{{/contentFor}}
+
 {{!-- The tag below means: insert everything in this file
 into the {body} of the default.hbs template --}}
 {{!< default}}
 
-{{!-- Everything inside the #post tags pulls data from the post --}}
+{{!-- Special header.hbs partial to generate the <header> tag --}}
 {{#post}}
-  <div class="main-wrap">
-    {{!-- Special header.hbs partial to generate the <header> tag --}}
-    {{> header background=feature_image}}
+  {{> header background=feature_image}}
+{{/post}}
+
+<main class="main-wrap">
+  {{!-- Everything inside the #post tags pulls data from the post --}}
+  {{#post}}
     {{!-- Inject styles of the hero image to make it responsive --}}
     {{> hero background=feature_image}}
     <div class="m-hero__content" data-aos="fade-down">
@@ -20,21 +34,19 @@ into the {body} of the default.hbs template --}}
       {{/if}}
     </div>
     </section>
-    <main>
-      <article>
-        <div class="l-content">
-          <div class="l-wrapper in-post" data-aos="fade-up" data-aos-delay="300">
-            <div class="l-post-content">
-              <div class="pos-relative js-post-content">
-                {{content}}
-              </div>
+    <article>
+      <div class="l-content">
+        <div class="l-wrapper in-post" data-aos="fade-up" data-aos-delay="300">
+          <div class="l-post-content">
+            <div class="pos-relative js-post-content">
+              {{content}}
             </div>
           </div>
         </div>
-      </article>
-    </main>
-  </div>
-{{/post}}
+      </div>
+    </article>
+  {{/post}}
+</main>
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}

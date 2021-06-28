@@ -4,28 +4,20 @@ for it, and apply those styles to the <header> tag.
 --}}
 
 {{#if background}}
-  {{#contentFor "herobackground"}}
-  <style>
-    .m-hero__picture {
-      background-image: url({{img_url background size='xl'}});
-    }
-  
-    @media(max-width: 1000px) {
-      .m-hero__picture {
-        background-image: url({{img_url background size='l'}});
-      }
-    }
-  
-    @media(max-width: 600px) {
-      .m-hero__picture {
-        background-image: url({{img_url background size='m'}});
-      }
-    }
-  </style>
-  {{/contentFor}}
-
   <section class="m-hero with-picture" data-aos="fade">
-    <div class="m-hero__picture {{#is "post"}}in-post{{/is}}"></div>
+    <div class="m-hero__picture {{#is "post"}}in-post{{/is}}">
+      <img
+        srcset="
+          {{img_url background size="s"}} 300w,
+          {{img_url background size="m"}} 600w,
+          {{img_url background size="l"}} 1000w,
+          {{img_url background size="xl"}} 2000w
+        "
+        sizes="(max-width: 600px) 600px, (max-width: 1000px) 1000px, 2000px"
+        src="{{img_url background size="l"}}"
+        alt=""
+      />
+    </div>
 {{else}}
   <section class="m-hero no-picture {{#is "post"}}in-post{{/is}}" data-aos="fade">
 {{/if}}

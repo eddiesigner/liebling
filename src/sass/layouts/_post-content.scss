@@ -3,6 +3,7 @@
 
   @include respond-to('medium') {
     max-width: 820px;
+    min-height: 400px;
     margin: 0 auto;
 
     @include respond-to('medium') {
@@ -98,9 +99,18 @@
     font-weight: 600;
   }
 
+  em {
+    font-style: italic;
+  }
+
   a {
     color: var(--primary-foreground-color);
     text-decoration: underline;
+    @include transition(color linear 0.2s);
+
+    &:hover {
+      color: var(--link-color);
+    }
   }
 
   ul, ol {
@@ -117,10 +127,10 @@
       padding-left: 40px;
       margin-bottom: 30px;
     }
+  }
 
-    li {
-      margin-bottom: 20px;
-    }
+  li {
+    margin-bottom: 20px;
   }
 
   img,
@@ -239,6 +249,7 @@
       margin: 0;
       width: 100%;
       height: 100%;
+      object-fit: cover;
     }
 
     .kg-gallery-row:not(:first-of-type) {
@@ -360,6 +371,7 @@
     display: inline-block;
     color: var(--link-color);
     font-size: 0.9rem;
+    font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
     padding: 0 5px;
     border-radius: 5px;
     background-color: var(--secondary-subtle-color);
@@ -367,7 +379,23 @@
 
   pre {
     line-height: 1.4;
+    font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
     margin: 0 0 25px;
+    overflow-x: auto;
+    border-radius: 5px;
+    background-color: var(--secondary-subtle-color);
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    -moz-tab-size: 2;
+    -o-tab-size: 2;
+    tab-size: 2;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
 
     @include respond-to('medium') {
       margin-bottom: 30px;
@@ -375,11 +403,22 @@
 
     > code {
       display: block;
-      padding: 10px;
-      white-space: pre-wrap;
+      padding: 10px 10px 0;
+      white-space: pre;
+      word-spacing: normal;
+      word-break: normal;
+      word-wrap: normal;
+      line-height: 1.5;
+      -moz-tab-size: 2;
+      -o-tab-size: 2;
+      tab-size: 2;
+      -webkit-hyphens: none;
+      -moz-hyphens: none;
+      -ms-hyphens: none;
+      hyphens: none;
 
       @include respond-to('medium') {
-        padding: 20px;
+        padding: 20px 20px 0;
       }
     }
 
@@ -431,6 +470,13 @@
     @include respond-to('medium') {
       margin: 40px auto !important;
     }
+
+    &:hover {
+      .kg-bookmark-container {
+        opacity: 0.8;
+        color: var(--primary-foreground-color);
+      }
+    }
   }
 
   .kg-card + .kg-bookmark-card {
@@ -445,6 +491,7 @@
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px,
       rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
     border-radius: 3px;
+    @include transition(opacity linear 0.2s);
   }
 
   .kg-bookmark-content {
@@ -493,7 +540,7 @@
     flex-wrap: wrap;
     font-size: 0.9rem;
     font-weight: 400;
-    color: $gray;
+    color: var(--titles-color);
     margin-top: 14px;
   }
 

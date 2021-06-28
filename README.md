@@ -4,7 +4,11 @@ Liebling is a beautiful and clean Ghost theme that is easy and comfortable to us
 
 If you find this theme useful, please consider to make a donation to support its development! 🙏🏼
 
-<a href="https://www.buymeacoffee.com/eddiesigner" target="_blank"><img src="https://res.cloudinary.com/edev/image/upload/v1583011476/button_y8hgt8.png" alt="Donate" style="width: 250px !important; height: 60px !important;" width="250" height="60"></a>
+<a href="https://ko-fi.com/eddiesigner" target="_blank"><img src="https://res.cloudinary.com/edev/image/upload/v1583011476/button_y8hgt8.png" alt="Donate" style="width: 250px !important; height: 60px !important;" width="250" height="60"></a>
+
+## Ghost 4
+
+This theme has been optimized for Ghost 4, if you are looking for a Ghost 3 compatible version please refer to [this link](https://github.com/eddiesigner/liebling/releases/tag/v.0.9.4).
 
 ## Preview
 
@@ -18,7 +22,9 @@ You can see a live demo here: [https://liebling.eduardogomez.io](https://lieblin
 
 To get the latest version please head over the [releases page](https://github.com/eddiesigner/liebling/releases) and download the file `liebling.zip` of the latest release.
 
-**IMPORTANT: From now on, this theme is only compatible with Ghost 3+**
+## Documentation
+
+To know how to enable the search, comments, newsletter and more, please head to the [Wiki](https://github.com/eddiesigner/liebling/wiki).
 
 ## Features
 
@@ -35,6 +41,7 @@ To get the latest version please head over the [releases page](https://github.co
 * Subscription form [more info here](https://github.com/eddiesigner/liebling/wiki/How-to-enable-subscribers)
 * Multiple authors
 * Logo support
+* Secondary menu
 * Featured posts and pages
 * Post, Page, Tag, Authors, pages
 * Koenig editor
@@ -84,7 +91,16 @@ To get the latest version please head over the [releases page](https://github.co
 * Turkish by [mskoroglu](https://github.com/mskoroglu)
 * Romanian by [dsecareanu](https://github.com/dsecareanu)
 * Chinese Simplified by [IvyB](https://github.com/IvyB)
-* Indonesian by [iqbalbinsb](https://github.com/iqbalbinsb)
+* Indonesian by [iqbalbinsb](https://github.com/iqbalbinsb), [khannedy](https://github.com/khannedy)
+* Lithuanian by [pintom](https://github.com/pintom)
+* Dutch by [Qballjos](https://github.com/Qballjos)
+* Traditional Chinese by [Weixiang](https://github.com/weixiang)
+* Persian (Farsi) by [Aminoiz](https://github.com/Aminoiz)
+* Ukrainian by [partizan007](https://github.com/partizan007)
+* Kazakh by [arshyn-t](https://github.com/arshyn-t)
+* Korean by [chocosobo](https://github.com/chocosobo)
+* Japanese by [ViaSnake](https://github.com/ViaSnake)
+* Czech by [Fjuro](https://github.com/Fjuro)
 
 ## Tests performed
 
@@ -102,13 +118,13 @@ Please take a look to this page to see how it works: https://github.com/eddiesig
 
 ## Help and Support
 
-To know how to enable the search, comments, subscribers and more, please head to the [Wiki](https://github.com/eddiesigner/liebling/wiki).
-
 If you have any questions or troubles with this product, please feel free to open an issue [here](https://github.com/eddiesigner/liebling/issues).
 
 ## Related
 
-* [Weiss Pro](https://blog.eduardogomez.io/weiss-pro-modern-and-clean-ghost-theme/) - Modern and beautiful Ghost theme ready to make your content shine ✨
+* [Firma](https://gum.co/ZXLha) - Ghost theme that can be used by startups to large companies to publish any kind of articles related to their business. It stands out for its clean design and is able to adapt to any company's identity.
+
+* [Weiss Pro](https://gum.co/pzvDn) - Modern and beautiful Ghost theme ready to make your content shine.
 
 ## License
 
