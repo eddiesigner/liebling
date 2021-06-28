@@ -4,47 +4,51 @@ This template is used for the post page.
 
 {{!-- This block preloads specific assets for the post page --}}
 {{#contentFor "preload"}}
-  <link rel="preload" href="{{asset "css/post.css"}}" as="style" />
-  <link rel="preload" href="{{asset "js/post.js"}}" as="script" />
+<link rel="preload" href="{{asset " css/post.css"}}" as="style" />
+<link rel="preload" href="{{asset " js/post.js"}}" as="script" />
 {{/contentFor}}
 
 {{!-- This block loads specific styles for the post page --}}
 {{#contentFor "styles"}}
-  <link rel="stylesheet" type="text/css" href="{{asset "css/post.css"}}" media="screen" />
+<link rel="stylesheet" type="text/css" href="{{asset " css/post.css"}}" media="screen" />
 {{/contentFor}}
 
 {{!-- The tag below means: insert everything in this file
 into the {body} of the default.hbs template --}}
-{{!< default}}
-
-{{!-- Special header.hbs partial to generate the <header> tag --}}
-{{#post}}
-  {{> header background=feature_image}}
-{{/post}}
-
-<main class="main-wrap">
+{{!< default}} {{!-- Special header.hbs partial to generate the <header> tag --}}
   {{#post}}
+  {{> header background=feature_image}}
+  {{/post}}
+
+  <main class="main-wrap">
+    {{#post}}
     {{!-- Inject styles of the hero image to make it responsive --}}
     {{> hero background=feature_image}}
     </section>
-  {{/post}}
-  
-  <article>
-    <div class="l-content in-post">
-      {{!-- Everything inside the #post tags pulls data from the post --}}
-      {{#post}}
+    {{/post}}
+
+    <article>
+      <div class="l-content in-post">
+        {{!-- Everything inside the #post tags pulls data from the post --}}
+        {{#post}}
         <div class="l-wrapper in-post {{#unless feature_image}}no-image{{/unless}} js-aos-wrapper" data-aos="fade-up"
           data-aos-delay="300">
-          <div
-            class="l-post-content js-progress-content">
+          <div class="l-post-content js-progress-content">
             <header class="m-heading">
               <h1 class="m-heading__title in-post">{{title}}</h1>
               <div class="m-heading__meta">
                 {{#if primary_tag}}
-                  <a href="{{primary_tag.url}}" class="m-heading__meta__tag">{{primary_tag.name}}</a>
-                  <span class="m-heading__meta__divider" aria-hidden="true">&bull;</span>
+                <a href="{{primary_tag.url}}" class="m-heading__meta__tag">{{primary_tag.name}}</a>
+                <span class="m-heading__meta__divider" aria-hidden="true">&bull;</span>
                 {{/if}}
                 <span class="m-heading__meta__time">{{date published_at}}</span>
+
+                {{!-- 文章热度显示 --}}
+                <span class="m-heading__meta__divider">&bull;</span>
+                <span id="busuanzi_container_page_pv" style="display: inline; color: var(--link-color)!important;">
+                  <span id="busuanzi_value_page_pv"></span> &#8451;
+                </span>
+
               </div>
             </header>
             <div class="pos-relative js-post-content">
@@ -58,7 +62,8 @@ into the {body} of the default.hbs template --}}
                     class="m-icon-button filled in-share" target="_blank" rel="noopener" aria-label="Twitter">
                     <span class="icon-twitter" aria-hidden="true"></span>
                   </a>
-                  <button class="m-icon-button filled in-share progress js-scrolltop" aria-label="{{t "Scroll to top"}}">
+                  <button class="m-icon-button filled in-share progress js-scrolltop" aria-label="{{t " Scroll to
+                    top"}}">
                     <span class="icon-arrow-top" aria-hidden="true"></span>
                     <svg aria-hidden="true">
                       <circle class="progress-ring__circle js-progress" fill="transparent" r="0" />
@@ -67,32 +72,22 @@ into the {body} of the default.hbs template --}}
                 </div>
               </div>
               {{content}}
-              {{!-- List of tags  --}}
+              {{!-- List of tags --}}
               {{#if tags}}
-                <section class="m-tags in-post">
-                  <h3 class="m-submenu-title">{{t "Tags"}}</h3>
-                  <ul>
-                    {{#foreach tags}}
-                      <li>
-                        <a href="{{url}}" title="{{name}}">{{name}}</a>
-                      </li>
-                    {{/foreach}}
-                  </ul>
-                </section>
+              <section class="m-tags in-post">
+                <h3 class="m-submenu-title">{{t "Tags"}}</h3>
+                <ul>
+                  {{#foreach tags}}
+                  <li>
+                    <a href="{{url}}" title="{{name}}">{{name}}</a>
+                  </li>
+                  {{/foreach}}
+                </ul>
+              </section>
               {{/if}}
             </div>
           </div>
         </div>
-
-        {{!-- CC协议声明模块 --}}
-        <div style="text-align: center;font-size: 14px;color: gray;margin-top: 30px;margin-bottom: 30px;"
-          class="l-wrapper in-post js-aos-wrapper aos-init aos-animate">
-          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议"
-              style="border-width:0;padding-bottom: 10px;"
-              src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a><br><i
-            class="fa fa-creative-commons"></i> 本站文章除特别声明外，均采用<a rel="license"
-            href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="color: var(--link-color);"> 知识共享署名 - 非商业性使用
-            - 相同方式共享 4.0 国际许可协议 </a>进行许可。</div>
 
         {{!-- Email subscribe form at the bottom of the page --}}
         <section class="m-subscribe-section js-newsletter">
@@ -115,9 +110,9 @@ into the {body} of the default.hbs template --}}
             <div class="m-author__picture">
               <a href="{{primary_author.url}}" class="m-author-picture" aria-label="{{primary_author.name}}">
                 {{#if primary_author.profile_image}}
-                  <div style="background-image: url({{primary_author.profile_image}});"></div>
+                <div style="background-image: url({{primary_author.profile_image}});"></div>
                 {{else}}
-                  <div style="background-image: url({{asset "images/default-avatar-square-small.jpg"}});"></div>
+                <div style="background-image: url({{asset " images/default-avatar-square-small.jpg"}});"></div>
                 {{/if}}
               </a>
             </div>
@@ -126,40 +121,53 @@ into the {body} of the default.hbs template --}}
                 <a href="{{primary_author.url}}">{{primary_author.name}}</a>
               </h4>
               {{#has author="count:>1"}}
-                <p class="m-small-text in-author-along-with">
-                  {{authors separator=", " prefix=(t "Among with no break line") from="2"}}
-                </p>
+              <p class="m-small-text in-author-along-with">
+                {{authors separator=", " prefix=(t "Among with no break line") from="2"}}
+              </p>
               {{/has}}
               {{#if primary_author.bio}}
-                <p class="m-author__bio">{{primary_author.bio}}</p>
+              <p class="m-author__bio">{{primary_author.bio}}</p>
               {{/if}}
               <ul class="m-author-links">
                 {{#if primary_author.website}}
-                  <li>
-                    <a href="{{primary_author.website}}" target="_blank" rel="noopener" aria-label="{{t "Website"}}">
-                      <span class="icon-globe" aria-hidden="true"></span>
-                    </a>
-                  </li>
+                <li>
+                  <a href="{{primary_author.website}}" target="_blank" rel="noopener" aria-label="{{t " Website"}}">
+                    <span class="icon-globe" aria-hidden="true"></span>
+                  </a>
+                </li>
                 {{/if}}
                 {{#if primary_author.facebook}}
-                  <li>
-                    <a href="https://facebook.com/{{primary_author.facebook}}" target="_blank" rel="noopener" aria-label="Facebook">
-                      <span class="icon-facebook" aria-hidden="true"></span>
-                    </a>
-                  </li>
+                <li>
+                  <a href="https://facebook.com/{{primary_author.facebook}}" target="_blank" rel="noopener"
+                    aria-label="Facebook">
+                    <span class="icon-facebook" aria-hidden="true"></span>
+                  </a>
+                </li>
                 {{/if}}
                 {{#if primary_author.twitter}}
-                  <li>
-                    <a href="https://twitter.com/{{primary_author.twitter}}" target="_blank" rel="noopener" aria-label="Twitter">
-                      <span class="icon-twitter" aria-hidden="true"></span>
-                    </a>
-                  </li>
+                <li>
+                  <a href="https://twitter.com/{{primary_author.twitter}}" target="_blank" rel="noopener"
+                    aria-label="Twitter">
+                    <span class="icon-twitter" aria-hidden="true"></span>
+                  </a>
+                </li>
                 {{/if}}
               </ul>
             </div>
           </div>
         </section>
         {{!-- If you want to embed comments, this is a good place to do it! --}}
+
+        {{!-- CC协议声明模块 --}}
+        <div style="text-align: center;font-size: 14px;color: gray;margin-top: 30px;margin-bottom: 30px;"
+          class="l-wrapper in-post js-aos-wrapper aos-init aos-animate">
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议"
+              style="border-width:0;padding-bottom: 10px;"
+              src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a><br><i
+            class="fa fa-creative-commons"></i> 本站文章除特别声明外，均采用<a rel="license"
+            href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="color: var(--link-color);"> 知识共享署名 - 非商业性使用
+            - 相同方式共享 4.0 国际许可协议 </a>进行许可。
+        </div>
 
         <!-- 来必力City版安装代码 -->
         <div class="l-wrapper in-post js-aos-wrapper aos-init aos-animate" id="lv-container" data-id="city"
@@ -180,36 +188,10 @@ into the {body} of the default.hbs template --}}
           <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
         </div>
 
-      {{/post}}
-      {{!-- Related posts --}}
-      {{#if post.tags.length}}
+        {{/post}}
+        {{!-- Related posts --}}
+        {{#if post.tags.length}}
         {{#get "posts" limit="3" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags,authors" as |related|}}
-          <section class="m-recommended">
-            <div class="l-wrapper in-recommended">
-              <h3 class="m-section-title in-recommended">{{t "Recommended for you"}}</h3>
-              <div class="m-recommended-articles">
-                <div class="m-recommended-slider glide js-recommended-slider">
-                  <div class="glide__track" data-glide-el="track">
-                    <div class="glide__slides">
-                      {{!-- The tag below iterates over all the related posts --}}
-                      {{> "loop"}}
-                    </div>
-                  </div>
-                  <div data-glide-el="controls" class="glide__arrows js-controls">
-                    <button data-glide-dir="<" class="m-icon-button filled in-recommended-articles glide-prev" aria-label="{{t "Previous"}}">
-                      <span class="icon-arrow-left" aria-hidden="true"></span>
-                    </button>
-                    <button data-glide-dir=">" class="m-icon-button filled in-recommended-articles glide-next" aria-label="{{t "Next"}}">
-                      <span class="icon-arrow-right" aria-hidden="true"></span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        {{/get}}
-      {{else}}
         <section class="m-recommended">
           <div class="l-wrapper in-recommended">
             <h3 class="m-section-title in-recommended">{{t "Recommended for you"}}</h3>
@@ -217,26 +199,55 @@ into the {body} of the default.hbs template --}}
               <div class="m-recommended-slider glide js-recommended-slider">
                 <div class="glide__track" data-glide-el="track">
                   <div class="glide__slides">
-                    <div class="m-recommended-slider__item glide__slide">
-                      <div class="m-heading no-margin">
-                        <h3>{{t "No posts found"}}</h3>
-                        <p>
-                          {{t "Apparently there are no posts at the moment, check again later."}}
-                        </p>
-                      </div>
+                    {{!-- The tag below iterates over all the related posts --}}
+                    {{> "loop"}}
+                  </div>
+                </div>
+                <div data-glide-el="controls" class="glide__arrows js-controls">
+                  <button data-glide-dir="<" class="m-icon-button filled in-recommended-articles glide-prev"
+                    aria-label="{{t " Previous"}}">
+                    <span class="icon-arrow-left" aria-hidden="true"></span>
+                  </button>
+                  <button data-glide-dir=">" class="m-icon-button filled in-recommended-articles glide-next"
+                    aria-label="{{t " Next"}}">
+                    <span class="icon-arrow-right" aria-hidden="true"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      </section>
+      {{/get}}
+      {{else}}
+      <section class="m-recommended">
+        <div class="l-wrapper in-recommended">
+          <h3 class="m-section-title in-recommended">{{t "Recommended for you"}}</h3>
+          <div class="m-recommended-articles">
+            <div class="m-recommended-slider glide js-recommended-slider">
+              <div class="glide__track" data-glide-el="track">
+                <div class="glide__slides">
+                  <div class="m-recommended-slider__item glide__slide">
+                    <div class="m-heading no-margin">
+                      <h3>{{t "No posts found"}}</h3>
+                      <p>
+                        {{t "Apparently there are no posts at the moment, check again later."}}
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
       {{/if}}
-    </div>
-  </article>
-</main>
+      </div>
+    </article>
+  </main>
 
-{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
-{{#contentFor "scripts"}}
-<script defer src="{{asset "js/post.js"}}"></script>
-{{/contentFor}}
+  {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs
+  --}}
+  {{#contentFor "scripts"}}
+  <script defer src="{{asset " js/post.js"}}"></script>
+  {{/contentFor}}
