@@ -94,7 +94,7 @@ To know how to enable the search, comments, newsletter and more, please head to 
 * Indonesian by [iqbalbinsb](https://github.com/iqbalbinsb), [khannedy](https://github.com/khannedy)
 * Lithuanian by [pintom](https://github.com/pintom)
 * Dutch by [Qballjos](https://github.com/Qballjos)
-* Traditional Chinese by [Weixiang](https://github.com/weixiang)
+* Traditional Chinese by [weixiang](https://github.com/weixiang)
 * Persian (Farsi) by [Aminoiz](https://github.com/Aminoiz)
 * Ukrainian by [partizan007](https://github.com/partizan007)
 * Kazakh by [arshyn-t](https://github.com/arshyn-t)
