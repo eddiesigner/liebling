@@ -101,6 +101,7 @@ To know how to enable the search, comments, newsletter and more, please head to 
 * Korean by [chocosobo](https://github.com/chocosobo)
 * Japanese by [ViaSnake](https://github.com/ViaSnake)
 * Czech by [Fjuro](https://github.com/Fjuro)
+* Swedish by [momeenme](https://github.com/momeenme)
 
 ## Tests performed
 
