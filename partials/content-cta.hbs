@@ -1,0 +1,17 @@
+{{{html}}}
+<aside class="m-post-upgrade-cta">
+    <div class="m-post-upgrade-cta-content">
+        {{#has visibility="paid"}}
+            <h2>This post is for paying subscribers only</h2>
+        {{/has}}
+        {{#has visibility="members"}}
+            <h2>This post is for subscribers only</h2>
+        {{/has}}
+        {{#if @member}}
+            <a class="m-btn" data-portal="account/plans">Upgrade your account</a>
+        {{else}}
+            <a class="m-btn" data-portal="signup">Subscribe now</a>
+            <p><small>Already have an account? <a data-portal="signin">Sign in</a></small></p>
+        {{/if}}
+    </div>
+</aside>

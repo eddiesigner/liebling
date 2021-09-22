@@ -1,0 +1,58 @@
+.m-post-upgrade-cta-content,
+.m-post-upgrade-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
+    font-size: 16px;
+}
+.m-post-upgrade-cta-content {
+    border-radius: 8px;
+    padding: 40px 4vw;
+    background-color: var(--primary-subtle-color);
+}
+.m-post-upgrade-cta h2 {
+    color: #ffffff;
+    font-size: 28px;
+    letter-spacing: -0.2px;
+    margin: 0;
+    padding: 0;
+}
+.m-post-upgrade-cta p {
+    margin: 20px 0 0;
+    padding: 0;
+}
+.m-post-upgrade-cta small {
+    font-size: 16px;
+    letter-spacing: -0.2px;
+}
+.m-post-upgrade-cta a {
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: none;
+    text-decoration: underline;
+}
+.m-post-upgrade-cta a:hover {
+    color: #ffffff;
+    opacity: 0.8;
+    box-shadow: none;
+    text-decoration: underline;
+}
+.m-post-upgrade-cta a.m-btn {
+    display: block;
+    background: #ffffff;
+    color: var(--primary-subtle-color);
+    text-decoration: none;
+    margin: 28px 0 0;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.m-post-upgrade-cta a.m-btn:hover {
+    opacity: 0.92;
+}
