@@ -67,7 +67,8 @@ export const managePostImages = $ => {
         !$(this)
           .parent()
           .is('a') &&
-        !$(this).hasClass('kg-product-card-image')
+        !$(this).hasClass('kg-product-card-image') &&
+        !$(this).hasClass('kg-audio-thumbnail')
       ) {
         $(this).addClass('js-zoomable');
       }
