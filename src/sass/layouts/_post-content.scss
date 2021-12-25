@@ -1,12 +1,12 @@
 .l-post-content {
   padding-bottom: 15px;
 
-  @include respond-to('medium') {
+  @include respond-to("medium") {
     max-width: 820px;
     min-height: 400px;
     margin: 0 auto;
 
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       padding-bottom: 30px;
     }
   }
@@ -23,7 +23,7 @@
     padding-top: 5px;
     margin: 0 0 30px;
 
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       padding-top: 10px;
       margin-bottom: 40px;
     }
@@ -32,31 +32,31 @@
   h1 {
     font-size: 2.125rem;
 
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       font-size: 2.625rem;
     }
   }
 
   h2 {
-    font-size: 1.750rem;
+    font-size: 1.75rem;
 
-    @include respond-to('medium') {
-      font-size: 2.250rem;
+    @include respond-to("medium") {
+      font-size: 2.25rem;
     }
   }
 
   h3 {
     font-size: 1.375rem;
 
-    @include respond-to('medium') {
-      font-size: 1.750rem;
+    @include respond-to("medium") {
+      font-size: 1.75rem;
     }
   }
 
   h4 {
     font-size: 1rem;
 
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       font-size: 1.375rem;
     }
   }
@@ -64,7 +64,7 @@
   h5 {
     font-size: 0.938rem;
 
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       font-size: 1.125rem;
     }
   }
@@ -72,7 +72,7 @@
   h6 {
     font-size: 0.813rem;
 
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       font-size: 1rem;
     }
   }
@@ -83,10 +83,10 @@
     font-size: 1.125rem;
     margin-bottom: 25px;
 
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       letter-spacing: 0.3px;
       line-height: 1.6;
-      font-size: 1.250rem;
+      font-size: 1.25rem;
       margin-bottom: 30px;
     }
 
@@ -95,7 +95,8 @@
     }
   }
 
-  b, strong {
+  b,
+  strong {
     font-weight: 600;
   }
 
@@ -113,17 +114,18 @@
     }
   }
 
-  ul, ol {
+  ul,
+  ol {
     letter-spacing: 0.2px;
     line-height: 1.5;
     font-size: 1.125rem;
     padding-left: 20px;
     margin: 0 0 20px 0;
 
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       letter-spacing: 0.3px;
       line-height: 1.6;
-      font-size: 1.250rem;
+      font-size: 1.25rem;
       padding-left: 40px;
       margin-bottom: 30px;
     }
@@ -139,7 +141,7 @@
     max-width: 100%;
     margin: 0 auto 35px;
 
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       margin-bottom: 40px;
     }
   }
@@ -151,7 +153,7 @@
   .fluid-width-video-wrapper {
     margin: 0 auto 35px;
 
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       margin-bottom: 40px;
     }
   }
@@ -161,7 +163,7 @@
     padding: 20px 0 40px;
     margin: 0 -#{$mobile-space};
 
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       padding: 20px 0 50px;
       margin: 0;
     }
@@ -187,16 +189,15 @@
     }
 
     &.kg-width-wide {
-      @include respond-to('extra-large') {
+      @include respond-to("extra-large") {
         margin: 0 -70px;
       }
     }
 
     &.kg-width-full {
-      @include respond-to('medium') {
+      @include respond-to("medium") {
         width: 100vw;
         margin-left: 50%;
-
         @include transform(translateX(-50%));
       }
     }
@@ -214,10 +215,10 @@
       text-align: center;
       letter-spacing: 0.1px;
       line-height: 1.3;
-      font-size: 0.750rem;
+      font-size: 0.75rem;
       padding: 10px $mobile-space 0 $mobile-space;
 
-      @include respond-to('medium') {
+      @include respond-to("medium") {
         font-size: 0.875rem;
         padding: 15px 0 0 0;
       }
@@ -267,12 +268,12 @@
     border: 0;
     border-top: 1px solid var(--secondary-subtle-color);
 
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       margin: 50px 0;
     }
 
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       top: 50%;
       left: 50%;
@@ -281,9 +282,9 @@
       border-radius: 50%;
       background-color: var(--secondary-subtle-color);
       @include bs(0 0 0 10px var(--background-color));
-      @include transform(translate(-50%,-50%));
+      @include transform(translate(-50%, -50%));
 
-      @include respond-to('medium') {
+      @include respond-to("medium") {
         width: 12px;
         height: 12px;
         @include bs(0 0 0 20px var(--background-color));
@@ -297,16 +298,37 @@
     line-height: 1.5;
     font-size: 1.125rem;
     font-style: italic;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, "Times New Roman", Times, serif;
     padding: 0 40px;
     margin: 0 0 25px;
 
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       letter-spacing: 0.3px;
       line-height: 1.6;
-      font-size: 1.250rem;
+      font-size: 1.25rem;
       padding: 0 60px;
       margin-bottom: 30px;
+    }
+
+    &.kg-blockquote-alt {
+      color: var(--primary-subtle-color);
+      line-height: 1.2;
+      font-family: inherit;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 2rem;
+      padding-top: 20px;
+      padding-bottom: 20px;
+
+      @include respond-to("medium") {
+        font-size: 2.625rem;
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+
+      &:before {
+        display: none;
+      }
     }
 
     &:before {
@@ -318,7 +340,7 @@
       line-height: 1;
       font-size: 2.625rem;
 
-      @include respond-to('medium') {
+      @include respond-to("medium") {
         font-size: 4rem;
       }
     }
@@ -334,7 +356,7 @@
     width: calc(100% + 40px);
     margin: 0 -#{$mobile-space} 25px;
 
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       font-size: 1rem;
       width: 100%;
       margin: 0 0 30px;
@@ -361,7 +383,7 @@
       text-align: center;
       padding: 10px;
 
-      @include respond-to('medium') {
+      @include respond-to("medium") {
         padding: 20px;
       }
     }
@@ -371,7 +393,7 @@
     display: inline-block;
     color: var(--link-color);
     font-size: 0.9rem;
-    font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
+    font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
     padding: 0 5px;
     border-radius: 5px;
     background-color: var(--secondary-subtle-color);
@@ -379,7 +401,7 @@
 
   pre {
     line-height: 1.4;
-    font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
+    font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
     margin: 0 0 25px;
     overflow-x: auto;
     border-radius: 5px;
@@ -397,7 +419,7 @@
     -ms-hyphens: none;
     hyphens: none;
 
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       margin-bottom: 30px;
     }
 
@@ -417,7 +439,7 @@
       -ms-hyphens: none;
       hyphens: none;
 
-      @include respond-to('medium') {
+      @include respond-to("medium") {
         padding: 20px 20px 0;
       }
     }
@@ -430,12 +452,12 @@
   form {
     margin-bottom: 25px;
 
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       margin-bottom: 30px;
     }
   }
 
-  input,
+  input:not(.kg-video-card input):not(.kg-audio-card input),
   textarea,
   select {
     margin-bottom: 20px;
@@ -456,7 +478,8 @@
     background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5IiBoZWlnaHQ9IjUiIHZpZXdCb3g9IjAgMCA5IDUiPgogICAgPHBhdGggZmlsbD0iIzU2NWU2MCIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNOC4zMi41N2EuMjQ3LjI0NyAwIDAgMSAwIC4zNkw0LjY4IDQuNTdhLjI0Ny4yNDcgMCAwIDEtLjM2IDBMLjY4LjkzYS4yNDcuMjQ3IDAgMCAxIDAtLjM2bC4zOS0uMzlhLjI0Ny4yNDcgMCAwIDEgLjM2IDBMNC41IDMuMjUgNy41Ny4xOGEuMjQ3LjI0NyAwIDAgMSAuMzYgMGwuMzkuMzl6Ii8+Cjwvc3ZnPgo=");
   }
 
-  button:not(.m-icon-button) {
+  button:not(.m-icon-button):not(.kg-video-card button):not(.kg-audio-card
+      button) {
     border: 1px solid var(--primary-foreground-color) !important;
     @extend .m-button;
   }
@@ -467,7 +490,7 @@
     margin: 30px auto !important;
     background: var(--background-color);
 
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       margin: 40px auto !important;
     }
 
@@ -551,7 +574,7 @@
   }
 
   .kg-bookmark-author:after {
-    content: '•';
+    content: "•";
     margin: 0 6px;
   }
 
@@ -578,15 +601,225 @@
       order: 2;
     }
   }
+
+  .kg-nft-card {
+    .kg-nft-card-container {
+      border-radius: 20px;
+      background-color: var(--background-color);
+    }
+
+    .kg-ntf-image-container {
+      border-radius: 20px 20px 0 0;
+      overflow: hidden;
+    }
+
+    .kg-nft-metadata {
+      border-radius: 0 0 20px 20px;
+    }
+
+    .kg-nft-header {
+      margin-bottom: 10px;
+
+      img {
+        display: inline-block;
+        width: 100px;
+        max-width: 100px;
+        margin: 0;
+        filter: #{"invert(var(--kg-card-img-invert-color))"};
+      }
+    }
+
+    .kg-nft-title {
+      color: var(--secondary-foreground-color);
+      padding-top: 0;
+    }
+
+    kg-nft-description,
+    .kg-nft-creator {
+      color: var(--primary-foreground-color);
+
+      span {
+        color: var(--secondary-foreground-color);
+      }
+    }
+  }
+
+  .kg-button-card {
+    padding: 30px 0;
+    margin-bottom: 25px;
+
+    a.kg-btn {
+      color: $white !important;
+      font-family: inherit !important;
+      height: auto;
+      background-color: var(--primary-subtle-color) !important;
+      @include bs(0 2px 4px var(--button-shadow-color-normal));
+      @extend .m-button;
+
+      &:hover {
+        opacity: 1;
+        @include transform(translateY(-2px));
+        @include bs(0 4px 8px var(--button-shadow-color-hover));
+      }
+    }
+  }
+
+  .kg-callout-card {
+    margin-bottom: 25px;
+
+    @include respond-to("medium") {
+      margin-bottom: 30px;
+    }
+
+    .kg-callout-emoji {
+      padding-right: 24px;
+    }
+
+    .kg-callout-text {
+      font-size: 1.0625rem;
+
+      @include respond-to("medium") {
+        font-size: 1.125rem;
+      }
+    }
+  }
+
+  .kg-header-card {
+    width: 100vw;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 50%;
+    @include transform(translateX(-50%));
+
+    @include respond-to("medium") {
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    &.kg-style-light {
+      .kg-header-card-header,
+      .kg-header-card-subheader {
+        color: $titles;
+      }
+
+      .kg-header-card-button {
+        color: $white !important;
+        background-color: var(--primary-subtle-color) !important;
+      }
+    }
+
+    .kg-header-card-button {
+      color: $titles !important;
+      font-family: inherit;
+      height: auto !important;
+      background-color: $white !important;
+      @extend .m-button;
+
+      &:hover {
+        opacity: 1;
+        @include transform(translateY(-2px));
+        @include bs(0 4px 8px var(--button-shadow-color-hover));
+      }
+    }
+  }
+
+  .kg-toggle-card {
+    margin-bottom: 20px;
+
+    .kg-toggle-heading-text {
+      padding-top: 0;
+    }
+
+    .kg-toggle-card-icon {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      border: 0 !important;
+      padding: 0;
+    }
+  }
+
+  .kg-product-card {
+    margin-bottom: 30px;
+
+    @include respond-to("medium") {
+      margin-bottom: 40px;
+    }
+
+    .kg-product-card-image {
+      margin-bottom: 0;
+      border-radius: 5px;
+    }
+
+    .kg-product-card-title {
+      padding-top: 0;
+      font-family: inherit;
+    }
+
+    .kg-product-card-description {
+      p {
+        font-family: inherit;
+      }
+    }
+
+    .kg-product-card-button {
+      color: $white !important;
+      font-family: inherit !important;
+      height: auto;
+      background-color: var(--primary-subtle-color) !important;
+      @extend .m-button;
+    }
+  }
+
+  .kg-file-card {
+    margin-bottom: 30px;
+
+    @include respond-to("medium") {
+      margin-bottom: 40px;
+    }
+  }
+
+  .kg-audio-card {
+    margin-bottom: 30px;
+
+    @include respond-to("medium") {
+      margin-bottom: 40px;
+    }
+
+    img {
+      margin: 8px;
+    }
+
+    .kg-audio-play-icon,
+    .kg-audio-pause-icon,
+    .kg-audio-unmute-icon,
+    .kg-audio-mute-icon {
+      svg {
+        fill: var(--secondary-foreground-color);
+      }
+    }
+
+    .kg-audio-playback-rate {
+      color: var(--secondary-foreground-color);
+    }
+
+    .kg-audio-seek-slider,
+    .kg-audio-volume-slider {
+      &:before {
+        background-color: var(--secondary-foreground-color);
+      }
+    }
+  }
 }
 
 .rtl {
   .l-post-content {
-    ul, ol {
+    ul,
+    ol {
       padding-left: 0;
       padding-right: 20px;
 
-      @include respond-to('medium') {
+      @include respond-to("medium") {
         padding-left: 0;
         padding-right: 40px;
       }
@@ -609,11 +842,32 @@
     }
 
     figure.kg-width-full {
-      @include respond-to('medium') {
+      @include respond-to("medium") {
         margin-left: 0;
         margin-right: 50%;
 
         @include transform(translateX(50%));
+      }
+    }
+
+    .kg-callout-card {
+      .kg-callout-emoji {
+        padding-right: auto;
+        padding-left: 24px;
+      }
+    }
+
+    .kg-toggle-card {
+      .kg-toggle-card-icon {
+        margin-left: 0;
+        margin-right: 16px;
+      }
+    }
+
+    .kg-product-card {
+      .kg-product-card-rating {
+        padding-left: 0;
+        padding-right: 16px;
       }
     }
   }

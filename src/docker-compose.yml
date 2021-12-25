@@ -1,8 +1,8 @@
-version: '3'
+version: "3"
 
 services:
   ghost:
-    image: ghost:4.4.0
+    image: ghost:4.32.0
     container_name: ghost
     volumes:
       - ./..:/var/lib/ghost/content/themes/liebling:Z
