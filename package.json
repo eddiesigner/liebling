@@ -25,6 +25,33 @@
       "xl": {
         "width": 2000
       }
+    },
+    "custom": {
+      "dark_mode_logo": {
+        "type": "image"
+      },
+      "search_api_key": {
+        "type": "text"
+      },
+      "disable_fade_animation": {
+        "type": "boolean",
+        "default": false
+      },
+      "use_custom_cta": {
+        "type": "boolean",
+        "default": false,
+        "group": "homepage"
+      },
+      "custom_cta_text": {
+        "type": "text",
+        "default": "Subscribe",
+        "group": "homepage"
+      },
+      "custom_cta_url": {
+        "type": "text",
+        "default": "/newsletter",
+        "group": "homepage"
+      }
     }
   },
   "demo": "https://liebling.eduardogomez.io",
@@ -54,5 +81,5 @@
     "desktop": "assets/screenshot-desktop.jpg",
     "mobile": "assets/screenshot-mobile.jpg"
   },
-  "version": "1.0.6"
+  "version": "1.5.0"
 }

@@ -85,12 +85,31 @@
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
 
-    {{!-- This variable is used to make the search form work --}}
+    {{!-- This style overrides the accent color to match the one from the Admin --}}
+    <style>
+      :root {
+        --primary-subtle-color: var(--ghost-accent-color) !important;
+      }
+    </style>
+
+    {{!-- These variables are used to make the search form work --}}
     <script>
       // @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
       const ghostHost = "{{@site.url}}"
       // @license-end
     </script>
+    {{#if @custom.search_api_key}}
+      <script>
+        const ghostSearchApiKey = "{{@custom.search_api_key}}"
+      </script>
+    {{/if}}
+
+    {{!-- This variable disbale the fade animation when it's enabled --}}
+    {{#if @custom.disable_fade_animation}}
+      <script>
+        const disableFadeAnimation = {{@custom.disable_fade_animation}}
+      </script>
+    {{/if}}
   </head>
   <body class="{{body_class}}">
     {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
@@ -101,9 +120,6 @@
 
     {{!-- The footer --}}
     {{> footer}}
-
-    {{!-- Notifications alerts --}}
-    {{> "notifications"}}
 
     {{!-- Common scripts shared between pages --}}
     <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver%2CPromise%2CArray.prototype.includes%2CString.prototype.endsWith%2CString.prototype.startsWith%2CObject.assign%2CNodeList.prototype.forEach"></script>

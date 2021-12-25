@@ -30,23 +30,34 @@ To know how to enable the search, comments, newsletter and more, please head to 
 
 ### General features
 
-* Clean and beautiful design 💅🏼
-* Lightning fast ⚡️
-* Fully responsive, looks great on any device 📱
-* Compatible with modern browsers 💻
-* Fast support 📞
+* Clean and beautiful design
+* Lightning fast
+* Lightweight and high performance
+* Fully responsive, looks great on any device
+* Compatible with modern browsers
 
 ### Ghost features
 
-* Subscription form [more info here](https://github.com/eddiesigner/liebling/wiki/How-to-enable-subscribers)
+* Subscription form
 * Multiple authors
 * Logo support
 * Secondary menu
+* Accent color
 * Featured posts and pages
 * Post, Page, Tag, Authors, pages
 * Koenig editor
 * Bookmark card
 * Gallery card
+* Button card
+* NFT card
+* Callouts
+* Toggles
+* Quotes
+* Products
+* Audio
+* Video
+* File uploads
+* Headers
 * Blog title and description
 * Cover image for Home, Post, Page, Tag, Author pages
 * Author avatar, bio, location, website and social links
@@ -59,6 +70,7 @@ To know how to enable the search, comments, newsletter and more, please head to 
 
 * Dark mode
 * Search
+* Custom settings
 * Custom Subscribe page
 * Custom authors page
 * Custom error page
@@ -127,13 +139,15 @@ Contributions are very welcome. First, please read the [Pull Request Guidelines]
 
 ## Related
 
+* [Galerie](https://eddiesigner.gumroad.com/l/KgroF) - Modern and versatile theme that stands out for its sleek design, it's incredibly fast, it offers a great user experience and it has many options to customise it.
+
 * [Firma](https://gum.co/ZXLha) - Ghost theme that can be used by startups to large companies to publish any kind of articles related to their business. It stands out for its clean design and is able to adapt to any company's identity.
 
 * [Weiss Pro](https://gum.co/pzvDn) - Modern and beautiful Ghost theme ready to make your content shine.
 
 ## License
 
-Copyright (c) 2019-2020 Eduardo Gómez. Released under the [MIT license](https://github.com/eddiesigner/liebling/blob/master/LICENSE).
+Copyright (c) 2019-present Eduardo Gómez. Released under the [MIT license](https://github.com/eddiesigner/liebling/blob/master/LICENSE).
 
 ## Credits
 

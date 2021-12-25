@@ -9,7 +9,10 @@ This header template is shared across all the pages.
     </button>
     {{#if @site.logo}}
       <a href="{{@site.url}}" class="m-logo in-mobile-topbar">
-        <img src="{{@site.logo}}" alt="{{@site.title}}">
+        <img src="{{@site.logo}}" alt="{{@site.title}}" class="{{#if @custom.dark_mode_logo}}m-logo__image-light{{/if}}">
+        {{#if @custom.dark_mode_logo}}
+          <img src="{{@custom.dark_mode_logo}}" alt="{{@site.title}}" class="m-logo__image-dark">
+        {{/if}}
       </a>
     {{else}}
       <a href="{{@site.url}}" class="m-site-name in-mobile-topbar">
@@ -33,7 +36,10 @@ This header template is shared across all the pages.
               {{#if @site.logo}}
                 <li class="only-desktop">
                   <a href="{{@site.url}}" class="m-logo">
-                    <img src="{{@site.logo}}" alt="{{@site.title}}">
+                    <img src="{{@site.logo}}" alt="{{@site.title}}" class="{{#if @custom.dark_mode_logo}}m-logo__image-light{{/if}}">
+                    {{#if @custom.dark_mode_logo}}
+                      <img src="{{@custom.dark_mode_logo}}" alt="{{@site.title}}" class="m-logo__image-dark">
+                    {{/if}}
                   </a>
                 </li>
                 {{else}}
