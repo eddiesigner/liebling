@@ -114,6 +114,7 @@ To know how to enable the search, comments, newsletter and more, please head to 
 * Japanese by [ViaSnake](https://github.com/ViaSnake)
 * Czech by [Fjuro](https://github.com/Fjuro)
 * Swedish by [momeenme](https://github.com/momeenme)
+* Slovak by [jjuris](https://github.com/jjuris)
 
 ## Tests performed
 
