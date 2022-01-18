@@ -109,11 +109,9 @@ const prepareProgressCircle = () => {
   }, 300)
 }
 
-$(document).ready(() => {
+$(() => {
   $aosWrapper = $('.js-aos-wrapper')
   const $scrollButton = $('.js-scrolltop')
-  const $loadComments = $('.js-load-comments')
-  const $commentsIframe = $('.js-comments-iframe')
   const $recommendedSlider = $('.js-recommended-slider')
 
   fitvids('.js-post-content')
@@ -178,15 +176,10 @@ $(document).ready(() => {
   shave('.js-article-card-title', 100)
   shave('.js-article-card-title-no-image', 250)
 
-  $scrollButton.click(() => {
+  $scrollButton.on('click', () => {
     $('html, body').animate({
       scrollTop: 0
     }, 500)
-  })
-
-  $loadComments.click(() => {
-    $loadComments.parent().hide()
-    $commentsIframe.fadeIn('slow')
   })
 
   managePostImages($)

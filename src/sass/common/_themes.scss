@@ -9,9 +9,9 @@
   --link-color: #133467;
   --primary-border-color: #9b9b9b;
   --secondary-border-color: aliceblue;
-  --article-shadow-normal: 0 10px 10px rgba(0,0,0,0.08);
-  --article-shadow-hover: 0 4px 60px 0 rgba(0,0,0,0.2);
-  --transparent-background-color: rgba(255,255,255,0.99);
+  --article-shadow-normal: 0 10px 10px rgba(0, 0, 0, 0.08);
+  --article-shadow-hover: 0 4px 60px 0 rgba(0, 0, 0, 0.2);
+  --transparent-background-color: rgba(255, 255, 255, 0.99);
   --footer-background-color: #133467;
   --submenu-shadow-color-opacity: 0.25;
   --button-shadow-color-normal: rgba(108, 108, 108, 0.2);
@@ -23,6 +23,7 @@
   --toggle-darkmode-background-color: rgba(0, 0, 0, 0.05);
   --header-menu-gradient-first-color: rgba(255, 255, 255, 0);
   --header-menu-gradient-second-color: rgba(255, 255, 255, 1);
+  --kg-card-img-invert-color: 0;
 }
 
 [data-theme="dark"] {
@@ -35,9 +36,9 @@
   --link-color: #b6b7f6;
   --primary-border-color: #1d1d1d;
   --secondary-border-color: #0f0f0f;
-  --article-shadow-normal: 0 4px 5px 5px rgba(0,0,0,0.1);
-  --article-shadow-hover: 0 4px 5px 10px rgba(0,0,0,0.1);
-  --transparent-background-color: rgba(0,0,0,0.99);
+  --article-shadow-normal: 0 4px 5px 5px rgba(0, 0, 0, 0.1);
+  --article-shadow-hover: 0 4px 5px 10px rgba(0, 0, 0, 0.1);
+  --transparent-background-color: rgba(0, 0, 0, 0.99);
   --footer-background-color: #080808;
   --submenu-shadow-color-opacity: 0.55;
   --button-shadow-color-normal: rgba(10, 10, 10, 0.5);
@@ -49,6 +50,7 @@
   --toggle-darkmode-background-color: rgba(0, 0, 0, 0.5);
   --header-menu-gradient-first-color: rgba(17, 17, 17, 0);
   --header-menu-gradient-second-color: rgba(17, 17, 17, 0.65);
+  --kg-card-img-invert-color: 1;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -62,9 +64,9 @@
     --link-color: #b6b7f6;
     --primary-border-color: #1d1d1d;
     --secondary-border-color: #0f0f0f;
-    --article-shadow-normal: 0 4px 5px 5px rgba(0,0,0,0.1);
-    --article-shadow-hover: 0 4px 5px 10px rgba(0,0,0,0.1);
-    --transparent-background-color: rgba(0,0,0,0.99);
+    --article-shadow-normal: 0 4px 5px 5px rgba(0, 0, 0, 0.1);
+    --article-shadow-hover: 0 4px 5px 10px rgba(0, 0, 0, 0.1);
+    --transparent-background-color: rgba(0, 0, 0, 0.99);
     --footer-background-color: #080808;
     --submenu-shadow-color-opacity: 0.55;
     --button-shadow-color-normal: rgba(10, 10, 10, 0.5);
@@ -76,5 +78,6 @@
     --toggle-darkmode-background-color: rgba(0, 0, 0, 0.5);
     --header-menu-gradient-first-color: rgba(17, 17, 17, 0);
     --header-menu-gradient-second-color: rgba(17, 17, 17, 0.65);
+    --kg-card-img-invert-color: 1;
   }
 }
