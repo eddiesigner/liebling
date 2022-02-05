@@ -72,11 +72,10 @@ This header template is shared across all the pages.
                       <h3 class="m-submenu-title in-recent-articles">{{t "Recent articles"}}</h3>
                       {{#get "posts" limit="4" order="published_at desc" as |recent|}}
                         {{#if recent}}
-                          <div class="glide js-recent-slider">
-                            <div class="glide__track" data-glide-el="track">
-                              <div class="glide__slides">
-                                {{#foreach recent}}
-                                <div class="glide__slide">
+                          <div class="swiper js-recent-slider">
+                            <div class="swiper-wrapper">
+                              {{#foreach recent}}
+                                <div class="swiper-slide">
                                   <a href="{{url}}" class="m-recent-article">
                                     <div class="m-recent-article__picture {{#unless feature_image}}no-picture{{/unless}}">
                                       {{#if feature_image}}
@@ -91,8 +90,7 @@ This header template is shared across all the pages.
                                     <span class="m-recent-article__date">{{date published_at timeago="true"}}</span>
                                   </a>
                                 </div>
-                                {{/foreach}}
-                              </div>
+                              {{/foreach}}
                             </div>
                           </div>
                         {{else}}

@@ -16,8 +16,6 @@
     <link rel="preload" href="{{asset "js/vendor/content-api.min.js"}}" as="script" />
     <link rel="preload" href="{{asset "js/vendor.js"}}" as="script" />
     <link rel="preload" href="{{asset "js/app.js"}}" as="script" />
-    <link rel="preconnect" href="https://polyfill.io">
-    <link rel="dns-prefetch" href="https://polyfill.io">
 
     {{!-- This #block helper will try to preload page-specific assets --}}
     {{{block "preload"}}}
@@ -122,7 +120,6 @@
     {{> footer}}
 
     {{!-- Common scripts shared between pages --}}
-    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver%2CPromise%2CArray.prototype.includes%2CString.prototype.endsWith%2CString.prototype.startsWith%2CObject.assign%2CNodeList.prototype.forEach"></script>
     <script defer src="{{asset "js/manifest.js"}}"></script>
     <script defer src="{{asset "js/vendor/content-api.min.js"}}"></script>
     <script defer src="{{asset "js/vendor.js"}}"></script>

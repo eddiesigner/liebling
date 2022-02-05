@@ -1,21 +1,13 @@
 import $ from 'jquery';
 import Headroom from 'headroom.js';
-import Glide, {
-  Swipe,
-  Breakpoints
-} from '@glidejs/glide/dist/glide.modular.esm';
 import tippy from 'tippy.js';
 import 'tippy.js/dist/tippy.css';
 import shave from 'shave';
 import AOS from 'aos';
 import Fuse from 'fuse.js/dist/fuse.basic.esm.min.js';
-import {
-  isRTL,
-  formatDate,
-  isDarkMode,
-  isMobile,
-  getParameterByName
-} from './helpers';
+import Swiper, { FreeMode, A11y } from 'swiper';
+import 'swiper/swiper.min.css';
+import { isRTL, formatDate, isDarkMode, isMobile } from './helpers';
 
 $(() => {
   if (isRTL()) {
@@ -272,40 +264,17 @@ $(() => {
   }
 
   if ($recentSlider.length > 0) {
-    const recentSlider = new Glide('.js-recent-slider', {
-      type: 'slider',
-      rewind: false,
-      perView: 4,
-      swipeThreshold: false,
-      dragThreshold: false,
-      gap: 0,
-      direction: isRTL() ? 'rtl' : 'ltr',
-      breakpoints: {
-        1024: {
-          perView: 3,
-          swipeThreshold: 80,
-          dragThreshold: 120
-        },
-        768: {
-          perView: 2,
-          swipeThreshold: 80,
-          dragThreshold: 120,
-          peek: { before: 0, after: 115 }
-        },
-        568: {
-          perView: 1,
-          swipeThreshold: 80,
-          dragThreshold: 120,
-          peek: { before: 0, after: 115 }
+    const recentSwiper = new Swiper('.js-recent-slider', {
+      modules: [FreeMode, A11y],
+      freeMode: true,
+      slidesPerView: 'auto',
+      a11y: true,
+      on: {
+        init: function() {
+          shave('.js-recent-article-title', 50);
         }
       }
     });
-
-    recentSlider.on('mount.after', () => {
-      shave('.js-recent-article-title', 50);
-    });
-
-    recentSlider.mount({ Swipe, Breakpoints });
   }
 
   if (typeof disableFadeAnimation === 'undefined' || !disableFadeAnimation) {

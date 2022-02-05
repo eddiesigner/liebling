@@ -1,25 +1,25 @@
-.m-featured-slider {
+.m-featured-slider.swiper {
   position: relative;
   overflow: hidden !important;
   height: 350px;
   margin: -40px -#{$mobile-space} 40px;
-  @include transition(all .25s cubic-bezier(.02,.01,.47,1));
+  @include transition(all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1));
 
   &:hover {
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       @include transform(translateY(-5px));
       @include bs(var(--article-shadow-hover));
     }
   }
 
-  @include respond-to('medium') {
+  @include respond-to("medium") {
     width: 100%;
     height: 420px;
     margin: -40px 10px 20px 10px;
     border-radius: 10px;
   }
 
-  @include respond-to('large') {
+  @include respond-to("large") {
     width: calc(100% - (100% / 3) - 40px);
     margin: 0 20px 40px 20px;
     overflow: unset;
@@ -36,9 +36,8 @@
   margin: 0;
   height: 100%;
 
-  @include respond-to('medium') {
+  @include respond-to("medium") {
     border-radius: 10px;
-    overflow: hidden;
   }
 }
 
@@ -46,7 +45,7 @@
   height: 100%;
   overflow: hidden;
 
-  @include respond-to('medium') {
+  @include respond-to("medium") {
     border-radius: 10px;
   }
 }

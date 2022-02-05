@@ -183,52 +183,28 @@ into the {body} of the default.hbs template --}}
       {{!-- Related posts --}}
       {{#if post.tags.length}}
         {{#get "posts" limit="3" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags,authors" as |related|}}
-          <section class="m-recommended">
-            <div class="l-wrapper in-recommended">
-              <h3 class="m-section-title in-recommended">{{t "Recommended for you"}}</h3>
-              <div class="m-recommended-articles">
-                <div class="m-recommended-slider glide js-recommended-slider">
-                  <div class="glide__track" data-glide-el="track">
-                    <div class="glide__slides">
+          {{#if related}}
+            <section class="m-recommended">
+              <div class="l-wrapper in-recommended">
+                <h3 class="m-section-title in-recommended">{{t "Recommended for you"}}</h3>
+                <div class="m-recommended-articles">
+                  <div class="m-recommended-slider swiper js-recommended-slider">
+                    <div class="swiper-wrapper">
                       {{!-- The tag below iterates over all the related posts --}}
                       {{> "loop"}}
                     </div>
-                  </div>
-                  <div data-glide-el="controls" class="glide__arrows js-controls">
-                    <button data-glide-dir="<" class="m-icon-button filled in-recommended-articles glide-prev" aria-label="{{t "Previous"}}">
+                    <button class="m-icon-button filled in-recommended-articles swiper-button-prev" aria-label="{{t "Previous"}}">
                       <span class="icon-arrow-left" aria-hidden="true"></span>
                     </button>
-                    <button data-glide-dir=">" class="m-icon-button filled in-recommended-articles glide-next" aria-label="{{t "Next"}}">
+                    <button class="m-icon-button filled in-recommended-articles swiper-button-next" aria-label="{{t "Next"}}">
                       <span class="icon-arrow-right" aria-hidden="true"></span>
                     </button>
                   </div>
                 </div>
               </div>
-            </div>
-          </section>
+            </section>
+          {{/if}}
         {{/get}}
-      {{else}}
-        <section class="m-recommended">
-          <div class="l-wrapper in-recommended">
-            <h3 class="m-section-title in-recommended">{{t "Recommended for you"}}</h3>
-            <div class="m-recommended-articles">
-              <div class="m-recommended-slider glide js-recommended-slider">
-                <div class="glide__track" data-glide-el="track">
-                  <div class="glide__slides">
-                    <div class="m-recommended-slider__item glide__slide">
-                      <div class="m-heading no-margin">
-                        <h3>{{t "No posts found"}}</h3>
-                        <p>
-                          {{t "Apparently there are no posts at the moment, check again later."}}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
       {{/if}}
     </div>
   </article>

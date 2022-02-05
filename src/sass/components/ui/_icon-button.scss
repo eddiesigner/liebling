@@ -18,7 +18,7 @@
   &.filled {
     background-color: var(--background-color);
     @include bs(0 2px 4px var(--button-shadow-color-normal));
-    @include transition(all .25s cubic-bezier(.02,.01,.47,1));
+    @include transition(all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1));
 
     &:hover {
       @include bs(0 4px 8px var(--button-shadow-color-hover));
@@ -44,7 +44,7 @@
     font-size: 0.625rem;
     z-index: 2;
 
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       display: none !important;
     }
   }
@@ -58,7 +58,7 @@
     font-size: 0.625rem;
     z-index: 2;
 
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       top: 30px;
       right: 30px;
       width: 42px;
@@ -66,7 +66,7 @@
       font-size: 0.875rem;
     }
 
-    @include respond-to('extra-large') {
+    @include respond-to("extra-large") {
       top: 40px;
       right: 40px;
       width: 50px;
@@ -77,7 +77,7 @@
   &.in-menu-main {
     display: none;
 
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       display: flex;
       width: 32px;
       height: 32px;
@@ -100,7 +100,7 @@
     height: 40px;
     font-size: 0.625rem;
 
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       width: 46px;
       height: 46px;
       font-size: 0.688rem;
@@ -124,22 +124,22 @@
     bottom: 5px;
     z-index: 2;
 
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       bottom: 26px;
     }
 
-    &.glide-prev {
+    &.swiper-button-prev {
       right: 56px;
 
-      @include respond-to('medium') {
+      @include respond-to("medium") {
         right: 76px;
       }
     }
 
-    &.glide-next {
+    &.swiper-button-next {
       right: 16px;
 
-      @include respond-to('medium') {
+      @include respond-to("medium") {
         right: 36px;
       }
     }
@@ -150,20 +150,20 @@
     font-size: 0.625rem;
     width: 40px;
     height: 40px;
-    top: 200px;
+    top: 240px;
     z-index: 2;
     @include transform(translateY(-50%));
 
-    @include respond-to('large') {
+    @include respond-to("large") {
       display: none;
     }
 
-    &.glide-prev {
-      left: 0;
+    &.swiper-button-prev {
+      left: 2px;
     }
 
-    &.glide-next {
-      right: 0;
+    &.swiper-button-next {
+      right: 2px;
     }
   }
 
@@ -171,11 +171,11 @@
     position: relative;
     width: 60px;
     height: 60px;
-    font-size: 1.250rem;
+    font-size: 1.25rem;
     margin: 0 auto;
     z-index: 2;
 
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       width: 80px;
       height: 80px;
       font-size: 1.625rem;
@@ -184,20 +184,20 @@
 
   &.in-share {
     color: var(--titles-color);
-    font-size: 0.750rem;
+    font-size: 0.75rem;
     text-decoration: none;
     width: 31px;
     height: 31px;
     margin: 0 25px;
 
-    @include respond-to('large') {
+    @include respond-to("large") {
       font-size: 0.875rem;
       width: 40px;
       height: 40px;
       margin: 0 0 20px 0;
     }
 
-    @include respond-to('extra-large') {
+    @include respond-to("extra-large") {
       font-size: 1rem;
       width: 50px;
       height: 50px;
@@ -228,21 +228,21 @@
 .rtl {
   .m-icon-button {
     &.in-featured-articles {
-      &.glide-prev {
+      &.swiper-button-prev {
         right: auto;
         left: 16px;
 
-        @include respond-to('medium') {
+        @include respond-to("medium") {
           right: auto;
           left: 36px;
         }
       }
 
-      &.glide-next {
+      &.swiper-button-next {
         right: auto;
         left: 52px;
 
-        @include respond-to('medium') {
+        @include respond-to("medium") {
           right: auto;
           left: 72px;
         }
@@ -250,15 +250,15 @@
     }
 
     &.in-recommended-articles {
-      &.glide-prev {
+      &.swiper-button-prev {
         left: auto;
-        right: 0;
+        right: 2px;
         @include transform(rotate(180deg));
       }
 
-      &.glide-next {
+      &.swiper-button-next {
         right: auto;
-        left : 0;
+        left: 2px;
         @include transform(rotate(180deg));
       }
     }

@@ -3,7 +3,7 @@
   width: 230px;
   margin: 0 $mobile-space;
 
-  @include respond-to('medium') {
+  @include respond-to("medium") {
     margin: 0 60px 0 0;
   }
 
@@ -18,7 +18,7 @@
 
 .rtl {
   .m-recent-article {
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       margin: 0 0 0 60px;
     }
   }
@@ -31,6 +31,7 @@
   border-radius: 5px;
   background-color: var(--secondary-subtle-color);
   overflow: hidden;
+  @include transform(translateZ(0));
 
   &.no-picture {
     img {
@@ -48,7 +49,7 @@
     height: 100%;
     object-fit: cover;
     backface-visibility: visible !important;
-    @include transition(transform .5s cubic-bezier(0.165, 0.84, 0.44, 1));
+    @include transition(transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1));
   }
 }
 
@@ -60,7 +61,7 @@
   font-weight: 400;
   margin: 0 0 10px;
 
-  @include respond-to('medium') {
+  @include respond-to("medium") {
     letter-spacing: 0.25px;
     font-size: 1.125rem;
   }

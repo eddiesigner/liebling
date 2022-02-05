@@ -46,7 +46,6 @@
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
-    "@glidejs/glide": "^3.4.1",
     "aos": "2.3.4",
     "fitvids": "^2.0.0",
     "fuse.js": "^6.4.6",
@@ -54,6 +53,7 @@
     "jquery": "^3.6.0",
     "medium-zoom": "^1.0.6",
     "shave": "^2.5.10",
+    "swiper": "^8.0.3",
     "tippy.js": "^5.2.1"
   },
   "optionalDependencies": {
