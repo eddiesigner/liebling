@@ -1,28 +1,29 @@
 .m-submenu {
   padding-top: 25px;
 
-  @include respond-to('medium') {
+  @include respond-to("medium") {
     visibility: hidden;
     position: fixed;
     top: 45px;
     left: 0;
     width: 100%;
     padding: 30px 0 20px 0;
+    white-space: normal;
     background-color: var(--background-color);
     border-top: 1px solid var(--secondary-border-color);
     z-index: 5;
-    @include bs(0 60px 60px rgba(0,0,0,var(--submenu-shadow-color-opacity)));
+    @include bs(0 60px 60px rgba(0, 0, 0, var(--submenu-shadow-color-opacity)));
   }
 
-  @include respond-to('extra-large') {
+  @include respond-to("extra-large") {
     padding: 32px 0 23px 0;
   }
 
   &.opened {
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       visibility: visible;
       backface-visibility: visible !important;
-      @include animation('openSubmenuAnimation 0.3s both');
+      @include animation("openSubmenuAnimation 0.3s both");
       @include keyframes(openSubmenuAnimation) {
         from {
           opacity: 0;
@@ -37,9 +38,9 @@
   }
 
   &.closed {
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       backface-visibility: visible !important;
-      @include animation('closeSubmenuAnimation 0.3s both');
+      @include animation("closeSubmenuAnimation 0.3s both");
       @include keyframes(closeSubmenuAnimation) {
         from {
           visibility: visible;
@@ -56,8 +57,9 @@
   }
 }
 
-_:-ms-fullscreen, :root .m-submenu {
-  @include respond-to('medium') {
+_:-ms-fullscreen,
+:root .m-submenu {
+  @include respond-to("medium") {
     top: 65px;
   }
 }
