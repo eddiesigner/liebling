@@ -6,6 +6,9 @@
   },
   "config": {
     "posts_per_page": 10,
+    "card_assets": {
+      "exclude": ["bookmark", "gallery"]
+    },
     "image_sizes": {
       "xxs": {
         "width": 30
@@ -57,8 +60,7 @@
   "demo": "https://liebling.eduardogomez.io",
   "description": "Beautiful and clean theme that is easy and comfortable to use.",
   "engines": {
-    "ghost": ">=4.0.0",
-    "ghost-api": "v4"
+    "ghost": ">=5.0.0"
   },
   "gpm": {
     "type": "theme",
@@ -81,5 +83,5 @@
     "desktop": "assets/screenshot-desktop.jpg",
     "mobile": "assets/screenshot-mobile.jpg"
   },
-  "version": "1.5.2"
+  "version": "2.0.0"
 }

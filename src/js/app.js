@@ -78,7 +78,7 @@ $(() => {
     const api = new GhostContentAPI({
       url: host,
       key,
-      version: 'v4'
+      version: 'v5.0'
     });
     const allPosts = [];
     const fuseOptions = {
