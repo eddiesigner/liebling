@@ -6,9 +6,9 @@ If you find this theme useful, please consider to make a donation to support its
 
 <a href="https://ko-fi.com/eddiesigner" target="_blank"><img src="https://res.cloudinary.com/edev/image/upload/v1583011476/button_y8hgt8.png" alt="Donate" style="width: 250px !important; height: 60px !important;" width="250" height="60"></a>
 
-## Ghost 4
+## Ghost 5
 
-This theme has been optimized for Ghost 4, if you are looking for a Ghost 3 compatible version please refer to [this link](https://github.com/eddiesigner/liebling/releases/tag/v.0.9.4).
+This theme has been optimized for Ghost 5, if you are looking for a Ghost 4 compatible version please refer to [this link](https://github.com/eddiesigner/liebling/releases/tag/v1.5.2).
 
 ## Preview
 

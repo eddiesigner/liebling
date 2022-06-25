@@ -147,6 +147,8 @@
   }
 
   iframe {
+    display: block;
+    margin: 0 auto;
     max-width: 100%;
   }
 
@@ -473,13 +475,12 @@
     position: relative;
     padding-right: 40px !important;
     background-repeat: no-repeat;
-    background-position: calc(100% -15px) center;
+    background-position: calc(100% - 15px) center;
     background-size: 15px 8px;
     background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5IiBoZWlnaHQ9IjUiIHZpZXdCb3g9IjAgMCA5IDUiPgogICAgPHBhdGggZmlsbD0iIzU2NWU2MCIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNOC4zMi41N2EuMjQ3LjI0NyAwIDAgMSAwIC4zNkw0LjY4IDQuNTdhLjI0Ny4yNDcgMCAwIDEtLjM2IDBMLjY4LjkzYS4yNDcuMjQ3IDAgMCAxIDAtLjM2bC4zOS0uMzlhLjI0Ny4yNDcgMCAwIDEgLjM2IDBMNC41IDMuMjUgNy41Ny4xOGEuMjQ3LjI0NyAwIDAgMSAuMzYgMGwuMzkuMzl6Ii8+Cjwvc3ZnPgo=");
   }
 
-  button:not(.m-icon-button):not(.kg-video-card button):not(.kg-audio-card
-      button) {
+  button:not(.m-icon-button):not(.kg-video-card button):not(.kg-audio-card button):not(.kg-toggle-card button) {
     border: 1px solid var(--primary-foreground-color) !important;
     @extend .m-button;
   }
@@ -736,6 +737,7 @@
       justify-content: center;
       border: 0 !important;
       padding: 0;
+      cursor: pointer;
     }
   }
 
