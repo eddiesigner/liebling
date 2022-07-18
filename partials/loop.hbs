@@ -2,7 +2,7 @@
 
 {{#foreach posts}}
   {{#is "post"}}
-    <div class="m-recommended-slider__item glide__slide">
+    <div class="m-recommended-slider__item swiper-slide">
   {{/is}}
   <article class="m-article-card {{#unless feature_image}}no-picture{{/unless}} {{post_class}}">
     <div class="m-article-card__picture">
@@ -47,7 +47,7 @@
     </div>
   {{/is}}
   {{else}}
-    <div class="m-recommended-slider__item glide__slide">
+    <div class="m-recommended-slider__item swiper-slide">
       <div class="m-heading no-margin">
         <h3>{{t "No posts found"}}</h3>
         <p>

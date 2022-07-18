@@ -1,7 +1,18 @@
 .m-recommended {
   padding-top: 40px;
 
-  @include respond-to('medium') {
+  @include respond-to("medium") {
     padding-top: 60px;
+  }
+}
+
+.m-recommended__empty {
+  padding: 40px 0 60px;
+  margin: 0 auto;
+
+  @include respond-to("medium") {
+    max-width: 420px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
