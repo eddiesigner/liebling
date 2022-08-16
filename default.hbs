@@ -96,6 +96,13 @@
       const ghostHost = "{{@site.url}}"
       // @license-end
     </script>
+
+    {{#if @custom.enable_native_search}}
+      <script>
+        const enableNativeSearch = "{{@custom.enable_native_search}}"
+      </script>
+    {{/if}}
+
     {{#if @custom.search_api_key}}
       <script>
         const ghostSearchApiKey = "{{@custom.search_api_key}}"

@@ -33,6 +33,10 @@
       "dark_mode_logo": {
         "type": "image"
       },
+      "enable_native_search": {
+        "type": "boolean",
+        "default": false
+      },
       "search_api_key": {
         "type": "text"
       },
