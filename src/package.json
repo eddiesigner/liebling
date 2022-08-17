@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "get-database": "curl https://raw.githubusercontent.com/eddiesigner/ghost-db/master/ghost.db -o ghost.db",
+    "get-database": "curl https://raw.githubusercontent.com/eddiesigner/ghost-db/liebling-ghost-v5/ghost.db -o ghost.db",
     "dev": "NODE_ENV=development node node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "NODE_ENV=development node node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "hot": "NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
