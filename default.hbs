@@ -96,6 +96,7 @@
       const ghostHost = "{{@site.url}}"
       // @license-end
     </script>
+
     {{#if @custom.search_api_key}}
       <script>
         const ghostSearchApiKey = "{{@custom.search_api_key}}"
@@ -108,6 +109,19 @@
         const disableFadeAnimation = {{@custom.disable_fade_animation}}
       </script>
     {{/if}}
+
+    {{!-- This script sets the correct theme mode (light or dark) --}}
+    <script>
+      if (typeof Storage !== 'undefined') {
+        const currentSavedTheme = localStorage.getItem('theme')
+
+        if (currentSavedTheme && currentSavedTheme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark')
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light')
+        }
+      }
+    </script>
   </head>
   <body class="{{body_class}}">
     {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}

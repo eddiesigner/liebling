@@ -7,7 +7,7 @@ import AOS from 'aos';
 import Fuse from 'fuse.js/dist/fuse.basic.esm.min.js';
 import Swiper, { FreeMode, A11y } from 'swiper';
 import 'swiper/swiper.min.css';
-import { isRTL, formatDate, isDarkMode, isMobile } from './helpers';
+import { isRTL, formatDate, isMobile } from './helpers';
 
 $(() => {
   if (isRTL()) {
@@ -36,6 +36,7 @@ $(() => {
   const $mainNav = $('.js-main-nav');
   const $mainNavLeft = $('.js-main-nav-left');
   const $newsletterElements = $('.js-newsletter');
+  const $nativeComments = $('.js-native-comments > div > iframe')[0];
   const currentSavedTheme = localStorage.getItem('theme');
 
   let fuse = null;
@@ -203,6 +204,10 @@ $(() => {
       $('html').attr('data-theme', 'light');
       localStorage.setItem('theme', 'light');
     }
+
+    if ($nativeComments) {
+      $nativeComments.contentDocument.location.reload(true);
+    }
   });
 
   $toggleDarkMode.on('mouseenter', () => {
@@ -229,14 +234,10 @@ $(() => {
   });
 
   if (currentSavedTheme) {
-    $('html').attr('data-theme', currentSavedTheme);
-
     if (currentSavedTheme === 'dark') {
-      $toggleDarkMode.attr('checked', true);
-    }
-  } else {
-    if (isDarkMode()) {
-      $toggleDarkMode.attr('checked', true);
+      $toggleDarkMode.each(function() {
+        $(this).attr('checked', true);
+      });
     }
   }
 
