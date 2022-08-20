@@ -1,0 +1,46 @@
+$animation-distance: 100px !default;
+
+[data-animate^='fade'] {
+  opacity: calc((var(--show-fade-animation) + (-1)) * -1);
+
+  @include animation('fadeAnimation 500ms linear forwards');
+  @include keyframes(fadeAnimation) {
+    0% {
+      opacity: calc((var(--show-fade-animation) + (-1)) * -1);
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+[data-animate='fade-up'] {
+  @include animation('fadeUpAnimation 500ms cubic-bezier(0.77,0,0.18,1) 300ms forwards');
+  @include keyframes(fadeUpAnimation) {
+    0% {
+      opacity: calc((var(--show-fade-animation) + (-1)) * -1);
+      @include transform(translateY(calc(#{$animation-distance} * var(--show-fade-animation))));
+    }
+
+    100% {
+      opacity: 1;
+      @include transform(translateY(0));
+    }
+  }
+}
+
+[data-animate='fade-down'] {
+  @include animation('fadeDownAnimation 500ms cubic-bezier(0.77,0,0.18,1) forwards');
+  @include keyframes(fadeDownAnimation) {
+    0% {
+      opacity: calc((var(--show-fade-animation) + (-1)) * -1);
+      @include transform(translateY(calc((#{$animation-distance} * -1) * var(--show-fade-animation))));
+    }
+
+    100% {
+      opacity: 1;
+      @include transform(translateY(0));
+    }
+  }
+}

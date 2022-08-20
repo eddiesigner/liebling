@@ -10,7 +10,6 @@ import {
   makeImagesZoomable
 } from './helpers';
 
-let $aosWrapper = null;
 let $progressCircle = null;
 let lastScrollingY = window.pageYOffset;
 let lastWindowHeight = 0;
@@ -23,20 +22,17 @@ const onScrolling = () => {
   requestTicking();
 };
 
-const adjustShare = timeout => {
+const adjustShare = () => {
   if (!isMobile('1023px')) {
     $('body').removeClass('share-menu-displayed');
   } else {
     $('body').addClass('share-menu-displayed');
-    setTimeout(() => {
-      $aosWrapper.removeAttr('data-aos');
-    }, timeout);
   }
 };
 
 const onResizing = () => {
   setHeights();
-  adjustShare(100);
+  adjustShare();
 
   setTimeout(() => {
     setCircleStyles();
@@ -105,14 +101,13 @@ const prepareProgressCircle = () => {
 };
 
 $(() => {
-  $aosWrapper = $('.js-aos-wrapper');
   const $scrollButton = $('.js-scrolltop');
   const $recommendedSlider = $('.js-recommended-slider');
 
   fitvids('.js-post-content');
 
   adjustImageGallery();
-  adjustShare(1000);
+  adjustShare();
 
   if ($recommendedSlider.length > 0) {
     const recommendedSwiper = new Swiper('.js-recommended-slider', {

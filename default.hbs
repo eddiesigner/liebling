@@ -105,9 +105,11 @@
 
     {{!-- This variable disbale the fade animation when it's enabled --}}
     {{#if @custom.disable_fade_animation}}
-      <script>
-        const disableFadeAnimation = {{@custom.disable_fade_animation}}
-      </script>
+      <style>
+        :root {
+          --show-fade-animation: 0;
+        }
+      </style>
     {{/if}}
 
     {{!-- This script sets the correct theme mode (light or dark) --}}

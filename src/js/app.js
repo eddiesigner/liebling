@@ -3,7 +3,6 @@ import Headroom from 'headroom.js';
 import tippy from 'tippy.js';
 import 'tippy.js/dist/tippy.css';
 import shave from 'shave';
-import AOS from 'aos';
 import Fuse from 'fuse.js/dist/fuse.basic.esm.min.js';
 import Swiper, { FreeMode, A11y } from 'swiper';
 import 'swiper/swiper.min.css';
@@ -276,15 +275,6 @@ $(() => {
         }
       }
     });
-  }
-
-  if (typeof disableFadeAnimation === 'undefined' || !disableFadeAnimation) {
-    AOS.init({
-      once: true,
-      startEvent: 'DOMContentLoaded'
-    });
-  } else {
-    $('[data-aos]').addClass('no-aos-animation');
   }
 
   if ($openSecondaryMenu.length > 0) {

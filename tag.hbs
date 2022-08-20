@@ -26,7 +26,7 @@ into the {body} of the default.hbs template --}}
   {{#tag}}
     {{!-- Inject styles of the hero image to make it responsive --}}
     {{> hero background=feature_image}}
-    <div class="m-hero__content" data-aos="fade-down">
+    <div class="m-hero__content" data-animate="fade-down">
       <h1 class="m-hero-title bigger">{{name}}</h1>
       {{#if description}}
         <p class="m-hero-description">
@@ -45,7 +45,7 @@ into the {body} of the default.hbs template --}}
   {{/tag}}
   
   <div class="l-content">
-    <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
+    <div class="l-wrapper" data-animate="fade-up">
       <div class="l-grid centered">
         {{!-- The tag below iterates over all the posts --}}
         {{> "loop"}}
