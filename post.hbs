@@ -42,7 +42,7 @@ into the {body} of the default.hbs template --}}
     <div class="l-content in-post">
       {{!-- Everything inside the #post tags pulls data from the post --}}
       {{#post}}
-        <div class="l-wrapper in-post {{#unless feature_image}}no-image{{/unless}}" data-animate="fade-up">
+        <div class="l-wrapper in-post {{#unless feature_image}}no-image{{/unless}} js-animation-wrapper" data-animate="fade-up">
           <div
             class="l-post-content js-progress-content">
             <header class="m-heading">

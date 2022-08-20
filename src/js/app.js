@@ -3,9 +3,10 @@ import Headroom from 'headroom.js';
 import tippy from 'tippy.js';
 import 'tippy.js/dist/tippy.css';
 import shave from 'shave';
+import GhostContentAPI from '@tryghost/content-api';
 import Fuse from 'fuse.js/dist/fuse.basic.esm.min.js';
 import Swiper, { FreeMode, A11y } from 'swiper';
-import 'swiper/swiper.min.css';
+import 'swiper/css';
 import { isRTL, formatDate, isMobile } from './helpers';
 
 $(() => {
