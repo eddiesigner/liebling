@@ -4,7 +4,7 @@ for it, and apply those styles to the <header> tag.
 --}}
 
 {{#if background}}
-  <section class="m-hero with-picture" data-aos="fade">
+  <section class="m-hero with-picture" data-animate="fade">
     <div class="m-hero__picture {{#is "post"}}in-post{{/is}}">
       <img
         srcset="
@@ -19,5 +19,5 @@ for it, and apply those styles to the <header> tag.
       />
     </div>
 {{else}}
-  <section class="m-hero no-picture {{#is "post"}}in-post{{/is}}" data-aos="fade">
+  <section class="m-hero no-picture {{#is "post"}}in-post{{/is}}" data-animate="fade">
 {{/if}}

@@ -42,8 +42,7 @@ into the {body} of the default.hbs template --}}
     <div class="l-content in-post">
       {{!-- Everything inside the #post tags pulls data from the post --}}
       {{#post}}
-        <div class="l-wrapper in-post {{#unless feature_image}}no-image{{/unless}} js-aos-wrapper" data-aos="fade-up"
-          data-aos-delay="300">
+        <div class="l-wrapper in-post {{#unless feature_image}}no-image{{/unless}} js-animation-wrapper" data-animate="fade-up">
           <div
             class="l-post-content js-progress-content">
             <header class="m-heading">
@@ -159,23 +158,19 @@ into the {body} of the default.hbs template --}}
             </div>
           </div>
         </section>
-        {{!-- If you want to embed comments, this is a good place to do it! --}}
+        {{!-- Native comments --}}
+        {{#if comments}}
+          <div class="m-comments">
+            <div class="l-wrapper in-comments js-native-comments">
+              {{comments}}
+            </div>
+          </div>
+        {{/if}}
+        {{!-- Third-party comments --}}
         {{!--
           <section class="m-comments">
-            <div class="m-load-comments__iframe l-wrapper in-comments js-comments-iframe">
-              <div id="disqus_thread"></div>
-              <script>
-                var disqus_config = function () {
-                  this.page.url = "{{url absolute="true"}}";
-                  this.page.identifier = "ghost-{{comment_id}}"
-                };
-                (function () {
-                  var d = document, s = d.createElement('script');
-                  s.src = 'https://CHANGETHIS.disqus.com/embed.js';
-                  s.setAttribute('data-timestamp', +new Date());
-                  (d.head || d.body).appendChild(s);
-                })();
-              </script>
+            <div class="l-wrapper in-comments js-third-party-comments">
+              <!-- Paste here the provided code snippet -->
             </div>
           </section>
         --}}

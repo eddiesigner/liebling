@@ -31,6 +31,8 @@
   }
 
   &.in-comments {
+    color: var(--primary-foreground-color);
+
     @include respond-to('medium') {
       max-width: 820px;
     }

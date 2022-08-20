@@ -26,7 +26,7 @@ into the {body} of the default.hbs template --}}
   {{#author}}
     {{!-- Inject styles of the hero image to make it responsive --}}
     {{> hero background=cover_image}}
-      <div class="m-hero__content" data-aos="fade-down">
+      <div class="m-hero__content" data-animate="fade-down">
         {{#if profile_image}}
           <div class="m-hero-avatar" style="background-image: url({{profile_image}});"></div>
         {{else}}
@@ -77,7 +77,7 @@ into the {body} of the default.hbs template --}}
   {{/author}}
   
   <div class="l-content">
-    <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
+    <div class="l-wrapper" data-animate="fade-up">
       <div class="l-grid centered">
         {{!-- The tag below iterates over all the posts --}}
         {{> "loop"}}
