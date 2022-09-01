@@ -115,6 +115,7 @@ To know how to enable the search, comments, newsletter and more, please head to 
 * Czech by [Fjuro](https://github.com/Fjuro)
 * Swedish by [momeenme](https://github.com/momeenme)
 * Slovak by [jjuris](https://github.com/jjuris)
+* Thai by [Parinya T.](https://github.com/pickyzz)
 
 ## Tests performed
 
