@@ -427,7 +427,7 @@
 
     > code {
       display: block;
-      padding: 10px 10px 0;
+      padding: 10px;
       white-space: pre;
       word-spacing: normal;
       word-break: normal;
@@ -442,7 +442,7 @@
       hyphens: none;
 
       @include respond-to("medium") {
-        padding: 20px 20px 0;
+        padding: 20px;
       }
     }
 
@@ -749,6 +749,7 @@
     }
 
     .kg-product-card-image {
+      height: auto;
       margin-bottom: 0;
       border-radius: 5px;
     }
