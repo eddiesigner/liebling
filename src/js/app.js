@@ -66,7 +66,7 @@ $(() => {
   };
 
   const trySearchFeature = () => {
-    if (typeof ghostSearchApiKey !== 'undefined') {
+    if (typeof ghostSearchApiKey !== 'undefined' && typeof nativeSearchEnabled === 'undefined') {
       getAllPosts(ghostHost, ghostSearchApiKey);
     } else {
       $openSearch.css('visibility', 'hidden');

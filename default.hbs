@@ -75,7 +75,7 @@
     {{!-- This #block helper will inject a stylesheet for a specific page --}}
     {{{block "styles"}}}
 
-    {{!-- This #block helper will pull data from the hero partial 
+    {{!-- This #block helper will pull data from the hero partial
     to inject styles of the hero image to make it responsive --}}
     {{{block "herobackground"}}}
 
@@ -95,6 +95,12 @@
       const ghostHost = "{{@site.url}}"
       // @license-end
     </script>
+
+    {{#if @custom.enable_native_search}}
+      <script>
+        const nativeSearchEnabled = true
+      </script>
+    {{/if}}
 
     {{#if @custom.search_api_key}}
       <script>
@@ -129,7 +135,9 @@
     {{{body}}}
 
     {{!-- Search form --}}
-    {{> search}}
+    {{^if @custom.enable_native_search}}
+      {{> search}}
+    {{/if}}
 
     {{!-- The footer --}}
     {{> footer}}
