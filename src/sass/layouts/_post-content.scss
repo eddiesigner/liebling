@@ -459,7 +459,13 @@
     }
   }
 
-  input:not(.kg-video-card input):not(.kg-audio-card input),
+  label {
+    display: block;
+    font-size: 1.125rem;
+    margin-bottom: 12px;
+  }
+
+  input:not([type="radio"]):not([type="checkbox"]):not(.kg-video-card input):not(.kg-audio-card input),
   textarea,
   select {
     margin-bottom: 20px;
@@ -481,8 +487,11 @@
   }
 
   button:not(.m-icon-button):not(.kg-video-card button):not(.kg-audio-card button):not(.kg-toggle-card button) {
-    border: 1px solid var(--primary-foreground-color) !important;
     @extend .m-button;
+
+    &:not(.primary) {
+      @extend .outlined;
+    }
   }
 
   .kg-bookmark-card {
