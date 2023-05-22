@@ -177,7 +177,7 @@ into the {body} of the default.hbs template --}}
       {{/post}}
       {{!-- Related posts --}}
       {{#if post.tags.length}}
-        {{#get "posts" limit="3" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags,authors" as |related|}}
+        {{#get "posts" limit="3" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags,authors" order="published_at desc" as |related|}}
           {{#if related}}
             <section class="m-recommended">
               <div class="l-wrapper in-recommended">
