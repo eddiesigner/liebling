@@ -18,6 +18,7 @@ $(() => {
 
   const $body = $('body');
   const $header = $('.js-header');
+  const $announcementBar = $('#announcement-bar-root');
   const $openMenu = $('.js-open-menu');
   const $closeMenu = $('.js-close-menu');
   const $menu = $('.js-menu');
@@ -262,6 +263,28 @@ $(() => {
       }
     });
     headroom.init();
+  }
+
+  if ($announcementBar.length > 0) {
+    $announcementBar.detach().prependTo($header);
+    $header.addClass('with-announcement-bar');
+
+    setTimeout(() => {
+      $body.css('padding-top', $announcementBar.height());
+      $header.removeAttr('data-animate');
+    }, 500);
+
+    const barObserver = new MutationObserver((e) => {
+      if (e[0].removedNodes.length) {
+        $body.css('padding-top', 0);
+      }
+    })
+
+    barObserver.observe($announcementBar[0], { childList: true });
+  } else {
+    setTimeout(() => {
+      $header.removeAttr('data-animate');
+    }, 500);
   }
 
   if ($recentSlider.length > 0) {

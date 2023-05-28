@@ -1,0 +1,11 @@
+div.gh-announcement-bar {
+  line-height: 1.3;
+  font-size: 1rem;
+  padding: 16px 48px;
+  min-height: auto;
+  z-index: auto;
+
+  @include respond-to("medium") {
+    font-size: 1.125rem;
+  }
+}

@@ -2,8 +2,8 @@
 This header template is shared across all the pages.
 --}}
 
-<header class="m-header {{#if background}}with-picture{{/if}} js-header">
-  <div class="m-mobile-topbar" data-animate="fade-down">
+<header class="m-header {{#if background}}with-picture{{/if}} js-header"  data-animate="fade-down">
+  <div class="m-mobile-topbar">
     <button class="m-icon-button in-mobile-topbar js-open-menu" aria-label="{{t "Open menu"}}">
       <span class="icon-menu" aria-hidden="true"></span>
     </button>
@@ -28,7 +28,7 @@ This header template is shared across all the pages.
     <button class="m-icon-button outlined as-close-menu js-close-menu" aria-label="{{t "Close menu"}}">
       <span class="icon-close"></span>
     </button>
-    <div class="m-menu__main" data-animate="fade-down">
+    <div class="m-menu__main">
       <div class="l-wrapper">
         <div class="m-nav js-main-nav">
           <nav class="m-nav__left js-main-nav-left" role="navigation" aria-label="{{t "Main menu"}}">
