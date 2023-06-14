@@ -76,6 +76,22 @@ $(() => {
     }
   };
 
+  const getDefaultSystemColorScheme = () => {
+    if (!currentSavedTheme) {
+      if (!window.matchMedia) return;
+
+      const darkMedia = window.matchMedia('(prefers-color-scheme: dark)');
+
+      if (darkMedia.matches) {
+        $('html').attr('data-theme', 'dark');
+      }
+
+      darkMedia.addEventListener('change', (event) => {
+        $('html').attr('data-theme', event.matches ? 'dark' : 'light');
+      });
+    }
+  };
+
   const getAllPosts = (host, key) => {
     const api = new GhostContentAPI({
       url: host,
@@ -327,4 +343,5 @@ $(() => {
 
   tryToRemoveNewsletter();
   trySearchFeature();
+  getDefaultSystemColorScheme();
 });
