@@ -266,21 +266,33 @@ $(() => {
   }
 
   if ($announcementBar.length > 0) {
-    $announcementBar.detach().prependTo($header);
     $header.addClass('with-announcement-bar');
 
     setTimeout(() => {
-      $body.css('padding-top', $announcementBar.height());
       $header.removeAttr('data-animate');
     }, 500);
 
-    const barObserver = new MutationObserver((e) => {
-      if (e[0].removedNodes.length) {
-        $body.css('padding-top', 0);
+    const barMutationObserver = new MutationObserver((e) => {
+      if (e[0].addedNodes.length) {
+        $announcementBar.detach().prependTo($header);
+        const barHeight = $announcementBar.height();
+        document.documentElement.style.setProperty('--announcement-bar-height', `${barHeight}px`);
       }
-    })
 
-    barObserver.observe($announcementBar[0], { childList: true });
+      if (e[0].removedNodes.length) {
+        document.documentElement.style.setProperty('--announcement-bar-height', '0px');
+      }
+    });
+
+    const barResizeObserver = new ResizeObserver((entries) => {
+      entries.forEach((entry) => {
+        const barHeight = entry.contentRect.height;
+        document.documentElement.style.setProperty('--announcement-bar-height', `${barHeight}px`);
+      })
+    });
+
+    barMutationObserver.observe($announcementBar[0], { childList: true });
+    barResizeObserver.observe($announcementBar[0]);
   } else {
     setTimeout(() => {
       $header.removeAttr('data-animate');
@@ -320,7 +332,7 @@ $(() => {
     });
   }
 
-  tippy('.js-tooltip');
+  tippy('.js-tooltip', { allowHTML: true });
 
   shave('.js-article-card-title', 100);
   shave('.js-article-card-title-no-image', 250);
