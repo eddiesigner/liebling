@@ -1,14 +1,15 @@
 .m-hero {
   position: relative;
   flex-direction: column;
-  min-height: 365px;
+  // min-height: 365px;
+  min-height: 100vh;
   overflow: hidden;
   padding: 100px 0 75px;
   background-color: var(--secondary-subtle-color);
   @extend .content-centered;
 
   @include respond-to('medium') {
-    min-height: 400px;
+    // min-height: 400px;
     padding: 150px 0 75px;
   }
 
@@ -16,13 +17,13 @@
     color: $white;
     background-color: $black;
 
-    @include respond-to('medium') {
-      min-height: 450px;
-    }
+    // @include respond-to('medium') {
+    //   min-height: 450px;
+    // }
 
-    @include respond-to('extra-large') {
-      min-height: 565px;
-    }
+    // @include respond-to('extra-large') {
+    //   min-height: 565px;
+    // }
 
     .m-hero-title {
       color: $white;
