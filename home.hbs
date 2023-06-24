@@ -1,0 +1,48 @@
+{{!--
+This template is used for the index page.
+It can be used also as the home page or the default page.
+--}}
+
+{{!-- This block preloads specific assets for the index page --}}
+{{#contentFor "preload"}}
+  <link rel="preload" href="{{asset "css/home.css"}}" as="style" />
+  <link rel="preload" href="{{asset "css/listing.css"}}" as="style" />
+  <link rel="preload" href="{{asset "js/home.js"}}" as="script" />
+{{/contentFor}}
+
+{{!-- This block loads specific styles for the index page --}}
+{{#contentFor "styles"}}
+  <link rel="stylesheet" type="text/css" href="{{asset "css/home.css"}}" media="screen" />
+  <link rel="stylesheet" type="text/css" href="{{asset "css/listing.css"}}" media="screen" />
+{{/contentFor}}
+
+{{!-- The tag below means: insert everything in this file
+into the {body} of the default.hbs template --}}
+{{!< default}}
+
+{{!-- Special header.hbs partial to generate the <header> tag --}}
+{{> header background=@site.cover_image}}
+
+<main class="main-wrap">
+  {{!-- Inject styles of the hero image to make it responsive --}}
+  {{> hero background=@site.cover_image}}
+  <div class="m-hero__content" data-animate="fade-down">
+    <h1 class="m-hero-title bigger">{{@site.title}}</h1>
+    {{#if @site.description}}
+      <p class="m-hero-description bigger">{{@site.description}}</p>
+    {{/if}}
+    {{#if @custom.use_custom_cta}}
+      <a href="{{@custom.custom_cta_url}}" class="m-button filled">{{@custom.custom_cta_text}}</a>
+    {{else}}
+      {{#if @site.members_enabled}}
+        <a href="{{@site.url}}/newsletter" class="m-button filled js-newsletter">{{t "Subscribe"}}</a>
+      {{/if}}
+    {{/if}}
+  </div>
+  </section>
+</main>
+
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+{{#contentFor "scripts"}}
+  <script defer src="{{asset "js/home.js"}}"></script>
+{{/contentFor}}
