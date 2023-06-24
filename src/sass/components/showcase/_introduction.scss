@@ -1,0 +1,40 @@
+.m-showcase-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: justify;
+  @include respond-to('large') {
+    padding: 0px 40px;
+  }
+}
+
+.m-showcase-container-reverse {
+  flex-direction: column-reverse;
+  @include respond-to('large') {
+    flex-direction: row;
+  }
+}
+
+.m-showcase-item {
+  display: flex;
+  flex-basis: 100%;
+  align-items: center;
+  @include respond-to('large') {
+    flex-basis: 50%;
+  }
+}
+
+.m-showcase-item-text {
+  padding: 40px 40px;
+}
+
+.m-showcase-item-image {
+  display: block;
+  margin: auto;
+  padding: 20px;
+  max-width: 100%;
+  @include respond-to('large') {
+    max-width: 512px;
+  }
+}
