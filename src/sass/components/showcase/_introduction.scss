@@ -4,14 +4,14 @@
   flex-wrap: wrap;
   justify-content: space-around;
   text-align: justify;
-  @include respond-to('large') {
+  @include respond-to("large") {
     padding: 0px 40px;
   }
 }
 
 .m-showcase-container-reverse {
   flex-direction: column-reverse;
-  @include respond-to('large') {
+  @include respond-to("large") {
     flex-direction: row;
   }
 }
@@ -20,7 +20,7 @@
   display: flex;
   flex-basis: 100%;
   align-items: center;
-  @include respond-to('large') {
+  @include respond-to("large") {
     flex-basis: 50%;
   }
 }
@@ -30,7 +30,10 @@
 }
 
 .m-showcase-item-text > p {
-  font-size: 1.4rem;
+  font-size: 1rem;;
+  @include respond-to("large") {
+    font-size: 1.4rem;
+  }
 }
 
 .m-showcase-item-image {
@@ -38,7 +41,7 @@
   margin: auto;
   padding: 20px;
   width: 80vw;
-  @include respond-to('large') {
+  @include respond-to("large") {
     max-width: 512px;
   }
 }
