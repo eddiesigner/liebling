@@ -26,14 +26,18 @@
 }
 
 .m-showcase-item-text {
-  padding: 40px 40px;
+  padding: 0px 40px;
+}
+
+.m-showcase-item-text > p {
+  font-size: 1.4rem;
 }
 
 .m-showcase-item-image {
   display: block;
   margin: auto;
   padding: 20px;
-  max-width: 100%;
+  width: 80vw;
   @include respond-to('large') {
     max-width: 512px;
   }
