@@ -11,8 +11,10 @@ body {
   font-display: swap;
   overflow-x: hidden;
   background-color: var(--background-color);
+  padding-top: var(--announcement-bar-height);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  @include transition(padding-top linear 0.2s);
 
   &.share-menu-displayed {
     padding-bottom: 45px;

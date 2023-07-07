@@ -13,7 +13,6 @@
     {{!-- Preload assets --}}
     <link rel="preload" href="{{asset "css/app.css"}}" as="style" />
     <link rel="preload" href="{{asset "js/manifest.js"}}" as="script" />
-    <link rel="preload" href="{{asset "js/vendor/content-api.min.js"}}" as="script" />
     <link rel="preload" href="{{asset "js/vendor.js"}}" as="script" />
     <link rel="preload" href="{{asset "js/app.js"}}" as="script" />
 
@@ -76,7 +75,7 @@
     {{!-- This #block helper will inject a stylesheet for a specific page --}}
     {{{block "styles"}}}
 
-    {{!-- This #block helper will pull data from the hero partial 
+    {{!-- This #block helper will pull data from the hero partial
     to inject styles of the hero image to make it responsive --}}
     {{{block "herobackground"}}}
 
@@ -96,6 +95,13 @@
       const ghostHost = "{{@site.url}}"
       // @license-end
     </script>
+
+    {{#if @custom.enable_native_search}}
+      <script>
+        const nativeSearchEnabled = true
+      </script>
+    {{/if}}
+
     {{#if @custom.search_api_key}}
       <script>
         const ghostSearchApiKey = "{{@custom.search_api_key}}"
@@ -104,24 +110,40 @@
 
     {{!-- This variable disbale the fade animation when it's enabled --}}
     {{#if @custom.disable_fade_animation}}
-      <script>
-        const disableFadeAnimation = {{@custom.disable_fade_animation}}
-      </script>
+      <style>
+        :root {
+          --show-fade-animation: 0;
+        }
+      </style>
     {{/if}}
+
+    {{!-- This script sets the correct theme mode (light or dark) --}}
+    <script>
+      if (typeof Storage !== 'undefined') {
+        const currentSavedTheme = localStorage.getItem('theme')
+
+        if (currentSavedTheme && currentSavedTheme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark')
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light')
+        }
+      }
+    </script>
   </head>
   <body class="{{body_class}}">
     {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
     {{{body}}}
 
     {{!-- Search form --}}
-    {{> search}}
+    {{^if @custom.enable_native_search}}
+      {{> search}}
+    {{/if}}
 
     {{!-- The footer --}}
     {{> footer}}
 
     {{!-- Common scripts shared between pages --}}
     <script defer src="{{asset "js/manifest.js"}}"></script>
-    <script defer src="{{asset "js/vendor/content-api.min.js"}}"></script>
     <script defer src="{{asset "js/vendor.js"}}"></script>
     <script defer src="{{asset "js/app.js"}}"></script>
 

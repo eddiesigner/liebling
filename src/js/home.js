@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import shave from 'shave';
 import Swiper, { Navigation, A11y } from 'swiper';
+import 'swiper/css';
 
 $(() => {
   const $featuredSlider = $('.js-featured-slider');

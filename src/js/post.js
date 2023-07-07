@@ -3,6 +3,7 @@ import mediumZoom from 'medium-zoom';
 import fitvids from 'fitvids';
 import shave from 'shave';
 import Swiper, { Navigation, A11y } from 'swiper';
+import 'swiper/css';
 import {
   isMobile,
   adjustImageGallery,
@@ -10,7 +11,7 @@ import {
   makeImagesZoomable
 } from './helpers';
 
-let $aosWrapper = null;
+let $animationWrapper = null;
 let $progressCircle = null;
 let lastScrollingY = window.pageYOffset;
 let lastWindowHeight = 0;
@@ -23,13 +24,13 @@ const onScrolling = () => {
   requestTicking();
 };
 
-const adjustShare = timeout => {
+const adjustShare = (timeout) => {
   if (!isMobile('1023px')) {
     $('body').removeClass('share-menu-displayed');
   } else {
     $('body').addClass('share-menu-displayed');
     setTimeout(() => {
-      $aosWrapper.removeAttr('data-aos');
+      $animationWrapper.removeAttr('data-animate');
     }, timeout);
   }
 };
@@ -105,7 +106,7 @@ const prepareProgressCircle = () => {
 };
 
 $(() => {
-  $aosWrapper = $('.js-aos-wrapper');
+  $animationWrapper = $('.js-animation-wrapper');
   const $scrollButton = $('.js-scrolltop');
   const $recommendedSlider = $('.js-recommended-slider');
 

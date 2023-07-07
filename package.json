@@ -33,6 +33,10 @@
       "dark_mode_logo": {
         "type": "image"
       },
+      "enable_native_search": {
+        "type": "boolean",
+        "default": false
+      },
       "search_api_key": {
         "type": "text"
       },
@@ -83,5 +87,5 @@
     "desktop": "assets/screenshot-desktop.jpg",
     "mobile": "assets/screenshot-mobile.jpg"
   },
-  "version": "2.0.0"
+  "version": "2.1.6"
 }

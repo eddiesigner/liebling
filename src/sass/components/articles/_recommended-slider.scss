@@ -3,12 +3,13 @@
   padding: 0;
   margin: 0;
 
+  @include respond-to("large") {
+    padding: 20px 30px 0 !important;
+    margin: -20px -30px 0 !important;
+  }
+
   .swiper-wrapper {
     padding: 40px 0 60px;
-
-    @include respond-to("medium") {
-      padding: 40px 0 60px;
-    }
 
     @include respond-to("large") {
       justify-content: center;

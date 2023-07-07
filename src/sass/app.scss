@@ -5,6 +5,7 @@
 @import "common/helpers";
 @import "common/icons";
 @import "common/global";
+@import "common/animations";
 
 @import "layouts/wrapper";
 @import "layouts/content";
@@ -28,6 +29,7 @@
 @import "components/header/recent-article";
 @import "components/header/tags";
 @import "components/header/toggle-darkmode";
+@import "components/header/announcement-bar";
 @import "components/hero/hero";
 @import "components/hero/avatar";
 @import "components/hero/title";
@@ -43,5 +45,3 @@
 @import "components/search/icon";
 @import "components/search/result";
 @import "components/footer";
-
-@import "libs/aos/aos";
