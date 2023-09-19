@@ -7,7 +7,10 @@
   "config": {
     "posts_per_page": 10,
     "card_assets": {
-      "exclude": ["bookmark", "gallery"]
+      "exclude": [
+        "bookmark",
+        "gallery"
+      ]
     },
     "image_sizes": {
       "xxs": {

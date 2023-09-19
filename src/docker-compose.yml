@@ -2,10 +2,10 @@ version: "3"
 
 services:
   ghost:
-    image: ghost:5.49.0
+    image: ghost:5-alpine
     container_name: ghost
     volumes:
-      - ./..:/var/lib/ghost/content/themes/liebling:Z
+      - ./..:/var/lib/ghost/content/themes/nrdliebling:Z
       - ./ghost.db:/var/lib/ghost/content/data/ghost.db:Z
     environment:
       NODE_ENV: development
