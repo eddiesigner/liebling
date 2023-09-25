@@ -1,0 +1,43 @@
+{{!-- This block preloads specific assets for the post page --}}
+{{#contentFor "preload"}}
+  <link rel="preload" href="{{asset "css/post.css"}}" as="style" />
+  <link rel="preload" href="{{asset "js/post.js"}}" as="script" />
+{{/contentFor}}
+
+{{!-- This block loads specific styles for the post page --}}
+{{#contentFor "styles"}}
+  <link rel="stylesheet" type="text/css" href="{{asset "css/post.css"}}" media="screen" />
+{{/contentFor}}
+
+
+{{#get "posts" slug="nathan" as |post|}}
+	<section class="m-hero no-picture" data-animate="fade">
+		<h1 class="m-hero-title bigger">{{@site.title}}</h1>
+		{{#if @site.description}}
+			<p class="m-hero-description bigger">{{@site.description}}</p>
+		{{/if}}
+	</section>
+	<article>
+		<div class="l-content in-post">
+		{{#post}}
+		<div class="l-wrapper in-post no-image js-animation-wrapper" data-animate="fade-up">
+			<div class="l-post-content js-progress-content">
+				<div class="pos-relative js-post-content">
+					<div class="m-share">
+						<div class="m-share__content js-sticky">
+							<button class="m-icon-button filled in-share progress js-scrolltop" aria-label="{{t "Scroll to top"}}">
+								<span class="icon-arrow-top" aria-hidden="true"></span>
+								<svg aria-hidden="true">
+								<circle class="progress-ring__circle js-progress" fill="transparent" r="0" />
+								</svg>
+							</button>
+						</div>
+					</div>
+				</div>
+				{{content}}
+			</div>
+		</div>
+		{{/post}}
+	</div>
+	</article>
+{{/get}}
