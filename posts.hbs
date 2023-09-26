@@ -24,28 +24,15 @@ into the {body} of the default.hbs template --}}
 {{> header background=@site.cover_image}}
 
 <main class="main-wrap">
-	
-	<section class="m-hero" data-animate="fade-down">
-		<div class="m-hero__content">
-			{{#if @site.logo}}
-				<a href="{{@site.url}}" class="m-logo in-profile">
-					<img src="{{@site.logo}}" alt="{{@site.title}}" class="{{#if @custom.dark_mode_logo}}m-logo__image-light{{/if}}">
-					{{#if @custom.dark_mode_logo}}
-						<img src="{{@custom.dark_mode_logo}}" alt="{{@site.title}}" class="m-logo__image-dark">
-					{{/if}}
-				</a>
-			{{else}}
-				<h1 class="m-hero-title bigger">{{@site.title}}</h1>
-			{{/if}}
-
-			{{#if @site.description}}
-				<p class="m-hero-description bigger">{{@site.description}}</p>
-			{{/if}}
+	{{> hero}}
+	<div class="l-content">
+		<div class="l-wrapper" data-animate="fade-up">
+			<div class="l-grid centered">
+				{{!-- The tag below iterates over all the posts --}}
+				{{> "loop-posts"}}
+      		</div>
 		</div>
-	</section>
-
-	{{!-- 'profile' requires a post with the slug '/nathan' --}}
-	{{> profile}}
+	</div>
 </main>
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}

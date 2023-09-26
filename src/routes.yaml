@@ -1,0 +1,16 @@
+routes:
+  /tech/:
+    permalink: /t/{slug}/
+    template: posts
+  /photo/:
+    permalink: /p/{slug}/
+    template: photos
+
+collections:
+  /:
+    permalink: /{slug}/
+    template: index
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/
