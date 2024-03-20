@@ -29,7 +29,7 @@
     opacity: 1 !important;
     overflow: initial;
     background-color: transparent;
-    @include transform(translate3d(0, 0, 0) !important);
+    transform: unset;
   }
 }
 

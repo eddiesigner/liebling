@@ -200,9 +200,11 @@ $(() => {
   $toggleDarkMode.on('change', () => {
     if ($toggleDarkMode.is(':checked')) {
       $('html').attr('data-theme', 'dark');
+      $('meta[name="theme-color"]').attr('content', '#111');
       localStorage.setItem('theme', 'dark');
     } else {
       $('html').attr('data-theme', 'light');
+      $('meta[name="theme-color"]').attr('content', '#fff');
       localStorage.setItem('theme', 'light');
     }
 
