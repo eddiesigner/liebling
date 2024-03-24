@@ -141,6 +141,8 @@ Contributions are very welcome. First, please read the [Pull Request Guidelines]
 
 ## Related
 
+* [Bold](https://eddiesigner.gumroad.com/l/ltqtms) - Bold is a Ghost theme designed to be minimal and customizable, allowing individuals to create a sleek and modern online presence.
+
 * [Galerie](https://eddiesigner.gumroad.com/l/KgroF) - Modern and versatile theme that stands out for its sleek design, it's incredibly fast, it offers a great user experience and it has many options to customise it.
 
 * [Firma](https://gum.co/ZXLha) - Ghost theme that can be used by startups to large companies to publish any kind of articles related to their business. It stands out for its clean design and is able to adapt to any company's identity.
