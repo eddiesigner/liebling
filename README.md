@@ -141,6 +141,8 @@ Contributions are very welcome. First, please read the [Pull Request Guidelines]
 
 ## Related
 
+* [Glow](https://eddiesigner.gumroad.com/l/glow) - Beautiful, clean, minimalist and powerful Ghost theme perfect for writers which offers a pleasant reading experience.
+
 * [Bold](https://eddiesigner.gumroad.com/l/ltqtms) - Bold is a Ghost theme designed to be minimal and customizable, allowing individuals to create a sleek and modern online presence.
 
 * [Galerie](https://eddiesigner.gumroad.com/l/KgroF) - Modern and versatile theme that stands out for its sleek design, it's incredibly fast, it offers a great user experience and it has many options to customise it.
