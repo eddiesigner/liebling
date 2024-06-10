@@ -28,8 +28,8 @@
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     padding-left: 5px;
     margin-bottom: 0;
     -webkit-overflow-scrolling: touch;
@@ -60,7 +60,6 @@
     @include respond-to('medium') {
       margin-bottom: 0;
       margin-right: 35px;
-      position: relative;
     }
 
     &:last-of-type {
