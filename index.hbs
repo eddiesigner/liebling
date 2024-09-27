@@ -54,11 +54,11 @@ into the {body} of the default.hbs template --}}
                         {{#if feature_image}}
                           <style>
                             #featured-bg-{{id}} {
-                              background-image: url({{img_url feature_image size='l'}});
+                              background-image: url({{{img_url feature_image size='l'}}});
                             }
                             @media(max-width: 768px) {
                               #featured-bg-{{id}} {
-                                background-image: url({{img_url feature_image size='m'}});
+                                background-image: url({{{img_url feature_image size='m'}}});
                               }
                             }
                           </style>
