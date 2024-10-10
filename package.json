@@ -58,6 +58,16 @@
         "type": "text",
         "default": "/newsletter",
         "group": "homepage"
+      },
+      "enable_mastodon": {
+        "type": "boolean",
+        "default": false,
+        "group": "homepage"
+      },
+      "mastodon_url": {
+        "type": "text",
+        "default": "Mastodon user link",
+        "group": "homepage"
       }
     }
   },
