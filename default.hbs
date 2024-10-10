@@ -124,8 +124,10 @@
 
         if (currentSavedTheme && currentSavedTheme === 'dark') {
           document.documentElement.setAttribute('data-theme', 'dark')
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#111')
         } else {
           document.documentElement.setAttribute('data-theme', 'light')
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
         }
       }
     </script>
